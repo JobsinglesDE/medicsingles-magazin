@@ -37,7 +37,7 @@ export default function HomePage() {
       </section>
 
       <footer className="mx-auto max-w-5xl px-6 py-12 text-zinc-500 text-sm border-t border-zinc-800">
-        © {new Date().getFullYear()} Medicsingles.de · <Link href="/kontakt" className="hover:underline">Kontakt</Link> · <Link href="/datenschutz" className="hover:underline">Datenschutz</Link> · <Link href="/keystatic" className="hover:underline">CMS</Link>
+        © {new Date().getFullYear()} Medicsingles.de · <Link href="/kontakt" className="hover:underline">Kontakt</Link> · <a href="https://medicsingles.de/datenschutz.html" className="hover:underline">Datenschutz</a> · <Link href="/keystatic" className="hover:underline">CMS</Link>
       </footer>
     </main>
   );

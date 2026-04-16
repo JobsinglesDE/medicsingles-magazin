@@ -128,11 +128,8 @@ export function Footer() {
                 <a href="https://medicsingles.de/kontakt/kündigen/" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Premium-Mitgliedschaft kündigen
                 </a>
-                <Link href="/datenschutz" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Datenschutz (Magazin)
-                </Link>
                 <a href="https://medicsingles.de/datenschutz.html" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Datenschutz Plattform
+                  Datenschutz
                 </a>
                 <a href="https://medicsingles.de/impressum.html" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Impressum / AGB

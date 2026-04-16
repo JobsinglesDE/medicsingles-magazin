@@ -4,29 +4,29 @@ import { JsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata = {
-  title: 'Über uns — BlaulichtSingles.ch',
-  description: 'Thomas Honold: Vom Küchenmeister und Marine-Koch zum Gründer des grössten Berufs-Dating-Netzwerks der Schweiz. Die Geschichte hinter BlaulichtSingles.ch.',
+  title: 'Über uns — MedicSingles.de Magazin',
+  description: 'Thomas Honold: Vom Küchenmeister und Marine-Koch zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter MedicSingles.de.',
 };
 
 const faqItems = [
   {
-    question: 'Wer steckt hinter BlaulichtSingles.ch?',
-    answer: 'BlaulichtSingles.ch wurde von Thomas Honold gegründet. Er ist gelernter Koch und Küchenmeister, war CEO des Online-Bewertungssiegels Ausgezeichnet.org und hat 2008 das Jobsingles-Netzwerk ins Leben gerufen. Heute betreibt er zusätzlich seeside.ai — KI-Agentenlösungen für Solopreneure und Unternehmen.',
+    question: 'Wer steckt hinter MedicSingles.de?',
+    answer: 'MedicSingles.de wurde von Thomas Honold gegründet. Er ist gelernter Koch und Küchenmeister, war CEO des Online-Bewertungssiegels Ausgezeichnet.org und hat 2008 das Jobsingles-Netzwerk ins Leben gerufen. Heute betreibt er zusätzlich seeside.ai — KI-Agentenlösungen für Solopreneure und Unternehmen.',
   },
   {
-    question: 'Warum eine Dating-Plattform speziell für Blaulicht-Berufe?',
-    answer: 'Menschen bei Polizei, Feuerwehr und Sanität arbeiten im Schichtdienst, erleben belastende Einsätze und haben wenig planbare Freizeit. Normale Dating-Plattformen berücksichtigen das nicht. BlaulichtSingles.ch verbindet Menschen, die diese Herausforderungen kennen — und genau deshalb besser zueinander passen.',
+    question: 'Warum eine Dating-Plattform speziell für Medizinberufe?',
+    answer: 'Ärzte, Pflegekräfte und Therapeuten arbeiten im Schichtdienst, erleben emotional belastende Situationen und haben kaum planbare Freizeit. Normale Dating-Plattformen berücksichtigen das nicht. MedicSingles.de verbindet Menschen, die diese Herausforderungen aus eigener Erfahrung kennen — und genau deshalb besser zueinander passen.',
   },
   {
-    question: 'Gehört BlaulichtSingles.ch zu einem grösseren Netzwerk?',
-    answer: 'Ja. BlaulichtSingles.ch ist Teil des Jobsingles-Netzwerks mit über 15 berufsspezifischen Dating-Portalen, darunter FarmerSingles.de, MedicSingles.de und SingleBuure.ch. Seit 2018 läuft die Technik über den bewährten Icony-Verbund mit deutschen Servern.',
+    question: 'Gehört MedicSingles.de zu einem grösseren Netzwerk?',
+    answer: 'Ja. MedicSingles.de ist Teil des Jobsingles-Netzwerks mit über 15 berufsspezifischen Dating-Portalen, darunter FarmerSingles.de, BlaulichtSingles.ch und SingleBuure.ch. Seit 2018 läuft die Technik über den bewährten Icony-Verbund mit deutschen Servern.',
   },
   {
-    question: 'Wie schützt BlaulichtSingles.ch meine Daten?',
-    answer: 'Alle Daten liegen auf deutschen Servern und sind DSGVO-konform geschützt. Profile sind nicht öffentlich einsehbar, und du entscheidest selbst, welche Informationen du teilst. Gerade für Blaulicht-Berufe ist Diskretion besonders wichtig — das respektieren wir.',
+    question: 'Wie schützt MedicSingles.de meine Daten?',
+    answer: 'Alle Daten liegen auf deutschen Servern und sind DSGVO-konform geschützt. Profile sind nicht öffentlich einsehbar, und du entscheidest selbst, welche Informationen du teilst. Gerade in Medizinberufen ist Diskretion besonders wichtig — das respektieren wir.',
   },
   {
-    question: 'Was kostet BlaulichtSingles.ch?',
+    question: 'Was kostet MedicSingles.de?',
     answer: 'Die Registrierung und das Erstellen eines Profils sind kostenlos. Du kannst dich umschauen, Profile ansehen und erste Kontakte knüpfen, ohne etwas zu bezahlen. Für erweiterte Funktionen wie unbegrenztes Messaging gibt es Premium-Optionen.',
   },
 ];
@@ -42,7 +42,7 @@ export default function UeberUns() {
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 particle-text">Über uns</h1>
           <p className="text-lg md:text-xl text-foreground/60 max-w-2xl mx-auto leading-relaxed">
-            Vom Küchenmeister zum Dating-Unternehmer — die Geschichte hinter BlaulichtSingles.ch
+            Vom Küchenmeister zum Dating-Unternehmer — die Geschichte hinter MedicSingles.de
           </p>
         </div>
       </section>
@@ -53,7 +53,7 @@ export default function UeberUns() {
           <h2 className="text-2xl font-bold mb-6">Die Geschichte</h2>
           <div className="prose prose-lg text-foreground/80 space-y-4">
             <p>
-              <strong>BlaulichtSingles.ch</strong> ist kein Zufallsprodukt. Hinter der Plattform steht <strong>Thomas Honold</strong> — ein Mann, der selbst weiss, was es heisst, in einem Beruf zu arbeiten, der das Privatleben bestimmt.
+              <strong>MedicSingles.de</strong> ist kein Zufallsprodukt. Hinter der Plattform steht <strong>Thomas Honold</strong> — ein Mann, der selbst weiss, was es heisst, in einem Beruf zu arbeiten, der das Privatleben bestimmt.
             </p>
             <p>
               Thomas wuchs in Radolfzell am Bodensee auf und lernte das Kochen im elterlichen Restaurant <strong>Mettnaustube</strong> — schon als Schüler stand er in den Ferien und an Wochenenden in der Küche seines Vaters Manfred. Mit 19 begann er die Ausbildung zum Koch, arbeitete sich vom <em>Commis de Cuisine</em> über den <em>Chef de Partie</em> bis zum <strong>Küchenmeister</strong> hoch.
@@ -87,13 +87,13 @@ export default function UeberUns() {
               Parallel zur Gastronomie gründete Thomas <strong>2008 das Jobsingles-Netzwerk</strong> — mit einer einfachen Idee: Menschen, die den gleichen Beruf teilen, verstehen einander besser. Wer weiss, wie sich eine 14-Stunden-Schicht anfühlt, muss das dem Partner nicht erklären.
             </p>
             <p>
-              Was als kleines Projekt begann, wuchs zu <strong>Deutschlands und der Schweiz grösstem berufsspezifischen Dating-Netzwerk</strong> — mit über 15 spezialisierten Portalen: FarmerSingles.de, MedicSingles.de, SingleBuure.ch und eben BlaulichtSingles.ch.
+              Was als kleines Projekt begann, wuchs zu <strong>Deutschlands und der Schweiz grösstem berufsspezifischen Dating-Netzwerk</strong> — mit über 15 spezialisierten Portalen: FarmerSingles.de, BlaulichtSingles.ch, SingleBuure.ch und eben MedicSingles.de.
             </p>
             <p>
               Von 2018 bis 2022 war Thomas zusätzlich <strong>Geschäftsführer (CEO) der Aubii GmbH</strong> — dem Unternehmen hinter <strong>Ausgezeichnet.org</strong>, einem der führenden Online-Bewertungssiegel im deutschsprachigen Raum. Dort baute er das B2B-Geschäft auf, führte ein Team und lernte, wie man digitale Plattformen skaliert.
             </p>
             <p>
-              Heute baut Thomas nicht nur das Jobsingles-Netzwerk weiter aus, sondern betreibt mit <strong><a href="https://seeside.ai" target="_blank" rel="noopener" className="text-brand-orange hover:underline">seeside.ai</a></strong> auch KI-Agentenlösungen für Solopreneure und Unternehmen. Die gesamte Infrastruktur hinter BlaulichtSingles.ch — von der automatisierten Content-Erstellung bis zur SEO-Optimierung — läuft auf seiner eigenen KI-Plattform.
+              Heute baut Thomas nicht nur das Jobsingles-Netzwerk weiter aus, sondern betreibt mit <strong><a href="https://seeside.ai" target="_blank" rel="nofollow noopener" className="text-brand-orange hover:underline">seeside.ai</a></strong> auch KI-Agentenlösungen für Solopreneure und Unternehmen. Die gesamte Infrastruktur hinter MedicSingles.de — von der automatisierten Content-Erstellung bis zur SEO-Optimierung — läuft auf seiner eigenen KI-Plattform.
             </p>
           </div>
         </section>
@@ -101,16 +101,16 @@ export default function UeberUns() {
 
       <ScrollReveal>
         <section className="max-w-3xl mx-auto px-6 py-8">
-          <h2 className="text-2xl font-bold mb-6">Warum BlaulichtSingles.ch?</h2>
+          <h2 className="text-2xl font-bold mb-6">Warum MedicSingles.de?</h2>
           <div className="prose prose-lg text-foreground/80 space-y-4">
             <p>
-              Polizistinnen, Feuerwehrmänner, Sanitäterinnen und Ärzte teilen eine Realität, die Aussenstehende selten verstehen: Schichtdienst, Nachtarbeit, belastende Einsätze und wenig planbare Freizeit. Normale Dating-Plattformen ignorieren das.
+              Ärztinnen, Pfleger, Therapeutinnen und Sanitäter teilen eine Realität, die Aussenstehende selten verstehen: Schichtdienst, Nachtarbeit, emotionale Belastung durch den Patientenkontakt und kaum planbare Freizeit. Normale Dating-Plattformen ignorieren das.
             </p>
             <p>
-              <strong>BlaulichtSingles.ch</strong> ist anders. Hier treffen sich Menschen, die wissen, was es heisst, um 3 Uhr morgens einen Notruf zu beantworten. Die verstehen, warum ein Wochenende nicht immer am Samstag beginnt. Die wissen, dass der beste Partner jemand ist, der diese Welt kennt.
+              <strong>MedicSingles.de</strong> ist anders. Hier treffen sich Menschen, die wissen, was es heisst, nach einer langen Nachtschicht wieder aufzutanken. Die verstehen, warum ein freies Wochenende kein selbstverständlicher Luxus ist. Die wissen, dass der beste Partner jemand ist, der diese Welt kennt.
             </p>
             <p>
-              <strong>Deutsche Server. DSGVO-konform. Diskret.</strong> Weil gerade Blaulicht-Berufe besonderen Schutz verdienen.
+              <strong>Deutsche Server. DSGVO-konform. Diskret.</strong> Weil gerade Medizinberufe besonderen Schutz verdienen.
             </p>
           </div>
         </section>
@@ -128,7 +128,7 @@ export default function UeberUns() {
               { name: 'Jobsingles.de', desc: 'Das Netzwerk — Partnersuche nach Beruf', url: 'https://jobsingles.de' },
               { name: 'FarmerSingles.de', desc: 'Singles in der Landwirtschaft', url: 'https://farmersingles.de' },
               { name: 'SingleBuure.ch', desc: 'Bauern-Singles in der Schweiz', url: 'https://singlebuure.ch' },
-              { name: 'BlaulichtSingles.ch', desc: 'Polizei, Feuerwehr & Sanität', url: 'https://medicsingles.de' },
+              { name: 'BlaulichtSingles.ch', desc: 'Polizei, Feuerwehr & Sanität', url: 'https://blaulichtsingles.ch' },
               { name: 'MedicSingles.de', desc: 'Ärzte & Medizin-Singles', url: 'https://medicsingles.de' },
               { name: 'GastroSingles.de', desc: 'Gastronomie & Hotellerie', url: 'https://gastrosingles.de' },
               { name: 'HandwerkSingles.de', desc: 'Handwerker-Singles', url: 'https://handwerksingles.de' },
@@ -169,7 +169,7 @@ export default function UeberUns() {
         <section className="text-center py-12 px-6">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Bereit für die Partnersuche?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
-            Tausende Blaulicht-Singles warten auf dich.
+            Tausende Medizin-Singles warten auf dich.
           </p>
           <HeartButton href="https://medicsingles.de/?AID=magazin">
             Jetzt kostenfrei mitmachen

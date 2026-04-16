@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     template: '%s · Medicsingles',
   },
   description:
-    'Das Magazin für Singles bei Polizei, Feuerwehr und Sanität. Partnersuche, Erfolgsgeschichten und regionale Tipps.',
+    'Das Magazin für Ärzte, Pflegekräfte und Therapeuten. Partnersuche, Erfolgsgeschichten und Tipps für den Schichtdienst.',
   metadataBase: new URL(BASE_URL),
   alternates: { canonical: BASE_URL },
   openGraph: {
     title: 'Medicsingles Magazin — Echte Liebe in der Medizin',
-    description: 'Das Magazin für Singles bei Polizei, Feuerwehr und Sanität.',
+    description: 'Das Magazin für Ärzte, Pflegekräfte und Therapeuten.',
     url: BASE_URL,
     type: 'website',
     siteName: 'Medicsingles Magazin',
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Medicsingles Magazin — Echte Liebe in der Medizin',
-    description: 'Das Magazin für Singles bei Polizei, Feuerwehr und Sanität.',
+    description: 'Das Magazin für Ärzte, Pflegekräfte und Therapeuten.',
     images: [`${BASE_URL}/images/hero-startseite.webp`],
   },
   verification: {

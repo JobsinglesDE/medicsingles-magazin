@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Kontakt — Blaulicht Magazin | medicsingles.de',
+  title: 'Kontakt — Medicsingles Magazin | medicsingles.de',
   description:
-    'Kontakt zum Blaulicht-Magazin: Redaktion, Hinweise zu Artikeln, Pressekontakt, Werbung. Wir antworten innerhalb von 48 Stunden.',
+    'Kontakt zum Medicsingles Magazin: Redaktion, Hinweise zu Artikeln, Pressekontakt, Werbung. Wir antworten innerhalb von 48 Stunden.',
 };
 
 export default function KontaktPage() {
   return (
     <section className="max-w-3xl mx-auto px-6 pt-24 pb-20">
       <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-4">
-        Kontakt zum Blaulicht-Magazin
+        Kontakt zum Medicsingles Magazin
       </h1>
       <p className="text-lg text-foreground/70 mb-12 leading-relaxed">
         Redaktionelle Anfragen, Themen-Vorschläge, Korrekturen oder Pressekontakt — schreib uns. Wir antworten innerhalb
@@ -50,7 +50,7 @@ export default function KontaktPage() {
         </div>
 
         <div className="rounded-2xl border border-foreground/10 p-6 bg-foreground/5">
-          <h2 className="text-xl font-bold mb-2">Plattform Blaulichtsingles.ch</h2>
+          <h2 className="text-xl font-bold mb-2">Plattform MedicSingles.de</h2>
           <p className="text-foreground/70 mb-2">
             Fragen zu Mitgliedschaft, Profil, Premium oder Datenschutz auf der Dating-Plattform:
           </p>
@@ -89,16 +89,16 @@ export default function KontaktPage() {
 
       <h2 className="text-2xl font-bold mt-12 mb-3">Wer steckt hinter dem Magazin?</h2>
       <p className="text-foreground/70">
-        Das Blaulicht-Magazin gehört zum Jobsingles-Netzwerk und wird redaktionell von Tommy Honold geführt. Schwerpunkt:
-        Singles aus Polizei, Feuerwehr, Sanität und medizinischen Berufen in der DACH-Region. Die Themen reichen von
-        TV-News rund um Bergdoktor und Tatort Zürich über regionale Dating-Tipps bis zu Erfolgsgeschichten echter Paare,
+        Das Medicsingles Magazin gehört zum Jobsingles-Netzwerk und wird redaktionell von Tommy Honold geführt. Schwerpunkt:
+        Partnersuche für Ärzte, Pflegekräfte und Therapeuten in der DACH-Region. Die Themen reichen von
+        Dating-Tipps im Schichtdienst über psychologische Aspekte der Partnersuche bis zu Erfolgsgeschichten echter Paare,
         die sich über die Plattform gefunden haben.
       </p>
 
       <h2 className="text-2xl font-bold mt-10 mb-3">Themenvorschläge willkommen</h2>
       <p className="text-foreground/70">
-        Wir nehmen Themen-Vorschläge gerne entgegen — vor allem wenn sie aus erster Hand kommen: aus dem Schichtdienst,
-        aus dem Rettungseinsatz, aus dem Beziehungsalltag mit Pikett. Anonymität ist möglich, alle Geschichten werden
+        Wir nehmen Themen-Vorschläge gerne entgegen — vor allem wenn sie aus erster Hand kommen: aus dem Krankenhaus-Alltag,
+        aus der Notaufnahme, aus dem Beziehungsalltag mit Doppelschicht. Anonymität ist möglich, alle Geschichten werden
         nur mit ausdrücklicher Freigabe veröffentlicht.
       </p>
 

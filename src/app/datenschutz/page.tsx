@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Datenschutz — Blaulicht Magazin',
+  title: 'Datenschutz — Medicsingles Magazin',
   description:
-    'Datenschutzerklärung für das Blaulicht-Magazin auf medicsingles.de. Wie wir Daten behandeln, welche Cookies wir setzen und wer Ansprechpartner ist.',
+    'Datenschutzerklärung für das Medicsingles Magazin auf medicsingles.de. Wie wir Daten behandeln, welche Cookies wir setzen und wer Ansprechpartner ist.',
 };
 
 export default function DatenschutzPage() {
@@ -80,7 +80,7 @@ export default function DatenschutzPage() {
       <p className="text-foreground/70">
         Diese Datenschutzerklärung folgt sowohl dem revidierten Schweizer Datenschutzgesetz (revDSG, gültig seit 1. September 2023)
         als auch der EU-DSGVO. Beides trifft zu, weil das Magazin in Deutschland und der Schweiz erreichbar ist und Nutzer aus
-        beiden Rechtsräumen anspricht. Die Plattform Blaulichtsingles.ch betreibt die ICONY GmbH (Sitz in Berlin) — Detail
+        beiden Rechtsräumen anspricht. Die Plattform MedicSingles.de wird von der ICONY GmbH (Sitz in Berlin) betrieben — Detail
         siehe <a href="https://medicsingles.de/impressum.html" className="text-brand-orange hover:underline">Impressum auf
         der Hauptseite</a>.
       </p>

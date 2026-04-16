@@ -10,39 +10,39 @@ interface Question {
 
 const questions: Question[] = [
   {
-    q: 'Was ist dein Blaulicht-Beruf?',
-    options: ['Polizei', 'Feuerwehr', 'Sanität / Rettung', 'Anderer Beruf'],
+    q: 'Was ist dein Beruf in der Medizin?',
+    options: ['Arzt / Ärztin', 'Pflege & Rettung', 'Therapeut / Therapeutin', 'Anderer Heilberuf'],
   },
   {
     q: 'Dein ideales erstes Date?',
-    options: ['Kaffee nach der Schicht', 'Wandern in den Bergen', 'Gemeinsam kochen', 'Überrasch mich!'],
+    options: ['Kaffee nach der Schicht', 'Spaziergang im Grünen', 'Gemeinsam kochen', 'Überrasch mich!'],
   },
   {
     q: 'Was ist dir bei einem Partner am wichtigsten?',
-    options: ['Verständnis für Schichtarbeit', 'Humor', 'Abenteuergeist', 'Treue & Stabilität'],
+    options: ['Verständnis für Schichtarbeit', 'Humor', 'Tiefe Gespräche', 'Treue & Stabilität'],
   },
 ];
 
 const results: Record<string, { title: string; emoji: string; text: string }> = {
-  'Polizei': {
-    title: 'Der Beschützer-Typ',
-    emoji: '🛡️',
-    text: 'Du brauchst jemanden, der deine Stärke schätzt — und auch mal die Schwäche hinter der Uniform sieht.',
+  'Arzt / Ärztin': {
+    title: 'Der Heiler mit Herz',
+    emoji: '🩺',
+    text: 'Du gibst täglich alles für andere — jetzt ist Zeit für jemanden, der auch für dich da ist.',
   },
-  'Feuerwehr': {
-    title: 'Der Held mit Herz',
-    emoji: '🔥',
-    text: 'Leidenschaft pur! Du suchst jemanden, der dein Feuer teilt — im Dienst und in der Liebe.',
-  },
-  'Sanität / Rettung': {
+  'Pflege & Rettung': {
     title: 'Der Lebensretter',
     emoji: '💙',
     text: 'Empathie ist deine Superkraft. Du brauchst jemanden, der auch für dich da ist, wenn du nach Hause kommst.',
   },
+  'Therapeut / Therapeutin': {
+    title: 'Der Zuhörer',
+    emoji: '🧠',
+    text: 'Du verstehst Menschen tief — und verdienst jemanden, der auch dich wirklich versteht.',
+  },
   'default': {
     title: 'Der Allrounder',
     emoji: '⭐',
-    text: 'Du weisst, was du willst. Blaulicht-Singles verstehen deinen Alltag — hier findest du deinen Match.',
+    text: 'Du weisst, was du willst. Medizin-Singles auf MedicSingles.de verstehen deinen Alltag.',
   },
 };
 

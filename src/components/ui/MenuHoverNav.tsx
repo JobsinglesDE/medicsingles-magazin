@@ -14,33 +14,25 @@ type NavItem = {
 const NAV_ITEMS: NavItem[] = [
   { label: 'Startseite', href: '/' },
   {
-    label: 'Singles & Partnersuche',
-    href: '/singles-partnersuche',
+    label: 'Partnersuche-Tipps',
+    href: '/magazin',
     dropdown: [
-      { label: 'Polizei Dating', href: '/singles-partnersuche/polizei', description: 'Kantonspolizei & Stadtpolizei' },
-      { label: 'Sanität Dating', href: '/singles-partnersuche/sanitaet', description: 'Rettungsdienst & Notfall' },
-      { label: 'Feuerwehr Dating', href: '/singles-partnersuche/feuerwehr', description: 'Berufs- & Milizfeuerwehr' },
+      { label: 'Für Ärzte', href: '/magazin/partnersuche-aerzte', description: 'Dating als Arzt oder Ärztin' },
+      { label: 'Für Pflegekräfte', href: '/magazin/partnersuche-pflege', description: 'Liebe trotz Schichtdienst' },
+      { label: 'Für Therapeuten', href: '/magazin/partnersuche-therapeuten', description: 'Partnersuche im Heilberuf' },
     ],
   },
   {
-    label: 'TV News',
-    href: '/tv-news',
+    label: 'Ratgeber',
+    href: '/magazin/partnersuche-medizin',
     dropdown: [
-      { label: '«Tatort» Zürich', href: '/tv-news/tatort-zuerich' },
-      { label: 'Der Bergdoktor', href: '/tv-news/bergdoktor' },
+      { label: 'Dating-Profil optimieren', href: '/magazin/dating-profil-aerzte-pflegekraefte', description: 'Profil-Tipps für Mediziner' },
+      { label: 'Erste Nachricht', href: '/magazin/erste-nachricht-dating-app-mediziner', description: 'Erfolgreich anschreiben' },
+      { label: 'Erstes Date', href: '/magazin/erstes-date-aerzte-ideen', description: 'Ideen für das erste Treffen' },
     ],
   },
-  {
-    label: 'Singles Regional',
-    href: '/regional',
-    dropdown: [
-      { label: 'Polizei', href: '/regional/polizei', description: 'Singles aus allen Polizei-Kantonen' },
-      { label: 'Sanität', href: '/regional/sanitaet', description: 'Rettungsdienst in deinem Kanton' },
-      { label: 'Feuerwehr', href: '/regional/feuerwehr', description: 'Berufs- & Milizfeuerwehr regional' },
-      { label: 'Bekanntschaften', href: '/regional/bekanntschaften', description: 'Blaulicht-Singles in deiner Stadt' },
-    ],
-  },
-  { label: 'Erfolgsgeschichten', href: '/erfolgsgeschichten' },
+  { label: 'Erfolgsgeschichten', href: '/magazin/erfolgsgeschichte-anna-mark-medicsingles' },
+  { label: 'Über uns', href: '/ueber-uns' },
 ];
 
 export function MenuHoverNav() {

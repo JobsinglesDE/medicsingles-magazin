@@ -80,16 +80,40 @@ export function Footer() {
                 Netzwerk
               </h4>
               <nav className="flex flex-col gap-2">
-                <a href="https://medicsingles.de" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Medicsingles.de
-                </a>
                 <a href="https://jobsingles.de" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Jobsingles.de — Das Netzwerk
+                  Jobsingles.de
+                </a>
+                <a href="https://farmersingles.de" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  FarmerSingles.de
+                </a>
+                <a href="https://singlebuure.ch" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  SingleBuure.ch
+                </a>
+                <a href="https://blaulichtsingles.ch" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  BlaulichtSingles.ch
+                </a>
+                <a href="https://medicsingles.de" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  MedicSingles.de
+                </a>
+                <a href="https://gastrosingles.de" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  GastroSingles.de
+                </a>
+                <a href="https://handwerksingles.de" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  HandwerkSingles.de
+                </a>
+                <a href="https://baeckersingles.de" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  BäckerSingles.de
+                </a>
+                <a href="https://metzgersingles.de" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  MetzgerSingles.de
+                </a>
+                <a href="https://mediasingles.de" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  MediaSingles.de
+                </a>
+                <a href="https://polizeisingles.de" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  PolizeiSingles.de
                 </a>
               </nav>
-              <p className="text-[10px] text-white/65 mt-3">
-                Teil des Jobsingles-Netzwerks mit 15+ Berufs-Dating-Portalen
-              </p>
             </div>
 
             {/* Service */}

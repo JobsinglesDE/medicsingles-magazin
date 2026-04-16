@@ -38,7 +38,7 @@ export function Footer() {
               <div className="flex items-center gap-3 mb-4">
                 <Image
                   src="/logos/jobsingles-logo.png"
-                  alt="Jobsingles Network"
+                  alt="Medicsingles Magazin"
                   width={36}
                   height={36}
                   className="rounded-lg"
@@ -48,8 +48,8 @@ export function Footer() {
                 </h3>
               </div>
               <p className="text-sm text-white/75 leading-relaxed">
-                Das Magazin für Singles bei Polizei, Feuerwehr und Sanität.
-                Partnersuche, Erfolgsgeschichten und regionale Tipps.
+                Das Magazin für Ärzte, Pflegepersonal und Therapeuten.
+                Partnersuche, Tipps für den Schichtdienst und echte Erfolgsgeschichten aus der Medizin.
               </p>
             </div>
 
@@ -59,14 +59,14 @@ export function Footer() {
                 Magazin
               </h4>
               <nav className="flex flex-col gap-2">
-                <Link href="/singles-partnersuche" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Singles & Partnersuche
+                <Link href="/magazin" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Partnersuche-Tipps
                 </Link>
-                <Link href="/tv-news" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  TV News
+                <Link href="/magazin/partnersuche-aerzte" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Für Ärzte
                 </Link>
-                <Link href="/regional" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Regional
+                <Link href="/magazin/partnersuche-pflege" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Für Pflegekräfte
                 </Link>
                 <Link href="/erfolgsgeschichten" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Erfolgsgeschichten

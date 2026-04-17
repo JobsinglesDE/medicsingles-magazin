@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 
 type Beruf = 'polizei' | 'sanitaet' | 'feuerwehr';
-type SeriesId = 'tatort-zuerich' | 'bergdoktor' | 'greys-anatomy' | 'junge-aerzte';
+type SeriesId = 'greys-anatomy' | 'junge-aerzte';
 type Variant = 'regional' | 'partnersuche' | 'tv-news' | 'bekanntschaften';
 
 interface Props {
@@ -42,22 +42,6 @@ const PARTNERSUCHE = {
 };
 
 const TV_NEWS: Record<SeriesId, { heading: string; text: string; seriesHref: string; seriesCta: string; pillarHref: string; pillarCta: string }> = {
-  'tatort-zuerich': {
-    heading: 'Tatort Zürich — alle Artikel',
-    text: 'Neue Folgen, Drehorte an der Limmat und das Privatleben der Ermittler Grandjean und Ott.',
-    seriesHref: '/tv-news/tatort-zuerich',
-    seriesCta: 'Alle Tatort-Artikel →',
-    pillarHref: '/tv-news',
-    pillarCta: 'Zurück zu TV News →',
-  },
-  'bergdoktor': {
-    heading: 'Der Bergdoktor — alle Artikel',
-    text: 'Hans Sigl, Ronja Forcher und das Privatleben der Stars aus den Tiroler Bergen.',
-    seriesHref: '/tv-news/bergdoktor',
-    seriesCta: 'Alle Bergdoktor-Artikel →',
-    pillarHref: '/tv-news',
-    pillarCta: 'Zurück zu TV News →',
-  },
   'greys-anatomy': {
     heading: "Grey's Anatomy — alle Artikel",
     text: 'Neue Folgen auf ProSieben, das Grey-Sloan-Team und das Privatleben der Stars.',

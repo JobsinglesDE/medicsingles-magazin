@@ -4,7 +4,6 @@ import { getArticleUrl } from '@/lib/routes';
 import { ArticleBody } from '@/components/content/ArticleBody';
 import { ClusterHero } from '@/components/content/ClusterHero';
 import { TableOfContents } from '@/components/content/TableOfContents';
-import { PillarBacklinkCard } from '@/components/content/PillarBacklinkCard';
 import { CalloutBox } from '@/components/ui/CalloutBox';
 import { TakeawayBox } from '@/components/ui/TakeawayBox';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
@@ -155,7 +154,7 @@ export default async function ClusterArticle({ params }: { params: Promise<{ slu
           insertElement={
             <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
               <div className="p-6 text-center">
-                <p className="text-sm text-foreground/70 mb-3">Du bist bei Polizei, Feuerwehr oder Sanität?</p>
+                <p className="text-sm text-foreground/70 mb-3">Du arbeitest im Gesundheitswesen?</p>
                 <HeartButton href="https://medicsingles.de/?AID=magazin">
                   Jetzt kostenfrei anmelden
                 </HeartButton>
@@ -174,13 +173,6 @@ export default async function ClusterArticle({ params }: { params: Promise<{ slu
             </HeartButton>
           </div>
         </AnimatedGradientBorder>
-
-        {['polizei', 'sanitaet', 'feuerwehr'].includes(article.category) && (
-          <PillarBacklinkCard
-            beruf={article.category as 'polizei' | 'sanitaet' | 'feuerwehr'}
-            variant="partnersuche"
-          />
-        )}
 
         {article.takeaways && article.takeaways.length > 0 && (
           <TakeawayBox items={article.takeaways} />

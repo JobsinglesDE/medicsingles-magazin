@@ -15,7 +15,7 @@ type ScoreResult = {
   checks: Check[];
 };
 
-const TYPES = ['articles', 'regional', 'bekanntschaften', 'series', 'stories'] as const;
+const TYPES = ['articles', 'regional', 'series', 'stories'] as const;
 
 function scoreColor(score: number): string {
   if (score >= 85) return 'text-green-500';
@@ -32,8 +32,8 @@ function scoreBg(score: number): string {
 }
 
 export default function SeoCheckPage() {
-  const [type, setType] = useState<(typeof TYPES)[number]>('series');
-  const [slug, setSlug] = useState('bergdoktor-hans-sigl-abschied-vision');
+  const [type, setType] = useState<(typeof TYPES)[number]>('articles');
+  const [slug, setSlug] = useState('partnersuche-medizin');
   const [result, setResult] = useState<ScoreResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);

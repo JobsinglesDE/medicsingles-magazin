@@ -5,27 +5,26 @@ import { getArticleUrl } from '@/lib/routes';
 const BASE = 'https://medicsingles.de/magazin';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [articles, regional, series, stories, authors, bekanntschaften] = await Promise.all([
+  const [articles, regional, series, stories, authors] = await Promise.all([
     reader.collections.articles.all(),
     reader.collections.regional.all(),
     reader.collections.series.all(),
     reader.collections.stories.all(),
     reader.collections.authors.all(),
-    reader.collections.bekanntschaften.all(),
   ]);
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE, priority: 1.0, changeFrequency: 'weekly' },
-    { url: `${BASE}/singles-partnersuche`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${BASE}/singles-partnersuche/polizei`, priority: 0.8, changeFrequency: 'weekly' },
-    { url: `${BASE}/singles-partnersuche/feuerwehr`, priority: 0.8, changeFrequency: 'weekly' },
-    { url: `${BASE}/singles-partnersuche/sanitaet`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE}/partnersuche-medizin`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${BASE}/partnersuche-aerzte`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE}/partnersuche-pflege`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE}/partnersuche-therapeuten`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE}/partnersuche-rettung`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-news`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-news/greys-anatomy`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-news/junge-aerzte`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/ueber-uns`, priority: 0.6, changeFrequency: 'monthly' },
     { url: `${BASE}/regional`, priority: 0.7, changeFrequency: 'monthly' },
-    { url: `${BASE}/regional/bekanntschaften`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/erfolgsgeschichten`, priority: 0.6, changeFrequency: 'monthly' },
   ];
 
@@ -67,13 +66,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'yearly',
   }));
 
-  const bekanntschaftenPages: MetadataRoute.Sitemap = bekanntschaften.map((b) => ({
-    url: `${BASE}/regional/bekanntschaften/${b.slug}`,
-    lastModified: b.entry.publishedAt ? new Date(b.entry.publishedAt) : undefined,
-    priority: 0.7,
-    changeFrequency: 'monthly',
-  }));
-
   const authorPages: MetadataRoute.Sitemap = authors.map((a) => ({
     url: `${BASE}/autor/${a.slug}`,
     priority: 0.6,
@@ -86,7 +78,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...kantonPages,
     ...regionalPages,
     ...seriesPages,
-    ...bekanntschaftenPages,
     ...storyPages,
     ...authorPages,
   ];

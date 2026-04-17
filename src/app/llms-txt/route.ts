@@ -4,12 +4,11 @@ import { getArticleUrl } from '@/lib/routes';
 const BASE = 'https://medicsingles.de/magazin';
 
 export async function GET() {
-  const [articles, regional, series, stories, bekanntschaften] = await Promise.all([
+  const [articles, regional, series, stories] = await Promise.all([
     reader.collections.articles.all(),
     reader.collections.regional.all(),
     reader.collections.series.all(),
     reader.collections.stories.all(),
-    reader.collections.bekanntschaften.all(),
   ]);
 
   const published = {
@@ -17,16 +16,15 @@ export async function GET() {
     regional,
     series: series.filter((s) => s.entry.status !== 'draft'),
     stories,
-    bekanntschaften,
   };
 
   const lines: string[] = [];
 
-  lines.push('# Blaulicht Magazin — medicsingles.de');
+  lines.push('# MedicSingles Magazin — medicsingles.de');
   lines.push('');
-  lines.push('Dating-Magazin für Blaulicht-Singles: Polizei, Feuerwehr, Sanität und Ärzte in der Schweiz.');
-  lines.push('Partnersuche-Tipps, regionale Guides für alle Kantone, Erfolgsgeschichten und TV-News');
-  lines.push('zu «Tatort» Zürich und Der Bergdoktor.');
+  lines.push('Dating-Magazin für Singles im Gesundheitswesen: Ärzte, Pflegekräfte, Therapeuten und Rettungsdienst.');
+  lines.push('Partnersuche-Tipps, Cluster-Guides für jedes Fachgebiet, Erfolgsgeschichten und TV-News');
+  lines.push("zu «Grey's Anatomy» und «In aller Freundschaft — Die jungen Ärzte».");
   lines.push('');
   lines.push('## Sitemaps');
   lines.push('');
@@ -34,7 +32,6 @@ export async function GET() {
   lines.push(`- [News Sitemap](${BASE}/news-sitemap.xml): Aktuelle Artikel (letzte 48h)`);
   lines.push('');
 
-  // Articles (Partnersuche)
   lines.push('## Partnersuche & Dating');
   lines.push('');
   for (const a of published.articles) {
@@ -44,8 +41,7 @@ export async function GET() {
   }
   lines.push('');
 
-  // Series (TV-News)
-  lines.push('## TV-News — «Tatort» Zürich & Der Bergdoktor');
+  lines.push("## TV-News — «Grey's Anatomy» & «In aller Freundschaft — Die jungen Ärzte»");
   lines.push('');
   for (const s of published.series) {
     const url = `${BASE}/tv-news/${s.entry.seriesId}/${s.slug}`;
@@ -54,8 +50,7 @@ export async function GET() {
   }
   lines.push('');
 
-  // Regional
-  lines.push('## Regionale Guides — Kantone & Städte');
+  lines.push('## Regionale Guides');
   lines.push('');
   for (const r of published.regional) {
     const kanton = r.entry.kanton.toLowerCase().replace(/\s+/g, '-');
@@ -65,17 +60,6 @@ export async function GET() {
   }
   lines.push('');
 
-  // Bekanntschaften
-  lines.push('## Bekanntschaften — Städte');
-  lines.push('');
-  for (const b of published.bekanntschaften) {
-    const url = `${BASE}/regional/bekanntschaften/${b.slug}`;
-    const desc = b.entry.excerpt || b.entry.seoDescription || '';
-    lines.push(`- [${b.entry.title}](${url})${desc ? ` - ${desc}` : ''}`);
-  }
-  lines.push('');
-
-  // Erfolgsgeschichten
   lines.push('## Erfolgsgeschichten');
   lines.push('');
   for (const s of published.stories) {

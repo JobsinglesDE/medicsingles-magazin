@@ -20,12 +20,8 @@ export async function GET() {
     const pubDate = new Date(a.entry.publishedAt);
     if (pubDate < twoDaysAgo) continue;
 
-    const slug = a.entry.type === 'cluster'
-      ? `/singles-partnersuche/${a.slug}`
-      : `/singles-partnersuche/${a.slug}`;
-
     newsEntries.push({
-      url: `${BASE}${slug}`,
+      url: `${BASE}/${a.slug}`,
       title: a.entry.title,
       date: pubDate.toISOString(),
     });
@@ -50,7 +46,7 @@ ${newsEntries.map((e) => `  <url>
     <loc>${e.url}</loc>
     <news:news>
       <news:publication>
-        <news:name>Blaulicht Magazin</news:name>
+        <news:name>MedicSingles Magazin</news:name>
         <news:language>de</news:language>
       </news:publication>
       <news:publication_date>${e.date}</news:publication_date>

@@ -6,7 +6,6 @@ type Check = { ok: boolean; weight: number; label: string; hint?: string };
 const COLLECTION_MAP = {
   articles: 'articles',
   regional: 'regional',
-  bekanntschaften: 'bekanntschaften',
   series: 'series',
   stories: 'stories',
 } as const;

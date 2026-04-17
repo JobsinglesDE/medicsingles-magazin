@@ -1,4 +1,4 @@
-import { config, fields, collection, singleton } from '@keystatic/core';
+import { config, fields, collection } from '@keystatic/core';
 
 export default config({
   storage: {
@@ -7,38 +7,6 @@ export default config({
   },
   ui: {
     brand: { name: 'Medicsingles Magazin' },
-  },
-  singletons: {
-    regionalPolizei: singleton({
-      label: 'Regional — Polizei (Pillar-Page)',
-      path: 'content/singletons/regional-polizei',
-      schema: {
-        seoTitle: fields.text({ label: 'SEO Titel' }),
-        seoDescription: fields.text({ label: 'SEO Beschreibung', multiline: true }),
-        intro1: fields.text({ label: 'Intro Absatz 1', multiline: true }),
-        intro2: fields.text({ label: 'Intro Absatz 2', multiline: true }),
-      },
-    }),
-    regionalSanitaet: singleton({
-      label: 'Regional — Sanität (Pillar-Page)',
-      path: 'content/singletons/regional-sanitaet',
-      schema: {
-        seoTitle: fields.text({ label: 'SEO Titel' }),
-        seoDescription: fields.text({ label: 'SEO Beschreibung', multiline: true }),
-        intro1: fields.text({ label: 'Intro Absatz 1', multiline: true }),
-        intro2: fields.text({ label: 'Intro Absatz 2', multiline: true }),
-      },
-    }),
-    regionalFeuerwehr: singleton({
-      label: 'Regional — Feuerwehr (Pillar-Page)',
-      path: 'content/singletons/regional-feuerwehr',
-      schema: {
-        seoTitle: fields.text({ label: 'SEO Titel' }),
-        seoDescription: fields.text({ label: 'SEO Beschreibung', multiline: true }),
-        intro1: fields.text({ label: 'Intro Absatz 1', multiline: true }),
-        intro2: fields.text({ label: 'Intro Absatz 2', multiline: true }),
-      },
-    }),
   },
   collections: {
     articles: collection({
@@ -184,53 +152,6 @@ export default config({
         }),
         featuredImageAlt: fields.text({
           label: 'Alt-Text Ortsbild',
-          description: 'Beschreibung des Bild-Motivs (SEO + Barrierefreiheit). Falls leer → Titel als Fallback.',
-        }),
-        featuredImageCredit: fields.text({
-          label: 'Bild-Credit',
-          description: 'Urhebernennung unter dem Bild. Beispiel: "Foto: ZDF/Sabine Finger Fotografie" oder "© Superbass / CC BY-SA 4.0 via Wikimedia Commons". Pflicht bei Pressebildern.',
-        }),
-        content: fields.markdoc({ label: 'Inhalt' }),
-        faqItems: fields.array(
-          fields.object({
-            question: fields.text({ label: 'Frage' }),
-            answer: fields.text({ label: 'Antwort', multiline: true }),
-          }),
-          {
-            label: 'FAQ',
-            itemLabel: (props) => props.fields.question.value,
-          }
-        ),
-        takeaways: fields.array(fields.text({ label: 'Punkt' }), {
-          label: 'Das Wichtigste',
-        }),
-        seoTitle: fields.text({ label: 'SEO Titel' }),
-        seoDescription: fields.text({ label: 'SEO Beschreibung' }),
-        publishedAt: fields.date({ label: 'Veröffentlicht am' }),
-      },
-    }),
-
-    bekanntschaften: collection({
-      label: 'Bekanntschaften',
-      slugField: 'title',
-      path: 'content/bekanntschaften/*',
-      columns: ['publishedAt', 'city', 'title'],
-      format: { contentField: 'content' },
-      schema: {
-        title: fields.slug({ name: { label: 'Titel' } }),
-        focusKeyword: fields.text({
-          label: 'Focus-Keyword',
-          description: 'Haupt-Keyword fuer SEO-Check (z.B. "Hans Sigl Bergdoktor"). Aktiviert 7 Yoast-Style-Checks im SEO-Score-Widget.',
-        }),
-        city: fields.text({ label: 'Stadt' }),
-        excerpt: fields.text({ label: 'Auszug', multiline: true }),
-        featuredImage: fields.image({
-          label: 'Stadtbild',
-          directory: 'public/images/bekanntschaften',
-          publicPath: '/images/bekanntschaften/',
-        }),
-        featuredImageAlt: fields.text({
-          label: 'Alt-Text Stadtbild',
           description: 'Beschreibung des Bild-Motivs (SEO + Barrierefreiheit). Falls leer → Titel als Fallback.',
         }),
         featuredImageCredit: fields.text({

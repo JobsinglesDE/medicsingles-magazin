@@ -12,12 +12,14 @@ interface Episode {
 }
 
 interface Props {
-  seriesId: 'bergdoktor' | 'tatort-zuerich';
+  seriesId: 'bergdoktor' | 'tatort-zuerich' | 'greys-anatomy' | 'junge-aerzte';
 }
 
 const SHOWS = {
   'bergdoktor': { tvmazeId: 6487, sender: 'ZDF', label: 'Der Bergdoktor', note: '' },
   'tatort-zuerich': { tvmazeId: 6446, sender: 'Das Erste', label: 'Tatort', note: 'Alle Tatort-Folgen inkl. anderer Ermittlerteams' },
+  'greys-anatomy': { tvmazeId: 1416, sender: 'ABC / ProSieben', label: "Grey's Anatomy", note: '' },
+  'junge-aerzte': { tvmazeId: 28753, sender: 'ARD', label: 'In aller Freundschaft — Die jungen Ärzte', note: '' },
 };
 
 function formatDate(dateStr: string): string {

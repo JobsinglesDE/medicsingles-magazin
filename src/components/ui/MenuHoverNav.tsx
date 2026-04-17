@@ -14,24 +14,24 @@ type NavItem = {
 const NAV_ITEMS: NavItem[] = [
   { label: 'Startseite', href: '/' },
   {
-    label: 'Partnersuche-Tipps',
-    href: '/magazin',
+    label: 'Partnersuche',
+    href: '/partnersuche-medizin',
     dropdown: [
-      { label: 'Für Ärzte', href: '/magazin/partnersuche-aerzte', description: 'Dating als Arzt oder Ärztin' },
-      { label: 'Für Pflegekräfte', href: '/magazin/partnersuche-pflege', description: 'Liebe trotz Schichtdienst' },
-      { label: 'Für Therapeuten', href: '/magazin/partnersuche-therapeuten', description: 'Partnersuche im Heilberuf' },
+      { label: 'Für Ärzte', href: '/partnersuche-aerzte', description: 'Dating als Arzt oder Ärztin' },
+      { label: 'Für Pflegekräfte', href: '/partnersuche-pflege', description: 'Liebe trotz Schichtdienst' },
+      { label: 'Für Therapeuten', href: '/partnersuche-therapeuten', description: 'Partnersuche im Heilberuf' },
+      { label: 'Für Rettungsdienst', href: '/partnersuche-rettung', description: 'Dating im Einsatzalltag' },
     ],
   },
   {
-    label: 'Ratgeber',
-    href: '/magazin/partnersuche-medizin',
+    label: 'TV Serien',
+    href: '/tv-news',
     dropdown: [
-      { label: 'Dating-Profil optimieren', href: '/magazin/dating-profil-aerzte-pflegekraefte', description: 'Profil-Tipps für Mediziner' },
-      { label: 'Erste Nachricht', href: '/magazin/erste-nachricht-dating-app-mediziner', description: 'Erfolgreich anschreiben' },
-      { label: 'Erstes Date', href: '/magazin/erstes-date-aerzte-ideen', description: 'Ideen für das erste Treffen' },
+      { label: "Grey's Anatomy", href: '/tv-news/greys-anatomy', description: 'Singles aus Grey Sloan Memorial' },
+      { label: 'Junge Ärzte', href: '/tv-news/junge-aerzte', description: 'In aller Freundschaft' },
     ],
   },
-  { label: 'Erfolgsgeschichten', href: '/magazin/erfolgsgeschichte-anna-mark-medicsingles' },
+  { label: 'Erfolgsgeschichten', href: '/erfolgsgeschichten' },
   { label: 'Über uns', href: '/ueber-uns' },
 ];
 

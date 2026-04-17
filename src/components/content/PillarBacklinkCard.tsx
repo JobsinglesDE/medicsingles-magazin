@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 
 type Beruf = 'polizei' | 'sanitaet' | 'feuerwehr';
-type SeriesId = 'tatort-zuerich' | 'bergdoktor';
+type SeriesId = 'tatort-zuerich' | 'bergdoktor' | 'greys-anatomy' | 'junge-aerzte';
 type Variant = 'regional' | 'partnersuche' | 'tv-news' | 'bekanntschaften';
 
 interface Props {
@@ -55,6 +55,22 @@ const TV_NEWS: Record<SeriesId, { heading: string; text: string; seriesHref: str
     text: 'Hans Sigl, Ronja Forcher und das Privatleben der Stars aus den Tiroler Bergen.',
     seriesHref: '/tv-news/bergdoktor',
     seriesCta: 'Alle Bergdoktor-Artikel →',
+    pillarHref: '/tv-news',
+    pillarCta: 'Zurück zu TV News →',
+  },
+  'greys-anatomy': {
+    heading: "Grey's Anatomy — alle Artikel",
+    text: 'Neue Folgen auf ProSieben, das Grey-Sloan-Team und das Privatleben der Stars.',
+    seriesHref: '/tv-news/greys-anatomy',
+    seriesCta: "Alle Grey's-Artikel →",
+    pillarHref: '/tv-news',
+    pillarCta: 'Zurück zu TV News →',
+  },
+  'junge-aerzte': {
+    heading: 'In aller Freundschaft — Die jungen Ärzte',
+    text: 'Sendetermine in der ARD, Johanna-Klinikum-Cast und aktuelle Storylines.',
+    seriesHref: '/tv-news/junge-aerzte',
+    seriesCta: 'Alle Jungen-Ärzte-Artikel →',
     pillarHref: '/tv-news',
     pillarCta: 'Zurück zu TV News →',
   },

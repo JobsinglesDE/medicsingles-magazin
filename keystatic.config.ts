@@ -279,10 +279,10 @@ export default config({
         }),
         seriesId: fields.select({
           label: 'Serie',
-          defaultValue: 'tatort-zuerich',
+          defaultValue: 'greys-anatomy',
           options: [
-            { label: 'Tatort Zürich (Schweizer Fernsehen)', value: 'tatort-zuerich' },
-            { label: 'Der Bergdoktor (ZDF)', value: 'bergdoktor' },
+            { label: "Grey's Anatomy (ABC)", value: 'greys-anatomy' },
+            { label: 'In aller Freundschaft — Die jungen Ärzte (ARD)', value: 'junge-aerzte' },
           ],
         }),
         isNews: fields.checkbox({ label: 'News-Artikel (NewsArticle JSON-LD)', defaultValue: false }),

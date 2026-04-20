@@ -2,7 +2,7 @@ import { reader } from '@/lib/keystatic';
 import { ArticleCard } from '@/components/content/ArticleCard';
 
 export const metadata = {
-  alternates: { canonical: \'/erfolgsgeschichten\' },
+  alternates: { canonical: '/erfolgsgeschichten' },
   title: 'Erfolgsgeschichten — Medicsingles Magazin',
   description: 'Echte Liebesgeschichten von Medicsingles.de — Ärzte, Pflegekräfte und Therapeuten, die ihre Partner im Gesundheitswesen gefunden haben.',
   openGraph: {

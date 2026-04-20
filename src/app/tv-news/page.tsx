@@ -2,7 +2,7 @@ import { reader } from '@/lib/keystatic';
 import { SeriesCard } from '@/components/content/SeriesCard';
 
 export const metadata = {
-  alternates: { canonical: \'/tv-news\' },
+  alternates: { canonical: '/tv-news' },
   title: "TV Serien — Grey's Anatomy & Junge Ärzte | Medicsingles Magazin",
   description: "Hintergrund-Storys zu Grey's Anatomy und In aller Freundschaft — Die jungen Ärzte: was die Darsteller privat machen, Drehorte und neue Staffeln.",
   openGraph: {

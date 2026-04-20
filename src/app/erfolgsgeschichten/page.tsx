@@ -13,9 +13,9 @@ export const metadata = {
 
 export default async function Erfolgsgeschichten() {
   const allArticles = await reader.collections.articles.all();
-  const stories = allArticles.filter(
-    (a) => a.entry.type === 'story' && a.entry.status === 'published'
-  );
+  const stories = allArticles
+    .filter((a) => a.entry.type === 'story' && a.entry.status === 'published')
+    .sort((a, b) => String(b.entry.publishedAt ?? '').localeCompare(String(a.entry.publishedAt ?? '')));
 
   return (
     <>

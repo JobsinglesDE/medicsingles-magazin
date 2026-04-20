@@ -16,9 +16,9 @@ export const metadata = {
 
 export default async function JungeAerzte() {
   const allSeries = await reader.collections.series.all();
-  const articles = allSeries.filter(
-    (s) => s.entry.seriesId === 'junge-aerzte' && s.entry.status !== 'draft'
-  );
+  const articles = allSeries
+    .filter((s) => s.entry.seriesId === 'junge-aerzte' && s.entry.status !== 'draft')
+    .sort((a, b) => String(b.entry.publishedAt ?? '').localeCompare(String(a.entry.publishedAt ?? '')));
 
   return (
     <div data-theme="dark" className="bg-background text-foreground min-h-screen">

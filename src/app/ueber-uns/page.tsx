@@ -4,6 +4,7 @@ import { JsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata = {
+  alternates: { canonical: \'/ueber-uns\' },
   title: 'Über uns — MedicSingles.de Magazin',
   description: 'Thomas Honold: Vom Küchenmeister und Marine-Koch zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter MedicSingles.de.',
 };

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
+  alternates: { canonical: \'/kontakt\' },
   title: 'Kontakt — Medicsingles Magazin | medicsingles.de',
   description:
     'Kontakt zum Medicsingles Magazin: Redaktion, Hinweise zu Artikeln, Pressekontakt, Werbung. Wir antworten innerhalb von 48 Stunden.',

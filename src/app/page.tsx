@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: \'/\' },
   title: 'Medicsingles Magazin — Echte Liebe in der Medizin',
   description: 'Partnersuche für Ärzte, Pflegepersonal, Therapeuten und Rettungskräfte. Wir verstehen Schichtdienst, emotionale Last und den Alltag im Heilberuf.',
 };

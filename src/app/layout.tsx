@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   description:
     'Das Magazin für Ärzte, Pflegekräfte und Therapeuten. Partnersuche, Erfolgsgeschichten und Tipps für den Schichtdienst.',
   metadataBase: new URL(BASE_URL),
-  alternates: { canonical: BASE_URL },
   openGraph: {
     title: 'Medicsingles Magazin — Echte Liebe in der Medizin',
     description: 'Das Magazin für Ärzte, Pflegekräfte und Therapeuten.',

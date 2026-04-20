@@ -5,6 +5,7 @@ import { SeriesCard } from '@/components/content/SeriesCard';
 import { SendetermineWidget } from '@/components/content/SendetermineWidget';
 
 export const metadata = {
+  alternates: { canonical: \'/tv-news/junge-aerzte\' },
   title: 'In aller Freundschaft — Die jungen Ärzte | Medicsingles Magazin',
   description: 'In aller Freundschaft — Die jungen Ärzte: die Darsteller hinter der ARD-Serie, neue Staffeln und was die jungen Mediziner privat machen.',
   openGraph: {

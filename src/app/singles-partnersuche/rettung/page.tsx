@@ -45,7 +45,33 @@ const SECTIONS = [
   {
     title: '❤️ Beziehung & Einsatz-Alltag',
     intro: 'Was im Körper nach einem schweren Einsatz passiert und wie du das deinem Partner erklärst, ohne jedes Heimkommen zum Drama zu machen.',
-    slugs: ['adrenalin-abfall-partner-erklaeren-rettung'],
+    slugs: [
+      'adrenalin-abfall-partner-erklaeren-rettung',
+      'beziehung-rettungsdienstler-schweigsam-einsatz',
+      'zwei-rettungsdienstler-paar-wechselschicht',
+    ],
+  },
+  {
+    title: '🚑 Fachrichtungen im Rettungsdienst',
+    intro: 'Notarzt, Notfallsanitäter, Leitstelle — alle tragen ein Rettungsdienst-Schild, aber die Dating-Realitäten unterscheiden sich deutlich.',
+    slugs: [
+      'notarzt-notfallsanitaeter-dating-unterschied',
+      'leitstelle-dating-partnersuche-disponent',
+    ],
+  },
+  {
+    title: '🎓 Networking & Fachkontakte',
+    intro: 'RettMobil, Feuerwehrtag, AGNN — wo du Menschen aus dem Fach triffst, ohne dass es ein Dating-Event sein muss.',
+    slugs: [
+      'rettmobil-fulda-networking-singles-dating',
+    ],
+  },
+  {
+    title: '🧠 Mental Health & Beziehung',
+    intro: 'PTBS ist im Rettungsdienst statistisch relevant — und eine neue Beziehung ist kein Therapieersatz. Wie du damit offen umgehst.',
+    slugs: [
+      'ptbs-rettungsdienst-neue-beziehung-umgang',
+    ],
   },
 ];
 

@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { PillarArticleFeature } from '@/components/content/PillarArticleFeature';
+import { ArticleCard } from '@/components/content/ArticleCard';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
@@ -29,6 +31,45 @@ const THERAPEUTEN_COLORS = [
   { r: 255, g: 122, b: 0 },
 ];
 
+const SECTIONS = [
+  {
+    title: '🧠 Grundlagen & Realität',
+    intro: 'Die fünf Dating-Herausforderungen für psychologische Fachkräfte und die Vorurteile, denen Therapeuten beim Dating immer wieder begegnen.',
+    slugs: [
+      'fuenf-dating-herausforderungen-psychologen-therapeuten',
+      'analysierst-du-mich-dating-vorurteile-therapeut',
+    ],
+  },
+  {
+    title: '💬 Online-Dating-Strategien',
+    intro: 'Wie du Empathie zeigst, ohne wie eine Praxis-Website zu klingen — Profile, die echte Verbindungen anziehen.',
+    slugs: [
+      'dating-profil-therapeuten-empathie-ohne-therapieren',
+    ],
+  },
+  {
+    title: '☕ Erstes Date & Kennenlernen',
+    intro: 'Date-Ideen, die tiefere Gespräche ermöglichen, ohne dass der Abend zur Therapiesitzung wird.',
+    slugs: [
+      'date-ideen-tiefgruendige-gespraeche-therapeuten',
+    ],
+  },
+  {
+    title: '❤️ Beziehung & Alltag',
+    intro: 'Wie es sich wirklich anfühlt, mit einem Therapeuten zu leben — emotionale Verfügbarkeit, Schweigepflicht, gesunde Streitkultur.',
+    slugs: [
+      'beziehung-mit-therapeut-partner-guide',
+    ],
+  },
+  {
+    title: '⚖️ Ethik & Grenzen',
+    intro: 'Das Abstinenzgebot, Klienten-Dating und berufsrechtliche Konsequenzen — was du unbedingt wissen musst.',
+    slugs: [
+      'klienten-daten-ethische-grenzen-abstinenzgebot',
+    ],
+  },
+];
+
 const CROSS_LINKS = [
   {
     title: 'Für Ärzte & Ärztinnen',
@@ -46,15 +87,32 @@ const CROSS_LINKS = [
   },
 ];
 
-export default function TherapeutenPillar() {
+export default async function TherapeutenPillar() {
+  const articles = await reader.collections.articles.all();
+
+  function getSectionArticles(slugs: string[]) {
+    return slugs
+      .map((slug) => articles.find((a) => a.slug === slug))
+      .filter(Boolean) as typeof articles;
+  }
+
+  const allSectionSlugs = SECTIONS.flatMap((s) => s.slugs);
+  const schemaItems = allSectionSlugs
+    .map((slug) => articles.find((a) => a.slug === slug))
+    .filter(Boolean)
+    .map((a) => ({
+      name: a!.entry.title,
+      url: `https://medicsingles.de/magazin/${a!.slug}`,
+    }));
+
   return (
     <>
       <JsonLd
         data={collectionPageJsonLd({
           name: 'Partnersuche Therapeuten — Dating für psychologische Fachkräfte',
-          description: 'Dating als Therapeut, Psychologe oder Coach. Ausführliche Cluster-Guides folgen in Kürze.',
+          description: 'Cluster-Guides für Therapeuten, Psychologen und Coaches: Dating-Herausforderungen, Profile, Date-Ideen, Beziehungsalltag und ethische Grenzen.',
           url: THERAPEUTEN_URL,
-          items: [],
+          items: schemaItems,
         })}
       />
       <JsonLd
@@ -122,22 +180,48 @@ export default function TherapeutenPillar() {
         </section>
       </ScrollReveal>
 
-      {/* Coming Soon Notice */}
+      {/* Thematic Sections */}
+      {SECTIONS.map((section) => {
+        const sectionArticles = getSectionArticles(section.slugs);
+        if (sectionArticles.length === 0) return null;
+        return (
+          <ScrollReveal key={section.title}>
+            <section className="max-w-6xl mx-auto px-6 py-10">
+              <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
+                {section.title}
+              </h2>
+              {section.intro && (
+                <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>
+              )}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {sectionArticles.map((article) => (
+                  <ArticleCard
+                    key={article.slug}
+                    title={article.entry.title}
+                    excerpt={article.entry.excerpt}
+                    href={`/${article.slug}`}
+                    image={article.entry.featuredImage || undefined}
+                    imageAlt={article.entry.featuredImageAlt || undefined}
+                    category={article.entry.category}
+                    date={article.entry.publishedAt || undefined}
+                  />
+                ))}
+              </div>
+            </section>
+          </ScrollReveal>
+        );
+      })}
+
+      {/* Pillar-Guide Verweis */}
       <ScrollReveal>
-        <section className="max-w-3xl mx-auto px-6 py-10">
-          <div className="bg-surface/50 border border-brand-orange/20 rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">📝 Ausführliche Guides folgen in Kürze</h2>
-            <p className="text-foreground/70 mb-6 leading-relaxed">
-              Wir bauen gerade die Cluster-Artikel für Therapeuten und Psychologen auf — von
-              den fünf größten Dating-Herausforderungen über Profile, die Empathie ohne Therapie
-              zeigen, bis hin zu rechtlich-ethischen Grenzen beim Daten ehemaliger Klienten.
-            </p>
+        <section className="max-w-3xl mx-auto px-6 py-8">
+          <div className="bg-surface/50 border border-brand-orange/20 rounded-2xl p-6 text-center">
             <p className="text-foreground/60 leading-relaxed text-sm">
-              Der{' '}
+              Den vollständigen Überblick zur Partnersuche für Therapeuten findest du im{' '}
               <Link href="/partnersuche-therapeuten" className="text-brand-orange-text underline">
-                bestehende Pillar-Guide
+                Pillar-Guide Partnersuche Therapeuten
               </Link>
-              {' '}liefert dir bereits den Überblick. Vertiefende Themen erscheinen hier laufend.
+              . Weitere Cluster-Artikel zu Fachrichtungen, Familienplanung und Praxisgründung folgen laufend.
             </p>
           </div>
         </section>

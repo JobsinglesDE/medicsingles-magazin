@@ -50,30 +50,54 @@ const testimonials = [
 
 const SECTIONS = [
   {
+    title: '💊 Grundlagen & Realität',
+    intro: 'Die fünf zentralen Dating-Herausforderungen für Pflegekräfte — vom Schichtdienst über öffentliches Bild bis zum Gehalts-Realismus.',
+    slugs: [
+      'fuenf-dating-herausforderungen-pflege',
+    ],
+  },
+  {
     title: '💬 Online-Dating im Schichtdienst',
-    intro: 'Online-Dating funktioniert für Pflegekräfte besser als fast jede andere Methode. Du knüpfst Kontakte zwischen Spätdienst und Schlafphase, ohne Ausgehen. Die richtige Plattform und ein authentisches Profil machen den Unterschied.',
+    intro: 'Online-Dating funktioniert für Pflegekräfte besser als fast jede andere Methode. Du knüpfst Kontakte zwischen Spätdienst und Schlafphase, ohne Ausgehen. Die richtige Plattform, authentisches Profil und eine erste Nachricht, die zieht.',
     slugs: [
       'krankenschwester-partner-finden-online',
       'pfleger-dating-app-tipps',
+      'erste-nachricht-krankenschwester-pfleger-dating',
+    ],
+  },
+  {
+    title: '☕ Erstes Date & Kennenlernen',
+    intro: 'Date-Ideen, die zum Pflege-Dienstplan passen — von Micro-Dates im Tagesloch bis zum Wochenende-Ausflug.',
+    slugs: [
+      'zehn-date-ideen-dienstplan-pflege',
     ],
   },
   {
     title: '❤️ Beziehung & Alltag in der Pflege',
-    intro: 'Der Dienstplan sitzt als dritter Partner am Tisch. Wie Partner das tragen, warum emotionale Abgrenzung entscheidend ist — und wie Paare das schaffen.',
+    intro: 'Der Dienstplan sitzt als dritter Partner am Tisch. Wie Partner das tragen, warum emotionale Abgrenzung entscheidend ist, und wie zwei Pflegekräfte ein funktionierendes Paar werden.',
     slugs: [
       'beziehung-krankenschwester-nicht-pflege',
       'partnersuche-pflegekraft-stress-abgrenzung',
+      'zwei-pflegekraefte-paar-gemeinsames-verstaendnis',
     ],
   },
 ];
 
 const SECTIONS_AFTER_CTA = [
   {
+    title: '👨‍👩‍👧 Zukunft, Karriere & Familie',
+    intro: 'Familienplanung in der Pflege: Elternzeit, Wiedereinstieg, Betreuungs-Puzzle und finanzielle Realität zwischen Kind und Schichtdienst.',
+    slugs: [
+      'kind-karriere-kittel-familienplanung-pflege',
+    ],
+  },
+  {
     title: '🌙 Spezifische Lebenslagen',
     intro: 'Dreischicht, alleinerziehend, Intensivstation — jede Pflege-Lebenslage hat ihre eigenen Dating-Herausforderungen.',
     slugs: [
       'dating-als-krankenschwester-schichtdienst',
       'alleinerziehend-pflegekraft-dating',
+      'dating-als-intensivpfleger-stress-partner',
     ],
   },
 ];

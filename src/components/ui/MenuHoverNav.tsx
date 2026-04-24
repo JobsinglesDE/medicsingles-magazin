@@ -15,12 +15,12 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Startseite', href: '/' },
   {
     label: 'Partnersuche',
-    href: '/partnersuche-medizin',
+    href: '/singles-partnersuche',
     dropdown: [
-      { label: 'Für Ärzte', href: '/partnersuche-aerzte', description: 'Dating als Arzt oder Ärztin' },
-      { label: 'Für Pflegekräfte', href: '/partnersuche-pflege', description: 'Liebe trotz Schichtdienst' },
-      { label: 'Für Therapeuten', href: '/partnersuche-therapeuten', description: 'Partnersuche im Heilberuf' },
-      { label: 'Für Rettungsdienst', href: '/partnersuche-rettung', description: 'Dating im Einsatzalltag' },
+      { label: 'Für Ärzte', href: '/singles-partnersuche/aerzte', description: 'Dating als Arzt oder Ärztin' },
+      { label: 'Für Pflegekräfte', href: '/singles-partnersuche/pflege', description: 'Liebe trotz Schichtdienst' },
+      { label: 'Für Therapeuten', href: '/singles-partnersuche/therapeuten', description: 'Partnersuche im Heilberuf' },
+      { label: 'Für Rettungsdienst', href: '/singles-partnersuche/rettung', description: 'Dating im Einsatzalltag' },
     ],
   },
   {

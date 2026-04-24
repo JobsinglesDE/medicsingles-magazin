@@ -22,6 +22,35 @@ const nextConfig: NextConfig = {
     // Default-quality: aggressiver
     qualities: [60, 75, 85],
   },
+  async redirects() {
+    return [
+      {
+        source: '/partnersuche-medizin',
+        destination: '/singles-partnersuche',
+        permanent: true,
+      },
+      {
+        source: '/partnersuche-aerzte',
+        destination: '/singles-partnersuche/aerzte',
+        permanent: true,
+      },
+      {
+        source: '/partnersuche-pflege',
+        destination: '/singles-partnersuche/pflege',
+        permanent: true,
+      },
+      {
+        source: '/partnersuche-therapeuten',
+        destination: '/singles-partnersuche/therapeuten',
+        permanent: true,
+      },
+      {
+        source: '/partnersuche-rettung',
+        destination: '/singles-partnersuche/rettung',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     const securityHeaders = [
       { key: 'X-Frame-Options', value: 'SAMEORIGIN' },

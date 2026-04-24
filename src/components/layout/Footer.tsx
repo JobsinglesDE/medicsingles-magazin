@@ -11,7 +11,7 @@ export function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 pt-14 pb-10">
         {/* Inner content area — slightly lighter surface */}
-        <div className="relative rounded-2xl p-8 md:p-10" style={{ background: '#2B4669' }}>
+        <div className="relative rounded-2xl p-8 md:p-10" style={{ background: '#166062' }}>
           {/* Tape left — fast senkrecht, zerrissene Ränder, dunkelgrau */}
           <div
             className="absolute -top-10 left-24 w-9 h-20 hidden md:block z-10"
@@ -59,14 +59,17 @@ export function Footer() {
                 Magazin
               </h4>
               <nav className="flex flex-col gap-2">
-                <Link href="/magazin" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Partnersuche-Tipps
+                <Link href="/singles-partnersuche" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Partnersuche-Hub
                 </Link>
-                <Link href="/magazin/partnersuche-aerzte" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <Link href="/singles-partnersuche/aerzte" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Für Ärzte
                 </Link>
-                <Link href="/magazin/partnersuche-pflege" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <Link href="/singles-partnersuche/pflege" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Für Pflegekräfte
+                </Link>
+                <Link href="/singles-partnersuche/therapeuten" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Für Therapeuten
                 </Link>
                 <Link href="/erfolgsgeschichten" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Erfolgsgeschichten

@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { PillarArticleFeature } from '@/components/content/PillarArticleFeature';
+import { ArticleCard } from '@/components/content/ArticleCard';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
@@ -29,6 +31,24 @@ const RETTUNG_COLORS = [
   { r: 255, g: 122, b: 0 },
 ];
 
+const SECTIONS = [
+  {
+    title: '🚨 Grundlagen & Schichtrealität',
+    intro: 'Der 12/24-Rhythmus prägt alles — vom Dating-Tempo bis zur Frage, wann Körper und Kopf überhaupt ansprechbar sind. Hier die Tiefenanalyse.',
+    slugs: ['partnersuche-rettungsdienst-realitaet-12-24-rhythmus'],
+  },
+  {
+    title: '💬 Online-Dating im Rettungsdienst',
+    intro: 'Das richtige Profil entscheidet, ob du Menschen triffst, die deinen Beruf verstehen — oder solche, die beim ersten abgesagten Date abspringen.',
+    slugs: ['dating-profil-rettungssanitaeter-notfallsanitaeter'],
+  },
+  {
+    title: '❤️ Beziehung & Einsatz-Alltag',
+    intro: 'Was im Körper nach einem schweren Einsatz passiert und wie du das deinem Partner erklärst, ohne jedes Heimkommen zum Drama zu machen.',
+    slugs: ['adrenalin-abfall-partner-erklaeren-rettung'],
+  },
+];
+
 const CROSS_LINKS = [
   {
     title: 'Für Ärzte & Ärztinnen',
@@ -46,15 +66,32 @@ const CROSS_LINKS = [
   },
 ];
 
-export default function RettungPillar() {
+export default async function RettungPillar() {
+  const articles = await reader.collections.articles.all();
+
+  function getSectionArticles(slugs: string[]) {
+    return slugs
+      .map((slug) => articles.find((a) => a.slug === slug))
+      .filter(Boolean) as typeof articles;
+  }
+
+  const allSectionSlugs = SECTIONS.flatMap((s) => s.slugs);
+  const schemaItems = allSectionSlugs
+    .map((slug) => articles.find((a) => a.slug === slug))
+    .filter(Boolean)
+    .map((a) => ({
+      name: a!.entry.title,
+      url: `https://medicsingles.de/magazin/${a!.slug}`,
+    }));
+
   return (
     <>
       <JsonLd
         data={collectionPageJsonLd({
           name: 'Partnersuche Rettungsdienst — Dating für Rettungssanitäter',
-          description: 'Dating für Rettungssanitäter, Notfallsanitäter und Notärzte. Ausführliche Cluster-Guides folgen in Kürze.',
+          description: 'Dating für Rettungssanitäter, Notfallsanitäter und Notärzte. Ausführliche Cluster-Guides zum 12/24-Rhythmus, Dating-Profil und Adrenalin-Abfall nach Einsätzen.',
           url: RETTUNG_URL,
-          items: [],
+          items: schemaItems,
         })}
       />
       <JsonLd
@@ -123,24 +160,49 @@ export default function RettungPillar() {
         </section>
       </ScrollReveal>
 
-      {/* Coming Soon Notice */}
+      {/* Thematic Sections */}
+      {SECTIONS.map((section) => {
+        const sectionArticles = getSectionArticles(section.slugs);
+        if (sectionArticles.length === 0) return null;
+        return (
+          <ScrollReveal key={section.title}>
+            <section className="max-w-6xl mx-auto px-6 py-10">
+              <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
+                {section.title}
+              </h2>
+              {section.intro && (
+                <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>
+              )}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {sectionArticles.map((article) => (
+                  <ArticleCard
+                    key={article.slug}
+                    title={article.entry.title}
+                    excerpt={article.entry.excerpt}
+                    href={`/${article.slug}`}
+                    image={article.entry.featuredImage || undefined}
+                    imageAlt={article.entry.featuredImageAlt || undefined}
+                    category={article.entry.category}
+                    date={article.entry.publishedAt || undefined}
+                  />
+                ))}
+              </div>
+            </section>
+          </ScrollReveal>
+        );
+      })}
+
+      {/* Pillar-Guide Verweis */}
       <ScrollReveal>
-        <section className="max-w-3xl mx-auto px-6 py-10">
-          <div className="bg-surface/50 border border-brand-orange/20 rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-bold mb-4">📝 Ausführliche Guides folgen in Kürze</h2>
-            <p className="text-foreground/70 mb-6 leading-relaxed">
-              Wir bauen gerade die Cluster-Artikel für den Rettungsdienst — von der
-              12/24-Rhythmus-Realität über Profile, die mit Adrenalin-Abfall umgehen, bis zu
-              Beziehungen zwischen zwei Rettungsdienstlern und PTBS-Themen in neuen
-              Partnerschaften.
-            </p>
+        <section className="max-w-3xl mx-auto px-6 py-8">
+          <div className="bg-surface/50 border border-brand-orange/20 rounded-2xl p-6 text-center">
             <p className="text-foreground/60 leading-relaxed text-sm">
-              Der{' '}
+              Den vollständigen Überblick zu Schichtrhythmen, Kollegen-Dating, RettMobil-Networking und
+              PTBS in Beziehungen findest du im{' '}
               <Link href="/partnersuche-rettung" className="text-brand-orange-text underline">
-                bestehende Pillar-Guide
+                Pillar-Guide Partnersuche Rettungsdienst
               </Link>
-              {' '}liefert dir bereits den Überblick inklusive FAQ zu Schichtrhythmen, Kollegen-Dating
-              und RettMobil-Networking. Vertiefende Themen erscheinen hier laufend.
+              . Weitere Cluster-Artikel zu Leitstelle, Bergrettung, Familienplanung und Co. erscheinen laufend.
             </p>
           </div>
         </section>

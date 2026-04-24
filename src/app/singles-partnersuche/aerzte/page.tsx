@@ -55,6 +55,7 @@ const SECTIONS = [
     slugs: [
       'partnersuche-aerzte-warum-schwer',
       'einsam-im-kittel-isolation-aerzte',
+      'arzt-status-dating-anziehung-abschreckung',
     ],
   },
   {
@@ -74,6 +75,7 @@ const SECTIONS = [
       'erstes-date-aerzte-ideen',
       'gespraechsthemen-erstes-date-arzt',
       'online-chat-zum-treffen-mediziner',
+      'video-call-effizienz-booster-arzt-dating',
     ],
   },
   {
@@ -115,6 +117,9 @@ const SECTIONS_AFTER_CTA = [
       'aerzte-kongresse-singles-kennenlernen',
       'aerztekammer-netzwerke-singles',
       'uniklinik-singles-charite-lmu-kennenlernen',
+      'charite-dating-guide-berlin',
+      'lmu-klinikum-muenchen-mediziner-dating',
+      'deutscher-aerztetag-singles-networking',
     ],
   },
   {
@@ -123,6 +128,7 @@ const SECTIONS_AFTER_CTA = [
     slugs: [
       'faq-partnersuche-aerzte',
       'kollegen-daten-krankenhaus-ja-nein',
+      'zeitmanagement-60h-woche-dating-arzt',
     ],
   },
 ];

@@ -1,17 +1,45 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { reader } from '@/lib/keystatic';
 import { ArticleBody } from '@/components/content/ArticleBody';
-import { ScrollReveal } from '@/components/ui/ScrollReveal';
-import { HeartButton } from '@/components/ui/HeartButton';
+import { ClusterHero } from '@/components/content/ClusterHero';
+import { TableOfContents } from '@/components/content/TableOfContents';
+import { StickyTOC } from '@/components/content/StickyTOC';
+import { ArticleByline } from '@/components/content/ArticleByline';
+import { RegionalPillarBacklink } from '@/components/content/RegionalPillarBacklink';
 import { CalloutBox } from '@/components/ui/CalloutBox';
+import { TakeawayBox } from '@/components/ui/TakeawayBox';
+import { FAQAccordion } from '@/components/ui/FAQAccordion';
+import { HeartButton } from '@/components/ui/HeartButton';
+import { AuthorBio } from '@/components/ui/AuthorBio';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 
+const BASE_URL = 'https://medicsingles.de/magazin';
 type Params = Promise<{ bundesland: string; stadt: string }>;
+
+function toId(text: string) {
+  return text.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+function collectText(n: any): string {
+  if (typeof n === 'string') return n;
+  if (n?.type === 'text') return n.attributes?.content ?? '';
+  return (n?.children ?? []).map(collectText).join('');
+}
+function extractH2s(content: any): { label: string; id: string }[] {
+  const node = 'node' in content ? content.node : content;
+  const items: { label: string; id: string }[] = [];
+  function walk(n: any) {
+    if (n?.type === 'heading' && n?.attributes?.level === 2) {
+      const text = collectText(n);
+      if (text) items.push({ label: text, id: toId(text) });
+    }
+    (n?.children ?? []).forEach(walk);
+  }
+  walk(node);
+  return items;
+}
 
 export async function generateStaticParams() {
   const all = await reader.collections.aerztekammern.all();
@@ -34,185 +62,164 @@ export async function generateMetadata({ params }: { params: Params }) {
   const { bundesland, stadt } = await params;
   const entry = await findEntry(bundesland, stadt);
   if (!entry) return {};
-  const url = `https://medicsingles.de/magazin/singles-regional/aerztekammern/${bundesland}/${stadt}`;
+  const e = entry.entry;
+  const url = `${BASE_URL}/singles-regional/aerztekammern/${bundesland}/${stadt}`;
+  const title = e.seoTitle || e.title;
+  const description = e.seoDescription || e.excerpt;
+  const image = e.featuredImage ? `${BASE_URL}${e.featuredImage}` : `${BASE_URL}/logos/jobsingles-logo.png`;
   return {
-    title: entry.entry.seoTitle || entry.entry.title,
-    description: entry.entry.seoDescription || entry.entry.excerpt,
+    title,
+    description,
     alternates: { canonical: url },
     openGraph: {
-      title: entry.entry.title,
-      description: entry.entry.excerpt,
-      url,
-      type: 'article',
-      siteName: 'Medicsingles Magazin',
-      locale: 'de-DE',
-      images: entry.entry.featuredImage ? [{ url: entry.entry.featuredImage }] : [],
+      title, description, url, type: 'article',
+      images: [{ url: image, width: 1200, height: 630, alt: title }],
+      siteName: 'Medicsingles Magazin', locale: 'de_DE',
     },
+    twitter: { card: 'summary_large_image', title, description, images: [image] },
   };
 }
 
 export default async function KammerStadtPage({ params }: { params: Params }) {
   const { bundesland, stadt } = await params;
   if (!BUNDESLAENDER[bundesland]) notFound();
-
   const entry = await findEntry(bundesland, stadt);
   if (!entry) notFound();
 
   const e = entry.entry;
   const blName = bundeslandName(bundesland);
-  const url = `https://medicsingles.de/magazin/singles-regional/aerztekammern/${bundesland}/${stadt}`;
+  const url = `${BASE_URL}/singles-regional/aerztekammern/${bundesland}/${stadt}`;
+  const tocItems = extractH2s(e.content);
 
-  const faqJsonLd = (e.faqItems && e.faqItems.length > 0) ? {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: e.faqItems.map((f: { question: string; answer: string }) => ({
-      '@type': 'Question',
-      name: f.question,
-      acceptedAnswer: { '@type': 'Answer', text: f.answer },
-    })),
-  } : null;
+  // Default-Author Tommy Honold (gleicher Pattern wie Articles)
+  const author = await reader.collections.authors.read('tommy-honold');
 
   return (
     <>
       <JsonLd
+        data={articleJsonLd({
+          title: e.title,
+          description: e.excerpt,
+          url,
+          image: e.featuredImage ? `${BASE_URL}${e.featuredImage}` : undefined,
+          datePublished: e.publishedAt || undefined,
+          authorName: author?.name,
+        })}
+      />
+      {e.faqItems && e.faqItems.length > 0 && <JsonLd data={faqJsonLd(e.faqItems)} />}
+      <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://medicsingles.de/magazin/singles-regional' },
-          { name: 'Ärztekammern', url: 'https://medicsingles.de/magazin/singles-regional/aerztekammern' },
-          { name: blName, url: `https://medicsingles.de/magazin/singles-regional/aerztekammern/${bundesland}` },
+          { name: 'Magazin', url: BASE_URL },
+          { name: 'Singles Regional', url: `${BASE_URL}/singles-regional` },
+          { name: 'Ärztekammern', url: `${BASE_URL}/singles-regional/aerztekammern` },
+          { name: blName, url: `${BASE_URL}/singles-regional/aerztekammern/${bundesland}` },
           { name: e.title, url },
         ])}
       />
-      {faqJsonLd && <JsonLd data={faqJsonLd} />}
 
-      {/* Hero */}
-      <section className="relative overflow-hidden min-h-[320px] md:min-h-[440px]">
-        {e.featuredImage && (
-          <div className="absolute inset-0">
-            <Image
-              src={e.featuredImage}
-              alt={e.featuredImageAlt || e.title}
-              width={1920}
-              height={1080}
-              className="w-full h-full object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-          </div>
-        )}
-        <div className="relative max-w-4xl mx-auto px-6 flex flex-col justify-end min-h-[320px] md:min-h-[440px] pb-8">
-          <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight drop-shadow-lg">
-            {e.title}
-          </h1>
-          {e.excerpt && (
-            <p className="text-base md:text-lg text-white/85 max-w-2xl mt-3 leading-relaxed drop-shadow">
-              {e.excerpt}
-            </p>
-          )}
-        </div>
-      </section>
+      <ClusterHero
+        title={e.title}
+        excerpt={e.excerpt}
+        category="Ärztekammer"
+        image={e.featuredImage || undefined}
+        imageAlt={e.featuredImageAlt || undefined}
+        imageCredit={e.featuredImageCredit || undefined}
+        date={e.publishedAt || undefined}
+      />
 
-      <div className="max-w-4xl mx-auto px-6 mt-6">
+      <StickyTOC items={tocItems} />
+
+      <div className="max-w-3xl mx-auto px-6 py-12">
         <Breadcrumbs items={[
           { label: 'Singles Regional', href: '/singles-regional' },
           { label: 'Ärztekammern', href: '/singles-regional/aerztekammern' },
           { label: blName, href: `/singles-regional/aerztekammern/${bundesland}` },
-          { label: e.title, href: url },
+          { label: e.title, href: `/singles-regional/aerztekammern/${bundesland}/${stadt}` },
         ]} />
+
+        <ArticleByline publishedAt={e.publishedAt || undefined} />
+
+        {/* Kammer-Fakten Box */}
+        <AnimatedGradientBorder borderRadius={16} borderWidth={2} className="my-8">
+          <div className="bg-surface-dark rounded-xl p-6 text-white/90 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            {e.kammerName && <div><span className="text-white/50">Kammer:</span> {e.kammerName}</div>}
+            {e.mitgliederzahl && <div><span className="text-white/50">Mitglieder:</span> {e.mitgliederzahl}</div>}
+            {e.sitzAdresse && <div className="sm:col-span-2"><span className="text-white/50">Sitz:</span> {e.sitzAdresse}</div>}
+            {e.webseite && (
+              <div className="sm:col-span-2">
+                <span className="text-white/50">Web:</span>{' '}
+                <a href={e.webseite} target="_blank" rel="noopener noreferrer" className="text-brand-orange-text hover:underline">{e.webseite}</a>
+              </div>
+            )}
+          </div>
+        </AnimatedGradientBorder>
+
+        <TableOfContents items={tocItems} />
+
+        {e.calloutQuestion && (
+          <CalloutBox question={e.calloutQuestion}>{e.calloutAnswer}</CalloutBox>
+        )}
+
+        <ArticleBody
+          content={e.content}
+          insertAfterH2={2}
+          insertElement={
+            <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
+              <div className="p-6 text-center">
+                <p className="text-sm text-foreground/70 mb-3">Du arbeitest im Gesundheitswesen?</p>
+                <HeartButton href={`https://medicsingles.de/?AID=magazin-kammer-${stadt}`}>
+                  Jetzt kostenfrei anmelden
+                </HeartButton>
+              </div>
+            </AnimatedGradientBorder>
+          }
+        />
+
+        {/* CTA Stopper nach Content */}
+        <AnimatedGradientBorder borderRadius={16} borderWidth={2} className="my-12">
+          <div className="py-10 px-6 bg-surface-dark text-white text-center">
+            <p className="text-lg font-bold mb-2">Genug gelesen?</p>
+            <p className="text-white/60 text-sm mb-5">Finde Mediziner-Singles in {blName}.</p>
+            <HeartButton href={`https://medicsingles.de/?AID=magazin-kammer-${stadt}`}>
+              Jetzt kostenfrei mitmachen
+            </HeartButton>
+          </div>
+        </AnimatedGradientBorder>
+
+        {e.takeaways && e.takeaways.length > 0 && <TakeawayBox items={e.takeaways} />}
+
+        {e.faqItems && e.faqItems.length > 0 && (
+          <>
+            <h2 id="haeufige-fragen" className="text-2xl font-bold mt-16 mb-2 scroll-mt-24">Häufige Fragen</h2>
+            <FAQAccordion items={e.faqItems} />
+          </>
+        )}
+
+        {author && (
+          <AuthorBio
+            name={author.name}
+            slug="tommy-honold"
+            role={author.role}
+            bio={author.bio}
+            avatar={author.avatar || undefined}
+            socialLinks={author.socialLinks}
+          />
+        )}
+
+        <RegionalPillarBacklink
+          currentPillar="aerztekammern"
+          bundesland={bundesland}
+          bundeslandName={blName}
+          stadt={stadt}
+        />
       </div>
 
-      {/* Kammer-Fakten Box */}
-      <ScrollReveal>
-        <section className="max-w-3xl mx-auto px-6 py-8">
-          <AnimatedGradientBorder borderRadius={16} borderWidth={2}>
-            <div className="bg-surface-dark rounded-xl p-6 text-white/90 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
-              {e.kammerName && <div><span className="text-white/50">Kammer:</span> {e.kammerName}</div>}
-              {e.mitgliederzahl && <div><span className="text-white/50">Mitglieder:</span> {e.mitgliederzahl}</div>}
-              {e.sitzAdresse && <div className="sm:col-span-2"><span className="text-white/50">Sitz:</span> {e.sitzAdresse}</div>}
-              {e.webseite && (
-                <div className="sm:col-span-2">
-                  <span className="text-white/50">Web:</span>{' '}
-                  <a href={e.webseite} target="_blank" rel="noopener noreferrer" className="text-brand-orange-text hover:underline">{e.webseite}</a>
-                </div>
-              )}
-            </div>
-          </AnimatedGradientBorder>
-        </section>
-      </ScrollReveal>
-
-      {/* Callout Frage/Antwort */}
-      {e.calloutQuestion && e.calloutAnswer && (
-        <ScrollReveal>
-          <section className="max-w-3xl mx-auto px-6">
-            <CalloutBox question={e.calloutQuestion}>{e.calloutAnswer}</CalloutBox>
-          </section>
-        </ScrollReveal>
-      )}
-
-      {/* Top CTA */}
-      <ScrollReveal>
-        <section className="text-center py-6 px-6">
-          <HeartButton href={`https://medicsingles.de/?AID=magazin-kammer-${stadt}`}>
-            Jetzt kostenfrei mitmachen
-          </HeartButton>
-        </section>
-      </ScrollReveal>
-
-      {/* Body */}
-      <article className="max-w-3xl mx-auto px-6 py-8 prose prose-invert prose-lg">
-        <ArticleBody content={e.content} />
-      </article>
-
-      {/* FAQ */}
-      {e.faqItems && e.faqItems.length > 0 && (
-        <ScrollReveal>
-          <section className="max-w-3xl mx-auto px-6 py-12">
-            <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">FAQ</h2>
-            {e.faqItems.map((f: { question: string; answer: string }, i: number) => (
-              <details key={i} className="mb-4 p-4 rounded-lg bg-surface border border-foreground/10">
-                <summary className="font-bold cursor-pointer">{f.question}</summary>
-                <p className="mt-3 text-foreground/80 leading-relaxed">{f.answer}</p>
-              </details>
-            ))}
-          </section>
-        </ScrollReveal>
-      )}
-
-      {/* Takeaways */}
-      {e.takeaways && e.takeaways.length > 0 && (
-        <ScrollReveal>
-          <section className="max-w-3xl mx-auto px-6 py-8">
-            <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Das Wichtigste</h2>
-            <ul className="space-y-2">
-              {e.takeaways.map((t: string, i: number) => (
-                <li key={i} className="flex gap-3"><span className="text-brand-orange">→</span><span>{t}</span></li>
-              ))}
-            </ul>
-          </section>
-        </ScrollReveal>
-      )}
-
-      {/* Cross-Link to Stammtisch derselben Stadt */}
-      <ScrollReveal>
-        <section className="max-w-3xl mx-auto px-6 py-8">
-          <Link
-            href={`/singles-regional/aerztestammtische/${bundesland}/${stadt}`}
-            className="block p-5 rounded-xl bg-surface border border-foreground/10 hover:border-brand-orange/50 transition-colors"
-          >
-            <div className="text-sm text-foreground/50 mb-1">Auch sehenswert</div>
-            <div className="font-bold text-brand-orange-text">→ Ärztestammtische in {e.title.split(' ')[0] === 'Ärztekammer' ? 'der gleichen Stadt' : 'dieser Region'}</div>
-          </Link>
-        </section>
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <section className="text-center py-16 px-6">
-          <h2 className="text-2xl font-bold mb-4">Bereit für dein lokales Match?</h2>
-          <HeartButton href={`https://medicsingles.de/?AID=magazin-kammer-${stadt}`}>
-            Jetzt kostenfrei mitmachen
-          </HeartButton>
-        </section>
-      </ScrollReveal>
+      {/* Bottom CTA */}
+      <section className="text-center py-16 px-6">
+        <HeartButton href={`https://medicsingles.de/?AID=magazin-kammer-${stadt}`}>
+          Jetzt kostenfrei mitmachen
+        </HeartButton>
+      </section>
     </>
   );
 }

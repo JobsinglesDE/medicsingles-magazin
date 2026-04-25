@@ -24,6 +24,14 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
+    label: 'Singles Regional',
+    href: '/singles-regional',
+    dropdown: [
+      { label: 'Ärztestammtische', href: '/singles-regional/aerztestammtische', description: 'Lokale Mediziner-Treffen finden' },
+      { label: 'Ärztekammern', href: '/singles-regional/aerztekammern', description: 'Kammer-Netzwerke nach Bundesland' },
+    ],
+  },
+  {
     label: 'TV Serien',
     href: '/tv-news',
     dropdown: [

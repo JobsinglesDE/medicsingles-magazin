@@ -42,9 +42,10 @@ const SECTIONS = [
   },
   {
     title: '💬 Online-Dating-Strategien',
-    intro: 'Wie du Empathie zeigst, ohne wie eine Praxis-Website zu klingen — Profile, die echte Verbindungen anziehen.',
+    intro: 'Wie du Empathie zeigst, ohne wie eine Praxis-Website zu klingen — Profile und Erstnachrichten, die echte Verbindungen anziehen.',
     slugs: [
       'dating-profil-therapeuten-empathie-ohne-therapieren',
+      'erste-nachricht-tiefgruendige-gespraechsstarter-therapeut',
     ],
   },
   {
@@ -60,13 +61,38 @@ const SECTIONS = [
     slugs: [
       'beziehung-mit-therapeut-partner-guide',
       'emotionale-abgrenzung-job-privat-therapeut',
+      'kommunikationsmuster-beziehung-therapeut',
+    ],
+  },
+  {
+    title: '👨‍👩‍👧 Zukunft, Karriere & Familie',
+    intro: 'Praxisgründung gemeinsam stemmen, Familienplanung zwischen Kassensitz und Elternzeit — die finanzielle und biographische Realität.',
+    slugs: [
+      'praxisgruendung-paar-therapeut-finanzen',
+      'familienplanung-therapeut-karriere-kind',
+    ],
+  },
+  {
+    title: '🔬 Spezifische Lebenslagen & Fachrichtungen',
+    intro: 'Dating als KJP mit Kindswohl-Themen, als Coach mit ungeregeltem Berufsbild — wo die Fachrichtung das Privatleben prägt.',
+    slugs: [
+      'dating-als-kinderjugendpsychotherapeut',
+      'partnersuche-coach-berater-grenzen',
+    ],
+  },
+  {
+    title: '🎓 Networking & Kontakte',
+    intro: 'Supervision, Intervision, Berufsverbände — wo psychologische Fachkräfte sich jenseits von Apps treffen.',
+    slugs: [
+      'supervision-intervision-networking-therapeuten',
     ],
   },
   {
     title: '⚖️ Ethik & Grenzen',
-    intro: 'Das Abstinenzgebot, Klienten-Dating und berufsrechtliche Konsequenzen — was du unbedingt wissen musst.',
+    intro: 'Das Abstinenzgebot, Klienten-Dating und Schweigepflicht in der Partnerschaft — was du unbedingt wissen musst.',
     slugs: [
       'klienten-daten-ethische-grenzen-abstinenzgebot',
+      'schweigepflicht-partner-erzaehlen-therapeut',
     ],
   },
 ];

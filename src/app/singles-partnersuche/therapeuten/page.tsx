@@ -59,6 +59,7 @@ const SECTIONS = [
     intro: 'Wie es sich wirklich anfühlt, mit einem Therapeuten zu leben — emotionale Verfügbarkeit, Schweigepflicht, gesunde Streitkultur.',
     slugs: [
       'beziehung-mit-therapeut-partner-guide',
+      'emotionale-abgrenzung-job-privat-therapeut',
     ],
   },
   {

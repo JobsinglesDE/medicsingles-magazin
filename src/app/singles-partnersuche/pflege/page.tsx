@@ -63,6 +63,7 @@ const SECTIONS = [
       'krankenschwester-partner-finden-online',
       'pfleger-dating-app-tipps',
       'erste-nachricht-krankenschwester-pfleger-dating',
+      'online-dating-sicherheit-pflege-diskretion',
     ],
   },
   {
@@ -70,6 +71,8 @@ const SECTIONS = [
     intro: 'Date-Ideen, die zum Pflege-Dienstplan passen — von Micro-Dates im Tagesloch bis zum Wochenende-Ausflug.',
     slugs: [
       'zehn-date-ideen-dienstplan-pflege',
+      'gespraechsthemen-erstes-date-pflege',
+      'chat-zu-treffen-pflegekraft-naechster-schritt',
     ],
   },
   {
@@ -79,6 +82,7 @@ const SECTIONS = [
       'beziehung-krankenschwester-nicht-pflege',
       'partnersuche-pflegekraft-stress-abgrenzung',
       'zwei-pflegekraefte-paar-gemeinsames-verstaendnis',
+      'kommunikation-schichtdienst-beziehung-stark',
     ],
   },
 ];
@@ -89,6 +93,8 @@ const SECTIONS_AFTER_CTA = [
     intro: 'Familienplanung in der Pflege: Elternzeit, Wiedereinstieg, Betreuungs-Puzzle und finanzielle Realität zwischen Kind und Schichtdienst.',
     slugs: [
       'kind-karriere-kittel-familienplanung-pflege',
+      'weiterbildung-pflege-partner-unterstuetzung',
+      'finanzielle-absicherung-partnerschaft-pflege',
     ],
   },
   {
@@ -98,6 +104,24 @@ const SECTIONS_AFTER_CTA = [
       'dating-als-krankenschwester-schichtdienst',
       'alleinerziehend-pflegekraft-dating',
       'dating-als-intensivpfleger-stress-partner',
+      'partnersuche-altenpflege-empathie-abgrenzung',
+      'pflege-ueber-40-zweiter-fruehling-dating',
+    ],
+  },
+  {
+    title: '🎓 Networking & Kontakte',
+    intro: 'Kongresse, Sportgruppen, Stationsteam — wo Pflegekräfte-Singles sich jenseits von Apps treffen.',
+    slugs: [
+      'pflegemanagementkongress-networking-pflege',
+      'hobbies-ausgleich-pflege-singles-treffen',
+      'kollegen-daten-station-krankenhaus-pflege',
+    ],
+  },
+  {
+    title: '❓ Häufige Fragen',
+    intro: 'Die Fragen, die sich jede Pflegekraft beim Thema Dating stellt — kompakt beantwortet.',
+    slugs: [
+      'zeitmanagement-50h-woche-dating-pflege-faq',
     ],
   },
 ];

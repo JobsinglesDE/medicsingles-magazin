@@ -5,6 +5,7 @@ import { reader } from '@/lib/keystatic';
 import { ArticleBody } from '@/components/content/ArticleBody';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
+import { CalloutBox } from '@/components/ui/CalloutBox';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
@@ -138,6 +139,15 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
           </AnimatedGradientBorder>
         </section>
       </ScrollReveal>
+
+      {/* Callout Frage/Antwort */}
+      {e.calloutQuestion && e.calloutAnswer && (
+        <ScrollReveal>
+          <section className="max-w-3xl mx-auto px-6">
+            <CalloutBox question={e.calloutQuestion}>{e.calloutAnswer}</CalloutBox>
+          </section>
+        </ScrollReveal>
+      )}
 
       {/* Top CTA */}
       <ScrollReveal>

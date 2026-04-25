@@ -286,7 +286,7 @@ export default async function PflegePillar() {
               <ArticleCard
                 title={annaMark.entry.title}
                 excerpt={annaMark.entry.excerpt}
-                href={`/erfolgsgeschichten/${annaMark.slug}`}
+                href={`/${annaMark.slug}`}
                 image={annaMark.entry.featuredImage || undefined}
                 imageAlt={annaMark.entry.featuredImageAlt || undefined}
                 category="Erfolgsgeschichte"

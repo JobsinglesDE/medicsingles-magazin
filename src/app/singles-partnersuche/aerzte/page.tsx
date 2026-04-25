@@ -119,7 +119,11 @@ const SECTIONS_AFTER_CTA = [
       'uniklinik-singles-charite-lmu-kennenlernen',
       'charite-dating-guide-berlin',
       'lmu-klinikum-muenchen-mediziner-dating',
+      'heidelberg-uniklinik-mediziner-treffpunkte',
       'deutscher-aerztetag-singles-networking',
+      'hauptstadtkongress-berlin-aerzte-dating',
+      'medica-duesseldorf-singles-medizinmesse',
+      'marburger-bund-tarif-arbeitsbedingungen-partnerschaft',
     ],
   },
   {
@@ -129,12 +133,16 @@ const SECTIONS_AFTER_CTA = [
       'faq-partnersuche-aerzte',
       'kollegen-daten-krankenhaus-ja-nein',
       'zeitmanagement-60h-woche-dating-arzt',
+      'beruf-arzt-dating-profil-erwaehnen-faq',
+      'partner-ohne-akademischen-abschluss-arzt',
+      'patient-flirtet-mit-arzt-umgang',
     ],
   },
 ];
 
 export default async function AerztePillar() {
   const articles = await reader.collections.articles.all();
+  const simonJulia = articles.find((a) => a.slug === 'erfolgsgeschichte-simon-julia-arzt-marketing');
 
   function getSectionArticles(slugs: string[]) {
     return slugs
@@ -306,6 +314,28 @@ export default async function AerztePillar() {
           </ScrollReveal>
         );
       })}
+
+      {/* Success Story */}
+      {simonJulia && (
+        <ScrollReveal>
+          <section className="max-w-4xl mx-auto px-6 py-10">
+            <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
+              💕 Echte Paare — Echte Geschichten
+            </h2>
+            <div className="grid grid-cols-1">
+              <ArticleCard
+                title={simonJulia.entry.title}
+                excerpt={simonJulia.entry.excerpt}
+                href={`/${simonJulia.slug}`}
+                image={simonJulia.entry.featuredImage || undefined}
+                imageAlt={simonJulia.entry.featuredImageAlt || undefined}
+                category="Erfolgsgeschichte"
+                date={simonJulia.entry.publishedAt || undefined}
+              />
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
 
       {/* Testimonials */}
       <ScrollReveal>

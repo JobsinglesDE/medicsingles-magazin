@@ -53,6 +53,7 @@ const SECTIONS = [
     intro: 'Date-Ideen, die tiefere Gespräche ermöglichen, ohne dass der Abend zur Therapiesitzung wird.',
     slugs: [
       'date-ideen-tiefgruendige-gespraeche-therapeuten',
+      'ueber-sich-reden-date-aktives-teilen',
     ],
   },
   {

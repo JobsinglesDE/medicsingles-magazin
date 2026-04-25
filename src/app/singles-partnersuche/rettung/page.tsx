@@ -52,18 +52,27 @@ const SECTIONS = [
     ],
   },
   {
+    title: '👨‍👩‍👧 Karriere, Familie & Zukunft',
+    intro: 'Kita-Logistik im 12/24-Rhythmus, Elternzeit als Rettungsdienstler, NotSan-Weiterbildung mit Kindern — die finanzielle und biographische Realität.',
+    slugs: [
+      'karriere-familie-12-24-rettungsdienst',
+    ],
+  },
+  {
     title: '🚑 Fachrichtungen im Rettungsdienst',
-    intro: 'Notarzt, Notfallsanitäter, Leitstelle — alle tragen ein Rettungsdienst-Schild, aber die Dating-Realitäten unterscheiden sich deutlich.',
+    intro: 'Notarzt, Notfallsanitäter, Leitstelle, Bergrettung — alle tragen ein Rettungsdienst-Schild, aber die Dating-Realitäten unterscheiden sich deutlich.',
     slugs: [
       'notarzt-notfallsanitaeter-dating-unterschied',
       'leitstelle-dating-partnersuche-disponent',
+      'bergrettung-partnersuche-alpen-dating',
     ],
   },
   {
     title: '🎓 Networking & Fachkontakte',
-    intro: 'RettMobil, Feuerwehrtag, AGNN — wo du Menschen aus dem Fach triffst, ohne dass es ein Dating-Event sein muss.',
+    intro: 'RettMobil, ACLS- und PHTLS-Fortbildungen, Feuerwehrtag — wo du Menschen aus dem Fach triffst, ohne dass es ein Dating-Event sein muss.',
     slugs: [
       'rettmobil-fulda-networking-singles-dating',
+      'acls-phtls-fortbildung-dating-rettung',
     ],
   },
   {

@@ -1,45 +1,179 @@
 import Link from 'next/link';
-import type { Metadata } from 'next';
+import Image from 'next/image';
+import { reader } from '@/lib/keystatic';
+import { ArticleCard } from '@/components/content/ArticleCard';
+import { SuccessStory } from '@/components/content/SuccessStory';
+import { PillarHero } from '@/components/content/PillarHero';
+import { HeartButton } from '@/components/ui/HeartButton';
+import { CarouselCards } from '@/components/ui/CarouselCards';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
+import { AnimatedStats } from '@/components/ui/AnimatedCounter';
+import { MatchQuiz } from '@/components/ui/MatchQuiz';
 
-export const metadata: Metadata = {
+export const metadata = {
   alternates: { canonical: '/' },
   title: 'Medicsingles Magazin — Echte Liebe in der Medizin',
   description: 'Partnersuche für Ärzte, Pflegepersonal, Therapeuten und Rettungskräfte. Wir verstehen Schichtdienst, emotionale Last und den Alltag im Heilberuf.',
 };
 
-const GUIDES = [
-  { slug: 'partnersuche-medizin', title: 'Der große Guide', kicker: 'Pillar', lead: 'Die ultimative Anleitung zur Partnersuche für alle Heilberufe — von Online-Dating bis Erfolgsgeschichten.' },
-  { slug: 'partnersuche-aerzte', title: 'Dating als Arzt oder Ärztin', kicker: 'Ärzte', lead: 'Vom Kittel zum Date — strategisch, ehrlich, realistisch. Für Assistenzärztinnen und Oberärzte.' },
-  { slug: 'partnersuche-pflege', title: 'Liebe in der Pflege', kicker: 'Pflege', lead: 'Dating trotz Schichtdienst und emotionaler Last. Für Krankenschwestern, Pfleger und Pflegefachkräfte.' },
-  { slug: 'partnersuche-therapeuten', title: 'Partnersuche für Therapeuten', kicker: 'Therapeuten', lead: 'Den Kopf im Feierabend frei bekommen — und trotzdem echten Kontakt finden.' },
-];
+const rotations: Array<'left' | 'right' | 'slight'> = ['left', 'right', 'slight'];
 
-export default function HomePage() {
+function extractCouple(title: string): string {
+  const m = title.match(/([A-ZÄÖÜ][a-zäöüß]+)\s+und\s+([A-ZÄÖÜ][a-zäöüß]+)/);
+  if (m) return `${m[1]} & ${m[2]}`;
+  const after = title.split(/[:—]/).pop()?.trim();
+  return after || title;
+}
+
+export default async function HomePage() {
+  const allArticles = await reader.collections.articles.all();
+
+  const byDateDesc = <T extends { entry: { publishedAt?: string | null } }>(a: T, b: T) =>
+    (b.entry.publishedAt || '').localeCompare(a.entry.publishedAt || '');
+
+  const articles = allArticles
+    .filter((a) => a.entry.status === 'published' && a.entry.type !== 'story')
+    .sort(byDateDesc);
+
+  const stories = allArticles
+    .filter((a) => a.entry.type === 'story' && a.entry.status === 'published')
+    .sort(byDateDesc);
+
+  const carouselItems = articles.slice(0, 8).map((article) => ({
+    title: article.entry.title,
+    excerpt: article.entry.excerpt,
+    href: `/${article.slug}`,
+    image: article.entry.featuredImage || undefined,
+    category: article.entry.category,
+  }));
+
   return (
-    <main className="bg-zinc-950 text-zinc-100 min-h-screen">
-      <section className="mx-auto max-w-5xl px-6 pt-24 pb-16">
-        <p className="text-brand-orange-text uppercase tracking-widest text-xs mb-4">Medicsingles Magazin</p>
-        <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-          Echte Liebe in der Medizin
-        </h1>
-        <p className="text-xl text-zinc-400 max-w-2xl">
-          Partnersuche für Ärzte, Pflegepersonal, Therapeuten und Rettungskräfte. Wir verstehen Schichtdienst, emotionale Last und den Alltag im Heilberuf.
-        </p>
+    <>
+      <section className="relative overflow-hidden min-h-[420px] md:min-h-[560px]">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-startseite.webp"
+            alt="Medicsingles — Ärzte, Pflegepersonal, Therapeuten und Rettungskräfte"
+            width={1920}
+            height={1080}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: '50% 30%' }}
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+        </div>
+        <div className="relative max-w-4xl mx-auto px-6 flex flex-col justify-end min-h-[420px] md:min-h-[560px] pb-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-white tracking-tight mb-2 drop-shadow-lg text-center">
+            Medic<span className="text-brand-orange">singles</span>
+          </h1>
+          <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed drop-shadow text-center">
+            Das Magazin für Singles im Gesundheitswesen
+          </p>
+        </div>
       </section>
 
-      <section className="mx-auto max-w-5xl px-6 pb-24 grid md:grid-cols-2 gap-6">
-        {GUIDES.map(g => (
-          <Link key={g.slug} href={`/${g.slug}`} className="group p-8 rounded-2xl bg-zinc-900 hover:bg-zinc-800 transition border border-zinc-800">
-            <p className="text-brand-orange-text text-xs uppercase tracking-widest mb-3">{g.kicker}</p>
-            <h2 className="text-2xl font-semibold mb-3 group-hover:text-brand-orange-text">{g.title}</h2>
-            <p className="text-zinc-400">{g.lead}</p>
-          </Link>
-        ))}
-      </section>
+      <ScrollReveal>
+        <PillarHero
+          as="h2"
+          title="Medicsingles"
+          texts={[
+            "Echte Liebe in der Medizin",
+            "Schichtdienst trifft Herz",
+            "Kittel sucht Match",
+            "Stethoskop & Liebe",
+            "Medizin verbindet",
+            "Heilberuf trifft Beziehung",
+            "Medicsingles",
+          ]}
+        />
+      </ScrollReveal>
 
-      <footer className="mx-auto max-w-5xl px-6 py-12 text-zinc-500 text-sm border-t border-zinc-800">
-        © {new Date().getFullYear()} Medicsingles.de · <Link href="/kontakt" className="hover:underline">Kontakt</Link> · <a href="https://medicsingles.de/datenschutz.html" className="hover:underline">Datenschutz</a> · <Link href="/keystatic" className="hover:underline">CMS</Link>
-      </footer>
-    </main>
+      <ScrollReveal>
+        <section className="max-w-6xl mx-auto px-6 pt-4 pb-12">
+          <h2 className="text-3xl font-bold mb-6">Neueste Artikel</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {articles.slice(0, 3).map((article, i) => (
+              <ArticleCard
+                key={article.slug}
+                title={article.entry.title}
+                excerpt={article.entry.excerpt}
+                href={`/${article.slug}`}
+                image={article.entry.featuredImage || undefined}
+                imageAlt={article.entry.featuredImageAlt || undefined}
+                date={article.entry.publishedAt || undefined}
+                priority={i === 0}
+              />
+            ))}
+            {articles.length === 0 && (
+              <p className="text-foreground/50 col-span-full text-center py-12">
+                Noch keine Artikel. Erstelle welche unter{' '}
+                <Link href="/keystatic" className="text-brand-orange underline">/keystatic</Link>
+              </p>
+            )}
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="max-w-4xl mx-auto px-6 py-12">
+          <AnimatedStats
+            items={[
+              { value: 1800, suffix: '+', label: 'Singles im Gesundheitswesen' },
+              { value: 90, suffix: '%', label: 'Heilberufe' },
+              { value: 2, suffix: '', label: 'Erfolgspaare' },
+            ]}
+          />
+        </section>
+      </ScrollReveal>
+
+      {stories.length > 0 && (
+        <ScrollReveal>
+          <section className="max-w-6xl mx-auto px-6 py-12">
+            <h2 className="text-3xl font-bold mb-8">Erfolgsgeschichten</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+              {stories.slice(0, 3).map((story, i) => (
+                <SuccessStory
+                  key={story.slug}
+                  title={story.entry.title}
+                  couple={extractCouple(story.entry.title)}
+                  excerpt={story.entry.excerpt}
+                  href={`/${story.slug}`}
+                  image={story.entry.featuredImage || undefined}
+                  imageAlt={story.entry.featuredImageAlt || undefined}
+                  rotation={rotations[i % 3]}
+                />
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {carouselItems.length > 3 && (
+        <ScrollReveal>
+          <CarouselCards title="Mehr entdecken" items={carouselItems.slice(3)} />
+        </ScrollReveal>
+      )}
+
+      <ScrollReveal>
+        <section className="max-w-4xl mx-auto px-6 py-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center">Finde deinen Match-Typ</h2>
+          <p className="text-foreground/60 mb-8 text-center">3 Fragen — und du weißt, wer zu dir passt.</p>
+          <MatchQuiz />
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section className="text-center py-12 px-6">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Bereit für die Partnersuche?</h2>
+          <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
+            Singles im Gesundheitswesen — Ärzte, Pflege, Therapeuten und Rettung — warten auf dich.
+          </p>
+          <HeartButton href="https://medicsingles.de/?AID=magazin">
+            Jetzt kostenfrei mitmachen
+          </HeartButton>
+        </section>
+      </ScrollReveal>
+    </>
   );
 }

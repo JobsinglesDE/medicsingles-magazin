@@ -18,15 +18,9 @@ export const metadata = {
 
 const rotations: Array<'left' | 'right' | 'slight'> = ['left', 'right', 'slight'];
 
-function extractCouple(title: string): string {
-  const m = title.match(/([A-ZÄÖÜ][a-zäöüß]+)\s+und\s+([A-ZÄÖÜ][a-zäöüß]+)/);
-  if (m) return `${m[1]} & ${m[2]}`;
-  const after = title.split(/[:—]/).pop()?.trim();
-  return after || title;
-}
-
 export default async function HomePage() {
   const allArticles = await reader.collections.articles.all();
+  const allStories = await reader.collections.stories.all();
 
   const byDateDesc = <T extends { entry: { publishedAt?: string | null } }>(a: T, b: T) =>
     (b.entry.publishedAt || '').localeCompare(a.entry.publishedAt || '');
@@ -35,9 +29,7 @@ export default async function HomePage() {
     .filter((a) => a.entry.status === 'published' && a.entry.type !== 'story')
     .sort(byDateDesc);
 
-  const stories = allArticles
-    .filter((a) => a.entry.type === 'story' && a.entry.status === 'published')
-    .sort(byDateDesc);
+  const stories = [...allStories].sort(byDateDesc);
 
   const carouselItems = articles.slice(0, 8).map((article) => ({
     title: article.entry.title,
@@ -136,9 +128,10 @@ export default async function HomePage() {
                 <SuccessStory
                   key={story.slug}
                   title={story.entry.title}
-                  couple={extractCouple(story.entry.title)}
+                  couple={story.entry.couple}
+                  location={story.entry.location}
                   excerpt={story.entry.excerpt}
-                  href={`/${story.slug}`}
+                  href={`/erfolgsgeschichten/${story.slug}`}
                   image={story.entry.featuredImage || undefined}
                   imageAlt={story.entry.featuredImageAlt || undefined}
                   rotation={rotations[i % 3]}

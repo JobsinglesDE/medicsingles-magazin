@@ -9,18 +9,11 @@ export const metadata = {
 
 const rotations: Array<'left' | 'right' | 'slight'> = ['left', 'right', 'slight'];
 
-function extractCouple(title: string): string {
-  const m = title.match(/([A-ZÄÖÜ][a-zäöüß]+)\s+und\s+([A-ZÄÖÜ][a-zäöüß]+)/);
-  if (m) return `${m[1]} & ${m[2]}`;
-  const after = title.split(/[:—]/).pop()?.trim();
-  return after || title;
-}
-
 export default async function Erfolgsgeschichten() {
-  const allArticles = await reader.collections.articles.all();
-  const stories = allArticles
-    .filter((a) => a.entry.type === 'story' && a.entry.status === 'published')
-    .sort((a, b) => String(b.entry.publishedAt ?? '').localeCompare(String(a.entry.publishedAt ?? '')));
+  const allStories = await reader.collections.stories.all();
+  const stories = [...allStories].sort((a, b) =>
+    String(b.entry.publishedAt ?? '').localeCompare(String(a.entry.publishedAt ?? ''))
+  );
 
   return (
     <>
@@ -57,9 +50,10 @@ export default async function Erfolgsgeschichten() {
             <SuccessStory
               key={story.slug}
               title={story.entry.title}
-              couple={extractCouple(story.entry.title)}
+              couple={story.entry.couple}
+              location={story.entry.location}
               excerpt={story.entry.excerpt}
-              href={`/${story.slug}`}
+              href={`/erfolgsgeschichten/${story.slug}`}
               image={story.entry.featuredImage || undefined}
               imageAlt={story.entry.featuredImageAlt || undefined}
               rotation={rotations[i % 3]}

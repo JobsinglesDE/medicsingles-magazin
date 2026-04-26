@@ -1,15 +1,20 @@
 import { reader } from '@/lib/keystatic';
-import { ArticleCard } from '@/components/content/ArticleCard';
+import { SuccessStory } from '@/components/content/SuccessStory';
 
 export const metadata = {
   alternates: { canonical: '/erfolgsgeschichten' },
-  title: 'Erfolgsgeschichten — Medicsingles Magazin',
+  title: 'Erfolgsgeschichten',
   description: 'Echte Liebesgeschichten von Medicsingles.de — Ärzte, Pflegekräfte und Therapeuten, die ihre Partner im Gesundheitswesen gefunden haben.',
-  openGraph: {
-    title: 'Erfolgsgeschichten — Medicsingles Magazin',
-    description: 'Echte Paare aus dem Gesundheitswesen. Keine inszenierten Storys — Menschen, die ihren Alltag im Kittel teilen.',
-  },
 };
+
+const rotations: Array<'left' | 'right' | 'slight'> = ['left', 'right', 'slight'];
+
+function extractCouple(title: string): string {
+  const m = title.match(/([A-ZÄÖÜ][a-zäöüß]+)\s+und\s+([A-ZÄÖÜ][a-zäöüß]+)/);
+  if (m) return `${m[1]} & ${m[2]}`;
+  const after = title.split(/[:—]/).pop()?.trim();
+  return after || title;
+}
 
 export default async function Erfolgsgeschichten() {
   const allArticles = await reader.collections.articles.all();
@@ -33,28 +38,31 @@ export default async function Erfolgsgeschichten() {
         <div className="space-y-4 text-foreground/75 leading-relaxed">
           <p>
             Echte Paare, die sich über Medicsingles.de gefunden haben. Keine Werbesprüche, keine inszenierten Models —
-            sondern Menschen, die im Berufsalltag mit Schichtdienst, Notaufnahme und 60-Stunden-Wochen leben.
-            Ihre Geschichten zeigen, dass Partnersuche im medizinischen Umfeld funktioniert.
+            sondern Menschen, die im Berufsalltag mit Schichtdienst, Notaufnahme und 60-Stunden-Wochen leben. Ihre Geschichten
+            zeigen, dass Partnersuche im medizinischen Umfeld funktioniert, auch wenn die Rahmenbedingungen unvorhersehbar sind.
           </p>
           <p>
-            Was sie eint: beide Seiten verstehen, was der andere beruflich durchmacht — und beide haben bewusst
-            eine Plattform gewählt, die darauf zugeschnitten ist.
+            Jede Erfolgsgeschichte stammt aus einem persönlichen Gespräch mit dem Paar — freigegeben für die Veröffentlichung.
+            Die Namen sind echt (oder mit Einverständnis leicht verändert), die Beschreibungen stammen aus den Paaren selbst.
+            Was sie eint: beide Seiten verstehen, was der andere beruflich durchmacht, und beide haben bewusst eine Plattform
+            gewählt, die darauf zugeschnitten ist.
           </p>
         </div>
       </section>
 
       <section className="max-w-6xl mx-auto px-6 py-16">
         <h2 className="sr-only">Erfolgsgeschichten unserer Mitglieder</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {stories.map((story) => (
-            <ArticleCard
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+          {stories.map((story, i) => (
+            <SuccessStory
               key={story.slug}
               title={story.entry.title}
+              couple={extractCouple(story.entry.title)}
               excerpt={story.entry.excerpt}
               href={`/${story.slug}`}
               image={story.entry.featuredImage || undefined}
               imageAlt={story.entry.featuredImageAlt || undefined}
-              date={story.entry.publishedAt || undefined}
+              rotation={rotations[i % 3]}
             />
           ))}
         </div>

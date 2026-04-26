@@ -11,22 +11,15 @@ export async function GET() {
     reader.collections.stories.all(),
   ]);
 
-  // Featured Articles (manuell in Keystatic UI gepinnt, max 3)
   const featuredArticles = allArticles
     .filter((a) => a.entry.isFeatured && a.entry.status === 'published')
-    .map((a) => {
-      const categoryPath =
-        '';
-      return {
-        title: a.entry.title,
-        excerpt: a.entry.excerpt || '',
-        url: `${SITE}/magazin/${a.slug}/`,
-        image: a.entry.featuredImage
-          ? `${SITE}/magazin${a.entry.featuredImage}`
-          : '',
-        date: a.entry.publishedAt || '2026-01-01',
-      };
-    });
+    .map((a) => ({
+      title: a.entry.title,
+      excerpt: a.entry.excerpt || '',
+      url: `${SITE}/magazin/${a.slug}/`,
+      image: a.entry.featuredImage ? `${SITE}/magazin${a.entry.featuredImage}` : '',
+      date: a.entry.publishedAt || '2026-01-01',
+    }));
 
   // Featured Stories
   const featuredStories = allStories
@@ -45,7 +38,6 @@ export async function GET() {
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 3);
 
-  // WP REST API kompatibles Format
   const posts = featured.map((item, index) => ({
     id: index + 1,
     date: item.date + 'T00:00:00',

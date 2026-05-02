@@ -90,7 +90,7 @@ export function Footer() {
                   Jobsingles.de — Das Netzwerk
                 </a>
               </nav>
-              <p className="text-[10px] text-white/65 mt-3">
+              <p className="text-[10px] text-white/80 mt-3">
                 Teil des Jobsingles-Netzwerks mit 15+ Berufs-Dating-Portalen
               </p>
             </div>

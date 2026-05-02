@@ -12,8 +12,8 @@ import { JsonLd, breadcrumbJsonLd, collectionPageJsonLd } from '@/components/seo
 const THERAPEUTEN_URL = 'https://medicsingles.de/magazin/singles-partnersuche/therapeuten';
 
 export const metadata = {
-  title: 'Partnersuche Therapeuten & Psychologen — Dating für psychologische Fachkräfte',
-  description: 'Partnersuche für Therapeuten, Psychologen und Coaches. Wie die emotionale Abgrenzung, das "Analysierst-du-mich-Klischee" und das erste Date wirklich funktionieren.',
+  title: 'Partnersuche Therapeuten — Dating für Psychologen',
+  description: 'Partnersuche für Therapeuten, Psychologen und Coaches. Emotionale Abgrenzung, das "Analysierst-du-mich"-Klischee und das erste Date — konkrete Guides.',
   alternates: { canonical: THERAPEUTEN_URL },
   openGraph: {
     title: 'Partnersuche Therapeuten — Liebe ohne Couch',
@@ -202,7 +202,7 @@ export default async function TherapeutenPillar() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=magazin-therapeuten">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-therapeuten">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -287,7 +287,7 @@ export default async function TherapeutenPillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Psychologische Fachkräfte und Singles, die dein Feld verstehen — auf Medicsingles.de.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=magazin-therapeuten">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-therapeuten">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

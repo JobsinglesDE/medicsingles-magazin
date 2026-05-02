@@ -3,8 +3,16 @@ import { SuccessStory } from '@/components/content/SuccessStory';
 
 export const metadata = {
   alternates: { canonical: '/erfolgsgeschichten' },
-  title: 'Erfolgsgeschichten',
-  description: 'Echte Liebesgeschichten von Medicsingles.de — Ärzte, Pflegekräfte und Therapeuten, die ihre Partner im Gesundheitswesen gefunden haben.',
+  title: 'Erfolgsgeschichten — Liebespaare aus der Medizin',
+  description: 'Echte Liebesgeschichten von Medicsingles.de: Ärzte, Pflegekräfte und Therapeuten, die ihre Partner im Gesundheitswesen gefunden haben.',
+  openGraph: {
+    title: 'Erfolgsgeschichten — Liebespaare aus der Medizin',
+    description: 'Echte Liebesgeschichten von Medicsingles.de: Ärzte, Pflegekräfte und Therapeuten, die ihre Partner im Gesundheitswesen gefunden haben.',
+    url: 'https://medicsingles.de/magazin/erfolgsgeschichten',
+    type: 'website' as const,
+    siteName: 'Medicsingles Magazin',
+    locale: 'de_DE',
+  },
 };
 
 const rotations: Array<'left' | 'right' | 'slight'> = ['left', 'right', 'slight'];

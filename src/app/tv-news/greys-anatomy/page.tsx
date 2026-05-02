@@ -6,7 +6,7 @@ import { SendetermineWidget } from '@/components/content/SendetermineWidget';
 
 export const metadata = {
   alternates: { canonical: '/tv-news/greys-anatomy' },
-  title: "Grey's Anatomy — News & Hintergründe | Medicsingles Magazin",
+  title: "Grey's Anatomy — News & Hintergründe",
   description: "Grey's Anatomy: Ellen Pompeo, die Darsteller und das Privatleben der Stars aus Grey Sloan Memorial — neue Staffeln, Drehorte und Dating-Perspektiven.",
   openGraph: {
     title: "Grey's Anatomy — News & Hintergründe | Medicsingles Magazin",

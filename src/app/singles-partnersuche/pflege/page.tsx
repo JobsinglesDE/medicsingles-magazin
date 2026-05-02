@@ -11,8 +11,8 @@ import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo
 const PFLEGE_URL = 'https://medicsingles.de/magazin/singles-partnersuche/pflege';
 
 export const metadata = {
-  title: 'Partnersuche Pflege — Dating für Krankenschwestern und Pfleger im Schichtdienst',
-  description: 'Partnersuche für Pflegekräfte trotz Dreischicht, Dienstplan und emotionaler Belastung. Guides für Online-Dating, erstes Date und Beziehung im Pflegealltag.',
+  title: 'Partnersuche Pflege — Dating trotz Schichtdienst',
+  description: 'Partnersuche für Pflegekräfte trotz Dreischicht und Dienstplan. Guides für Online-Dating, erstes Date und Beziehung im Pflegealltag — Medicsingles.de.',
   alternates: { canonical: PFLEGE_URL },
   openGraph: {
     title: 'Partnersuche Pflege — Liebe im Schichtdienst',
@@ -213,7 +213,7 @@ export default async function PflegePillar() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=magazin-pflege">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-pflege">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -259,7 +259,7 @@ export default async function PflegePillar() {
               <p className="text-lg font-semibold">
                 Jetzt Pflege-Singles in deiner Region finden
               </p>
-              <HeartButton href="https://medicsingles.de/?AID=magazin-pflege">
+              <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-pflege">
                 Jetzt kostenlos registrieren
               </HeartButton>
             </div>
@@ -335,7 +335,7 @@ export default async function PflegePillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Krankenschwestern, Pfleger und Pflegefachkräfte — echte Menschen, die deinen Alltag teilen.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=magazin-pflege">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-pflege">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

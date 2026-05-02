@@ -5,8 +5,16 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export const metadata = {
   alternates: { canonical: '/ueber-uns' },
-  title: 'Über uns — MedicSingles.de Magazin',
-  description: 'Thomas Honold: Vom Küchenmeister und Marine-Koch zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter MedicSingles.de.',
+  title: 'Über uns — Die Geschichte hinter Medicsingles',
+  description: 'Thomas Honold: Vom Küchenmeister zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter Medicsingles.de — und warum es Ärzten & Pflege hilft.',
+  openGraph: {
+    title: 'Über uns — Die Geschichte hinter Medicsingles',
+    description: 'Thomas Honold: Vom Küchenmeister zum Gründer des grössten Berufs-Dating-Netzwerks. Die Geschichte hinter Medicsingles.de.',
+    url: 'https://medicsingles.de/magazin/ueber-uns',
+    type: 'website' as const,
+    siteName: 'Medicsingles Magazin',
+    locale: 'de_DE',
+  },
 };
 
 const faqItems = [
@@ -172,7 +180,7 @@ export default function UeberUns() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Tausende Medizin-Singles warten auf dich.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=magazin">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

@@ -29,19 +29,20 @@ export function ArticleByline({
           rel="author"
           href={`/autor/${authorSlug}`}
           className="text-foreground/85 font-medium hover:text-brand-orange transition-colors"
+          itemProp="author"
         >
           {authorName}
         </Link>
       </span>
       {publishedAt && (
         <>
-          <span className="text-foreground/30">·</span>
-          <time dateTime={publishedAt}>Veröffentlicht {formatDate(publishedAt)}</time>
+          <span className="text-foreground/50">·</span>
+          <time dateTime={publishedAt} itemProp="datePublished">Veröffentlicht {formatDate(publishedAt)}</time>
         </>
       )}
       {updatedAt && updatedAt !== publishedAt && (
         <>
-          <span className="text-foreground/30">·</span>
+          <span className="text-foreground/50">·</span>
           <time dateTime={updatedAt}>Aktualisiert {formatDate(updatedAt)}</time>
         </>
       )}

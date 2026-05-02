@@ -3,9 +3,17 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/kontakt' },
-  title: 'Kontakt — Medicsingles Magazin | medicsingles.de',
+  title: 'Kontakt — Medicsingles Magazin',
   description:
     'Kontakt zum Medicsingles Magazin: Redaktion, Hinweise zu Artikeln, Pressekontakt, Werbung. Wir antworten innerhalb von 48 Stunden.',
+  openGraph: {
+    title: 'Kontakt — Medicsingles Magazin',
+    description: 'Kontakt zum Medicsingles Magazin: Redaktion, Hinweise zu Artikeln, Pressekontakt und Werbung.',
+    url: 'https://medicsingles.de/magazin/kontakt',
+    type: 'website',
+    siteName: 'Medicsingles Magazin',
+    locale: 'de_DE',
+  },
 };
 
 export default function KontaktPage() {

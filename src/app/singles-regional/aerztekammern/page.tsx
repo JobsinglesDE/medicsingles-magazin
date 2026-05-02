@@ -101,7 +101,7 @@ export default async function AerztekammernPillar() {
 
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=magazin-aerztekammern">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztekammern">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -146,7 +146,7 @@ export default async function AerztekammernPillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Mediziner-Singles aus jedem Bundesland — auf Medicsingles.de.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=magazin-aerztekammern">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztekammern">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

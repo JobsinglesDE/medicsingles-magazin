@@ -12,8 +12,8 @@ import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo
 const HUB_URL = 'https://medicsingles.de/magazin/singles-partnersuche';
 
 export const metadata = {
-  title: 'Partnersuche Medizin — Der Hub für Ärzte, Pflege, Therapeuten & Rettung',
-  description: 'Partnersuche im Gesundheitswesen — Guides für Ärzte, Pflegekräfte, Therapeuten und Rettungsdienst. Online-Dating trotz Schichtdienst, 60-Stunden-Woche und emotionaler Belastung.',
+  title: 'Partnersuche Medizin — Hub für alle Heilberufe',
+  description: 'Partnersuche im Gesundheitswesen: Guides für Ärzte, Pflege, Therapeuten & Rettung. Dating trotz Schichtdienst, 60-Stunden-Woche und emotionaler Belastung.',
   alternates: { canonical: HUB_URL },
   openGraph: {
     title: 'Partnersuche Medizin — Dating für Heilberufe',
@@ -177,7 +177,7 @@ export default async function SinglesPartnersuche() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=magazin">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -217,7 +217,7 @@ export default async function SinglesPartnersuche() {
               <p className="text-lg font-semibold">
                 Jetzt Medizin-Singles in deiner Region finden
               </p>
-              <HeartButton href="https://medicsingles.de/?AID=magazin">
+              <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
                 Jetzt kostenlos registrieren
               </HeartButton>
             </div>
@@ -260,7 +260,7 @@ export default async function SinglesPartnersuche() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Tausende Medizin-Singles warten auf dich — echte Menschen, echter Alltag, echte Verbindungen.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=magazin">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

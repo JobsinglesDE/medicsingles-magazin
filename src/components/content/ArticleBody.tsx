@@ -1,5 +1,6 @@
 import Markdoc, { type RenderableTreeNode } from '@markdoc/markdoc';
 import React, { type ReactNode } from 'react';
+import { InstagramEmbed } from './InstagramEmbed';
 
 function toId(text: string) {
   return text
@@ -32,6 +33,16 @@ function prefixInternalHref(href: string): string {
 }
 
 const markdocConfig = {
+  tags: {
+    instagram: {
+      render: 'InstagramEmbed',
+      attributes: {
+        url: { type: String, required: true },
+        caption: { type: String },
+        handle: { type: String },
+      },
+    },
+  },
   nodes: {
     heading: {
       render: 'heading',
@@ -79,7 +90,7 @@ export function ArticleBody({ content, insertAfterH2, insertElement }: Props) {
   if (!insertAfterH2 || !insertElement) {
     return (
       <div className={proseClasses}>
-        {Markdoc.renderers.react(renderable, React)}
+        {Markdoc.renderers.react(renderable, React, { components: { InstagramEmbed } })}
       </div>
     );
   }
@@ -113,7 +124,7 @@ export function ArticleBody({ content, insertAfterH2, insertElement }: Props) {
   if (splitIndex === -1) {
     return (
       <div className={proseClasses}>
-        {Markdoc.renderers.react(renderable, React)}
+        {Markdoc.renderers.react(renderable, React, { components: { InstagramEmbed } })}
       </div>
     );
   }
@@ -125,11 +136,11 @@ export function ArticleBody({ content, insertAfterH2, insertElement }: Props) {
   return (
     <>
       <div className={proseClasses}>
-        {Markdoc.renderers.react(firstHalf, React)}
+        {Markdoc.renderers.react(firstHalf, React, { components: { InstagramEmbed } })}
       </div>
       {insertElement}
       <div className={proseClasses}>
-        {Markdoc.renderers.react(secondHalf, React)}
+        {Markdoc.renderers.react(secondHalf, React, { components: { InstagramEmbed } })}
       </div>
     </>
   );

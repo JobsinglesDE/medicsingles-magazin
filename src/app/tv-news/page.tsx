@@ -3,8 +3,8 @@ import { SeriesCard } from '@/components/content/SeriesCard';
 
 export const metadata = {
   alternates: { canonical: '/tv-news' },
-  title: "TV Serien — Grey's Anatomy & Junge Ärzte | Medicsingles Magazin",
-  description: "Hintergrund-Storys zu Grey's Anatomy und In aller Freundschaft — Die jungen Ärzte: was die Darsteller privat machen, Drehorte und neue Staffeln.",
+  title: "TV Serien — Grey's Anatomy & Junge Ärzte",
+  description: "Hintergrund-Storys zu Grey's Anatomy und Junge Ärzte: Darsteller, Privatleben, Drehorte, neue Staffeln und Dating-Perspektiven aus dem Klinikalltag.",
   openGraph: {
     title: "TV Serien — Grey's Anatomy & Junge Ärzte | Medicsingles Magazin",
     description: "Hintergrund-Storys zu Grey's Anatomy und In aller Freundschaft — Die jungen Ärzte.",

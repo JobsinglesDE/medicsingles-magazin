@@ -48,7 +48,7 @@ export function ClusterHero({ title, excerpt, category, image, imageAlt, imageCr
         {excerpt && <p className="text-base md:text-lg text-white/80 max-w-2xl leading-relaxed drop-shadow">{excerpt}</p>}
       </div>
       {imageCredit && (
-        <div className="absolute bottom-1 right-2 text-[10px] text-white/60 drop-shadow-sm pointer-events-none">
+        <div className="absolute bottom-1 right-2 text-[10px] text-white/80 drop-shadow-sm pointer-events-none">
           {imageCredit}
         </div>
       )}

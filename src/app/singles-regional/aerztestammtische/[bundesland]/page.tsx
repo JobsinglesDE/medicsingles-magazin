@@ -87,7 +87,7 @@ export default async function StammtischBundeslandPage({ params }: { params: Pro
               Stammtisch-Recherche für {blName} läuft noch. Die Stammtisch-Landschaft ist regional sehr
               unterschiedlich — wir validieren jeden Eintrag bevor er hier landet.
             </p>
-            <HeartButton href="https://medicsingles.de/?AID=magazin-aerztestammtische">
+            <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztestammtische">
               Jetzt kostenfrei mitmachen
             </HeartButton>
           </section>
@@ -133,7 +133,7 @@ export default async function StammtischBundeslandPage({ params }: { params: Pro
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Lokale Mediziner-Singles auf Medicsingles.de finden.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=magazin-aerztestammtische">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztestammtische">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

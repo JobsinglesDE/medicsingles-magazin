@@ -11,8 +11,8 @@ import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo
 const AERZTE_URL = 'https://medicsingles.de/magazin/singles-partnersuche/aerzte';
 
 export const metadata = {
-  title: 'Partnersuche Ärzte — Dating für Mediziner zwischen OP und 60-Stunden-Woche',
-  description: 'Partnersuche für Ärztinnen und Ärzte. Guides zu Online-Dating, erstem Date, Klinikalltag, Karriere und Familienplanung — von Mediziner für Mediziner auf Medicsingles.de.',
+  title: 'Partnersuche Ärzte — Dating trotz Klinikalltag',
+  description: 'Partnersuche für Ärztinnen und Ärzte: Guides zu Online-Dating, erstem Date, 60-Stunden-Woche und Karriere. Tipps von Mediziner für Mediziner auf Medicsingles.de.',
   alternates: { canonical: AERZTE_URL },
   openGraph: {
     title: 'Partnersuche Ärzte — Dating zwischen Assistenzdienst und Chefarzt',
@@ -229,7 +229,7 @@ export default async function AerztePillar() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=magazin-aerzte">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerzte">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -275,7 +275,7 @@ export default async function AerztePillar() {
               <p className="text-lg font-semibold">
                 Jetzt Ärzte-Singles in deiner Region finden
               </p>
-              <HeartButton href="https://medicsingles.de/?AID=magazin-aerzte">
+              <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerzte">
                 Jetzt kostenlos registrieren
               </HeartButton>
             </div>
@@ -351,7 +351,7 @@ export default async function AerztePillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Tausende Ärzte-Singles warten — Menschen, die deinen Alltag kennen.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=magazin-aerzte">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerzte">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

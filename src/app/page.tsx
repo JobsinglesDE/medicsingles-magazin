@@ -12,8 +12,8 @@ import { MatchQuiz } from '@/components/ui/MatchQuiz';
 
 export const metadata = {
   alternates: { canonical: '/' },
-  title: 'Medicsingles Magazin — Echte Liebe in der Medizin',
-  description: 'Partnersuche für Ärzte, Pflegepersonal, Therapeuten und Rettungskräfte. Wir verstehen Schichtdienst, emotionale Last und den Alltag im Heilberuf.',
+  title: { absolute: '❤️ Medicsingles — Partnersuche für Ärzte & Pflege' },
+  description: 'Partnersuche für Ärzte, Pflege & Therapeuten. Guides für Dating trotz Schichtdienst, echte Erfolgsgeschichten und Tipps für den Klinikalltag.',
 };
 
 const rotations: Array<'left' | 'right' | 'slight'> = ['left', 'right', 'slight'];
@@ -162,7 +162,7 @@ export default async function HomePage() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Singles im Gesundheitswesen — Ärzte, Pflege, Therapeuten und Rettung — warten auf dich.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=magazin">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

@@ -12,11 +12,12 @@ interface AuthorBioProps {
 
 export function AuthorBio({ name, slug, role, bio, avatar, socialLinks }: AuthorBioProps) {
   return (
-    <div className="flex gap-5 items-start p-6 rounded-2xl bg-surface ambient-shadow my-12">
+    <div className="flex gap-5 items-start p-6 rounded-2xl bg-surface ambient-shadow my-12" itemScope itemType="https://schema.org/Person">
       {avatar ? (
         <img width="600" height="400"
           src={withBasePath(avatar)}
-          alt={name}
+          alt={`${name} — Autor beim Medicsingles Magazin`}
+          itemProp="image"
           className="w-16 h-16 rounded-full object-cover shrink-0 ring-2 ring-brand-orange/20"
         />
       ) : (
@@ -27,7 +28,7 @@ export function AuthorBio({ name, slug, role, bio, avatar, socialLinks }: Author
         </div>
       )}
       <div className="min-w-0">
-        <p className="font-bold text-foreground text-lg">{name}</p>
+        <p className="font-bold text-foreground text-lg" itemProp="name">{name}</p>
         {role && (
           <p className="text-xs uppercase tracking-widest text-brand-orange font-bold mb-2">{role}</p>
         )}

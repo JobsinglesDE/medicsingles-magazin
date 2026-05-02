@@ -12,8 +12,8 @@ import { JsonLd, breadcrumbJsonLd, collectionPageJsonLd } from '@/components/seo
 const RETTUNG_URL = 'https://medicsingles.de/magazin/singles-partnersuche/rettung';
 
 export const metadata = {
-  title: 'Partnersuche Rettungsdienst — Dating für Rettungssanitäter und Notfallsanitäter',
-  description: 'Partnersuche im Rettungsdienst — zwischen 12/24-Schichtrhythmus, Adrenalin-Abfall und dem, was man nach einem Einsatz nicht erklären kann. Für Rettungssanitäter, Notfallsanitäter und Notärzte.',
+  title: 'Partnersuche Rettung — Dating für Sanitäter & Notärzte',
+  description: 'Partnersuche im Rettungsdienst: zwischen 12/24-Schichtrhythmus und Adrenalin-Abfall. Guides für Rettungssanitäter, Notfallsanitäter und Notärzte.',
   alternates: { canonical: RETTUNG_URL },
   openGraph: {
     title: 'Partnersuche Rettungsdienst — Liebe trotz 12/24-Dienst',
@@ -189,7 +189,7 @@ export default async function RettungPillar() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=magazin-rettung">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-rettung">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -275,7 +275,7 @@ export default async function RettungPillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Rettungssanitäter, Notfallsanitäter und Menschen, die deinen 12/24-Rhythmus kennen.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=magazin-rettung">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-rettung">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

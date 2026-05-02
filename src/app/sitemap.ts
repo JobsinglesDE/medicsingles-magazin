@@ -15,17 +15,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE, priority: 1.0, changeFrequency: 'weekly' },
-    { url: `${BASE}/partnersuche-medizin`, priority: 0.9, changeFrequency: 'weekly' },
-    { url: `${BASE}/partnersuche-aerzte`, priority: 0.8, changeFrequency: 'weekly' },
-    { url: `${BASE}/partnersuche-pflege`, priority: 0.8, changeFrequency: 'weekly' },
-    { url: `${BASE}/partnersuche-therapeuten`, priority: 0.8, changeFrequency: 'weekly' },
-    { url: `${BASE}/partnersuche-rettung`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE}/singles-partnersuche`, priority: 0.9, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-news`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-news/greys-anatomy`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-news/junge-aerzte`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/ueber-uns`, priority: 0.6, changeFrequency: 'monthly' },
     { url: `${BASE}/regional`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/erfolgsgeschichten`, priority: 0.6, changeFrequency: 'monthly' },
+    { url: `${BASE}/kontakt`, priority: 0.4, changeFrequency: 'yearly' },
   ];
 
   const articlePages: MetadataRoute.Sitemap = articles.map((a) => ({

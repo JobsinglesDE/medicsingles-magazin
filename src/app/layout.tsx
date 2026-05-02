@@ -17,7 +17,7 @@ const BASE_URL = 'https://medicsingles.de/magazin';
 export const metadata: Metadata = {
   title: {
     default: '❤️ Medicsingles — Partnersuche im Gesundheitswesen',
-    template: '%s ❤️ Medicsingles',
+    template: '%s ❤️',
   },
   description:
     'Magazin für Ärzte, Pflege & Therapeuten: Partnersuche-Guides, Erfolgsgeschichten und Tipps für Dating trotz Schichtdienst. Jetzt kostenlos zu Medicsingles.de.',

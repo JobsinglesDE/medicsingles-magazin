@@ -111,9 +111,9 @@ export default async function HomePage() {
         <section className="max-w-4xl mx-auto px-6 py-12">
           <AnimatedStats
             items={[
-              { value: 1800, suffix: '+', label: 'Singles im Gesundheitswesen' },
+              { value: 25000, suffix: '+', label: 'Singles im Gesundheitswesen' },
               { value: 90, suffix: '%', label: 'Heilberufe' },
-              { value: 2, suffix: '', label: 'Erfolgspaare' },
+              { value: 115, suffix: '', label: 'Erfolgspaare' },
             ]}
           />
         </section>

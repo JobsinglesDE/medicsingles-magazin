@@ -1,6 +1,28 @@
 import Markdoc, { type RenderableTreeNode } from '@markdoc/markdoc';
 import React, { type ReactNode } from 'react';
 import { InstagramEmbed } from './InstagramEmbed';
+import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
+
+function YouTubeEmbed({ url, title }: { url: string; title?: string }) {
+  const videoId = url.match(/(?:v=|youtu\.be\/|shorts\/)([^&\s?]+)/)?.[1];
+  if (!videoId) return null;
+  return (
+    <div className="my-8 flex justify-center">
+      <AnimatedGradientBorder borderRadius={16} borderWidth={3} className="w-full max-w-xs">
+        <div className="relative w-full aspect-[9/16] rounded-2xl overflow-hidden shadow-lg">
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}`}
+            title={title || 'YouTube Video'}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full border-0"
+            loading="lazy"
+          />
+        </div>
+      </AnimatedGradientBorder>
+    </div>
+  );
+}
 
 function toId(text: string) {
   return text
@@ -40,6 +62,13 @@ const markdocConfig = {
         url: { type: String, required: true },
         caption: { type: String },
         handle: { type: String },
+      },
+    },
+    youtube: {
+      render: 'YouTube',
+      attributes: {
+        url: { type: String, required: true },
+        title: { type: String },
       },
     },
   },
@@ -90,7 +119,7 @@ export function ArticleBody({ content, insertAfterH2, insertElement }: Props) {
   if (!insertAfterH2 || !insertElement) {
     return (
       <div className={proseClasses}>
-        {Markdoc.renderers.react(renderable, React, { components: { InstagramEmbed } })}
+        {Markdoc.renderers.react(renderable, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed } })}
       </div>
     );
   }
@@ -124,7 +153,7 @@ export function ArticleBody({ content, insertAfterH2, insertElement }: Props) {
   if (splitIndex === -1) {
     return (
       <div className={proseClasses}>
-        {Markdoc.renderers.react(renderable, React, { components: { InstagramEmbed } })}
+        {Markdoc.renderers.react(renderable, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed } })}
       </div>
     );
   }
@@ -136,11 +165,11 @@ export function ArticleBody({ content, insertAfterH2, insertElement }: Props) {
   return (
     <>
       <div className={proseClasses}>
-        {Markdoc.renderers.react(firstHalf, React, { components: { InstagramEmbed } })}
+        {Markdoc.renderers.react(firstHalf, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed } })}
       </div>
       {insertElement}
       <div className={proseClasses}>
-        {Markdoc.renderers.react(secondHalf, React, { components: { InstagramEmbed } })}
+        {Markdoc.renderers.react(secondHalf, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed } })}
       </div>
     </>
   );

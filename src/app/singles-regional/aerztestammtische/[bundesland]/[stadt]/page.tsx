@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { reader } from '@/lib/keystatic';
 import { ArticleBody } from '@/components/content/ArticleBody';
@@ -91,6 +92,19 @@ export default async function StammtischStadtPage({ params }: { params: Params }
   const url = `${BASE_URL}/singles-regional/aerztestammtische/${bundesland}/${stadt}`;
   const tocItems = extractH2s(e.content);
   const author = await reader.collections.authors.read('tommy-honold');
+
+  // Verwandte Pages: Ärztekammer gleiche Stadt + 3 Nachbar-Stammtische
+  const allKammern = await reader.collections.aerztekammern.all();
+  const matchingKammer = allKammern.find(
+    (k) => k.entry.status === 'published' && k.entry.bundesland === bundesland && k.entry.stadt === stadt,
+  );
+  const allStamm = await reader.collections.aerztestammtische.all();
+  const sameBundesland = allStamm
+    .filter((s) => s.entry.status === 'published' && s.entry.bundesland === bundesland && s.entry.stadt !== stadt);
+  const otherBundesland = allStamm
+    .filter((s) => s.entry.status === 'published' && s.entry.bundesland !== bundesland)
+    .sort((a, b) => (a.entry.stadt || '').localeCompare(b.entry.stadt || ''));
+  const nearbyStammtische = [...sameBundesland, ...otherBundesland].slice(0, 3);
 
   return (
     <>
@@ -202,6 +216,37 @@ export default async function StammtischStadtPage({ params }: { params: Params }
             avatar={author.avatar || undefined}
             socialLinks={author.socialLinks}
           />
+        )}
+
+        {(matchingKammer || nearbyStammtische.length > 0) && (
+          <section className="mt-16">
+            <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
+              Verwandte Seiten
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {matchingKammer && (
+                <Link
+                  href={`/singles-regional/aerztekammern/${matchingKammer.entry.bundesland}/${matchingKammer.entry.stadt}`}
+                  className="block p-4 rounded-lg bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors"
+                >
+                  <div className="text-xs uppercase text-foreground/50 mb-1">Ärztekammer in {stadt}</div>
+                  <div className="text-base font-bold text-foreground">{matchingKammer.entry.title}</div>
+                </Link>
+              )}
+              {nearbyStammtische.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/singles-regional/aerztestammtische/${s.entry.bundesland}/${s.entry.stadt}`}
+                  className="block p-4 rounded-lg bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors"
+                >
+                  <div className="text-xs uppercase text-foreground/50 mb-1">
+                    Stammtisch {bundeslandName(s.entry.bundesland)}
+                  </div>
+                  <div className="text-base font-bold text-foreground">{s.entry.title}</div>
+                </Link>
+              ))}
+            </div>
+          </section>
         )}
 
         <RegionalPillarBacklink

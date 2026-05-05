@@ -141,6 +141,36 @@ export default async function AerztekammernPillar() {
       </ScrollReveal>
 
       <ScrollReveal>
+        <section className="max-w-6xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
+            Direkt zur Stadt
+          </h2>
+          <p className="text-foreground/70 mb-8 leading-relaxed">
+            Alle Ärztekammern auf einen Blick — sortiert nach Stadt.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            {published
+              .slice()
+              .sort((a, b) => (a.entry.stadt || '').localeCompare(b.entry.stadt || ''))
+              .map((k) => (
+                <Link
+                  key={k.slug}
+                  href={`/singles-regional/aerztekammern/${k.entry.bundesland}/${k.entry.stadt}`}
+                  className="block px-4 py-3 rounded-lg bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors"
+                >
+                  <div className="text-base font-bold text-foreground capitalize">
+                    {(k.entry.stadt || '').replace(/-/g, ' ')}
+                  </div>
+                  <div className="text-xs text-foreground/50 mt-1">
+                    {BUNDESLAENDER[k.entry.bundesland]?.name || k.entry.bundesland}
+                  </div>
+                </Link>
+              ))}
+          </div>
+        </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
         <section className="text-center py-16 px-6">
           <h2 className="text-2xl font-bold mb-4">Lieber direkt zum Match?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">

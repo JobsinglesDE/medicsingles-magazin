@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { reader } from '@/lib/keystatic';
 import { ArticleBody } from '@/components/content/ArticleBody';
@@ -93,6 +94,19 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
 
   // Default-Author Tommy Honold (gleicher Pattern wie Articles)
   const author = await reader.collections.authors.read('tommy-honold');
+
+  // Verwandte Pages: Ärztestammtisch gleiche Stadt + 3 Nachbar-Kammern
+  const allStamm = await reader.collections.aerztestammtische.all();
+  const matchingStammtisch = allStamm.find(
+    (s) => s.entry.status === 'published' && s.entry.bundesland === bundesland && s.entry.stadt === stadt,
+  );
+  const allKammern = await reader.collections.aerztekammern.all();
+  const sameBundesland = allKammern
+    .filter((k) => k.entry.status === 'published' && k.entry.bundesland === bundesland && k.entry.stadt !== stadt);
+  const otherBundesland = allKammern
+    .filter((k) => k.entry.status === 'published' && k.entry.bundesland !== bundesland)
+    .sort((a, b) => (a.entry.stadt || '').localeCompare(b.entry.stadt || ''));
+  const nearbyKammern = [...sameBundesland, ...otherBundesland].slice(0, 3);
 
   return (
     <>
@@ -204,6 +218,37 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
             avatar={author.avatar || undefined}
             socialLinks={author.socialLinks}
           />
+        )}
+
+        {(matchingStammtisch || nearbyKammern.length > 0) && (
+          <section className="mt-16">
+            <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
+              Verwandte Seiten
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {matchingStammtisch && (
+                <Link
+                  href={`/singles-regional/aerztestammtische/${matchingStammtisch.entry.bundesland}/${matchingStammtisch.entry.stadt}`}
+                  className="block p-4 rounded-lg bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors"
+                >
+                  <div className="text-xs uppercase text-foreground/50 mb-1">Stammtisch in {stadt}</div>
+                  <div className="text-base font-bold text-foreground">{matchingStammtisch.entry.title}</div>
+                </Link>
+              )}
+              {nearbyKammern.map((k) => (
+                <Link
+                  key={k.slug}
+                  href={`/singles-regional/aerztekammern/${k.entry.bundesland}/${k.entry.stadt}`}
+                  className="block p-4 rounded-lg bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors"
+                >
+                  <div className="text-xs uppercase text-foreground/50 mb-1">
+                    Kammer {bundeslandName(k.entry.bundesland)}
+                  </div>
+                  <div className="text-base font-bold text-foreground">{k.entry.title}</div>
+                </Link>
+              ))}
+            </div>
+          </section>
         )}
 
         <RegionalPillarBacklink

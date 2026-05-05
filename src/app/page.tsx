@@ -21,6 +21,7 @@ const rotations: Array<'left' | 'right' | 'slight'> = ['left', 'right', 'slight'
 export default async function HomePage() {
   const allArticles = await reader.collections.articles.all();
   const allStories = await reader.collections.stories.all();
+  const allSeries = await reader.collections.series.all();
 
   const byDateDesc = <T extends { entry: { publishedAt?: string | null } }>(a: T, b: T) =>
     (b.entry.publishedAt || '').localeCompare(a.entry.publishedAt || '');
@@ -30,6 +31,13 @@ export default async function HomePage() {
     .sort(byDateDesc);
 
   const stories = [...allStories].sort(byDateDesc);
+
+  const seriesSorted = allSeries
+    .filter((s) => s.entry.status === 'published')
+    .sort(byDateDesc);
+  const tvNewsGreys = seriesSorted.filter((s) => s.entry.seriesId === 'greys-anatomy').slice(0, 2);
+  const tvNewsJunge = seriesSorted.filter((s) => s.entry.seriesId === 'junge-aerzte').slice(0, 1);
+  const tvNews = [...tvNewsGreys, ...tvNewsJunge];
 
   const carouselItems = articles.slice(0, 8).map((article) => ({
     title: article.entry.title,
@@ -135,6 +143,33 @@ export default async function HomePage() {
                   image={story.entry.featuredImage || undefined}
                   imageAlt={story.entry.featuredImageAlt || undefined}
                   rotation={rotations[i % 3]}
+                />
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {tvNews.length > 0 && (
+        <ScrollReveal>
+          <section className="max-w-6xl mx-auto px-6 py-12">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-3xl font-bold">TV News</h2>
+              <Link href="/tv-news" className="text-brand-orange hover:underline text-sm font-semibold">
+                Alle TV News &rarr;
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {tvNews.map((article) => (
+                <ArticleCard
+                  key={article.slug}
+                  title={article.entry.title}
+                  excerpt={article.entry.excerpt}
+                  href={`/tv-news/${article.entry.seriesId}/${article.slug}`}
+                  image={article.entry.featuredImage || undefined}
+                  imageAlt={article.entry.featuredImageAlt || undefined}
+                  category={article.entry.seriesId === 'junge-aerzte' ? 'Die jungen Ärzte' : "Grey's Anatomy"}
+                  date={article.entry.publishedAt || undefined}
                 />
               ))}
             </div>

@@ -5,12 +5,14 @@ import { getArticleUrl } from '@/lib/routes';
 const BASE = 'https://medicsingles.de/magazin';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [articles, regional, series, stories, authors] = await Promise.all([
+  const [articles, regional, series, stories, authors, aerztekammern, aerztestammtische] = await Promise.all([
     reader.collections.articles.all(),
     reader.collections.regional.all(),
     reader.collections.series.all(),
     reader.collections.stories.all(),
     reader.collections.authors.all(),
+    reader.collections.aerztekammern.all(),
+    reader.collections.aerztestammtische.all(),
   ]);
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -21,6 +23,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/tv-news/junge-aerzte`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/ueber-uns`, priority: 0.6, changeFrequency: 'monthly' },
     { url: `${BASE}/regional`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${BASE}/singles-regional`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${BASE}/singles-regional/aerztekammern`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${BASE}/singles-regional/aerztestammtische`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/erfolgsgeschichten`, priority: 0.6, changeFrequency: 'monthly' },
     { url: `${BASE}/kontakt`, priority: 0.4, changeFrequency: 'yearly' },
   ];
@@ -69,6 +74,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly',
   }));
 
+  // Ärztekammern: per-bundesland pillar + per-stadt detail
+  const kammerBundeslaender = [...new Set(aerztekammern.map((a) => a.entry.bundesland))];
+  const kammerBundeslandPages: MetadataRoute.Sitemap = kammerBundeslaender.map((b) => ({
+    url: `${BASE}/singles-regional/aerztekammern/${b}`,
+    priority: 0.6,
+    changeFrequency: 'monthly',
+  }));
+  const kammerPages: MetadataRoute.Sitemap = aerztekammern.map((a) => ({
+    url: `${BASE}/singles-regional/aerztekammern/${a.entry.bundesland}/${a.entry.stadt}`,
+    lastModified: a.entry.publishedAt ? new Date(a.entry.publishedAt) : undefined,
+    priority: 0.6,
+    changeFrequency: 'monthly',
+  }));
+
+  // Ärztestammtische: per-bundesland pillar + per-stadt detail
+  const stammtischBundeslaender = [...new Set(aerztestammtische.map((a) => a.entry.bundesland))];
+  const stammtischBundeslandPages: MetadataRoute.Sitemap = stammtischBundeslaender.map((b) => ({
+    url: `${BASE}/singles-regional/aerztestammtische/${b}`,
+    priority: 0.6,
+    changeFrequency: 'monthly',
+  }));
+  const stammtischPages: MetadataRoute.Sitemap = aerztestammtische.map((a) => ({
+    url: `${BASE}/singles-regional/aerztestammtische/${a.entry.bundesland}/${a.entry.stadt}`,
+    lastModified: a.entry.publishedAt ? new Date(a.entry.publishedAt) : undefined,
+    priority: 0.6,
+    changeFrequency: 'monthly',
+  }));
+
   return [
     ...staticPages,
     ...articlePages,
@@ -77,5 +110,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...seriesPages,
     ...storyPages,
     ...authorPages,
+    ...kammerBundeslandPages,
+    ...kammerPages,
+    ...stammtischBundeslandPages,
+    ...stammtischPages,
   ];
 }

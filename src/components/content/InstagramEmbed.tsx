@@ -86,7 +86,7 @@ export function InstagramEmbed({ url, caption, handle }: Props) {
           Zustimmung zum Setzen von Cookies und zur Datenübertragung an Meta.
           Mehr Informationen in unserer{' '}
           <a
-            href="/magazin/datenschutz/"
+            href="/magazin/datenschutz"
             className="underline text-brand-orange hover:opacity-80"
           >
             Datenschutzerklärung

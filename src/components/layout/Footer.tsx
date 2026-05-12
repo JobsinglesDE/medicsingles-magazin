@@ -138,7 +138,7 @@ export function Footer() {
             <a
               href="https://seeside.ai"
               target="_blank"
-              rel="noopener"
+              rel="nofollow noopener"
               className="text-white/60 underline hover:text-brand-orange transition-colors"
             >
               seeside.ai

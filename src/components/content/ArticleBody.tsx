@@ -93,9 +93,16 @@ const markdocConfig = {
       },
       transform(node: any, config: any) {
         const children = node.transformChildren(config);
-        const href = prefixInternalHref(node.attributes.href);
+        const rawHref = node.attributes.href as string;
+        const href = prefixInternalHref(rawHref);
         const attrs: Record<string, string> = { href };
         if (node.attributes.title) attrs.title = node.attributes.title;
+        // External links: nofollow noopener noreferrer + target=_blank
+        const isExternal = /^https?:\/\//i.test(rawHref) && !rawHref.startsWith('https://medicsingles.de');
+        if (isExternal) {
+          attrs.rel = 'nofollow noopener noreferrer';
+          attrs.target = '_blank';
+        }
         return new Markdoc.Tag('a', attrs, children);
       },
     },

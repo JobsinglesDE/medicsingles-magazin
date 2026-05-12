@@ -98,7 +98,9 @@ const markdocConfig = {
         const attrs: Record<string, string> = { href };
         if (node.attributes.title) attrs.title = node.attributes.title;
         // External links: nofollow noopener noreferrer + target=_blank
-        const isExternal = /^https?:\/\//i.test(rawHref) && !rawHref.startsWith('https://medicsingles.de');
+        // Eigene Domains bleiben follow (medicsingles, jobsingles, seeside, farmersingles, singlebuure, blaulichtsingles)
+        const OWN_DOMAINS = /^https?:\/\/(www\.)?(medicsingles\.de|jobsingles\.de|seeside\.ai|farmersingles\.de|singlebuure\.ch|blaulichtsingles\.ch)/i;
+        const isExternal = /^https?:\/\//i.test(rawHref) && !OWN_DOMAINS.test(rawHref);
         if (isExternal) {
           attrs.rel = 'nofollow noopener noreferrer';
           attrs.target = '_blank';

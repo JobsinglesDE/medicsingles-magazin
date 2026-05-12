@@ -86,7 +86,7 @@ export function Footer() {
                 <a href="https://medicsingles.de" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Medicsingles.de
                 </a>
-                <a href="https://jobsingles.de" rel="nofollow" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                <a href="https://jobsingles.de" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Jobsingles.de — Das Netzwerk
                 </a>
                 <a href="https://www.youtube.com/@Medicsingles" target="_blank" rel="me noopener" className="text-sm text-white/75 hover:text-brand-orange transition-colors flex items-center gap-1.5">
@@ -138,7 +138,7 @@ export function Footer() {
             <a
               href="https://seeside.ai"
               target="_blank"
-              rel="nofollow noopener"
+              rel="noopener"
               className="text-white/60 underline hover:text-brand-orange transition-colors"
             >
               seeside.ai

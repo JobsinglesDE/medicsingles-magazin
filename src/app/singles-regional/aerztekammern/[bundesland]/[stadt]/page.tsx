@@ -162,7 +162,7 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
             {e.webseite && (
               <div className="sm:col-span-2">
                 <span className="text-white/50">Web:</span>{' '}
-                <a href={e.webseite} target="_blank" rel="noopener noreferrer" className="text-brand-orange-text hover:underline">{e.webseite}</a>
+                <a href={e.webseite} target="_blank" rel="nofollow noopener noreferrer" className="text-brand-orange-text hover:underline">{e.webseite}</a>
               </div>
             )}
           </div>

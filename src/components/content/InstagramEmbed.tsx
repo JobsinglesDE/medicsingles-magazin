@@ -103,7 +103,7 @@ export function InstagramEmbed({ url, caption, handle }: Props) {
         <a
           href={url}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="nofollow noopener noreferrer"
           className="inline-flex items-center ml-3 text-sm text-foreground/60 hover:text-foreground/90 underline"
         >
           Auf Instagram öffnen ↗
@@ -132,7 +132,7 @@ export function InstagramEmbed({ url, caption, handle }: Props) {
           width: '99.375%',
         }}
       >
-        <a href={url} target="_blank" rel="noopener noreferrer">
+        <a href={url} target="_blank" rel="nofollow noopener noreferrer">
           Beitrag auf Instagram ansehen
         </a>
       </blockquote>

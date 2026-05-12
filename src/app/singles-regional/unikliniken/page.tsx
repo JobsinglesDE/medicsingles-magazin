@@ -35,8 +35,8 @@ const FAQ = [
 const PILLAR_URL = 'https://medicsingles.de/magazin/singles-regional/unikliniken';
 
 export const metadata = {
-  title: 'Unikliniken & Maximalversorger Deutschland — Singles im Heilberuf',
-  description: 'Übersicht aller Universitätskliniken und Maximalversorger. Wie Schichtdienst, Forschungstage und Fakultätsfeste zu echten Begegnungen für Mediziner-Singles werden.',
+  title: 'Unikliniken Deutschland: Mediziner-Singles am Campus',
+  description: '34 Universitätskliniken und Maximalversorger. Wo Mediziner-Singles sich begegnen: Mensa, Sommerfest, Forschungstag. Pro Bundesland.',
   alternates: { canonical: PILLAR_URL },
   openGraph: {
     title: 'Unikliniken — Hochleistungsmedizin trifft Privatleben',
@@ -217,11 +217,13 @@ export default async function UniklinikenPillar() {
               gleichen Gesichter. Das Sommerfest oder die Mitarbeiterfeier, einmal pro Jahr,
               meist im Juni. Hier verschwindet die Hierarchie, Oberärzte stehen am gleichen
               Tisch wie Pflegekräfte. Und Forschungstage oder Doktoranden-Retreats für alle, die
-              wissenschaftlich arbeiten — kleine Gruppen, gemeinsames Thema, langer Tag.
+              wissenschaftlich arbeiten — kleine Gruppen, gemeinsames Thema, langer Tag. Wer
+              ergänzend außerhalb der Klinik netzwerken will, findet bei den <a href="/singles-regional/aerztestammtische" className="text-brand-orange hover:underline">Mediziner-Stammtischen</a> regional sortierte
+              JADE- und MB-Runden.
             </p>
             <p>
               Wer in einer Großstadt-Uniklinik arbeitet, kennt die Stadtteil-Konzentration der
-              Kollegen. Heidelberg-Neuenheim, Bonn-Venusberg, Frankfurt-Sachsenhausen, München-
+              Kollegen. <a href="/singles-regional/unikliniken/baden-wuerttemberg/heidelberg" className="text-brand-orange hover:underline">Heidelberg-Neuenheim</a>, <a href="/singles-regional/unikliniken/nordrhein/bonn" className="text-brand-orange hover:underline">Bonn-Venusberg</a>, <a href="/singles-regional/unikliniken/hessen/frankfurt" className="text-brand-orange hover:underline">Frankfurt-Sachsenhausen</a>, München-
               Bogenhausen: kurze Wege zur Klinik bedeuten Nachbarn aus dem gleichen Haus. Die
               Bäckerei am Sonntagmorgen wird zum unfreiwilligen Treffpunkt.
             </p>

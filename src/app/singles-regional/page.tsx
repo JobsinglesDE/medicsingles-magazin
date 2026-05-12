@@ -10,8 +10,8 @@ import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/com
 const HUB_URL = 'https://medicsingles.de/magazin/singles-regional';
 
 export const metadata = {
-  title: 'Singles Regional — Mediziner-Stammtische, Unikliniken & Ärztekammern',
-  description: 'Regionale Partnersuche für Mediziner: 52 Stammtische, 34 Universitätskliniken, 51 Ärztekammer-Pages. Drei Wege, im Heilberuf offline jemanden kennenzulernen.',
+  title: 'Singles Regional: Stammtische, Unikliniken & Kammern',
+  description: 'Regionale Mediziner-Treffpunkte: 52 Ärztestammtische, 34 Unikliniken, 51 Ärztekammern. Bundesland für Bundesland.',
   alternates: { canonical: HUB_URL },
   openGraph: {
     title: 'Singles Regional — Mediziner-Netzwerke vor Ort',
@@ -191,15 +191,16 @@ export default function SinglesRegionalHub() {
             </p>
             <p>
               <strong className="text-foreground">Du arbeitest fest an einer Uniklinik.</strong> Die
-              Uniklinik-Page deiner Stadt ist dein Startpunkt. Sie listet Schwerpunkte,
-              Forschungstage und typische Begegnungsorte am Campus auf — von der Mensa bis
-              zum Sommerfest der Fakultät.
+              <a href="/singles-regional/unikliniken" className="text-brand-orange hover:underline"> Uniklinik-Page deiner Stadt</a> ist
+              dein Startpunkt. Sie listet Schwerpunkte, Forschungstage und typische
+              Begegnungsorte am Campus auf — von der Mensa bis zum Sommerfest der Fakultät.
+              Beispiele: <a href="/singles-regional/unikliniken/berlin/berlin" className="text-brand-orange hover:underline">Charité Berlin</a>, <a href="/singles-regional/unikliniken/niedersachsen/hannover" className="text-brand-orange hover:underline">MHH Hannover</a> und <a href="/singles-regional/unikliniken/nordrhein/bonn" className="text-brand-orange hover:underline">UKB Bonn</a>.
             </p>
             <p>
               <strong className="text-foreground">Du machst gerade Facharzt-Vorbereitung oder bist
-              fertig.</strong> Kammer-Pflichtfortbildungen lassen sich gut als Anlass nutzen.
-              Welche Landesärztekammer welche Format-Mischung anbietet (Hybrid, Präsenz,
-              Akademie-Wochenende), zeigen wir pro Bundesland.
+              fertig.</strong> <a href="/singles-regional/aerztekammern" className="text-brand-orange hover:underline">Kammer-Pflichtfortbildungen</a> lassen sich gut
+              als Anlass nutzen. Welche Landesärztekammer welche Format-Mischung anbietet
+              (Hybrid, Präsenz, Akademie-Wochenende), zeigen wir pro Bundesland.
             </p>
             <p>
               <strong className="text-foreground">Du willst nicht mehr warten.</strong> Direkt auf

@@ -35,8 +35,8 @@ const FAQ = [
 const PILLAR_URL = 'https://medicsingles.de/magazin/singles-regional/aerztestammtische';
 
 export const metadata = {
-  title: 'Ärztestammtische Deutschland — JADE, Marburger Bund und lokale Mediziner-Treffen',
-  description: 'Mediziner-Stammtische pro Stadt und Bundesland. JADE Junge Allgemeinmedizin, Marburger Bund Junges Netzwerk, ÄKV-Kreisstammtische — wo Singles im Heilberuf offline networking betreiben.',
+  title: 'Ärztestammtische Deutschland: JADE, MB, ÄKV-Runden',
+  description: '52 Mediziner-Stammtische in Deutschland: JADE Junge Allgemeinmedizin, Marburger-Bund-Netzwerke, ÄKV-Kreisrunden. Pro Bundesland und Stadt.',
   alternates: { canonical: PILLAR_URL },
   openGraph: {
     title: 'Ärztestammtische — informelle Mediziner-Treffen',
@@ -214,13 +214,14 @@ export default async function AerztestammtischePillar() {
               Das senkt den Druck und macht echte Begegnungen wahrscheinlicher.
             </p>
             <p>
-              JADE (Junge Allgemeinmedizin Deutschland) hat regelmäßige Stammtische in Berlin,
-              Hamburg, München, Köln, Frankfurt und einem Dutzend weiterer Städte. Die Termine
-              stehen auf jungeallgemeinmedizin.de/termine. Das Marburger-Bund-Junges-Netzwerk
+              JADE (Junge Allgemeinmedizin Deutschland) hat regelmäßige Stammtische in <a href="/singles-regional/aerztestammtische/berlin" className="text-brand-orange hover:underline">Berlin</a>,
+              <a href="/singles-regional/aerztestammtische/hamburg" className="text-brand-orange hover:underline"> Hamburg</a>, <a href="/singles-regional/aerztestammtische/bayern" className="text-brand-orange hover:underline">München</a>, Köln,
+              Frankfurt und einem Dutzend weiterer Städte. Die Termine stehen auf
+              jungeallgemeinmedizin.de/termine. Das Marburger-Bund-Junges-Netzwerk
               veranstaltet in fast jedem Landesverband Treffen, oft mit fachlichem Input am
               Anfang und freiem Ausklang. Lokale ÄKV-Kreisstammtische gibt es in Regionen wie
-              Bamberg, Bad Kissingen oder Hoyerswerda seit Jahrzehnten — kleine, feste Runden
-              ohne Marketing.
+              <a href="/singles-regional/aerztestammtische/bayern" className="text-brand-orange hover:underline"> Bamberg</a>, Bad Kissingen oder
+              Hoyerswerda seit Jahrzehnten — kleine, feste Runden ohne Marketing.
             </p>
             <p>
               Der erste Besuch ist immer am schwersten. Tipp: vorher anschreiben, dass man neu
@@ -230,7 +231,10 @@ export default async function AerztestammtischePillar() {
             </p>
             <p>
               Pro Bundesland und Stadt findest du auf den Detailseiten Treffpunkt, Frequenz,
-              Anmelde-Status und Ansprechpartner für die einzelnen Stammtische.
+              Anmelde-Status und Ansprechpartner für die einzelnen Stammtische. Wer den
+              Stammtisch um den klinischen Alltag herum platzieren will, sieht in der
+              <a href="/singles-regional/unikliniken" className="text-brand-orange hover:underline"> Uniklinik-Übersicht</a>, welche Häuser im
+              eigenen Bundesland sitzen.
             </p>
           </div>
         </section>

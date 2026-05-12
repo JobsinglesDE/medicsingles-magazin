@@ -83,9 +83,6 @@ export function Footer() {
                 Netzwerk
               </h4>
               <nav className="flex flex-col gap-2">
-                <a href="https://medicsingles.de" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Medicsingles.de
-                </a>
                 <a href="https://jobsingles.de" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Jobsingles.de — Das Netzwerk
                 </a>

@@ -98,9 +98,10 @@ const markdocConfig = {
         const attrs: Record<string, string> = { href };
         if (node.attributes.title) attrs.title = node.attributes.title;
         // External links: nofollow noopener noreferrer + target=_blank
-        // Eigene Domains bleiben follow (medicsingles, jobsingles, seeside, farmersingles, singlebuure, blaulichtsingles)
-        const OWN_DOMAINS = /^https?:\/\/(www\.)?(medicsingles\.de|jobsingles\.de|seeside\.ai|farmersingles\.de|singlebuure\.ch|blaulichtsingles\.ch)/i;
-        const isExternal = /^https?:\/\//i.test(rawHref) && !OWN_DOMAINS.test(rawHref);
+        // Nur medicsingles.de (eigene Domain) bleibt follow. Alle anderen externen Links —
+        // auch zu Netzwerk-Sites wie jobsingles/seeside aus Content — werden nofollow,
+        // damit Link-Equity nicht inflationär verschenkt wird.
+        const isExternal = /^https?:\/\//i.test(rawHref) && !/^https?:\/\/(www\.)?medicsingles\.de/i.test(rawHref);
         if (isExternal) {
           attrs.rel = 'nofollow noopener noreferrer';
           attrs.target = '_blank';

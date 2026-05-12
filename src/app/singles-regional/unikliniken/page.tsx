@@ -4,9 +4,33 @@ import { PillarHero } from '@/components/content/PillarHero';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
+import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, BUNDESLAND_SLUGS } from '@/lib/bundeslaender';
+
+const FAQ = [
+  {
+    question: 'Was ist eine Universitätsklinik genau?',
+    answer: 'Eine Universitätsklinik ist ein Krankenhaus, das in Forschung und Lehre an eine medizinische Fakultät angebunden ist. Sie übernimmt drei Aufgaben gleichzeitig: Krankenversorgung auf höchster Stufe (Maximalversorgung), klinische Forschung und die Ausbildung von Medizinstudierenden. In Deutschland gibt es 35 Universitätskliniken, dazu kommen einige Maximalversorger im Uniklinik-Verbund wie das Klinikum Stuttgart oder Vivantes Neukölln Berlin.',
+  },
+  {
+    question: 'Wie lerne ich an einer Uniklinik jemanden privat kennen?',
+    answer: 'Drei Orte funktionieren erfahrungsgemäß: die Mensa zwischen 12 und 13 Uhr (regelmäßige Mittagspause, andere bleiben länger sitzen), die jährliche Mitarbeiterfeier oder das Sommerfest der Fakultät (privater Rahmen, Alkohol senkt Hemmschwelle) und Forschungstage oder Doktoranden-Retreats (kleine Gruppen, gemeinsames Hobby Wissenschaft). Wer Frühbesprechung und Wäschekammer-Smalltalk als Kennenlern-Anlässe sieht, übersieht die wirklich relevanten Treffpunkte.',
+  },
+  {
+    question: 'Welche Größenklassen gibt es bei Unikliniken?',
+    answer: 'Klein (unter 1.000 Betten): Greifswald, Rostock, Magdeburg, Halle. Mittel (1.000–1.500 Betten): Mainz, Marburg, Bonn, Düsseldorf. Groß (1.500–2.500 Betten): Charité Berlin, MHH Hannover, Frankfurt, Köln, Heidelberg. Sehr groß (über 2.500 Betten): Charité ist mit Abstand das größte Universitätsklinikum Europas. Je größer das Haus, desto anonymer der Alltag — und desto wichtiger werden die kleinen, festen Kreise innerhalb der eigenen Abteilung.',
+  },
+  {
+    question: 'Sind die Stadtteile rund um die Uniklinik typische Wohngegenden für Mediziner?',
+    answer: 'Oft ja. In Heidelberg konzentriert sich die ärztliche Community in Neuenheim und Handschuhsheim, in Bonn am Venusberg und Poppelsdorf, in Frankfurt rund um Niederrad und Sachsenhausen, in München in Bogenhausen und Maxvorstadt. Wer in unmittelbarer Klinik-Nähe wohnt, lebt automatisch in einer Mediziner-Community — auch ohne aktive Suche.',
+  },
+  {
+    question: 'Spielt der Trägerstatus (Land, Stiftung, privat) eine Rolle?',
+    answer: 'Für den Berufsalltag ja, für die Begegnungs-Frage kaum. Landeskliniken (z.B. UKB Bonn, UKD Düsseldorf, MHH Hannover) sind klassische Vollausbildungs-Häuser mit hohem Akademiker-Anteil. Stiftungskliniken (z.B. UKE Hamburg, Universitätsmedizin Mainz) haben oft etwas andere Hierarchie-Kulturen. Privatisierte Uniklinik-Kooperationen sind selten und betreffen meist Spezialbereiche. Für Mediziner-Singles ist die Größe und die Stadt-Anbindung wichtiger als der Träger.',
+  },
+];
 
 const PILLAR_URL = 'https://medicsingles.de/magazin/singles-regional/unikliniken';
 
@@ -58,6 +82,7 @@ export default async function UniklinikenPillar() {
           { name: 'Unikliniken', url: PILLAR_URL },
         ])}
       />
+      <JsonLd data={faqJsonLd(FAQ)} />
 
       <PillarHero
         title="Unikliniken"
@@ -68,7 +93,8 @@ export default async function UniklinikenPillar() {
           'Maximalversorger Deutschland',
           'Unikliniken',
         ]}
-        subtitle="Alle Universitätskliniken und Maximalversorger Deutschlands — und wie Singles im Heilberuf sie jenseits von Dienstplan und OP-Schleuse nutzen."
+        subtitle="34 Universitätskliniken und Maximalversorger Deutschlands. Welche Häuser welchen Charakter haben und wie Mediziner-Singles sie jenseits von Dienstplan und OP-Schleuse nutzen."
+        image="/images/hubs/unikliniken.webp"
         colors={KLINIK_COLORS}
       />
 
@@ -171,11 +197,92 @@ export default async function UniklinikenPillar() {
         </section>
       </ScrollReveal>
 
+      {/* Topic-Content */}
+      <ScrollReveal>
+        <section className="max-w-3xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
+            Wie aus 60-Stunden-Wochen Begegnungen werden
+          </h2>
+          <div className="space-y-5 text-foreground/80 leading-relaxed">
+            <p>
+              Die Uniklinik ist nicht der erste Ort, an den man bei Dating denkt. Sie ist der
+              Ort, an dem Mediziner den größten Teil ihrer Wachstunden verbringen. Frühbesprechung
+              um 7 Uhr, Visite, OP-Plan, Wartung der Forschungsdaten, Spätdienst, Nachtdienst.
+              Wer hier offen durch den Tag geht, statt nur durchzurennen, trifft Menschen, denen
+              der eigene Alltag nicht erklärt werden muss.
+            </p>
+            <p>
+              Drei Treffpunkte sind in fast jedem Universitätsklinikum gleich. Die Mensa zwischen
+              12 und 13 Uhr. Wer regelmäßig zur gleichen Zeit kommt, sieht über Wochen die
+              gleichen Gesichter. Das Sommerfest oder die Mitarbeiterfeier, einmal pro Jahr,
+              meist im Juni. Hier verschwindet die Hierarchie, Oberärzte stehen am gleichen
+              Tisch wie Pflegekräfte. Und Forschungstage oder Doktoranden-Retreats für alle, die
+              wissenschaftlich arbeiten — kleine Gruppen, gemeinsames Thema, langer Tag.
+            </p>
+            <p>
+              Wer in einer Großstadt-Uniklinik arbeitet, kennt die Stadtteil-Konzentration der
+              Kollegen. Heidelberg-Neuenheim, Bonn-Venusberg, Frankfurt-Sachsenhausen, München-
+              Bogenhausen: kurze Wege zur Klinik bedeuten Nachbarn aus dem gleichen Haus. Die
+              Bäckerei am Sonntagmorgen wird zum unfreiwilligen Treffpunkt.
+            </p>
+            <p>
+              Pro Bundesland und Stadt zeigen die Detailseiten, welche Schwerpunkte das Haus
+              hat, wie groß die Belegschaft ist und wo sich die Mediziner-Community konzentriert.
+              Wähle dein Bundesland oben oder direkt deine Stadt.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* FAQ */}
+      <ScrollReveal>
+        <section className="max-w-3xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
+            Häufige Fragen zu Unikliniken
+          </h2>
+          <FAQAccordion items={FAQ} />
+        </section>
+      </ScrollReveal>
+
+      {/* Cross-Links zu Sister-Pillars */}
+      <ScrollReveal>
+        <section className="max-w-6xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
+            Auch im Cluster Singles Regional
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link
+              href="/singles-regional/aerztestammtische"
+              className="block p-6 rounded-xl bg-surface border border-foreground/10 hover:border-brand-orange/50 transition-colors"
+            >
+              <div className="text-2xl mb-2">🍻</div>
+              <div className="text-lg font-bold text-foreground mb-1">Ärztestammtische</div>
+              <div className="text-sm text-foreground/60 leading-relaxed">
+                52 Mediziner-Stammtische pro Bundesland — JADE, Marburger Bund, lokale ÄKV-Runden
+                außerhalb der Klinik.
+              </div>
+            </Link>
+            <Link
+              href="/singles-regional/aerztekammern"
+              className="block p-6 rounded-xl bg-surface border border-foreground/10 hover:border-brand-orange/50 transition-colors"
+            >
+              <div className="text-2xl mb-2">🏛️</div>
+              <div className="text-lg font-bold text-foreground mb-1">Ärztekammern</div>
+              <div className="text-sm text-foreground/60 leading-relaxed">
+                17 Landesärztekammern plus Bezirkskammern. Pflicht-CME, Versorgungswerk-Foren,
+                strukturierte Anlässe.
+              </div>
+            </Link>
+          </div>
+        </section>
+      </ScrollReveal>
+
       <ScrollReveal>
         <section className="text-center py-16 px-6">
           <h2 className="text-2xl font-bold mb-4">Lieber direkt zum Match?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
-            Mediziner-Singles aus jedem Bundesland — auf Medicsingles.de.
+            Mediziner-Singles aus jedem Bundesland auf Medicsingles.de — Profil in zwei Minuten,
+            erste Nachricht noch heute.
           </p>
           <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-unikliniken">
             Jetzt kostenfrei mitmachen

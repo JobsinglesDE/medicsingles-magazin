@@ -28,6 +28,7 @@ const NAV_ITEMS: NavItem[] = [
     href: '/singles-regional',
     dropdown: [
       { label: 'Ärztestammtische', href: '/singles-regional/aerztestammtische', description: 'Lokale Mediziner-Treffen finden' },
+      { label: 'Unikliniken', href: '/singles-regional/unikliniken', description: 'Universitätskliniken & Maximalversorger' },
       { label: 'Ärztekammern', href: '/singles-regional/aerztekammern', description: 'Kammer-Netzwerke nach Bundesland' },
     ],
   },

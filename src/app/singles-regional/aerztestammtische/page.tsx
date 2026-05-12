@@ -4,9 +4,33 @@ import { PillarHero } from '@/components/content/PillarHero';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
+import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, BUNDESLAND_SLUGS } from '@/lib/bundeslaender';
+
+const FAQ = [
+  {
+    question: 'Was ist ein Mediziner-Stammtisch genau?',
+    answer: 'Ein Mediziner-Stammtisch ist ein regelmäßiges, meist monatliches Treffen von Ärztinnen und Ärzten an einem festen Ort, oft in einer Kneipe oder einem Restaurant. Es gibt drei große Träger in Deutschland: JADE (Junge Allgemeinmedizin Deutschland) mit Stammtischen in über 15 Städten, das Marburger-Bund-Netzwerk Junge Ärzte in fast jedem Landesverband, und lokale Kreisstammtische einzelner Ärztekammern. Teilnahme ist meist offen, Anmeldung selten erforderlich.',
+  },
+  {
+    question: 'Lohnt sich der erste Besuch, wenn ich niemanden kenne?',
+    answer: 'Ja, weil die Gruppen klein und freundlich sind. Typische Größe: 8 bis 20 Personen. Wer mit "Ich bin neu hier" reinkommt, wird in den ersten Minuten herumgereicht. Tipp: nicht direkt am Abend mit den meisten Leuten reden wollen, sondern zwei oder drei Gespräche bewusst führen. Beim zweiten Besuch wirst du wiedererkannt — und ab dem dritten Besuch bist du Teil der Runde.',
+  },
+  {
+    question: 'Sind Stammtische zum Daten geeignet oder dafür zu professionell?',
+    answer: 'Beides geht, wenn die Reihenfolge stimmt. Erst Stammtisch als Stammtisch nutzen, also fachlich und kollegial. Dann mit der Zeit die Personen kennenlernen. Direktes Anbaggern in der Runde verbrennt sowohl den Stammtisch als auch die Begegnung. Wer dagegen jemanden über Wochen kennenlernt und dann außerhalb der Stammtisch-Runde einlädt, hat einen sehr natürlichen Übergang.',
+  },
+  {
+    question: 'Was unterscheidet JADE vom Marburger-Bund-Netzwerk?',
+    answer: 'JADE richtet sich an Allgemeinmediziner und Ärzte in allgemeinmedizinischer Weiterbildung, ist also fachlich fokussiert. Das Marburger-Bund-Junges-Netzwerk ist berufspolitisch breiter und für alle MB-Mitglieder offen. JADE-Stammtische sind oft kleiner und stärker freundschaftlich, MB-Treffen häufiger Networking-orientiert mit klarer Tagesordnung. Wer sich nicht entscheiden will, geht zu beiden Formaten.',
+  },
+  {
+    question: 'Ich bin Pflegekraft oder Therapeut. Sind Stammtische für mich offen?',
+    answer: 'JADE und MB-Junges-Netzwerk sind primär Ärzte-Formate. Pflege und Therapie haben eigene Netzwerke, die auf einigen Stammtisch-Detailseiten verlinkt sind. Pflegekraft-spezifische Stammtische gibt es vor allem in Großstädten, oft organisiert über Berufsverbände wie DBfK oder die ÄK-Pflegekammer. Wer aus Pflege oder Therapie zu einem Ärzte-Stammtisch dazu möchte, fragt am besten vorher beim Veranstalter an.',
+  },
+];
 
 const PILLAR_URL = 'https://medicsingles.de/magazin/singles-regional/aerztestammtische';
 
@@ -58,6 +82,7 @@ export default async function AerztestammtischePillar() {
           { name: 'Ärztestammtische', url: PILLAR_URL },
         ])}
       />
+      <JsonLd data={faqJsonLd(FAQ)} />
 
       <PillarHero
         title="Ärztestammtische"
@@ -68,7 +93,8 @@ export default async function AerztestammtischePillar() {
           'Bier statt Bumble',
           'Ärztestammtische',
         ]}
-        subtitle="Wo Mediziner sich trotz Schichtdienst regelmäßig treffen — Stammtische, Junge-Ärzte-Netzwerke und ÄKV-Kreisrunden, geordnet nach Bundesland."
+        subtitle="52 Mediziner-Stammtische in Deutschland: JADE Junge Allgemeinmedizin, Marburger-Bund-Netzwerke, ÄKV-Kreisrunden. Sortiert nach Bundesland, dokumentiert pro Stadt."
+        image="/images/hubs/aerztestammtische.webp"
         colors={STAMMTISCH_COLORS}
       />
 
@@ -146,7 +172,8 @@ export default async function AerztestammtischePillar() {
             Direkt zur Stadt
           </h2>
           <p className="text-foreground/70 mb-8 leading-relaxed">
-            Alle aktiven Mediziner-Stammtische auf einen Blick — sortiert nach Stadt.
+            Alle aktiven Mediziner-Stammtische auf einen Blick. Klick öffnet die Bundesland-Seite,
+            wo der gesuchte Stammtisch detailliert beschrieben ist.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {published
@@ -155,7 +182,7 @@ export default async function AerztestammtischePillar() {
               .map((s) => (
                 <Link
                   key={s.slug}
-                  href={`/singles-regional/aerztestammtische/${s.entry.bundesland}/${s.entry.stadt}`}
+                  href={`/singles-regional/aerztestammtische/${s.entry.bundesland}#${s.entry.stadt}`}
                   className="block px-4 py-3 rounded-lg bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors"
                 >
                   <div className="text-base font-bold text-foreground capitalize">
@@ -170,11 +197,94 @@ export default async function AerztestammtischePillar() {
         </section>
       </ScrollReveal>
 
+      {/* Topic-Content */}
+      <ScrollReveal>
+        <section className="max-w-3xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
+            Warum Stammtische funktionieren, wenn Apps versagen
+          </h2>
+          <div className="space-y-5 text-foreground/80 leading-relaxed">
+            <p>
+              Stammtisch klingt altbacken, ist aber das am wenigsten ausgelutschte Format für
+              Mediziner-Begegnungen in Deutschland. Drei Gründe. Erstens: Gleicher Beruf,
+              gleicher Rhythmus. Niemand muss erklären, warum man Mittwochabend gerädert ist
+              oder am Wochenende plötzlich Dienst hat. Zweitens: Klein und wiederkehrend. Wer
+              dreimal hingeht, ist Teil der Runde. Auf einer Dating-App wirst du nach drei
+              Wochen vom Algorithmus durchgemischt. Drittens: Es geht nicht primär ums Daten.
+              Das senkt den Druck und macht echte Begegnungen wahrscheinlicher.
+            </p>
+            <p>
+              JADE (Junge Allgemeinmedizin Deutschland) hat regelmäßige Stammtische in Berlin,
+              Hamburg, München, Köln, Frankfurt und einem Dutzend weiterer Städte. Die Termine
+              stehen auf jungeallgemeinmedizin.de/termine. Das Marburger-Bund-Junges-Netzwerk
+              veranstaltet in fast jedem Landesverband Treffen, oft mit fachlichem Input am
+              Anfang und freiem Ausklang. Lokale ÄKV-Kreisstammtische gibt es in Regionen wie
+              Bamberg, Bad Kissingen oder Hoyerswerda seit Jahrzehnten — kleine, feste Runden
+              ohne Marketing.
+            </p>
+            <p>
+              Der erste Besuch ist immer am schwersten. Tipp: vorher anschreiben, dass man neu
+              kommt. Fast alle Veranstalter melden sich aktiv zurück und kümmern sich am Abend
+              um den Erstkontakt. Wer zweimal kommt, wird wiedererkannt. Wer dreimal kommt,
+              gehört dazu.
+            </p>
+            <p>
+              Pro Bundesland und Stadt findest du auf den Detailseiten Treffpunkt, Frequenz,
+              Anmelde-Status und Ansprechpartner für die einzelnen Stammtische.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* FAQ */}
+      <ScrollReveal>
+        <section className="max-w-3xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
+            Häufige Fragen zu Mediziner-Stammtischen
+          </h2>
+          <FAQAccordion items={FAQ} />
+        </section>
+      </ScrollReveal>
+
+      {/* Cross-Links zu Sister-Pillars */}
+      <ScrollReveal>
+        <section className="max-w-6xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
+            Auch im Cluster Singles Regional
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link
+              href="/singles-regional/unikliniken"
+              className="block p-6 rounded-xl bg-surface border border-foreground/10 hover:border-brand-orange/50 transition-colors"
+            >
+              <div className="text-2xl mb-2">🏥</div>
+              <div className="text-lg font-bold text-foreground mb-1">Unikliniken</div>
+              <div className="text-sm text-foreground/60 leading-relaxed">
+                34 Universitätskliniken und Maximalversorger. Begegnungen im Klinik-Alltag,
+                Mensa, Sommerfest, Forschungstage.
+              </div>
+            </Link>
+            <Link
+              href="/singles-regional/aerztekammern"
+              className="block p-6 rounded-xl bg-surface border border-foreground/10 hover:border-brand-orange/50 transition-colors"
+            >
+              <div className="text-2xl mb-2">🏛️</div>
+              <div className="text-lg font-bold text-foreground mb-1">Ärztekammern</div>
+              <div className="text-sm text-foreground/60 leading-relaxed">
+                17 Landesärztekammern und Bezirkskammern. Pflicht-CME, Versorgungswerk-Foren,
+                strukturierte Anlässe.
+              </div>
+            </Link>
+          </div>
+        </section>
+      </ScrollReveal>
+
       <ScrollReveal>
         <section className="text-center py-16 px-6">
           <h2 className="text-2xl font-bold mb-4">Lieber gleich zum Match?</h2>
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
-            Mediziner-Singles in deiner Region — Stammtisch oder direkt auf Medicsingles.de.
+            Mediziner-Singles in deiner Region. Wenn das Warten auf den nächsten Stammtisch zu
+            lang dauert, geht es direkt auf Medicsingles.de schneller.
           </p>
           <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztestammtische">
             Jetzt kostenfrei mitmachen

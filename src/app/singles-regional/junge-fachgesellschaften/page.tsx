@@ -220,27 +220,126 @@ export default async function JungeFachgesellschaftenPillar() {
         </section>
       </ScrollReveal>
 
-      {/* Alphabetisch */}
+      {/* Stats-Strip */}
+      <ScrollReveal>
+        <section className="max-w-6xl mx-auto px-6 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { num: published.length, label: 'Junge Fachgesellschaften', sub: 'aktiv & verlinkt' },
+              { num: published.filter((a) => a.entry.bjaeMitglied).length, label: 'davon im BJÄ', sub: 'Bündnis Junge Ärzte' },
+              { num: 8, label: 'Fachrichtungs-Cluster', sub: 'Innere bis Spezial' },
+              { num: 4, label: 'Themen-Übersichten', sub: 'BJÄ · Summer · Mentor · Stip.' },
+            ].map((s, i) => (
+              <div key={i} className="rounded-xl bg-surface-dark border border-foreground/10 px-5 py-4">
+                <div className="text-3xl font-extrabold text-brand-orange-text leading-none">{s.num}</div>
+                <div className="text-sm font-semibold text-foreground/90 mt-2">{s.label}</div>
+                <div className="text-xs text-foreground/50 mt-1">{s.sub}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Highlight-Spotlights: 3 BJÄ-Schwergewichte mit Hero-Bild */}
       <ScrollReveal>
         <section className="max-w-6xl mx-auto px-6 py-12">
           <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
-            Alle Junge Fachgesellschaften A–Z
+            Im Spotlight
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-            {published.map((a) => (
-              <Link
-                key={a.slug}
-                href={`/singles-regional/junge-fachgesellschaften/${a.slug}`}
-                className="block px-4 py-3 rounded-lg bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors"
-              >
-                <div className="text-base font-bold text-foreground">
-                  {a.entry.jungeFGName || a.entry.title}
-                </div>
-                <div className="text-xs text-foreground/50 mt-1">
-                  {a.entry.mutterFG}
-                </div>
-              </Link>
-            ))}
+          <p className="text-foreground/70 mb-6 leading-relaxed">
+            Drei BJÄ-Schwergewichte mit besonders aktiven Nachwuchs-Strukturen — Stammtisch, Autumn School, regionales Netzwerk.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {['jade-allgemeinmedizin', 'young-dgk-kardiologie', 'junge-dgim'].map((slug) => {
+              const fg = published.find((a) => a.slug === slug);
+              if (!fg) return null;
+              return (
+                <Link
+                  key={slug}
+                  href={`/singles-regional/junge-fachgesellschaften/${slug}`}
+                  className="group block rounded-xl overflow-hidden bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors"
+                >
+                  {fg.entry.featuredImage && (
+                    <div className="relative aspect-[16/9] overflow-hidden bg-surface-dark">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={fg.entry.featuredImage}
+                        alt={fg.entry.featuredImageAlt || fg.entry.jungeFGName || fg.entry.title}
+                        className="h-full w-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      {fg.entry.bjaeMitglied && (
+                        <span className="absolute top-3 right-3 text-[10px] uppercase tracking-wider font-bold bg-brand-orange/90 text-white px-2 py-1 rounded">BJÄ</span>
+                      )}
+                    </div>
+                  )}
+                  <div className="p-5">
+                    <div className="text-xs uppercase tracking-wider text-foreground/50 mb-2">{fg.entry.mutterFG}</div>
+                    <div className="text-lg font-bold text-foreground leading-tight">{fg.entry.jungeFGName || fg.entry.title}</div>
+                    {fg.entry.altersgrenze && (
+                      <div className="text-xs text-foreground/60 mt-2">⌖ {fg.entry.altersgrenze}</div>
+                    )}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Alphabetisch — visuelle FG-Cards */}
+      <ScrollReveal>
+        <section className="max-w-6xl mx-auto px-6 py-12">
+          <div className="flex items-baseline justify-between mb-4 pb-2 border-b-2 border-brand-orange">
+            <h2 className="text-2xl font-bold">Alle Junge Fachgesellschaften A–Z</h2>
+            <span className="text-xs text-foreground/50 hidden sm:inline">{published.length} Pages</span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {published.map((a) => {
+              const fach = FACHRICHTUNGEN[a.entry.fachrichtung];
+              return (
+                <Link
+                  key={a.slug}
+                  href={`/singles-regional/junge-fachgesellschaften/${a.slug}`}
+                  className="group relative block rounded-xl overflow-hidden bg-surface border border-foreground/10 hover:border-brand-orange/50 transition-colors"
+                >
+                  <div className="flex gap-4 p-4">
+                    {a.entry.featuredImage ? (
+                      <div className="relative h-20 w-20 shrink-0 rounded-lg overflow-hidden bg-surface-dark">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={a.entry.featuredImage}
+                          alt=""
+                          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    ) : (
+                      <div className="h-20 w-20 shrink-0 rounded-lg bg-surface-dark flex items-center justify-center text-3xl">
+                        {fach?.emoji || '🩺'}
+                      </div>
+                    )}
+                    <div className="min-w-0 flex-1">
+                      <div className="text-sm font-bold text-foreground leading-tight">
+                        {a.entry.jungeFGName || a.entry.title}
+                      </div>
+                      <div className="text-[11px] text-foreground/50 mt-1">{a.entry.mutterFG}</div>
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        {fach && (
+                          <span className="text-[10px] uppercase tracking-wide bg-foreground/10 text-foreground/70 px-2 py-0.5 rounded">
+                            {fach.emoji} {fach.label}
+                          </span>
+                        )}
+                        {a.entry.bjaeMitglied && (
+                          <span className="text-[10px] uppercase tracking-wide bg-brand-orange/15 text-brand-orange-text px-2 py-0.5 rounded font-semibold">
+                            BJÄ
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </section>
       </ScrollReveal>

@@ -11,8 +11,8 @@ import { BUNDESLAENDER, BUNDESLAND_SLUGS } from '@/lib/bundeslaender';
 const PILLAR_URL = 'https://medicsingles.de/magazin/singles-regional/aerztekammern';
 
 export const metadata = {
-  title: 'Ärztekammern Deutschland — alle 17 Landesärztekammern für Mediziner-Singles',
-  description: 'Übersicht aller Landesärztekammern und Bezirkskammern. Wie Fortbildungen, Ärztetage und Delegiertenversammlungen zur informellen Partnersuche werden.',
+  title: 'Ärztekammern Deutschland: alle 17 Landeskammern',
+  description: 'Übersicht aller deutschen Landesärztekammern und Bezirkskammern. Wie Fortbildungen, Ärztetage und Delegiertenversammlungen zur informellen Mediziner-Partnersuche werden.',
   alternates: { canonical: PILLAR_URL },
   openGraph: {
     title: 'Ärztekammern — Networking mit Liebes-Potenzial',

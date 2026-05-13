@@ -11,7 +11,7 @@ const HUB_URL = 'https://medicsingles.de/magazin/singles-regional';
 
 export const metadata = {
   title: 'Singles Regional: Stammtische, Unikliniken & Kammern',
-  description: 'Regionale Mediziner-Treffpunkte: 52 Ärztestammtische, 34 Unikliniken, 51 Ärztekammern. Bundesland für Bundesland.',
+  description: 'Regionale Mediziner-Treffpunkte: 52 Ärztestammtische, 34 Unikliniken, 51 Ärztekammern, 35 Junge Fachgesellschaften — sortiert nach Bundesland.',
   alternates: { canonical: HUB_URL },
   openGraph: {
     title: 'Singles Regional — Mediziner-Netzwerke vor Ort',

@@ -153,6 +153,30 @@ export default function StipendienPage() {
         </section>
       </ScrollReveal>
 
+
+      <ScrollReveal>
+        <section className="max-w-6xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Weitere Themen-Übersichten</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <Link href="/singles-regional/junge-fachgesellschaften/themen/bjae-buendnis-junge-aerzte" className="block p-5 rounded-xl bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors">
+              <div className="text-2xl mb-2">🤝</div>
+              <div className="text-base font-bold text-foreground mb-1">BJÄ — Bündnis Junge Ärzte</div>
+              <div className="text-xs text-foreground/60 leading-relaxed">19+ Mitglieder, Allianz seit 2013</div>
+            </Link>
+            <Link href="/singles-regional/junge-fachgesellschaften/themen/summer-schools-mediziner" className="block p-5 rounded-xl bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors">
+              <div className="text-2xl mb-2">☀️</div>
+              <div className="text-base font-bold text-foreground mb-1">Summer Schools</div>
+              <div className="text-xs text-foreground/60 leading-relaxed">DGGG, YARE, jDEGRO, Young DGN</div>
+            </Link>
+            <Link href="/singles-regional/junge-fachgesellschaften/themen/mentoring-programme-aerzte" className="block p-5 rounded-xl bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors">
+              <div className="text-2xl mb-2">🧭</div>
+              <div className="text-base font-bold text-foreground mb-1">Mentoring-Programme</div>
+              <div className="text-xs text-foreground/60 leading-relaxed">WAKWiN, AGJR, GeSRU Academics</div>
+            </Link>
+          </div>
+        </section>
+      </ScrollReveal>
+
       <ScrollReveal>
         <section className="text-center py-16 px-6">
           <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-stipendien">

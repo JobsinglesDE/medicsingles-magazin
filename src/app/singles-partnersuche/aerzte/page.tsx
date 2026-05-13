@@ -12,7 +12,7 @@ const AERZTE_URL = 'https://medicsingles.de/magazin/singles-partnersuche/aerzte'
 
 export const metadata = {
   title: 'Partnersuche Ärzte — Dating trotz Klinikalltag',
-  description: 'Partnersuche für Ärztinnen und Ärzte: Guides zu Online-Dating, erstem Date, 60-Stunden-Woche und Karriere. Tipps von Mediziner für Mediziner auf Medicsingles.de.',
+  description: 'Partnersuche für Ärztinnen und Ärzte: Guides zu Online-Dating, erstem Date, 60-Stunden-Woche und Karriere. Mediziner-Tipps von Mediziner-Singles.',
   alternates: { canonical: AERZTE_URL },
   openGraph: {
     title: 'Partnersuche Ärzte — Dating zwischen Assistenzdienst und Chefarzt',

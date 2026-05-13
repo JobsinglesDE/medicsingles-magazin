@@ -164,6 +164,109 @@ export function placeJsonLd({
   };
 }
 
+function parseIntFromText(s?: string): number | undefined {
+  if (!s) return undefined;
+  const m = s.replace(/\./g, '').match(/(\d{2,7})/);
+  return m ? parseInt(m[1], 10) : undefined;
+}
+
+export function hospitalJsonLd({
+  name,
+  url,
+  webseite,
+  address,
+  bundesland,
+  bettenzahl,
+  trägerschaft,
+  klinikTyp,
+}: {
+  name: string;
+  url: string;
+  webseite?: string;
+  address?: string;
+  bundesland: string;
+  bettenzahl?: string;
+  trägerschaft?: string;
+  klinikTyp?: string;
+}) {
+  const beds = parseIntFromText(bettenzahl);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Hospital',
+    name,
+    url,
+    ...(webseite ? { sameAs: [webseite] } : {}),
+    ...(address ? {
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: address,
+        addressRegion: bundesland,
+        addressCountry: 'DE',
+      },
+    } : {
+      address: {
+        '@type': 'PostalAddress',
+        addressRegion: bundesland,
+        addressCountry: 'DE',
+      },
+    }),
+    ...(beds ? { numberOfBeds: { '@type': 'QuantitativeValue', value: beds } } : {}),
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: bundesland,
+    },
+    ...(trägerschaft ? { ownershipFundingInfo: trägerschaft } : {}),
+    ...(klinikTyp ? { additionalType: klinikTyp } : {}),
+  };
+}
+
+export function kammerOrgJsonLd({
+  name,
+  url,
+  webseite,
+  address,
+  bundesland,
+  mitgliederzahl,
+  kammerTyp,
+}: {
+  name: string;
+  url: string;
+  webseite?: string;
+  address?: string;
+  bundesland: string;
+  mitgliederzahl?: string;
+  kammerTyp?: string;
+}) {
+  const members = parseIntFromText(mitgliederzahl);
+  return {
+    '@context': 'https://schema.org',
+    '@type': ['MedicalOrganization', 'GovernmentOrganization'],
+    name,
+    url,
+    ...(webseite ? { sameAs: [webseite] } : {}),
+    ...(address ? {
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: address,
+        addressRegion: bundesland,
+        addressCountry: 'DE',
+      },
+    } : {
+      address: {
+        '@type': 'PostalAddress',
+        addressRegion: bundesland,
+        addressCountry: 'DE',
+      },
+    }),
+    ...(members ? { numberOfEmployees: { '@type': 'QuantitativeValue', value: members } } : {}),
+    areaServed: {
+      '@type': 'AdministrativeArea',
+      name: bundesland,
+    },
+    ...(kammerTyp ? { additionalType: kammerTyp } : {}),
+  };
+}
+
 export function organizationJsonLd({
   name,
   alternateName,

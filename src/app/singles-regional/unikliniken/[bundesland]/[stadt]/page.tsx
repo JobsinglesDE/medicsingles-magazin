@@ -13,7 +13,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd, hospitalJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 
 const BASE_URL = 'https://medicsingles.de/magazin';
@@ -118,6 +118,18 @@ export default async function KlinikStadtPage({ params }: { params: Params }) {
         })}
       />
       {e.faqItems && e.faqItems.length > 0 && <JsonLd data={faqJsonLd(e.faqItems)} />}
+      <JsonLd
+        data={hospitalJsonLd({
+          name: e.klinikName || e.title,
+          url,
+          webseite: e.webseite || undefined,
+          address: e.sitzAdresse || undefined,
+          bundesland: blName,
+          bettenzahl: e.bettenzahl || undefined,
+          trägerschaft: e.trägerschaft || undefined,
+          klinikTyp: klinikLabel,
+        })}
+      />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Magazin', url: BASE_URL },

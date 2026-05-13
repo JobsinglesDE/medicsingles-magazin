@@ -14,7 +14,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd, kammerOrgJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 
 const BASE_URL = 'https://medicsingles.de/magazin';
@@ -121,6 +121,17 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
         })}
       />
       {e.faqItems && e.faqItems.length > 0 && <JsonLd data={faqJsonLd(e.faqItems)} />}
+      <JsonLd
+        data={kammerOrgJsonLd({
+          name: e.kammerName || e.title,
+          url,
+          webseite: e.webseite || undefined,
+          address: e.sitzAdresse || undefined,
+          bundesland: blName,
+          mitgliederzahl: e.mitgliederzahl || undefined,
+          kammerTyp: e.kammerTyp || undefined,
+        })}
+      />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Magazin', url: BASE_URL },

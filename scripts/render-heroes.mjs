@@ -57,8 +57,22 @@ function buildPrompt(fm, collection) {
 
   if (collection === 'unikliniken') {
     const klinik = fm.klinikName || 'Universitätsklinikum';
-    // Architecture/exterior shot of the clinic + city context
     return `Exterior architectural shot of ${klinik} hospital campus in ${stadt}, Germany. Modern German university hospital architecture, glass and concrete facade, medical staff in white coats walking past entrance, warm late-afternoon light, German urban or hillside setting. ${base}. Wide angle establishing shot, no signage text visible, no logos.`;
+  }
+  if (collection === 'junge-fachgesellschaften') {
+    const fach = fm.fachrichtung || 'innere';
+    const fgName = fm.jungeFGName || 'junge Fachgesellschaft';
+    const fachScene = {
+      innere: 'modern medical congress lecture hall, young internal medicine doctors networking in business-casual',
+      chirurgie: 'surgical congress hands-on workshop room, young surgeons in scrubs at a wet-lab table',
+      bildgebung: 'modern radiology reading room with monitors, young radiologists discussing scans',
+      anaesthesie: 'anesthesiology congress hall, young anesthesia doctors networking in casual blazers',
+      'neuro-psy': 'modern neurology/psychiatry congress mingling area, young doctors in smart-casual attire',
+      'paediatrie-gyn': 'pediatrics/obstetrics summer school workshop with young doctors in lab coats over casual wear',
+      allgemein: 'cozy German pub or café — young family doctors networking at a JADE-style stammtisch',
+      spezial: 'small specialist medical congress workshop area, young doctors networking in casual attire',
+    }[fach] || 'modern medical conference networking lounge with young German doctors';
+    return `${fachScene}, Germany. ${fgName} young doctors meetup atmosphere, 6-8 mixed-gender young Mediziner (mid-20s to mid-30s), engaged conversation, name badges visible but no readable text, warm professional lighting. ${base}. No clinic logos, no patient material, no instrument close-ups.`;
   }
   // aerztestammtische
   const traeger = fm.traegerName || 'Mediziner-Netzwerk';
@@ -112,7 +126,7 @@ async function applyStyle(imgBuf) {
 
 function listJobs() {
   const jobs = [];
-  const collections = singleColl ? [singleColl] : (kindArg ? [kindArg] : ['aerztestammtische', 'unikliniken']);
+  const collections = singleColl ? [singleColl] : (kindArg ? [kindArg] : ['aerztestammtische', 'unikliniken', 'junge-fachgesellschaften']);
   for (const coll of collections) {
     const contentDir = path.join(REPO, 'content', coll);
     const imgRoot = path.join(REPO, 'public/images', coll);

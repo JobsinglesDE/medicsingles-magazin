@@ -256,7 +256,7 @@ export default async function AerztestammtischePillar() {
           <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
             Auch im Cluster Singles Regional
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Link
               href="/singles-regional/unikliniken"
               className="block p-6 rounded-xl bg-surface border border-foreground/10 hover:border-brand-orange/50 transition-colors"
@@ -264,8 +264,7 @@ export default async function AerztestammtischePillar() {
               <div className="text-2xl mb-2">🏥</div>
               <div className="text-lg font-bold text-foreground mb-1">Unikliniken</div>
               <div className="text-sm text-foreground/60 leading-relaxed">
-                34 Universitätskliniken und Maximalversorger. Begegnungen im Klinik-Alltag,
-                Mensa, Sommerfest, Forschungstage.
+                34 Universitätskliniken und Maximalversorger. Mensa, Sommerfest, Forschungstage.
               </div>
             </Link>
             <Link
@@ -275,8 +274,17 @@ export default async function AerztestammtischePillar() {
               <div className="text-2xl mb-2">🏛️</div>
               <div className="text-lg font-bold text-foreground mb-1">Ärztekammern</div>
               <div className="text-sm text-foreground/60 leading-relaxed">
-                17 Landesärztekammern und Bezirkskammern. Pflicht-CME, Versorgungswerk-Foren,
-                strukturierte Anlässe.
+                17 Landesärztekammern und Bezirkskammern. Pflicht-CME, Versorgungswerk.
+              </div>
+            </Link>
+            <Link
+              href="/singles-regional/junge-fachgesellschaften"
+              className="block p-6 rounded-xl bg-surface border border-foreground/10 hover:border-brand-orange/50 transition-colors"
+            >
+              <div className="text-2xl mb-2">🩺</div>
+              <div className="text-lg font-bold text-foreground mb-1">Junge Fachgesellschaften</div>
+              <div className="text-sm text-foreground/60 leading-relaxed">
+                JADE, JUNGE DGIM, Young DGK & Co. Summer Schools, BJÄ-Netzwerk, Kongress-Sessions.
               </div>
             </Link>
           </div>

@@ -30,6 +30,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Ärztestammtische', href: '/singles-regional/aerztestammtische', description: 'Lokale Mediziner-Treffen finden' },
       { label: 'Unikliniken', href: '/singles-regional/unikliniken', description: 'Universitätskliniken & Maximalversorger' },
       { label: 'Ärztekammern', href: '/singles-regional/aerztekammern', description: 'Kammer-Netzwerke nach Bundesland' },
+      { label: 'Junge Fachgesellschaften', href: '/singles-regional/junge-fachgesellschaften', description: 'JADE, JUNGE DGIM, Young DGK & Co.' },
     ],
   },
   {

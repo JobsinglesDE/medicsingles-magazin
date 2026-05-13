@@ -602,6 +602,83 @@ export default config({
       },
     }),
 
+    jungeFachgesellschaften: collection({
+      label: 'Junge Fachgesellschaften (Singles Regional)',
+      slugField: 'title',
+      path: 'content/junge-fachgesellschaften/*',
+      columns: ['publishedAt', 'title', 'fachrichtung'],
+      format: { contentField: 'content' },
+      schema: {
+        title: fields.slug({ name: { label: 'Titel' } }),
+        focusKeyword: fields.text({
+          label: 'Focus-Keyword',
+          description: 'z.B. "Junge DGIM" oder "JADE Allgemeinmedizin".',
+        }),
+        fachrichtung: fields.select({
+          label: 'Fachrichtung-Cluster',
+          defaultValue: 'innere',
+          options: [
+            { label: 'Innere Medizin', value: 'innere' },
+            { label: 'Chirurgie', value: 'chirurgie' },
+            { label: 'Bildgebung & Strahlentherapie', value: 'bildgebung' },
+            { label: 'Anästhesie & Notfall', value: 'anaesthesie' },
+            { label: 'Neurologie & Psychiatrie', value: 'neuro-psy' },
+            { label: 'Pädiatrie & Geburtshilfe', value: 'paediatrie-gyn' },
+            { label: 'Allgemein- & Hausarztmedizin', value: 'allgemein' },
+            { label: 'Spezialfächer', value: 'spezial' },
+          ],
+        }),
+        mutterFG: fields.text({ label: 'Mutter-Fachgesellschaft (Kürzel)', description: 'z.B. DGIM, DGK, DEGAM' }),
+        jungeFGName: fields.text({ label: 'Voller Junge-FG-Name', description: 'z.B. JUNGE DGIM, Young DGK, JADE' }),
+        webseite: fields.url({ label: 'Junge-FG-Webseite' }),
+        mutterFGWebseite: fields.url({ label: 'Mutter-FG-Webseite' }),
+        altersgrenze: fields.text({ label: 'Altersgrenze', description: 'z.B. "unter 40" oder "keine"' }),
+        gruendung: fields.text({ label: 'Gründungsjahr (ca.)' }),
+        bjaeMitglied: fields.checkbox({ label: 'BJÄ-Mitglied (Bündnis Junge Ärzte)', defaultValue: false }),
+        treffenFormat: fields.text({ label: 'Treffen-Format', multiline: true, description: 'Summer School, Kongress-Session, Stammtisch etc.' }),
+        priorität: fields.select({
+          label: 'Priorität (Build-Order)',
+          defaultValue: 'MEDIUM',
+          options: [
+            { label: 'HIGH', value: 'HIGH' },
+            { label: 'MEDIUM', value: 'MEDIUM' },
+            { label: 'LOW', value: 'LOW' },
+          ],
+        }),
+        excerpt: fields.text({ label: 'Auszug', multiline: true }),
+        featuredImage: fields.image({
+          label: 'Hero-Bild',
+          directory: 'public/images/junge-fachgesellschaften',
+          publicPath: '/images/junge-fachgesellschaften/',
+        }),
+        featuredImageAlt: fields.text({ label: 'Alt-Text', description: 'Fachrichtung-Szene + Mediziner-Element' }),
+        featuredImageCredit: fields.text({ label: 'Bild-Credit' }),
+        calloutQuestion: fields.text({ label: 'Callout Frage' }),
+        calloutAnswer: fields.text({ label: 'Callout Antwort', multiline: true }),
+        content: fields.markdoc({ label: 'Inhalt' }),
+        faqItems: fields.array(
+          fields.object({
+            question: fields.text({ label: 'Frage' }),
+            answer: fields.text({ label: 'Antwort', multiline: true }),
+          }),
+          { label: 'FAQ', itemLabel: (props) => props.fields.question.value }
+        ),
+        takeaways: fields.array(fields.text({ label: 'Punkt' }), { label: 'Das Wichtigste' }),
+        tags: fields.array(fields.text({ label: 'Tag' }), { label: 'Tags' }),
+        seoTitle: fields.text({ label: 'SEO Titel' }),
+        seoDescription: fields.text({ label: 'SEO Beschreibung' }),
+        status: fields.select({
+          label: 'Status',
+          defaultValue: 'draft',
+          options: [
+            { label: 'Draft', value: 'draft' },
+            { label: 'Published', value: 'published' },
+          ],
+        }),
+        publishedAt: fields.date({ label: 'Veröffentlicht am' }),
+      },
+    }),
+
     authors: collection({
       label: 'Autoren',
       slugField: 'name',

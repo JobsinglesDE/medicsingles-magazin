@@ -30,6 +30,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/singles-regional/aerztestammtische`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/singles-regional/unikliniken`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/singles-regional/junge-fachgesellschaften`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${BASE}/singles-regional/junge-fachgesellschaften/themen/bjae-buendnis-junge-aerzte`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${BASE}/singles-regional/junge-fachgesellschaften/themen/summer-schools-mediziner`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${BASE}/singles-regional/junge-fachgesellschaften/themen/mentoring-programme-aerzte`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${BASE}/singles-regional/junge-fachgesellschaften/themen/stipendien-junge-aerzte`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/erfolgsgeschichten`, priority: 0.6, changeFrequency: 'monthly' },
     { url: `${BASE}/kontakt`, priority: 0.4, changeFrequency: 'yearly' },
   ];

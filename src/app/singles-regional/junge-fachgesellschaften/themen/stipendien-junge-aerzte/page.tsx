@@ -51,8 +51,8 @@ const STIPS = [
 const COLORS = [{ r: 15, g: 139, b: 141 }, { r: 47, g: 181, b: 184 }, { r: 255, g: 122, b: 0 }];
 
 export const metadata = {
-  title: 'Stipendien für junge Ärztinnen und Ärzte: Übersicht',
-  description: 'Stipendien junger Mediziner: Reisestipendien, Forschungsförderung, Hospitations- und Dissertations-Stipendien — Young DGK, JuDerm, DGNC, YARE und mehr.',
+  title: 'Stipendium junge Ärzte: Reisen, Forschung, Hospitation',
+  description: 'Stipendium junge Ärzte: Reise-, Forschungs-, Hospitations- und Dissertationsförderung. Programme von Young DGK, JuDerm, DGNC, YARE, Junge Geriatrie, Junge DGHO.',
   alternates: { canonical: URL },
   openGraph: {
     title: 'Stipendien für junge Ärzte: alle Programme der Jungen FGs',
@@ -93,7 +93,7 @@ export default function StipendienPage() {
           <AnimatedGradientBorder borderRadius={16} borderWidth={2}>
             <div className="bg-surface-dark rounded-xl p-6 text-white/90 space-y-4 text-base leading-relaxed">
               <p>
-                Stipendien sind in der deutschen Mediziner-Nachwuchsszene viel breiter aufgestellt, als die meisten denken. Reise-, Forschungs-, Hospitations- und Dissertations-Stipendien gibt es in fast jedem Fach — vergeben durch die Jungen Fachgesellschaften, oft kofinanziert durch Industrie-Partner oder die Mutter-FG. Wer Mitglied ist, hat Zugriff.
+                Ein Stipendium für junge Ärzte ist in der deutschen Nachwuchsszene viel breiter aufgestellt, als die meisten denken. Reise-, Forschungs-, Hospitations- und Dissertations-Förderungen gibt es in fast jedem Fach — vergeben durch die Jungen Fachgesellschaften, oft kofinanziert durch Industrie-Partner oder die Mutter-FG. Wer Mitglied ist, hat Zugriff.
               </p>
               <p>
                 Die folgende Übersicht zeigt etablierte Programme, sortiert nach Junger FG. Für die aktuellen Fristen und Höhen bitte die Webseite der jeweiligen FG prüfen — die Bedingungen ändern sich von Jahr zu Jahr.
@@ -105,7 +105,7 @@ export default function StipendienPage() {
 
       <ScrollReveal>
         <section className="max-w-6xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Etablierte Stipendien-Programme</h2>
+          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Stipendium für junge Ärzte: Etablierte Förderprogramme</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm text-foreground/85">
               <thead>
@@ -131,16 +131,16 @@ export default function StipendienPage() {
 
       <ScrollReveal>
         <section className="max-w-3xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Bewerbung und Strategie</h2>
+          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Stipendium beantragen: Bewerbung und Strategie für junge Ärzte</h2>
           <div className="space-y-5 text-foreground/80 leading-relaxed">
             <p>
-              Wer früh Stipendien sammelt, baut nicht nur einen Lebenslauf-Strang, sondern Sichtbarkeit. Stipendiatinnen und Stipendiaten werden in Newslettern, auf Kongressen und in Junge-FG-Sessions vorgestellt. Wer dort einmal namentlich genannt wurde, kommt bei der nächsten Bewerbung leichter durch.
+              Wer früh Förderungen sammelt, baut nicht nur einen Lebenslauf-Strang, sondern Sichtbarkeit. Stipendiatinnen und Stipendiaten werden in Newslettern, auf Kongressen und in Junge-FG-Sessions vorgestellt. Wer dort einmal namentlich genannt wurde, kommt bei der nächsten Bewerbung leichter durch.
             </p>
             <p>
-              Praktischer Tipp: Stipendien lassen sich oft mit <Link href="/singles-regional/junge-fachgesellschaften/themen/summer-schools-mediziner" className="text-brand-orange-text hover:underline">Summer Schools</Link> kombinieren. Wer eine Reiseförderung für die Autumn School der Young DGK oder die ESE-Anbindung über YARE bekommt, finanziert nicht nur Anreise und Hotel, sondern auch die Mitgliedsbeiträge und Workshopkosten. Wer parallel in einem <Link href="/singles-regional/junge-fachgesellschaften/themen/mentoring-programme-aerzte" className="text-brand-orange-text hover:underline">Mentoring-Programm</Link> ist, hat einen Sparringspartner für die Bewerbungsunterlagen.
+              Praktischer Tipp: Förderprogramme lassen sich oft mit <Link href="/singles-regional/junge-fachgesellschaften/themen/summer-schools-mediziner" className="text-brand-orange-text hover:underline">Summer Schools</Link> kombinieren. Wer eine Reiseförderung für die Autumn School der Young DGK oder die ESE-Anbindung über YARE bekommt, finanziert nicht nur Anreise und Hotel, sondern auch die Mitgliedsbeiträge und Workshopkosten. Wer parallel in einem <Link href="/singles-regional/junge-fachgesellschaften/themen/mentoring-programme-aerzte" className="text-brand-orange-text hover:underline">Mentoring-Programm</Link> ist, hat einen Sparringspartner für die Bewerbungsunterlagen.
             </p>
             <p>
-              Spezialfall <Link href="/singles-regional/junge-fachgesellschaften/nachwuchsvertretung-neurochirurgie" className="text-brand-orange-text hover:underline">Neurochirurgie</Link>: die Nachwuchsvertretung der DGNC arbeitet mit drei Industrie-Partnern für ihre Stipendien — DePuySynthes Spine, Codman und Carl-Zeiss. Solche Industrie-Stipendien sind formal sauber, sollten aber in jeder Bewerbung transparent angegeben werden.
+              Spezialfall <Link href="/singles-regional/junge-fachgesellschaften/nachwuchsvertretung-neurochirurgie" className="text-brand-orange-text hover:underline">Neurochirurgie</Link>: die Nachwuchsvertretung der DGNC arbeitet mit drei Industrie-Partnern für ihre Förderung — DePuySynthes Spine, Codman und Carl-Zeiss. Solche Industrie-Förderungen sind formal sauber, sollten aber in jeder Bewerbung transparent angegeben werden.
             </p>
           </div>
         </section>

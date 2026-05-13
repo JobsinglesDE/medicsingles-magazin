@@ -101,7 +101,7 @@ export default function SummerSchoolsPage() {
 
       <ScrollReveal>
         <section className="max-w-6xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Etablierte Summer-School-Formate</h2>
+          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Mediziner Summer Schools in Deutschland: Etablierte Formate</h2>
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm text-foreground/85">
               <thead>

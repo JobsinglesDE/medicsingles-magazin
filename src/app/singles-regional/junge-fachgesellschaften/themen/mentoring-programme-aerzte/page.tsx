@@ -46,8 +46,8 @@ const PROGRAMS = [
 const COLORS = [{ r: 15, g: 139, b: 141 }, { r: 47, g: 181, b: 184 }, { r: 255, g: 122, b: 0 }];
 
 export const metadata = {
-  title: 'Mentoring für junge Ärzte: WAKWiN, AGJR, GeSRU & mehr',
-  description: 'Mediziner-Mentoring-Programme der Jungen Fachgesellschaften: WAKWiN (DGAI), AG Next Generation (DGAUM), AGJR, GeSRU Academics, JADE-Tandems.',
+  title: 'Mediziner Mentoring: Programme der Jungen FGs (Übersicht)',
+  description: 'Mediziner Mentoring der Jungen FGs: WAKWiN (DGAI seit 2007), AG Next Generation DGAUM, AGJR, GeSRU Academics, JADE-Tandems — Karriere in der Weiterbildung.',
   alternates: { canonical: URL },
   openGraph: {
     title: 'Mediziner-Mentoring in Deutschland — Programme',
@@ -88,10 +88,10 @@ export default function MentoringPage() {
           <AnimatedGradientBorder borderRadius={16} borderWidth={2}>
             <div className="bg-surface-dark rounded-xl p-6 text-white/90 space-y-4 text-base leading-relaxed">
               <p>
-                Mentoring-Programme sind im deutschen Klinikalltag das stille Rückgrat der Karriereentwicklung. Wer früh eine Mentorin oder einen Mentor außerhalb der eigenen Abteilung hat, bekommt eine zweite Stimme zu Habilitation, Klinikwechsel, Forschungspfad und Teilzeit-Optionen — Themen, bei denen die direkte Vorgesetzten-Beziehung oft nicht der beste Ort ist.
+                Mediziner-Mentoring ist im deutschen Klinikalltag das stille Rückgrat der Karriereentwicklung. Wer früh eine Mentorin oder einen Mentor außerhalb der eigenen Abteilung hat, bekommt eine zweite Stimme zu Habilitation, Klinikwechsel, Forschungspfad und Teilzeit-Optionen — Themen, bei denen die direkte Vorgesetzten-Beziehung oft nicht der beste Ort ist.
               </p>
               <p>
-                Mehrere Junge Fachgesellschaften haben dafür strukturierte Programme aufgebaut. Klassiker ist WAKWiN der Jungen DGAI seit 2007. Andere Fächer haben in den letzten Jahren nachgezogen — Arbeitsmedizin, Rheumatologie, Urologie, Hämatologie/Onkologie.
+                Mehrere Junge Fachgesellschaften haben dafür strukturierte Tandem-Formate aufgebaut. Klassiker ist WAKWiN der Jungen DGAI seit 2007. Andere Fächer haben in den letzten Jahren nachgezogen — Arbeitsmedizin, Rheumatologie, Urologie, Hämatologie und Onkologie.
               </p>
             </div>
           </AnimatedGradientBorder>
@@ -100,7 +100,7 @@ export default function MentoringPage() {
 
       <ScrollReveal>
         <section className="max-w-6xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Programme im Überblick</h2>
+          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Mediziner Mentoring: Programme der Jungen FGs im Überblick</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {PROGRAMS.map((p) => (
               <Link key={p.slug} href={`/singles-regional/junge-fachgesellschaften/${p.slug}`}
@@ -115,16 +115,16 @@ export default function MentoringPage() {
 
       <ScrollReveal>
         <section className="max-w-3xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Wie ein gutes Mentoring funktioniert</h2>
+          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Wie ein gutes Tandem in der Medizin funktioniert</h2>
           <div className="space-y-5 text-foreground/80 leading-relaxed">
             <p>
-              Strukturierte Mentoring-Programme arbeiten mit klaren Tandems über zwölf Monate. Zwei bis vier persönliche Treffen pro Jahr, dazwischen laufender Austausch per Telefon oder Mail. Themen werden meist im ersten Treffen gesetzt: Habilitationspläne, Auslandsaufenthalt, Wechsel in die Niederlassung, Versorgungsforschung, Familienplanung. Die Mentorinnen und Mentoren sind nicht die direkten Vorgesetzten — genau deshalb funktioniert das Format.
+              Strukturierte Tandems arbeiten mit klaren Paarungen über zwölf Monate. Zwei bis vier persönliche Treffen pro Jahr, dazwischen laufender Austausch per Telefon oder Mail. Themen werden meist im ersten Treffen gesetzt: Habilitationspläne, Auslandsaufenthalt, Wechsel in die Niederlassung, Versorgungsforschung, Familienplanung. Die Mentorinnen und Mentoren sind nicht die direkten Vorgesetzten — genau deshalb funktioniert das Format.
             </p>
             <p>
-              <strong>WAKWiN</strong> in der Anästhesie ist das älteste Programm und Vorlage vieler andere. Es vermittelt seit 2007 systematisch Tandems zwischen jungen DGAI-Mitgliedern und erfahrenen Kolleginnen aus dem WAKWiN-Pool. Die <Link href="/singles-regional/junge-fachgesellschaften/ag-next-generation-arbeitsmedizin" className="text-brand-orange-text hover:underline">AG Next Generation</Link> der DGAUM nutzt seit 2021 ein vergleichbares Modell mit etwa 20 Mentorinnen und Mentoren bundesweit. <Link href="/singles-regional/junge-fachgesellschaften/gesru-urologie" className="text-brand-orange-text hover:underline">GeSRU Academics</Link> verbindet Mentoring mit der Steps-Videoplattform.
+              <strong>WAKWiN</strong> in der Anästhesie ist das älteste deutsche Begleitungs-Format und Vorlage vieler andere. Es vermittelt seit 2007 systematisch Tandems zwischen jungen DGAI-Mitgliedern und erfahrenen Kolleginnen aus dem WAKWiN-Pool. Die <Link href="/singles-regional/junge-fachgesellschaften/ag-next-generation-arbeitsmedizin" className="text-brand-orange-text hover:underline">AG Next Generation</Link> der DGAUM nutzt seit 2021 ein vergleichbares Modell mit etwa 20 Mentorinnen und Mentoren bundesweit. <Link href="/singles-regional/junge-fachgesellschaften/gesru-urologie" className="text-brand-orange-text hover:underline">GeSRU Academics</Link> verbindet die Begleitung mit der Steps-Videoplattform.
             </p>
             <p>
-              Wer in einem Fach ohne explizites Mentoring-Programm arbeitet, findet trotzdem Einstiege. Die <Link href="/singles-regional/junge-fachgesellschaften/themen/summer-schools-mediziner" className="text-brand-orange-text hover:underline">Summer Schools</Link> der Jungen FGs bauen praktisch immer einen Mentoring-Slot ein. Wer dort dranbleibt, hat nach einem Wochenende einen ersten Kontakt, der oft jahrelang trägt.
+              Wer in einem Fach ohne explizites Tandem-Format arbeitet, findet trotzdem Einstiege. Die <Link href="/singles-regional/junge-fachgesellschaften/themen/summer-schools-mediziner" className="text-brand-orange-text hover:underline">Summer Schools</Link> der Jungen FGs bauen praktisch immer einen Begleitungs-Slot ein. Wer dort dranbleibt, hat nach einem Wochenende einen ersten Kontakt, der oft jahrelang trägt.
             </p>
           </div>
         </section>

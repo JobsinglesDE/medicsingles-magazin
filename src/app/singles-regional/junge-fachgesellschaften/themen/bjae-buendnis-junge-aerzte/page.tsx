@@ -34,8 +34,8 @@ const FAQ = [
 ];
 
 export const metadata = {
-  title: 'BJÄ — Bündnis Junge Ärztinnen und Ärzte: Mitglieder & Ziele',
-  description: 'Das Bündnis Junge Ärzte (BJÄ): 19+ Verbände und Fachgesellschaften, Sprecher gegenüber BÄK und Politik. Alle Mitglieds-FGs im Überblick.',
+  title: 'Bündnis Junge Ärzte (BJÄ): Mitglieder, Ziele, FGs',
+  description: 'Bündnis Junge Ärzte BJÄ seit 2013: 19+ Verbände und Fachgesellschaften, politische Stimme gegenüber BÄK, KBV und Politik. Alle BJÄ-Mitglieds-FGs im Überblick.',
   alternates: { canonical: URL },
   openGraph: {
     title: 'BJÄ — politische Stimme junger Mediziner',
@@ -122,7 +122,7 @@ export default function BjaePage() {
 
       <ScrollReveal>
         <section className="max-w-3xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Geschichte und Selbstverständnis</h2>
+          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">Bündnis Junge Ärzte: Geschichte und Selbstverständnis</h2>
           <div className="space-y-5 text-foreground/80 leading-relaxed">
             <p>
               Das BJÄ entstand 2013 aus der Beobachtung, dass die deutsche Ärzteschaft viele

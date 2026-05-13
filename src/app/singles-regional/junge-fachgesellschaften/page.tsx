@@ -46,8 +46,8 @@ const FAQ = [
 const PILLAR_URL = 'https://medicsingles.de/magazin/singles-regional/junge-fachgesellschaften';
 
 export const metadata = {
-  title: 'Junge Fachgesellschaften: Nachwuchs-Foren der deutschen Medizin',
-  description: 'Junge Sektionen aller großen medizinischen Fachgesellschaften: BJÄ, JADE, JUNGE DGIM, Young DGK, jDEGRO und mehr. Treffen, Summer Schools, Stipendien.',
+  title: 'Junge Fachgesellschaften: Nachwuchs-Foren',
+  description: 'Junge Sektionen der medizinischen Fachgesellschaften: BJÄ, JADE, JUNGE DGIM, Young DGK, jDEGRO und mehr. Treffen, Summer Schools, Stipendien.',
   alternates: { canonical: PILLAR_URL },
   openGraph: {
     title: 'Junge Fachgesellschaften — Mediziner-Nachwuchs vernetzt',

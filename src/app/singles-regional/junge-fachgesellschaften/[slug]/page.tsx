@@ -13,7 +13,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd, organizationJsonLd } from '@/components/seo/JsonLd';
 
 const BASE_URL = 'https://medicsingles.de/magazin';
 type Params = Promise<{ slug: string }>;
@@ -117,6 +117,18 @@ export default async function JungeFGDetailPage({ params }: { params: Params }) 
         })}
       />
       {e.faqItems && e.faqItems.length > 0 && <JsonLd data={faqJsonLd(e.faqItems)} />}
+      <JsonLd
+        data={organizationJsonLd({
+          name: e.jungeFGName || e.title,
+          alternateName: e.mutterFG ? `Junge ${e.mutterFG}` : undefined,
+          url: e.webseite || undefined,
+          parentName: e.mutterFG || undefined,
+          parentUrl: e.mutterFGWebseite || undefined,
+          description: e.excerpt || undefined,
+          foundingDate: e.gruendung && /^\d{4}/.test(e.gruendung) ? e.gruendung.match(/^\d{4}/)![0] : undefined,
+          memberOfBjae: !!e.bjaeMitglied,
+        })}
+      />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Magazin', url: BASE_URL },

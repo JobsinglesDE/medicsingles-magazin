@@ -163,3 +163,51 @@ export function placeJsonLd({
     },
   };
 }
+
+export function organizationJsonLd({
+  name,
+  alternateName,
+  url,
+  parentName,
+  parentUrl,
+  description,
+  foundingDate,
+  memberOfBjae,
+}: {
+  name: string;
+  alternateName?: string;
+  url?: string;
+  parentName?: string;
+  parentUrl?: string;
+  description?: string;
+  foundingDate?: string;
+  memberOfBjae?: boolean;
+}) {
+  const memberOf: any[] = [];
+  if (parentName) memberOf.push({
+    '@type': 'MedicalOrganization',
+    name: parentName,
+    ...(parentUrl ? { url: parentUrl } : {}),
+  });
+  if (memberOfBjae) memberOf.push({
+    '@type': 'Organization',
+    name: 'Bündnis Junge Ärztinnen und Ärzte',
+    alternateName: 'BJÄ',
+    url: 'https://www.buendnisjungeaerzte.org',
+  });
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalOrganization',
+    name,
+    ...(alternateName ? { alternateName } : {}),
+    ...(url ? { url } : {}),
+    ...(description ? { description } : {}),
+    ...(foundingDate ? { foundingDate } : {}),
+    areaServed: {
+      '@type': 'Country',
+      name: 'Deutschland',
+      sameAs: 'https://www.wikidata.org/wiki/Q183',
+    },
+    ...(memberOf.length ? { memberOf } : {}),
+  };
+}

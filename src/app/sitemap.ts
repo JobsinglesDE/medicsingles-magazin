@@ -5,7 +5,7 @@ import { getArticleUrl } from '@/lib/routes';
 const BASE = 'https://medicsingles.de/magazin';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [articles, regional, series, stories, authors, aerztekammern, aerztestammtische] = await Promise.all([
+  const [articles, regional, series, stories, authors, aerztekammern, aerztestammtische, unikliniken, jungeFG] = await Promise.all([
     reader.collections.articles.all(),
     reader.collections.regional.all(),
     reader.collections.series.all(),
@@ -13,6 +13,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     reader.collections.authors.all(),
     reader.collections.aerztekammern.all(),
     reader.collections.aerztestammtische.all(),
+    reader.collections.unikliniken.all(),
+    reader.collections.jungeFachgesellschaften.all(),
   ]);
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -26,6 +28,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/singles-regional`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/singles-regional/aerztekammern`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/singles-regional/aerztestammtische`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${BASE}/singles-regional/unikliniken`, priority: 0.7, changeFrequency: 'monthly' },
+    { url: `${BASE}/singles-regional/junge-fachgesellschaften`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/erfolgsgeschichten`, priority: 0.6, changeFrequency: 'monthly' },
     { url: `${BASE}/kontakt`, priority: 0.4, changeFrequency: 'yearly' },
   ];
@@ -102,6 +106,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: 'monthly',
   }));
 
+  // Unikliniken: per-bundesland pillar + per-stadt detail
+  const uniBundeslaender = [...new Set(unikliniken.map((a) => a.entry.bundesland))];
+  const uniBundeslandPages: MetadataRoute.Sitemap = uniBundeslaender.map((b) => ({
+    url: `${BASE}/singles-regional/unikliniken/${b}`,
+    priority: 0.6, changeFrequency: 'monthly',
+  }));
+  const uniPages: MetadataRoute.Sitemap = unikliniken
+    .filter((a) => a.entry.status === 'published')
+    .map((a) => ({
+      url: `${BASE}/singles-regional/unikliniken/${a.entry.bundesland}/${a.entry.stadt}`,
+      lastModified: a.entry.publishedAt ? new Date(a.entry.publishedAt) : undefined,
+      priority: 0.6, changeFrequency: 'monthly',
+    }));
+
+  // Junge Fachgesellschaften: pillar + detail
+  const jungeFGPages: MetadataRoute.Sitemap = jungeFG
+    .filter((a) => a.entry.status === 'published')
+    .map((a) => ({
+      url: `${BASE}/singles-regional/junge-fachgesellschaften/${a.slug}`,
+      lastModified: a.entry.publishedAt ? new Date(a.entry.publishedAt) : undefined,
+      priority: 0.7, changeFrequency: 'monthly',
+    }));
+
   return [
     ...staticPages,
     ...articlePages,
@@ -114,5 +141,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...kammerPages,
     ...stammtischBundeslandPages,
     ...stammtischPages,
+    ...uniBundeslandPages,
+    ...uniPages,
+    ...jungeFGPages,
   ];
 }

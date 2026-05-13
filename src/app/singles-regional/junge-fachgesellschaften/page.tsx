@@ -120,14 +120,15 @@ export default async function JungeFachgesellschaftenPillar() {
           <AnimatedGradientBorder borderRadius={16} borderWidth={2}>
             <div className="bg-surface-dark rounded-xl p-6 text-white/90">
               <p className="text-base leading-relaxed">
-                In fast jeder größeren deutschen Fachgesellschaft gibt es heute ein <strong>Junges Forum</strong> —
-                eine Sektion für Studierende, Assistenzärzt:innen und junge Fachärzt:innen, meist
-                unter 40. Diese Foren sind keine Dating-Plattformen. Aber sie sind Orte, an denen
-                Mediziner gleicher Altersgruppe und gleichem Engagement aufeinandertreffen, ohne
-                sich Schichtdienst, CME-Pflicht oder Facharztprüfung erklären zu müssen.
+                In fast jeder größeren deutschen Fachgesellschaft gibt es heute eine Nachwuchs-Sektion —
+                meist <strong>Junges Forum</strong> genannt, mit Mitgliedern unter 40: Studierende,
+                Assistenzärzt:innen, Fachärzt:innen in der frühen Karrierephase. Diese Foren sind
+                keine Dating-Plattformen, sondern Orte, an denen Mediziner gleicher Altersgruppe und
+                gleichem Engagement aufeinandertreffen — ohne Schichtdienst, CME-Pflicht oder
+                Facharztprüfung erklären zu müssen.
               </p>
               <p className="text-base leading-relaxed mt-4">
-                Wähle deine Fachrichtung — wir zeigen dir, welches Junge Forum welches Format hat,
+                Wähle deine Fachrichtung — wir zeigen dir, welches Nachwuchs-Forum welches Format hat,
                 ob Stammtisch, Summer School oder Kongress-Session, ob BJÄ-Mitglied und wo der
                 erste sinnvolle Berührungspunkt liegt.
               </p>
@@ -309,7 +310,7 @@ export default async function JungeFachgesellschaftenPillar() {
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={a.entry.featuredImage}
-                          alt=""
+                          alt={a.entry.featuredImageAlt || a.entry.jungeFGName || a.entry.title}
                           className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                       </div>
@@ -348,7 +349,7 @@ export default async function JungeFachgesellschaftenPillar() {
       <ScrollReveal>
         <section className="max-w-3xl mx-auto px-6 py-12">
           <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
-            Wie die Junge-FG-Szene in Deutschland funktioniert
+            Wie die Mediziner-Nachwuchs-Szene in Deutschland funktioniert
           </h2>
           <div className="space-y-5 text-foreground/80 leading-relaxed">
             <p>
@@ -360,7 +361,7 @@ export default async function JungeFachgesellschaftenPillar() {
               <Link href="/singles-regional/junge-fachgesellschaften/gesru-urologie" className="text-brand-orange-text hover:underline"> GeSRU</Link> der Urologie.
             </p>
             <p>
-              Die meisten Jungen Foren funktionieren nach dem gleichen Muster. Eine
+              Die meisten Nachwuchs-Foren funktionieren nach dem gleichen Muster. Eine
               <strong> Altersgrenze unter 40</strong>, eine eigene Session auf dem jährlichen Fachkongress,
               ein bis zwei dedizierte Summer Schools oder Autumn Schools pro Jahr, ein
               Mentoring-Programm und Stipendien für Forschungsaufenthalte. Wer mitmacht,
@@ -368,17 +369,17 @@ export default async function JungeFachgesellschaftenPillar() {
               ist auch privat hochwertvoll.
             </p>
             <p>
-              Drei Junge FGs haben besonders aktive regionale Strukturen: <strong>JADE</strong> mit Stammtischen
-              in praktisch jeder größeren Stadt, <strong>Junge Neurologie DGN One</strong> mit
+              Drei Nachwuchs-FGs haben besonders aktive regionale Strukturen: <strong>JADE</strong> mit Stammtischen
+              in praktisch jeder größeren Stadt, <strong>DGN One</strong> in der Neurologie mit
               regionalen Treffen z.B. in München, und <strong>Young DGK</strong> mit
               Nucleus-Wahlen alle zwei Jahre und Autumn School. Wer regional weiter sucht,
               findet auf unseren <Link href="/singles-regional/aerztestammtische" className="text-brand-orange-text hover:underline">Mediziner-Stammtisch-Pages</Link> pro Stadt
               die JADE- und MB-Runden mit konkreten Treffpunkten. Wer eher klinik-zentriert
               netzwerken will, schaut bei den <Link href="/singles-regional/unikliniken" className="text-brand-orange-text hover:underline">Unikliniken</Link>:
-              Forschungstage und Doktoranden-Retreats laufen oft parallel zu Junge-FG-Aktivitäten.
+              Forschungstage und Doktoranden-Retreats laufen oft parallel zu Nachwuchs-FG-Aktivitäten.
             </p>
             <p>
-              Pro Junges Forum zeigen die Detailseiten Format, BJÄ-Status, Treffpunkte und welche
+              Pro Nachwuchs-Forum zeigen die Detailseiten Format, BJÄ-Status, Treffpunkte und welche
               Anker für Mediziner-Singles relevant sind. Wähle deine Fachrichtung oben oder die
               FG direkt aus der A–Z-Liste.
             </p>
@@ -390,7 +391,7 @@ export default async function JungeFachgesellschaftenPillar() {
       <ScrollReveal>
         <section className="max-w-3xl mx-auto px-6 py-12">
           <h2 className="text-2xl font-bold mb-6 pb-2 border-b-2 border-brand-orange">
-            Häufige Fragen zu Jungen Fachgesellschaften
+            Häufige Fragen zum Mediziner-Nachwuchs
           </h2>
           <FAQAccordion items={FAQ} />
         </section>

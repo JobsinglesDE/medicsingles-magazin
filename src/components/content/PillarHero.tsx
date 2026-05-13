@@ -7,13 +7,14 @@ interface PillarHeroProps {
   texts?: string[];
   subtitle?: string;
   image?: string;
+  imageAlt?: string;
   colors?: Array<{ r: number; g: number; b: number }>;
   /** Heading-Level für sr-only-Title. 'h1' wenn primärer Page-Hero (default),
    *  'h2' wenn die Page bereits ein anderes H1 hat (z.B. Homepage, Regional-Overview). */
   as?: 'h1' | 'h2';
 }
 
-export function PillarHero({ title, texts, subtitle, image, colors, as = 'h1' }: PillarHeroProps) {
+export function PillarHero({ title, texts, subtitle, image, imageAlt, colors, as = 'h1' }: PillarHeroProps) {
   const HeadingTag = as;
   return (
     <SpotlightHero>
@@ -23,7 +24,7 @@ export function PillarHero({ title, texts, subtitle, image, colors, as = 'h1' }:
         {image && (
           <Image
             src={image}
-            alt=""
+            alt={imageAlt || `${title} — Hintergrund-Hero`}
             width={1920}
             height={1080}
             priority

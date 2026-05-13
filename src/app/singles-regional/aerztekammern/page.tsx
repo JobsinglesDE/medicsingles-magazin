@@ -12,7 +12,7 @@ const PILLAR_URL = 'https://medicsingles.de/magazin/singles-regional/aerztekamme
 
 export const metadata = {
   title: 'Ärztekammern Deutschland: alle 17 Landeskammern',
-  description: 'Übersicht aller deutschen Landesärztekammern und Bezirkskammern. Wie Fortbildungen, Ärztetage und Delegiertenversammlungen zur informellen Mediziner-Partnersuche werden.',
+  description: 'Alle deutschen Landesärztekammern und Bezirkskammern: Fortbildungen, Ärztetage und Delegiertenversammlungen als informelle Mediziner-Partnersuche.',
   alternates: { canonical: PILLAR_URL },
   openGraph: {
     title: 'Ärztekammern — Networking mit Liebes-Potenzial',

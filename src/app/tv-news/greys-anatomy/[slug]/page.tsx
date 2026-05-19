@@ -10,7 +10,7 @@ import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { ArticleByline } from '@/components/content/ArticleByline';
-import { JsonLd, articleJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, videoJsonLd, extractYoutubeEmbed } from '@/components/seo/JsonLd';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 
 const SERIES_ID = 'greys-anatomy';
@@ -79,6 +79,7 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
 
   const hasFaq = 'faqItems' in article && article.faqItems && article.faqItems.length > 0;
   const isNews = 'isNews' in article ? (article as any).isNews : false;
+  const ytEmbed = extractYoutubeEmbed(article.content);
 
   return (
     <>
@@ -94,6 +95,14 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
         })}
       />
       {hasFaq && <JsonLd data={faqJsonLd((article as any).faqItems)} />}
+      {ytEmbed && (
+        <JsonLd data={videoJsonLd({
+          name: ytEmbed.title || article.title,
+          description: article.excerpt,
+          videoId: ytEmbed.videoId,
+          uploadDate: `${article.publishedAt || new Date().toISOString().slice(0,10)}T08:00:00+02:00`,
+        })} />
+      )}
 
       <ClusterHero
         title={article.title}

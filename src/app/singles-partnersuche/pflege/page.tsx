@@ -118,6 +118,15 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
+    title: '👩‍⚕️ Krankenschwester sucht Mann — Realität jenseits Klischee',
+    intro: 'Wo Pflegekräfte ihre Partner wirklich treffen und warum Schichtdienst, Klischees und Online-Dating-Stigma kein Hindernis sein müssen.',
+    slugs: [
+      'krankenschwester-sucht-mann-realitaet',
+      'liebe-im-krankenhaus-realitaet',
+      'partnersuche-mediziner-kennenlernen',
+    ],
+  },
+  {
     title: '❓ Häufige Fragen',
     intro: 'Die Fragen, die sich jede Pflegekraft beim Thema Dating stellt — kompakt beantwortet.',
     slugs: [

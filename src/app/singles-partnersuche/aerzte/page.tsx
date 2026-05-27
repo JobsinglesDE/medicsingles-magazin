@@ -127,6 +127,34 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
+    title: '⭐ Promi-Ärzte Deutschland — bekannte TV-Mediziner',
+    intro: 'Hirschhausen, Riedl, Doc Fischer, Doc Esser und sechs weitere Persönlichkeiten zeigen, wie aus Klinikarbeit eine Marke wird. Vorbilder für Spezialisierung und Sichtbarkeit.',
+    slugs: [
+      'promi-aerzte-deutschland',
+      'promi-matthias-riedl',
+      'promi-eckart-hirschhausen',
+      'promi-doc-fischer',
+      'promi-yael-adler',
+      'promi-doc-esser',
+      'promi-anne-fleck',
+      'promi-johannes-wimmer',
+      'promi-carsten-lekutat',
+    ],
+  },
+  {
+    title: '💎 Akademiker-Niveau & Themen-Hubs',
+    intro: 'Partnersuche auf Augenhöhe, Singles unter Ärzten und realistische Wege Mediziner kennenzulernen.',
+    slugs: [
+      'singles-aerzte',
+      'partnersuche-akademiker-niveau',
+      'partnersuche-mediziner-kennenlernen',
+      'arzt-sucht-frau-realitaet',
+      'arzt-kennenlernen-wege',
+      'arzt-beziehung-familie-alltag',
+      'liebe-im-krankenhaus-realitaet',
+    ],
+  },
+  {
     title: '❓ Häufige Fragen',
     intro: 'Die Fragen, die sich jeder Arzt beim Thema Dating stellt — kompakt beantwortet.',
     slugs: [

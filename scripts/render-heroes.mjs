@@ -136,7 +136,7 @@ function listJobs() {
       const slug = file.replace(/\.mdoc$/, '');
       if (singleSlug && slug !== singleSlug) continue;
       const outDir = path.join(imgRoot, slug);
-      const outPath = path.join(outDir, 'featuredImage.webp');
+      const outPath = path.join(outDir, `${slug}.webp`);
       if (fs.existsSync(outPath)) continue;
       const fm = parseFM(path.join(contentDir, file));
       jobs.push({ slug, coll, fm, outPath, outDir });

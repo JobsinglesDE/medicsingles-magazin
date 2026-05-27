@@ -39,12 +39,12 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     label: 'TV & Promi-Ärzte',
-    href: '/promi-aerzte',
+    href: '/magazin/promi-aerzte',
     dropdown: [
       { label: "Grey's Anatomy", href: '/tv-news/greys-anatomy', description: 'Singles aus Grey Sloan Memorial' },
       { label: 'Junge Ärzte', href: '/tv-news/junge-aerzte', description: 'In aller Freundschaft' },
-      { label: '─── Promi-Ärzte Deutschland ───', href: '/promi-aerzte', description: '' },
-      { label: 'Übersicht: Promi-Ärzte', href: '/promi-aerzte', description: 'Die 8 bekanntesten TV-Mediziner' },
+      { label: '─── Promi-Ärzte Deutschland ───', href: '/magazin/promi-aerzte', description: '' },
+      { label: 'Übersicht: Promi-Ärzte', href: '/magazin/promi-aerzte', description: 'Die 8 bekanntesten TV-Mediziner' },
       { label: 'Eckart von Hirschhausen', href: '/magazin/promi-eckart-hirschhausen', description: 'Arzt, Komiker, Klima-Stifter' },
       { label: 'Matthias Riedl', href: '/magazin/promi-matthias-riedl', description: 'Ernährungs-Doc NDR' },
       { label: 'Doc Fischer (Julia)', href: '/magazin/promi-doc-fischer', description: 'SWR-Gesundheits-TV' },

@@ -82,7 +82,7 @@ export default async function PromiAerzteHub() {
 
       <section className="max-w-6xl mx-auto px-6 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {promiCards.map((p) => (
+          {promiCards.map((p, idx) => (
             <Link
               key={p.slug}
               href={`/magazin/${p.slug}`}
@@ -91,9 +91,11 @@ export default async function PromiAerzteHub() {
               <div className="relative aspect-[3/2] bg-surface-dark overflow-hidden">
                 <Image
                   src={p.featuredImage}
-                  alt={`${p.name} — ${p.role}`}
+                  alt={`${p.name}, ${p.role}`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={idx < 3}
+                  loading={idx < 3 ? undefined : 'lazy'}
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>

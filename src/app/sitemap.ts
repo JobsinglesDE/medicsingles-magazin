@@ -20,7 +20,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE, priority: 1.0, changeFrequency: 'weekly' },
     { url: `${BASE}/singles-partnersuche`, priority: 0.9, changeFrequency: 'weekly' },
+    { url: `${BASE}/singles-partnersuche/aerzte`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE}/singles-partnersuche/pflege`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE}/singles-partnersuche/rettung`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE}/singles-partnersuche/therapeuten`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-news`, priority: 0.7, changeFrequency: 'weekly' },
+    { url: `${BASE}/promi-aerzte`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-news/greys-anatomy`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-news/junge-aerzte`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/ueber-uns`, priority: 0.6, changeFrequency: 'monthly' },

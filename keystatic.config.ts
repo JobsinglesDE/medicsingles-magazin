@@ -206,6 +206,7 @@ export default config({
             { label: 'In aller Freundschaft — Die jungen Ärzte (ARD)', value: 'junge-aerzte' },
             { label: 'In aller Freundschaft (ARD)', value: 'in-aller-freundschaft' },
             { label: 'Dr. Nice (ZDF)', value: 'dr-nice' },
+            { label: 'Charité (ARD)', value: 'charite' },
           ],
         }),
         isNews: fields.checkbox({ label: 'News-Artikel (NewsArticle JSON-LD)', defaultValue: false }),
@@ -276,6 +277,7 @@ export default config({
             { label: 'Die jungen Ärzte', value: 'junge-aerzte' },
             { label: 'In aller Freundschaft', value: 'in-aller-freundschaft' },
             { label: 'Dr. Nice', value: 'dr-nice' },
+            { label: 'Charité', value: 'charite' },
           ],
         }),
         status: fields.select({

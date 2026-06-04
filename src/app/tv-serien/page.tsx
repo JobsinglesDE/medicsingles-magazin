@@ -24,6 +24,7 @@ export default async function TVNews() {
   const jungeAerzte = published.filter((s) => s.entry.seriesId === 'junge-aerzte');
   const inAllerFreundschaft = published.filter((s) => s.entry.seriesId === 'in-aller-freundschaft');
   const drNice = published.filter((s) => s.entry.seriesId === 'dr-nice');
+  const charite = published.filter((s) => s.entry.seriesId === 'charite');
 
   return (
     <>
@@ -134,6 +135,27 @@ export default async function TVNews() {
           </div>
         ) : (
           <p className="text-foreground/50">Patrick Kalupa &amp; das Team — <a href="/tv-serien/dr-nice" className="text-brand-orange hover:underline">zu den Darstellern →</a></p>
+        )}
+
+        <h2 className="text-2xl font-bold mb-6 mt-16">
+          <a href="/tv-serien/charite" className="hover:text-brand-orange transition-colors">Charité</a>
+        </h2>
+        {charite.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {charite.map((article) => (
+              <SeriesCard
+                key={article.slug}
+                title={article.entry.title}
+                excerpt={article.entry.excerpt}
+                href={`/tv-serien/charite/${article.slug}`}
+                image={article.entry.featuredImage || undefined}
+                imageAlt={article.entry.featuredImageAlt || undefined}
+                seriesLabel="Charité"
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="text-foreground/50">Die Darsteller der ARD-Geschichtsserie — <a href="/tv-serien/charite" className="text-brand-orange hover:underline">zu den Darstellern →</a></p>
         )}
       </section>
     </>

@@ -20,6 +20,7 @@ const SHOW_LABELS: Record<string, string> = {
   'junge-aerzte': 'Die jungen Ärzte',
   'in-aller-freundschaft': 'In aller Freundschaft',
   'dr-nice': 'Dr. Nice',
+  'charite': 'Charité',
 };
 
 interface PersonHubPageProps {

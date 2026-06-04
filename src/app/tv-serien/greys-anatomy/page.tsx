@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { SeriesCard } from '@/components/content/SeriesCard';
 import { SendetermineWidget } from '@/components/content/SendetermineWidget';
+import { PersonStarsGrid } from '@/components/content/PersonStarsGrid';
 
 export const metadata = {
   alternates: { canonical: '/tv-serien/greys-anatomy' },
@@ -51,6 +52,8 @@ export default async function GreysAnatomy() {
         <div className="flex justify-center mt-8 mb-12">
           <SendetermineWidget seriesId="greys-anatomy" />
         </div>
+
+        <PersonStarsGrid show="greys-anatomy" />
 
         <h2 className="text-xl font-bold mb-6">Alle Artikel</h2>
         {articles.length > 0 ? (

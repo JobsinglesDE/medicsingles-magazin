@@ -86,6 +86,34 @@ export function faqJsonLd(items: readonly { readonly question: string; readonly 
   };
 }
 
+export function personJsonLd({
+  name,
+  role,
+  image,
+  url,
+  sameAs,
+}: {
+  name: string;
+  role?: string;
+  image?: string;
+  url: string;
+  sameAs?: string[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name,
+    url,
+    ...(role && { jobTitle: role }),
+    ...(image && {
+      image: image.startsWith('http')
+        ? image
+        : `https://medicsingles.de${image.startsWith('/') ? '' : '/'}${image}`,
+    }),
+    ...(sameAs && sameAs.length > 0 && { sameAs }),
+  };
+}
+
 export function breadcrumbJsonLd(items: { name: string; url: string }[]) {
   return {
     '@context': 'https://schema.org',

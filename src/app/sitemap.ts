@@ -5,7 +5,7 @@ import { getArticleUrl } from '@/lib/routes';
 const BASE = 'https://medicsingles.de/magazin';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [articles, regional, series, stories, authors, aerztekammern, aerztestammtische, unikliniken, jungeFG] = await Promise.all([
+  const [articles, regional, series, stories, authors, aerztekammern, aerztestammtische, unikliniken, jungeFG, persons] = await Promise.all([
     reader.collections.articles.all(),
     reader.collections.regional.all(),
     reader.collections.series.all(),
@@ -15,6 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     reader.collections.aerztestammtische.all(),
     reader.collections.unikliniken.all(),
     reader.collections.jungeFachgesellschaften.all(),
+    reader.collections.persons.all(),
   ]);
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -71,6 +72,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: s.entry.publishedAt ? new Date(s.entry.publishedAt) : undefined,
       priority: 0.6,
       changeFrequency: 'monthly',
+    }));
+
+  const personPages: MetadataRoute.Sitemap = persons
+    .filter((p) => p.entry.status !== 'draft')
+    .map((p) => ({
+      url: `${BASE}/tv-serien/${p.entry.show}/person/${p.slug}`,
+      lastModified: p.entry.publishedAt ? new Date(p.entry.publishedAt) : undefined,
+      priority: 0.7,
+      changeFrequency: 'weekly',
     }));
 
   const storyPages: MetadataRoute.Sitemap = stories.map((s) => ({
@@ -143,6 +153,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...kantonPages,
     ...regionalPages,
     ...seriesPages,
+    ...personPages,
     ...storyPages,
     ...authorPages,
     ...kammerBundeslandPages,

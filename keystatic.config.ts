@@ -204,6 +204,8 @@ export default config({
           options: [
             { label: "Grey's Anatomy (ABC)", value: 'greys-anatomy' },
             { label: 'In aller Freundschaft — Die jungen Ärzte (ARD)', value: 'junge-aerzte' },
+            { label: 'In aller Freundschaft (ARD)', value: 'in-aller-freundschaft' },
+            { label: 'Dr. Nice (ZDF)', value: 'dr-nice' },
           ],
         }),
         isNews: fields.checkbox({ label: 'News-Artikel (NewsArticle JSON-LD)', defaultValue: false }),
@@ -247,6 +249,90 @@ export default config({
         tags: fields.array(fields.text({ label: 'Tag' }), { label: 'Tags' }),
         seoTitle: fields.text({ label: 'SEO Titel' }),
         seoDescription: fields.text({ label: 'SEO Beschreibung' }),
+        person: fields.array(
+          fields.text({ label: 'Person-Slug (z.B. ellen-pompeo)' }),
+          {
+            label: 'Personen-Hubs (Cast-Verknüpfung, Mehrfach möglich)',
+            itemLabel: (props) => props.value,
+          }
+        ),
+        publishedAt: fields.date({ label: 'Veröffentlicht am' }),
+      },
+    }),
+
+    persons: collection({
+      label: 'Personen (TV-Cast)',
+      slugField: 'slug',
+      path: 'content/persons/*',
+      schema: {
+        slug: fields.slug({ name: { label: 'Slug' } }),
+        name: fields.text({ label: 'Name' }),
+        role: fields.text({ label: 'Rolle (z.B. Hauptdarstellerin, Arzt)' }),
+        show: fields.select({
+          label: 'Show',
+          defaultValue: 'junge-aerzte',
+          options: [
+            { label: "Grey's Anatomy", value: 'greys-anatomy' },
+            { label: 'Die jungen Ärzte', value: 'junge-aerzte' },
+            { label: 'In aller Freundschaft', value: 'in-aller-freundschaft' },
+            { label: 'Dr. Nice', value: 'dr-nice' },
+          ],
+        }),
+        status: fields.select({
+          label: 'Status',
+          defaultValue: 'published',
+          options: [
+            { label: 'Draft', value: 'draft' },
+            { label: 'Published', value: 'published' },
+          ],
+        }),
+        focusKeyword: fields.text({
+          label: 'Focus-Keyword',
+          description: 'Haupt-Keyword fuer SEO-Check (z.B. "Ellen Pompeo"). Aktiviert die SEO-Style-Checks.',
+        }),
+        intro: fields.text({ label: 'Intro (Teaser-Text unter Hero)', multiline: true }),
+        creditLine: fields.text({
+          label: 'Credit-Line',
+          description: 'Urhebernennung des Personenbilds. Beispiel: "Foto: ZDF/Erika Hauri"',
+        }),
+        steckbrief: fields.array(
+          fields.object({
+            label: fields.text({ label: 'Label' }),
+            value: fields.text({ label: 'Wert' }),
+          }),
+          {
+            label: 'Steckbrief',
+            itemLabel: (props) => props.fields.label.value,
+          }
+        ),
+        bio: fields.markdoc({ label: 'Bio (ausführlich)' }),
+        featuredImage: fields.image({
+          label: 'Personenbild',
+          directory: 'public/images/persons',
+          publicPath: '/images/persons/',
+        }),
+        featuredImageAlt: fields.text({
+          label: 'Alt-Text Personenbild',
+          description: 'Beschreibung des Bild-Motivs (SEO + Barrierefreiheit).',
+        }),
+        featuredImageCredit: fields.text({
+          label: 'Bild-Credit',
+          description: 'Urhebernennung unter dem Bild. Pflicht bei Pressebildern.',
+        }),
+        author: fields.relationship({ label: 'Autor', collection: 'authors' }),
+        faqItems: fields.array(
+          fields.object({
+            question: fields.text({ label: 'Frage' }),
+            answer: fields.text({ label: 'Antwort', multiline: true }),
+          }),
+          {
+            label: 'FAQ',
+            itemLabel: (props) => props.fields.question.value,
+          }
+        ),
+        takeaways: fields.array(fields.text({ label: 'Punkt' }), { label: 'Das Wichtigste' }),
+        seoTitle: fields.text({ label: 'SEO Titel' }),
+        seoDescription: fields.text({ label: 'SEO Beschreibung', multiline: true }),
         publishedAt: fields.date({ label: 'Veröffentlicht am' }),
       },
     }),

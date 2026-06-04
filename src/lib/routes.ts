@@ -15,6 +15,11 @@ export function getSeriesUrl(seriesId: string, slug: string): string {
   return `/tv-serien/${seriesId}/${slug}`;
 }
 
+/** URL eines Personen-Hubs (persons-Collection). */
+export function getPersonHubUrl(slug: string, show: string = 'junge-aerzte'): string {
+  return `/tv-serien/${show}/person/${slug}`;
+}
+
 /** Helfer: Artikel-URL aus einem Keystatic-Collection-Item ({slug, entry}). */
 export function articleHref(item: {
   slug: string;

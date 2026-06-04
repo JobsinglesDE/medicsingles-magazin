@@ -5,7 +5,7 @@ import { SeriesCard } from '@/components/content/SeriesCard';
 import { SendetermineWidget } from '@/components/content/SendetermineWidget';
 
 export const metadata = {
-  alternates: { canonical: '/tv-news/junge-aerzte' },
+  alternates: { canonical: '/tv-serien/junge-aerzte' },
   title: 'In aller Freundschaft — Die jungen Ärzte',
   description: 'Die jungen Ärzte: Darsteller hinter der ARD-Serie, neue Staffeln und was die jungen Mediziner privat machen. News, Drehorte und Hintergründe.',
   openGraph: {
@@ -36,8 +36,8 @@ export default async function JungeAerzte() {
 
       <section className="max-w-6xl mx-auto px-4 py-12">
         <Breadcrumbs items={[
-          { label: 'TV Serien', href: '/tv-news' },
-          { label: 'Junge Ärzte', href: '/tv-news/junge-aerzte' },
+          { label: 'TV Serien', href: '/tv-serien' },
+          { label: 'Junge Ärzte', href: '/tv-serien/junge-aerzte' },
         ]} />
 
         <div className="max-w-3xl mt-8 mb-10">
@@ -60,7 +60,7 @@ export default async function JungeAerzte() {
                 key={article.slug}
                 title={article.entry.title}
                 excerpt={article.entry.excerpt}
-                href={`/tv-news/junge-aerzte/${article.slug}`}
+                href={`/tv-serien/junge-aerzte/${article.slug}`}
                 image={article.entry.featuredImage || undefined}
                 imageAlt={article.entry.featuredImageAlt || undefined}
                 seriesLabel="Junge Ärzte"
@@ -72,7 +72,7 @@ export default async function JungeAerzte() {
         )}
 
         <div className="mt-8">
-          <Link href="/tv-news" className="text-brand-orange font-semibold hover:underline text-sm">
+          <Link href="/tv-serien" className="text-brand-orange font-semibold hover:underline text-sm">
             ← Zurück zu TV Serien
           </Link>
         </div>

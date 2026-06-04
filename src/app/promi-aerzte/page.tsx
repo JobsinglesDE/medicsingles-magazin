@@ -154,7 +154,7 @@ export default async function PromiAerzteHub() {
             <div className="font-semibold text-foreground">Partnersuche für Ärzte (Pillar)</div>
             <div className="text-sm text-foreground/60">Dating als Arzt oder Ärztin</div>
           </Link>
-          <Link href="/tv-news" className="block p-4 rounded-xl border border-border hover:border-brand-orange transition-colors">
+          <Link href="/tv-serien" className="block p-4 rounded-xl border border-border hover:border-brand-orange transition-colors">
             <div className="font-semibold text-foreground">TV Serien</div>
             <div className="text-sm text-foreground/60">Grey&apos;s Anatomy &amp; Junge Ärzte</div>
           </Link>

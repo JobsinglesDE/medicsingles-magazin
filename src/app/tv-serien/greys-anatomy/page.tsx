@@ -5,7 +5,7 @@ import { SeriesCard } from '@/components/content/SeriesCard';
 import { SendetermineWidget } from '@/components/content/SendetermineWidget';
 
 export const metadata = {
-  alternates: { canonical: '/tv-news/greys-anatomy' },
+  alternates: { canonical: '/tv-serien/greys-anatomy' },
   title: "Grey's Anatomy — News & Hintergründe",
   description: "Grey's Anatomy: Ellen Pompeo, die Darsteller und das Privatleben der Stars aus Grey Sloan Memorial — neue Staffeln, Drehorte und Dating-Perspektiven.",
   openGraph: {
@@ -36,8 +36,8 @@ export default async function GreysAnatomy() {
 
       <section className="max-w-6xl mx-auto px-4 py-12">
         <Breadcrumbs items={[
-          { label: 'TV Serien', href: '/tv-news' },
-          { label: "Grey's Anatomy", href: '/tv-news/greys-anatomy' },
+          { label: 'TV Serien', href: '/tv-serien' },
+          { label: "Grey's Anatomy", href: '/tv-serien/greys-anatomy' },
         ]} />
 
         <div className="max-w-3xl mt-8 mb-10">
@@ -60,7 +60,7 @@ export default async function GreysAnatomy() {
                 key={article.slug}
                 title={article.entry.title}
                 excerpt={article.entry.excerpt}
-                href={`/tv-news/greys-anatomy/${article.slug}`}
+                href={`/tv-serien/greys-anatomy/${article.slug}`}
                 image={article.entry.featuredImage || undefined}
                 imageAlt={article.entry.featuredImageAlt || undefined}
                 seriesLabel="Grey's Anatomy"
@@ -72,7 +72,7 @@ export default async function GreysAnatomy() {
         )}
 
         <div className="mt-8">
-          <Link href="/tv-news" className="text-brand-orange font-semibold hover:underline text-sm">
+          <Link href="/tv-serien" className="text-brand-orange font-semibold hover:underline text-sm">
             ← Zurück zu TV Serien
           </Link>
         </div>

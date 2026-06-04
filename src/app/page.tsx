@@ -155,7 +155,7 @@ export default async function HomePage() {
           <section className="max-w-6xl mx-auto px-6 py-12">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-3xl font-bold">TV News</h2>
-              <Link href="/tv-news" className="text-brand-orange hover:underline text-sm font-semibold">
+              <Link href="/tv-serien" className="text-brand-orange hover:underline text-sm font-semibold">
                 Alle TV News &rarr;
               </Link>
             </div>
@@ -165,7 +165,7 @@ export default async function HomePage() {
                   key={article.slug}
                   title={article.entry.title}
                   excerpt={article.entry.excerpt}
-                  href={`/tv-news/${article.entry.seriesId}/${article.slug}`}
+                  href={`/tv-serien/${article.entry.seriesId}/${article.slug}`}
                   image={article.entry.featuredImage || undefined}
                   imageAlt={article.entry.featuredImageAlt || undefined}
                   category={article.entry.seriesId === 'junge-aerzte' ? 'Die jungen Ärzte' : "Grey's Anatomy"}

@@ -35,7 +35,7 @@ export async function GET() {
   for (const s of series) {
     if (s.entry.status === 'draft' || !s.entry.publishedAt) continue;
     items.push({
-      url: `${BASE}/tv-news/${s.entry.seriesId}/${s.slug}`,
+      url: `${BASE}/tv-serien/${s.entry.seriesId}/${s.slug}`,
       title: s.entry.title,
       description: s.entry.excerpt || '',
       date: new Date(s.entry.publishedAt).toUTCString(),

@@ -3,7 +3,7 @@ import { reader } from '@/lib/keystatic';
 import { SeriesCard } from '@/components/content/SeriesCard';
 
 export const metadata = {
-  alternates: { canonical: '/tv-news' },
+  alternates: { canonical: '/tv-serien' },
   title: "TV Serien — Grey's Anatomy & Junge Ärzte",
   description: "Hintergrund-Storys zu Grey's Anatomy und Junge Ärzte: Darsteller, Privatleben, Drehorte, neue Staffeln und Dating-Perspektiven aus dem Klinikalltag.",
   openGraph: {
@@ -62,7 +62,7 @@ export default async function TVNews() {
                 key={article.slug}
                 title={article.entry.title}
                 excerpt={article.entry.excerpt}
-                href={`/tv-news/greys-anatomy/${article.slug}`}
+                href={`/tv-serien/greys-anatomy/${article.slug}`}
                 image={article.entry.featuredImage || undefined}
                 imageAlt={article.entry.featuredImageAlt || undefined}
                 seriesLabel="Grey's Anatomy"
@@ -81,7 +81,7 @@ export default async function TVNews() {
                 key={article.slug}
                 title={article.entry.title}
                 excerpt={article.entry.excerpt}
-                href={`/tv-news/junge-aerzte/${article.slug}`}
+                href={`/tv-serien/junge-aerzte/${article.slug}`}
                 image={article.entry.featuredImage || undefined}
                 imageAlt={article.entry.featuredImageAlt || undefined}
                 seriesLabel="Junge Ärzte"

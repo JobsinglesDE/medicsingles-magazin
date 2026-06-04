@@ -17,6 +17,9 @@ import { StickyTOC } from '@/components/content/StickyTOC';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { ArticleByline } from '@/components/content/ArticleByline';
 import { JsonLd, articleJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
+import { SPEC_HUBS, SECTION_HUBS } from '@/lib/hubs';
+
+const BASE_URL = 'https://medicsingles.de/magazin';
 
 function toId(text: string) {
   return text.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -40,16 +43,13 @@ function extractH2s(content: any): { label: string; id: string }[] {
   return items;
 }
 
-const BASE_URL = 'https://medicsingles.de/magazin';
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export async function buildArticleMetadata(slug: string) {
   const article = await reader.collections.articles.read(slug);
   if (!article) return {};
 
   const title = article.seoTitle || article.title;
   const description = article.seoDescription || article.excerpt;
-  const url = `${BASE_URL}/${slug}`;
+  const url = `${BASE_URL}${getArticleUrl(slug, article.specialization)}`;
   const image = article.featuredImage
     ? `${BASE_URL}${article.featuredImage}`
     : `${BASE_URL}/logos/jobsingles-logo.png`;
@@ -76,15 +76,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export async function generateStaticParams() {
-  const articles = await reader.collections.articles.all();
-  return articles
-    .filter((a) => a.entry.type === 'cluster')
-    .map((a) => ({ slug: a.slug }));
-}
-
-export default async function ClusterArticle({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function ArticleView({ slug }: { slug: string }) {
   const article = await reader.collections.articles.read(slug, { resolveLinkedFiles: true });
   if (!article) notFound();
 
@@ -94,15 +86,23 @@ export default async function ClusterArticle({ params }: { params: Promise<{ slu
 
   const allArticles = await reader.collections.articles.all();
   const relatedArticles = allArticles
-    .filter((a) => a.slug !== slug && a.entry.category === article.category)
+    .filter((a) => a.slug !== slug && a.entry.specialization === article.specialization && a.entry.type === 'cluster')
     .slice(0, 6)
     .map((a) => ({
       title: a.entry.title,
       excerpt: a.entry.excerpt,
-      href: getArticleUrl(a.slug, a.entry.type, a.entry.series),
+      href: getArticleUrl(a.slug, a.entry.specialization),
       image: a.entry.featuredImage || undefined,
       category: a.entry.category,
     }));
+
+  const canonicalPath = getArticleUrl(slug, article.specialization);
+  const specHub = article.specialization ? SPEC_HUBS[article.specialization] : null;
+  const crumbs = [
+    { label: 'Singles & Partnersuche', href: `/${SECTION_HUBS['singles-partnersuche'].slug}` },
+    ...(specHub ? [{ label: specHub.title.split(' ❤️')[0], href: `/${specHub.slug}` }] : []),
+    { label: article.title, href: canonicalPath },
+  ];
 
   return (
     <>
@@ -110,7 +110,7 @@ export default async function ClusterArticle({ params }: { params: Promise<{ slu
         data={articleJsonLd({
           title: article.title,
           description: article.excerpt,
-          url: `${BASE_URL}/${slug}`,
+          url: `${BASE_URL}${canonicalPath}`,
           image: article.featuredImage ? `${BASE_URL}${article.featuredImage}` : undefined,
           datePublished: article.publishedAt || undefined,
           authorName: author?.name,
@@ -134,10 +134,7 @@ export default async function ClusterArticle({ params }: { params: Promise<{ slu
       <StickyTOC items={extractH2s(article.content)} />
 
       <div className="max-w-3xl mx-auto px-6 py-12">
-        <Breadcrumbs items={[
-          { label: 'Singles & Partnersuche', href: '/singles-partnersuche' },
-          { label: article.title, href: `/${slug}` },
-        ]} />
+        <Breadcrumbs items={crumbs} />
 
         <ArticleByline publishedAt={article.publishedAt || undefined} />
 

@@ -33,7 +33,7 @@ export async function GET() {
     if (pubDate < twoDaysAgo) continue;
 
     newsEntries.push({
-      url: `${BASE}/tv-news/${s.entry.seriesId}/${s.slug}`,
+      url: `${BASE}/tv-serien/${s.entry.seriesId}/${s.slug}`,
       title: s.entry.title,
       date: pubDate.toISOString(),
     });

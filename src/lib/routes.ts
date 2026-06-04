@@ -1,11 +1,24 @@
-export function getArticleUrl(slug: string, type: string, _series?: string): string {
-  switch (type) {
-    case 'cluster':
-    case 'pillar-sub':
-    case 'regional':
-    case 'serie':
-    case 'story':
-    default:
-      return `/${slug}`;
-  }
+import { SPEC_SLUG } from './hubs';
+
+/**
+ * Kanonische Artikel-URL aus der specialization (Hub-Treiber).
+ * - specialization gesetzt → /singles-partnersuche/{spec-slug}/{slug}
+ * - sonst → /singles-partnersuche/{slug}
+ */
+export function getArticleUrl(slug: string, specialization?: string): string {
+  const spec = specialization && SPEC_SLUG[specialization];
+  return spec ? `/singles-partnersuche/${spec}/${slug}` : `/singles-partnersuche/${slug}`;
+}
+
+/** URL eines TV-Serien-Artikels (series-Collection). */
+export function getSeriesUrl(seriesId: string, slug: string): string {
+  return `/tv-serien/${seriesId}/${slug}`;
+}
+
+/** Helfer: Artikel-URL aus einem Keystatic-Collection-Item ({slug, entry}). */
+export function articleHref(item: {
+  slug: string;
+  entry: { specialization?: string };
+}): string {
+  return getArticleUrl(item.slug, item.entry.specialization);
 }

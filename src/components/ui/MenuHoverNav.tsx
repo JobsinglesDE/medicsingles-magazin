@@ -41,8 +41,8 @@ const NAV_ITEMS: NavItem[] = [
     label: 'TV & Promi-Ärzte',
     href: '/magazin/promi-aerzte',
     dropdown: [
-      { label: "Grey's Anatomy", href: '/tv-news/greys-anatomy', description: 'Singles aus Grey Sloan Memorial' },
-      { label: 'Junge Ärzte', href: '/tv-news/junge-aerzte', description: 'In aller Freundschaft' },
+      { label: "Grey's Anatomy", href: '/tv-serien/greys-anatomy', description: 'Singles aus Grey Sloan Memorial' },
+      { label: 'Junge Ärzte', href: '/tv-serien/junge-aerzte', description: 'In aller Freundschaft' },
       { label: 'Promi-Ärzte Deutschland', href: '/magazin/promi-aerzte', description: 'Die 8 bekanntesten TV-Mediziner' },
     ],
   },

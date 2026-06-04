@@ -35,7 +35,7 @@ export async function GET() {
   lines.push('## Partnersuche & Dating');
   lines.push('');
   for (const a of published.articles) {
-    const url = `${BASE}${getArticleUrl(a.slug, a.entry.type, a.entry.series)}`;
+    const url = `${BASE}${getArticleUrl(a.slug, a.entry.specialization)}`;
     const desc = a.entry.excerpt || a.entry.seoDescription || '';
     lines.push(`- [${a.entry.title}](${url})${desc ? ` - ${desc}` : ''}`);
   }
@@ -44,7 +44,7 @@ export async function GET() {
   lines.push("## TV-News — «Grey's Anatomy» & «In aller Freundschaft — Die jungen Ärzte»");
   lines.push('');
   for (const s of published.series) {
-    const url = `${BASE}/tv-news/${s.entry.seriesId}/${s.slug}`;
+    const url = `${BASE}/tv-serien/${s.entry.seriesId}/${s.slug}`;
     const desc = s.entry.excerpt || s.entry.seoDescription || '';
     lines.push(`- [${s.entry.title}](${url})${desc ? ` - ${desc}` : ''}`);
   }

@@ -13,9 +13,9 @@ import { ArticleByline } from '@/components/content/ArticleByline';
 import { JsonLd, articleJsonLd, faqJsonLd, videoJsonLd, extractYoutubeEmbed } from '@/components/seo/JsonLd';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 
-const SERIES_ID = 'junge-aerzte';
-const SERIES_LABEL = 'Die jungen Ärzte';
-const SERIES_PATH = `/tv-news/${SERIES_ID}`;
+const SERIES_ID = 'greys-anatomy';
+const SERIES_LABEL = "Grey's Anatomy";
+const SERIES_PATH = `/tv-serien/${SERIES_ID}`;
 const SITE_BASE = 'https://medicsingles.de/magazin';
 
 function toId(text: string) {
@@ -119,7 +119,7 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
       <div className="max-w-3xl mx-auto px-6 py-12">
         <Breadcrumbs
           items={[
-            { label: 'TV News', href: '/tv-news' },
+            { label: 'TV News', href: '/tv-serien' },
             { label: SERIES_LABEL, href: SERIES_PATH },
             { label: article.title, href: `${SERIES_PATH}/${slug}` },
           ]}

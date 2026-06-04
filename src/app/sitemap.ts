@@ -29,6 +29,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/promi-aerzte`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-serien/greys-anatomy`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-serien/junge-aerzte`, priority: 0.7, changeFrequency: 'weekly' },
+    { url: `${BASE}/tv-serien/in-aller-freundschaft`, priority: 0.7, changeFrequency: 'weekly' },
+    { url: `${BASE}/tv-serien/dr-nice`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/ueber-uns`, priority: 0.6, changeFrequency: 'monthly' },
     { url: `${BASE}/singles-regional`, priority: 0.7, changeFrequency: 'monthly' },
     { url: `${BASE}/singles-regional/aerztekammern`, priority: 0.7, changeFrequency: 'monthly' },

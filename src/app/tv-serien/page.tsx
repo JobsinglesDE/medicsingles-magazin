@@ -22,6 +22,8 @@ export default async function TVNews() {
 
   const greysAnatomy = published.filter((s) => s.entry.seriesId === 'greys-anatomy');
   const jungeAerzte = published.filter((s) => s.entry.seriesId === 'junge-aerzte');
+  const inAllerFreundschaft = published.filter((s) => s.entry.seriesId === 'in-aller-freundschaft');
+  const drNice = published.filter((s) => s.entry.seriesId === 'dr-nice');
 
   return (
     <>
@@ -90,6 +92,48 @@ export default async function TVNews() {
           </div>
         ) : (
           <p className="text-foreground/50">Artikel folgen in Kürze.</p>
+        )}
+
+        <h2 className="text-2xl font-bold mb-6 mt-16">
+          <a href="/tv-serien/in-aller-freundschaft" className="hover:text-brand-orange transition-colors">In aller Freundschaft</a>
+        </h2>
+        {inAllerFreundschaft.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {inAllerFreundschaft.map((article) => (
+              <SeriesCard
+                key={article.slug}
+                title={article.entry.title}
+                excerpt={article.entry.excerpt}
+                href={`/tv-serien/in-aller-freundschaft/${article.slug}`}
+                image={article.entry.featuredImage || undefined}
+                imageAlt={article.entry.featuredImageAlt || undefined}
+                seriesLabel="In aller Freundschaft"
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="text-foreground/50">Cast-Porträts der Sachsenklinik — <a href="/tv-serien/in-aller-freundschaft" className="text-brand-orange hover:underline">zu den Darstellern →</a></p>
+        )}
+
+        <h2 className="text-2xl font-bold mb-6 mt-16">
+          <a href="/tv-serien/dr-nice" className="hover:text-brand-orange transition-colors">Dr. Nice</a>
+        </h2>
+        {drNice.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {drNice.map((article) => (
+              <SeriesCard
+                key={article.slug}
+                title={article.entry.title}
+                excerpt={article.entry.excerpt}
+                href={`/tv-serien/dr-nice/${article.slug}`}
+                image={article.entry.featuredImage || undefined}
+                imageAlt={article.entry.featuredImageAlt || undefined}
+                seriesLabel="Dr. Nice"
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="text-foreground/50">Patrick Kalupa &amp; das Team — <a href="/tv-serien/dr-nice" className="text-brand-orange hover:underline">zu den Darstellern →</a></p>
         )}
       </section>
     </>

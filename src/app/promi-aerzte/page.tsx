@@ -85,7 +85,7 @@ export default async function PromiAerzteHub() {
           {promiCards.map((p, idx) => (
             <Link
               key={p.slug}
-              href={`/magazin/${p.slug}`}
+              href={`/${p.slug}`}
               className="group bg-surface rounded-2xl overflow-hidden border border-border hover:border-brand-orange transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg"
             >
               <div className="relative aspect-[3/2] bg-surface-dark overflow-hidden">
@@ -132,7 +132,7 @@ export default async function PromiAerzteHub() {
           </ul>
           <p className="mt-6 text-sm text-foreground/60">
             Vertiefender Pillar-Text:{' '}
-            <Link href="/magazin/promi-aerzte-deutschland" className="text-brand-orange-text hover:underline">
+            <Link href="/promi-aerzte-deutschland" className="text-brand-orange-text hover:underline">
               Promi-Ärzte Deutschland — die bekanntesten TV-Mediziner (ausführlicher Pillar)
             </Link>
           </p>
@@ -142,11 +142,11 @@ export default async function PromiAerzteHub() {
       <section className="max-w-4xl mx-auto px-6 py-8">
         <h2 className="text-xl font-bold text-foreground mb-4">Verwandte Mediziner-Themen</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <Link href="/magazin/singles-aerzte" className="block p-4 rounded-xl border border-border hover:border-brand-orange transition-colors">
+          <Link href="/singles-aerzte" className="block p-4 rounded-xl border border-border hover:border-brand-orange transition-colors">
             <div className="font-semibold text-foreground">Singles Ärzte</div>
             <div className="text-sm text-foreground/60">Warum Ärzte oft Single sind</div>
           </Link>
-          <Link href="/magazin/partnersuche-mediziner-kennenlernen" className="block p-4 rounded-xl border border-border hover:border-brand-orange transition-colors">
+          <Link href="/partnersuche-mediziner-kennenlernen" className="block p-4 rounded-xl border border-border hover:border-brand-orange transition-colors">
             <div className="font-semibold text-foreground">Partnersuche Mediziner</div>
             <div className="text-sm text-foreground/60">Mediziner kennenlernen</div>
           </Link>

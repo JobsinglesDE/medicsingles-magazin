@@ -1,4 +1,5 @@
 import { reader } from '@/lib/keystatic';
+import { getArticleUrl } from '@/lib/routes';
 
 const BASE = 'https://medicsingles.de/magazin';
 
@@ -21,7 +22,7 @@ export async function GET() {
     if (pubDate < twoDaysAgo) continue;
 
     newsEntries.push({
-      url: `${BASE}/${a.slug}`,
+      url: `${BASE}${getArticleUrl(a.slug, a.entry.specialization)}`,
       title: a.entry.title,
       date: pubDate.toISOString(),
     });

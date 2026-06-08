@@ -22,9 +22,9 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Für Therapeuten', href: '/singles-partnersuche/therapeuten', description: 'Partnersuche im Heilberuf' },
       { label: 'Für Rettungsdienst', href: '/singles-partnersuche/rettung', description: 'Dating im Einsatzalltag' },
       { label: '─── Themen & Akademiker ───', href: '/singles-partnersuche', description: '' },
-      { label: 'Singles Ärzte', href: '/magazin/singles-aerzte', description: 'Warum Ärzte oft Single sind' },
-      { label: 'Partnersuche Akademiker', href: '/magazin/partnersuche-akademiker-niveau', description: 'Auf Augenhöhe daten' },
-      { label: 'Partnersuche Mediziner', href: '/magazin/partnersuche-mediziner-kennenlernen', description: 'Mediziner kennenlernen' },
+      { label: 'Singles Ärzte', href: '/singles-aerzte', description: 'Warum Ärzte oft Single sind' },
+      { label: 'Partnersuche Akademiker', href: '/partnersuche-akademiker-niveau', description: 'Auf Augenhöhe daten' },
+      { label: 'Partnersuche Mediziner', href: '/partnersuche-mediziner-kennenlernen', description: 'Mediziner kennenlernen' },
     ],
   },
   {
@@ -39,11 +39,11 @@ const NAV_ITEMS: NavItem[] = [
   },
   {
     label: 'TV & Promi-Ärzte',
-    href: '/magazin/promi-aerzte',
+    href: '/promi-aerzte',
     dropdown: [
       { label: "Grey's Anatomy", href: '/tv-serien/greys-anatomy', description: 'Singles aus Grey Sloan Memorial' },
       { label: 'Junge Ärzte', href: '/tv-serien/junge-aerzte', description: 'In aller Freundschaft' },
-      { label: 'Promi-Ärzte Deutschland', href: '/magazin/promi-aerzte', description: 'Die 8 bekanntesten TV-Mediziner' },
+      { label: 'Promi-Ärzte Deutschland', href: '/promi-aerzte', description: 'Die 8 bekanntesten TV-Mediziner' },
     ],
   },
   { label: 'Erfolgsgeschichten', href: '/erfolgsgeschichten' },

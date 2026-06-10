@@ -8,6 +8,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { JsonLd, breadcrumbJsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
+import { getArticleUrl } from '@/lib/routes';
 
 const RETTUNG_URL = 'https://medicsingles.de/magazin/singles-partnersuche/rettung';
 
@@ -116,7 +117,7 @@ export default async function RettungPillar() {
     .filter(Boolean)
     .map((a) => ({
       name: a!.entry.title,
-      url: `https://medicsingles.de/magazin/${a!.slug}`,
+      url: `https://medicsingles.de/magazin${getArticleUrl(a!.slug, a!.entry.specialization)}`,
     }));
 
   return (
@@ -214,7 +215,7 @@ export default async function RettungPillar() {
                     key={article.slug}
                     title={article.entry.title}
                     excerpt={article.entry.excerpt}
-                    href={`/${article.slug}`}
+                    href={getArticleUrl(article.slug, article.entry.specialization)}
                     image={article.entry.featuredImage || undefined}
                     imageAlt={article.entry.featuredImageAlt || undefined}
                     category={article.entry.category}

@@ -7,6 +7,7 @@ import { CircularTestimonials } from '@/components/ui/CircularTestimonials';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { getArticleUrl } from '@/lib/routes';
 
 const AERZTE_URL = 'https://medicsingles.de/magazin/singles-partnersuche/aerzte';
 
@@ -184,7 +185,7 @@ export default async function AerztePillar() {
     .filter(Boolean)
     .map((a) => ({
       name: a!.entry.title,
-      url: `https://medicsingles.de/magazin/${a!.slug}`,
+      url: `https://medicsingles.de/magazin${getArticleUrl(a!.slug, a!.entry.specialization)}`,
     }));
 
   return (
@@ -282,7 +283,7 @@ export default async function AerztePillar() {
                     key={article.slug}
                     title={article.entry.title}
                     excerpt={article.entry.excerpt}
-                    href={`/${article.slug}`}
+                    href={getArticleUrl(article.slug, article.entry.specialization)}
                     image={article.entry.featuredImage || undefined}
                     imageAlt={article.entry.featuredImageAlt || undefined}
                     category={article.entry.category}
@@ -330,7 +331,7 @@ export default async function AerztePillar() {
                     key={article.slug}
                     title={article.entry.title}
                     excerpt={article.entry.excerpt}
-                    href={`/${article.slug}`}
+                    href={getArticleUrl(article.slug, article.entry.specialization)}
                     image={article.entry.featuredImage || undefined}
                     imageAlt={article.entry.featuredImageAlt || undefined}
                     category={article.entry.category}
@@ -354,7 +355,7 @@ export default async function AerztePillar() {
               <ArticleCard
                 title={simonJulia.entry.title}
                 excerpt={simonJulia.entry.excerpt}
-                href={`/${simonJulia.slug}`}
+                href={getArticleUrl(simonJulia.slug, simonJulia.entry.specialization)}
                 image={simonJulia.entry.featuredImage || undefined}
                 imageAlt={simonJulia.entry.featuredImageAlt || undefined}
                 category="Erfolgsgeschichte"

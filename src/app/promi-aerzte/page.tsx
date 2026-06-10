@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { reader } from '@/lib/keystatic';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { getArticleUrl } from '@/lib/routes';
 
 const HUB_URL = 'https://medicsingles.de/promi-aerzte';
 
@@ -52,7 +53,7 @@ export default async function PromiAerzteHub() {
           url: HUB_URL,
           items: promiCards.map((p) => ({
             name: p.name,
-            url: `https://medicsingles.de/magazin/${p.slug}`,
+            url: `https://medicsingles.de/magazin${getArticleUrl(p.slug, 'arzt')}`,
           })),
         })}
       />
@@ -85,7 +86,7 @@ export default async function PromiAerzteHub() {
           {promiCards.map((p, idx) => (
             <Link
               key={p.slug}
-              href={`/${p.slug}`}
+              href={getArticleUrl(p.slug, 'arzt')}
               className="group bg-surface rounded-2xl overflow-hidden border border-border hover:border-brand-orange transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg"
             >
               <div className="relative aspect-[3/2] bg-surface-dark overflow-hidden">

@@ -7,6 +7,7 @@ import { CircularTestimonials } from '@/components/ui/CircularTestimonials';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { getArticleUrl } from '@/lib/routes';
 
 const PFLEGE_URL = 'https://medicsingles.de/magazin/singles-partnersuche/pflege';
 
@@ -151,7 +152,7 @@ export default async function PflegePillar() {
     .filter(Boolean)
     .map((a) => ({
       name: a!.entry.title,
-      url: `https://medicsingles.de/magazin/${a!.slug}`,
+      url: `https://medicsingles.de/magazin${getArticleUrl(a!.slug, a!.entry.specialization)}`,
     }));
 
   return (
@@ -247,7 +248,7 @@ export default async function PflegePillar() {
                     key={article.slug}
                     title={article.entry.title}
                     excerpt={article.entry.excerpt}
-                    href={`/${article.slug}`}
+                    href={getArticleUrl(article.slug, article.entry.specialization)}
                     image={article.entry.featuredImage || undefined}
                     imageAlt={article.entry.featuredImageAlt || undefined}
                     category={article.entry.category}
@@ -295,7 +296,7 @@ export default async function PflegePillar() {
                     key={article.slug}
                     title={article.entry.title}
                     excerpt={article.entry.excerpt}
-                    href={`/${article.slug}`}
+                    href={getArticleUrl(article.slug, article.entry.specialization)}
                     image={article.entry.featuredImage || undefined}
                     imageAlt={article.entry.featuredImageAlt || undefined}
                     category={article.entry.category}
@@ -319,7 +320,7 @@ export default async function PflegePillar() {
               <ArticleCard
                 title={annaMark.entry.title}
                 excerpt={annaMark.entry.excerpt}
-                href={`/${annaMark.slug}`}
+                href={getArticleUrl(annaMark.slug, annaMark.entry.specialization)}
                 image={annaMark.entry.featuredImage || undefined}
                 imageAlt={annaMark.entry.featuredImageAlt || undefined}
                 category="Erfolgsgeschichte"

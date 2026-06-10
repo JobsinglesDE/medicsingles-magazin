@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { reader } from '@/lib/keystatic';
+import { getArticleUrl } from '@/lib/routes';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,7 +17,7 @@ export async function GET() {
     .map((a) => ({
       title: a.entry.title,
       excerpt: a.entry.excerpt || '',
-      url: `${SITE}/magazin/${a.slug}/`,
+      url: `${SITE}/magazin${getArticleUrl(a.slug, a.entry.specialization)}/`,
       image: a.entry.featuredImage ? `${SITE}/magazin${a.entry.featuredImage}` : '',
       date: a.entry.publishedAt || '2026-01-01',
     }));

@@ -9,6 +9,7 @@ import { CarouselCards } from '@/components/ui/CarouselCards';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { AnimatedStats } from '@/components/ui/AnimatedCounter';
 import { MatchQuiz } from '@/components/ui/MatchQuiz';
+import { getArticleUrl } from '@/lib/routes';
 
 export const metadata = {
   alternates: { canonical: '/' },
@@ -42,7 +43,7 @@ export default async function HomePage() {
   const carouselItems = articles.slice(0, 8).map((article) => ({
     title: article.entry.title,
     excerpt: article.entry.excerpt,
-    href: `/${article.slug}`,
+    href: getArticleUrl(article.slug, article.entry.specialization),
     image: article.entry.featuredImage || undefined,
     category: article.entry.category,
   }));
@@ -98,7 +99,7 @@ export default async function HomePage() {
                 key={article.slug}
                 title={article.entry.title}
                 excerpt={article.entry.excerpt}
-                href={`/${article.slug}`}
+                href={getArticleUrl(article.slug, article.entry.specialization)}
                 image={article.entry.featuredImage || undefined}
                 imageAlt={article.entry.featuredImageAlt || undefined}
                 date={article.entry.publishedAt || undefined}

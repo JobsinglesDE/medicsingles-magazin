@@ -1,4 +1,5 @@
 import { reader } from '@/lib/keystatic';
+import { getArticleUrl } from '@/lib/routes';
 
 const BASE = 'https://medicsingles.de/magazin';
 const SITE_TITLE = 'Medicsingles Magazin';
@@ -25,7 +26,7 @@ export async function GET() {
   for (const a of articles) {
     if (a.entry.status !== 'published' || !a.entry.publishedAt) continue;
     items.push({
-      url: `${BASE}/${a.slug}`,
+      url: `${BASE}${getArticleUrl(a.slug, a.entry.specialization)}`,
       title: a.entry.title,
       description: a.entry.excerpt || '',
       date: new Date(a.entry.publishedAt).toUTCString(),

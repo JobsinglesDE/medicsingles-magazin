@@ -8,6 +8,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { getArticleUrl } from '@/lib/routes';
 
 const HUB_URL = 'https://medicsingles.de/magazin/singles-partnersuche';
 
@@ -241,7 +242,7 @@ export default async function SinglesPartnersuche() {
                   key={article.slug}
                   title={article.entry.title}
                   excerpt={article.entry.excerpt}
-                  href={`/${article.slug}`}
+                  href={getArticleUrl(article.slug, article.entry.specialization)}
                   image={article.entry.featuredImage || undefined}
                   imageAlt={article.entry.featuredImageAlt || undefined}
                   category={article.entry.category}

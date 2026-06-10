@@ -17,7 +17,7 @@ export async function GET() {
     .map((a) => ({
       title: a.entry.title,
       excerpt: a.entry.excerpt || '',
-      url: `${SITE}/magazin${getArticleUrl(a.slug, a.entry.specialization)}/`,
+      url: `${SITE}/magazin${getArticleUrl(a.slug, a.entry.specialization, a.entry.section)}/`,
       image: a.entry.featuredImage ? `${SITE}/magazin${a.entry.featuredImage}` : '',
       date: a.entry.publishedAt || '2026-01-01',
     }));

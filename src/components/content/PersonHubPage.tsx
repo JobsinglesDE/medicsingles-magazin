@@ -30,7 +30,7 @@ interface PersonHubPageProps {
 
 export async function PersonHubPage({ slug, show }: PersonHubPageProps) {
   const person = await reader.collections.persons.read(slug, { resolveLinkedFiles: true });
-  if (!person || person.status === 'draft') notFound();
+  if (!person || person.status === 'draft' || person.personType === 'promi-arzt') notFound();
 
   const showLabel = SHOW_LABELS[show] ?? show;
   const personUrl = `${SITE_BASE}${getPersonHubUrl(slug, show)}`;

@@ -152,7 +152,7 @@ export default async function PflegePillar() {
     .filter(Boolean)
     .map((a) => ({
       name: a!.entry.title,
-      url: `https://medicsingles.de/magazin${getArticleUrl(a!.slug, a!.entry.specialization)}`,
+      url: `https://medicsingles.de/magazin${getArticleUrl(a!.slug, a!.entry.specialization, a!.entry.section)}`,
     }));
 
   return (
@@ -248,7 +248,7 @@ export default async function PflegePillar() {
                     key={article.slug}
                     title={article.entry.title}
                     excerpt={article.entry.excerpt}
-                    href={getArticleUrl(article.slug, article.entry.specialization)}
+                    href={getArticleUrl(article.slug, article.entry.specialization, article.entry.section)}
                     image={article.entry.featuredImage || undefined}
                     imageAlt={article.entry.featuredImageAlt || undefined}
                     category={article.entry.category}
@@ -296,7 +296,7 @@ export default async function PflegePillar() {
                     key={article.slug}
                     title={article.entry.title}
                     excerpt={article.entry.excerpt}
-                    href={getArticleUrl(article.slug, article.entry.specialization)}
+                    href={getArticleUrl(article.slug, article.entry.specialization, article.entry.section)}
                     image={article.entry.featuredImage || undefined}
                     imageAlt={article.entry.featuredImageAlt || undefined}
                     category={article.entry.category}
@@ -320,7 +320,7 @@ export default async function PflegePillar() {
               <ArticleCard
                 title={annaMark.entry.title}
                 excerpt={annaMark.entry.excerpt}
-                href={getArticleUrl(annaMark.slug, annaMark.entry.specialization)}
+                href={getArticleUrl(annaMark.slug, annaMark.entry.specialization, annaMark.entry.section)}
                 image={annaMark.entry.featuredImage || undefined}
                 imageAlt={annaMark.entry.featuredImageAlt || undefined}
                 category="Erfolgsgeschichte"

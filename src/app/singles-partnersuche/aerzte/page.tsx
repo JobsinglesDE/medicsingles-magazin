@@ -185,7 +185,7 @@ export default async function AerztePillar() {
     .filter(Boolean)
     .map((a) => ({
       name: a!.entry.title,
-      url: `https://medicsingles.de/magazin${getArticleUrl(a!.slug, a!.entry.specialization)}`,
+      url: `https://medicsingles.de/magazin${getArticleUrl(a!.slug, a!.entry.specialization, a!.entry.section)}`,
     }));
 
   return (
@@ -283,7 +283,7 @@ export default async function AerztePillar() {
                     key={article.slug}
                     title={article.entry.title}
                     excerpt={article.entry.excerpt}
-                    href={getArticleUrl(article.slug, article.entry.specialization)}
+                    href={getArticleUrl(article.slug, article.entry.specialization, article.entry.section)}
                     image={article.entry.featuredImage || undefined}
                     imageAlt={article.entry.featuredImageAlt || undefined}
                     category={article.entry.category}
@@ -331,7 +331,7 @@ export default async function AerztePillar() {
                     key={article.slug}
                     title={article.entry.title}
                     excerpt={article.entry.excerpt}
-                    href={getArticleUrl(article.slug, article.entry.specialization)}
+                    href={getArticleUrl(article.slug, article.entry.specialization, article.entry.section)}
                     image={article.entry.featuredImage || undefined}
                     imageAlt={article.entry.featuredImageAlt || undefined}
                     category={article.entry.category}
@@ -355,7 +355,7 @@ export default async function AerztePillar() {
               <ArticleCard
                 title={simonJulia.entry.title}
                 excerpt={simonJulia.entry.excerpt}
-                href={getArticleUrl(simonJulia.slug, simonJulia.entry.specialization)}
+                href={getArticleUrl(simonJulia.slug, simonJulia.entry.specialization, simonJulia.entry.section)}
                 image={simonJulia.entry.featuredImage || undefined}
                 imageAlt={simonJulia.entry.featuredImageAlt || undefined}
                 category="Erfolgsgeschichte"

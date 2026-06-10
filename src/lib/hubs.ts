@@ -82,6 +82,17 @@ export const SHOW_HUBS: Record<string, Hub> = {
   },
 };
 
+// Sektion 2: Promi-Ärzte — eigene Sektion mit Personen-Hubs unter /aerzte/{slug}
+export const PROMI_AERZTE_SECTION_HUB: Hub = {
+  slug: 'promi-aerzte',
+  title: 'Promi-Ärzte ❤️ — Deutschlands bekannteste TV-Mediziner',
+  description:
+    'Hirschhausen, Riedl, Anne Fleck, Yael Adler & Co.: Werdegang, Sendungen, Bücher und Vermögen der prominentesten Mediziner Deutschlands — und was Mediziner-Singles aus ihren Karrieren lernen können.',
+  seoTitle: 'Promi-Ärzte: Deutschlands TV-Mediziner',
+  seoDescription:
+    'Promi-Ärzte Deutschland: Hirschhausen, Riedl, Anne Fleck, Yael Adler & Co. — Werdegang, Sendungen, Bücher und Vermögen der bekanntesten TV-Mediziner.',
+};
+
 // Sektion-Index-Hubs
 export const SECTION_HUBS: Record<string, Hub> = {
   'singles-partnersuche': {
@@ -106,6 +117,7 @@ export const SECTION_HUBS: Record<string, Hub> = {
 
 export const ALL_HUBS: Hub[] = [
   ...Object.values(SECTION_HUBS),
+  PROMI_AERZTE_SECTION_HUB,
   ...Object.values(SPEC_HUBS),
   ...Object.values(SHOW_HUBS),
 ];

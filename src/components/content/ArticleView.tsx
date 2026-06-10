@@ -1,10 +1,11 @@
 import { reader } from '@/lib/keystatic';
 import { notFound } from 'next/navigation';
-import { getArticleUrl } from '@/lib/routes';
+import { getArticleUrl, articleHref, getDoctorHubUrl } from '@/lib/routes';
 import { ArticleBody } from '@/components/content/ArticleBody';
 import { ClusterHero } from '@/components/content/ClusterHero';
 import { TableOfContents } from '@/components/content/TableOfContents';
 import { PillarBacklinkCard } from '@/components/content/PillarBacklinkCard';
+import { DoctorBacklinkCard } from '@/components/content/DoctorBacklinkCard';
 import { CalloutBox } from '@/components/ui/CalloutBox';
 import { TakeawayBox } from '@/components/ui/TakeawayBox';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
@@ -49,7 +50,7 @@ export async function buildArticleMetadata(slug: string) {
 
   const title = article.seoTitle || article.title;
   const description = article.seoDescription || article.excerpt;
-  const url = `${BASE_URL}${getArticleUrl(slug, article.specialization)}`;
+  const url = `${BASE_URL}${getArticleUrl(slug, article.specialization, article.section)}`;
   const image = article.featuredImage
     ? `${BASE_URL}${article.featuredImage}`
     : `${BASE_URL}/logos/jobsingles-logo.png`;
@@ -84,25 +85,38 @@ export default async function ArticleView({ slug }: { slug: string }) {
     ? await reader.collections.authors.read(article.author)
     : null;
 
+  const isDoctor = article.section === 'promi-aerzte';
+
   const allArticles = await reader.collections.articles.all();
   const relatedArticles = allArticles
-    .filter((a) => a.slug !== slug && a.entry.specialization === article.specialization && a.entry.type === 'cluster')
+    .filter((a) =>
+      a.slug !== slug &&
+      (isDoctor
+        ? a.entry.section === 'promi-aerzte'
+        : a.entry.specialization === article.specialization && a.entry.section !== 'promi-aerzte' && a.entry.type === 'cluster')
+    )
     .slice(0, 6)
     .map((a) => ({
       title: a.entry.title,
       excerpt: a.entry.excerpt,
-      href: getArticleUrl(a.slug, a.entry.specialization),
+      href: articleHref({ slug: a.slug, entry: a.entry }),
       image: a.entry.featuredImage || undefined,
       category: a.entry.category,
     }));
 
-  const canonicalPath = getArticleUrl(slug, article.specialization);
+  const canonicalPath = getArticleUrl(slug, article.specialization, article.section);
   const specHub = article.specialization ? SPEC_HUBS[article.specialization] : null;
-  const crumbs = [
-    { label: 'Singles & Partnersuche', href: `/${SECTION_HUBS['singles-partnersuche'].slug}` },
-    ...(specHub ? [{ label: specHub.title.split(' ❤️')[0], href: `/${specHub.slug}` }] : []),
-    { label: article.title, href: canonicalPath },
-  ];
+  const crumbs = isDoctor
+    ? [
+        { label: 'Promi-Ärzte', href: '/promi-aerzte' },
+        ...(article.person ? [{ label: article.title.split(':')[0], href: getDoctorHubUrl(article.person) }] : []),
+        { label: article.title, href: canonicalPath },
+      ]
+    : [
+        { label: 'Singles & Partnersuche', href: `/${SECTION_HUBS['singles-partnersuche'].slug}` },
+        ...(specHub ? [{ label: specHub.title.split(' ❤️')[0], href: `/${specHub.slug}` }] : []),
+        { label: article.title, href: canonicalPath },
+      ];
 
   return (
     <>
@@ -214,9 +228,13 @@ export default async function ArticleView({ slug }: { slug: string }) {
           />
         )}
 
-        {/* Pillar Backlink */}
-        {article.specialization && ['arzt', 'pflege', 'therapeut', 'rettung'].includes(article.specialization) && (
-          <PillarBacklinkCard specialization={article.specialization as 'arzt' | 'pflege' | 'therapeut' | 'rettung'} />
+        {/* Backlink: Promi-Arzt → Personen-Hub, sonst Pillar-Hub */}
+        {isDoctor ? (
+          article.person ? <DoctorBacklinkCard personSlug={article.person} /> : null
+        ) : (
+          article.specialization && ['arzt', 'pflege', 'therapeut', 'rettung'].includes(article.specialization) && (
+            <PillarBacklinkCard specialization={article.specialization as 'arzt' | 'pflege' | 'therapeut' | 'rettung'} />
+          )
         )}
       </div>
 

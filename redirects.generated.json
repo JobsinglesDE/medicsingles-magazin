@@ -30,6 +30,16 @@
     "permanent": true
   },
   {
+    "source": "/anne-fleck-longevity-schlaf-podcast-2026",
+    "destination": "/promi-aerzte/anne-fleck-longevity-schlaf-podcast-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/anne-fleck-longevity-schlaf-podcast-2026",
+    "destination": "/promi-aerzte/anne-fleck-longevity-schlaf-podcast-2026",
+    "permanent": true
+  },
+  {
     "source": "/arzt-beziehung-familie-alltag",
     "destination": "/singles-partnersuche/aerzte/arzt-beziehung-familie-alltag",
     "permanent": true
@@ -77,6 +87,16 @@
   {
     "source": "/beziehung-rettungsdienstler-schweigsam-einsatz",
     "destination": "/singles-partnersuche/rettung/beziehung-rettungsdienstler-schweigsam-einsatz",
+    "permanent": true
+  },
+  {
+    "source": "/carsten-lekutat-buehnenprogramm-hausarzt-2026",
+    "destination": "/promi-aerzte/carsten-lekutat-buehnenprogramm-hausarzt-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/carsten-lekutat-buehnenprogramm-hausarzt-2026",
+    "destination": "/promi-aerzte/carsten-lekutat-buehnenprogramm-hausarzt-2026",
     "permanent": true
   },
   {
@@ -142,6 +162,26 @@
   {
     "source": "/deutscher-aerztetag-singles-networking",
     "destination": "/singles-partnersuche/aerzte/deutscher-aerztetag-singles-networking",
+    "permanent": true
+  },
+  {
+    "source": "/dietrich-groenemeyer-demenz-buch",
+    "destination": "/promi-aerzte/dietrich-groenemeyer-demenz-buch",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/dietrich-groenemeyer-demenz-buch",
+    "destination": "/promi-aerzte/dietrich-groenemeyer-demenz-buch",
+    "permanent": true
+  },
+  {
+    "source": "/doc-esser-sprechende-medizin-2026",
+    "destination": "/promi-aerzte/doc-esser-sprechende-medizin-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/doc-esser-sprechende-medizin-2026",
+    "destination": "/promi-aerzte/doc-esser-sprechende-medizin-2026",
     "permanent": true
   },
   {
@@ -240,13 +280,48 @@
     "permanent": true
   },
   {
+    "source": "/hirschhausen-deepfake-ard-doku-2026",
+    "destination": "/promi-aerzte/hirschhausen-deepfake-ard-doku-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/hirschhausen-deepfake-ard-doku-2026",
+    "destination": "/promi-aerzte/hirschhausen-deepfake-ard-doku-2026",
+    "permanent": true
+  },
+  {
+    "source": "/hirschhausen-goldene-tanne-sdw-2026",
+    "destination": "/promi-aerzte/hirschhausen-goldene-tanne-sdw-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/hirschhausen-goldene-tanne-sdw-2026",
+    "destination": "/promi-aerzte/hirschhausen-goldene-tanne-sdw-2026",
+    "permanent": true
+  },
+  {
     "source": "/hirschhausen-papst-vatikan",
-    "destination": "/singles-partnersuche/aerzte/hirschhausen-papst-vatikan",
+    "destination": "/promi-aerzte/hirschhausen-papst-vatikan",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/hirschhausen-papst-vatikan",
+    "destination": "/promi-aerzte/hirschhausen-papst-vatikan",
     "permanent": true
   },
   {
     "source": "/hobbies-ausgleich-pflege-singles-treffen",
     "destination": "/singles-partnersuche/pflege/hobbies-ausgleich-pflege-singles-treffen",
+    "permanent": true
+  },
+  {
+    "source": "/johannes-wimmer-pro-care-hannover-2026",
+    "destination": "/promi-aerzte/johannes-wimmer-pro-care-hannover-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/johannes-wimmer-pro-care-hannover-2026",
+    "destination": "/promi-aerzte/johannes-wimmer-pro-care-hannover-2026",
     "permanent": true
   },
   {
@@ -325,6 +400,16 @@
     "permanent": true
   },
   {
+    "source": "/matthias-riedl-iss-besser-3sat-2026",
+    "destination": "/promi-aerzte/matthias-riedl-iss-besser-3sat-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/matthias-riedl-iss-besser-3sat-2026",
+    "destination": "/promi-aerzte/matthias-riedl-iss-besser-3sat-2026",
+    "permanent": true
+  },
+  {
     "source": "/medica-duesseldorf-singles-medizinmesse",
     "destination": "/singles-partnersuche/aerzte/medica-duesseldorf-singles-medizinmesse",
     "permanent": true
@@ -332,6 +417,16 @@
   {
     "source": "/medicsingles-vs-tinder-nischen-dating",
     "destination": "/singles-partnersuche/aerzte/medicsingles-vs-tinder-nischen-dating",
+    "permanent": true
+  },
+  {
+    "source": "/mueller-wohlfahrt-wiederverletzungen-2026",
+    "destination": "/promi-aerzte/mueller-wohlfahrt-wiederverletzungen-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/mueller-wohlfahrt-wiederverletzungen-2026",
+    "destination": "/promi-aerzte/mueller-wohlfahrt-wiederverletzungen-2026",
     "permanent": true
   },
   {
@@ -461,162 +556,322 @@
   },
   {
     "source": "/promi-anne-fleck-buecher",
-    "destination": "/singles-partnersuche/aerzte/promi-anne-fleck-buecher",
+    "destination": "/promi-aerzte/promi-anne-fleck-buecher",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-anne-fleck-buecher",
+    "destination": "/promi-aerzte/promi-anne-fleck-buecher",
     "permanent": true
   },
   {
     "source": "/promi-anne-fleck-methode",
-    "destination": "/singles-partnersuche/aerzte/promi-anne-fleck-methode",
+    "destination": "/promi-aerzte/promi-anne-fleck-methode",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-anne-fleck-methode",
+    "destination": "/promi-aerzte/promi-anne-fleck-methode",
     "permanent": true
   },
   {
     "source": "/promi-anne-fleck-vermoegen",
-    "destination": "/singles-partnersuche/aerzte/promi-anne-fleck-vermoegen",
+    "destination": "/promi-aerzte/promi-anne-fleck-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-anne-fleck-vermoegen",
+    "destination": "/promi-aerzte/promi-anne-fleck-vermoegen",
     "permanent": true
   },
   {
     "source": "/promi-anne-fleck",
-    "destination": "/singles-partnersuche/aerzte/promi-anne-fleck",
+    "destination": "/promi-aerzte/promi-anne-fleck",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-anne-fleck",
+    "destination": "/promi-aerzte/promi-anne-fleck",
     "permanent": true
   },
   {
     "source": "/promi-carsten-lekutat-buecher",
-    "destination": "/singles-partnersuche/aerzte/promi-carsten-lekutat-buecher",
+    "destination": "/promi-aerzte/promi-carsten-lekutat-buecher",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-carsten-lekutat-buecher",
+    "destination": "/promi-aerzte/promi-carsten-lekutat-buecher",
     "permanent": true
   },
   {
     "source": "/promi-carsten-lekutat-frau",
-    "destination": "/singles-partnersuche/aerzte/promi-carsten-lekutat-frau",
+    "destination": "/promi-aerzte/promi-carsten-lekutat-frau",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-carsten-lekutat-frau",
+    "destination": "/promi-aerzte/promi-carsten-lekutat-frau",
     "permanent": true
   },
   {
     "source": "/promi-carsten-lekutat-vermoegen",
-    "destination": "/singles-partnersuche/aerzte/promi-carsten-lekutat-vermoegen",
+    "destination": "/promi-aerzte/promi-carsten-lekutat-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-carsten-lekutat-vermoegen",
+    "destination": "/promi-aerzte/promi-carsten-lekutat-vermoegen",
     "permanent": true
   },
   {
     "source": "/promi-carsten-lekutat",
-    "destination": "/singles-partnersuche/aerzte/promi-carsten-lekutat",
+    "destination": "/promi-aerzte/promi-carsten-lekutat",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-carsten-lekutat",
+    "destination": "/promi-aerzte/promi-carsten-lekutat",
     "permanent": true
   },
   {
     "source": "/promi-doc-esser-buecher",
-    "destination": "/singles-partnersuche/aerzte/promi-doc-esser-buecher",
+    "destination": "/promi-aerzte/promi-doc-esser-buecher",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-doc-esser-buecher",
+    "destination": "/promi-aerzte/promi-doc-esser-buecher",
     "permanent": true
   },
   {
     "source": "/promi-doc-esser-frau",
-    "destination": "/singles-partnersuche/aerzte/promi-doc-esser-frau",
+    "destination": "/promi-aerzte/promi-doc-esser-frau",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-doc-esser-frau",
+    "destination": "/promi-aerzte/promi-doc-esser-frau",
     "permanent": true
   },
   {
     "source": "/promi-doc-esser-vermoegen",
-    "destination": "/singles-partnersuche/aerzte/promi-doc-esser-vermoegen",
+    "destination": "/promi-aerzte/promi-doc-esser-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-doc-esser-vermoegen",
+    "destination": "/promi-aerzte/promi-doc-esser-vermoegen",
     "permanent": true
   },
   {
     "source": "/promi-doc-esser",
-    "destination": "/singles-partnersuche/aerzte/promi-doc-esser",
+    "destination": "/promi-aerzte/promi-doc-esser",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-doc-esser",
+    "destination": "/promi-aerzte/promi-doc-esser",
     "permanent": true
   },
   {
     "source": "/promi-doc-fischer-alter",
-    "destination": "/singles-partnersuche/aerzte/promi-doc-fischer-alter",
+    "destination": "/promi-aerzte/promi-doc-fischer-alter",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-doc-fischer-alter",
+    "destination": "/promi-aerzte/promi-doc-fischer-alter",
     "permanent": true
   },
   {
     "source": "/promi-doc-fischer-buecher",
-    "destination": "/singles-partnersuche/aerzte/promi-doc-fischer-buecher",
+    "destination": "/promi-aerzte/promi-doc-fischer-buecher",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-doc-fischer-buecher",
+    "destination": "/promi-aerzte/promi-doc-fischer-buecher",
     "permanent": true
   },
   {
     "source": "/promi-doc-fischer-swr",
-    "destination": "/singles-partnersuche/aerzte/promi-doc-fischer-swr",
+    "destination": "/promi-aerzte/promi-doc-fischer-swr",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-doc-fischer-swr",
+    "destination": "/promi-aerzte/promi-doc-fischer-swr",
     "permanent": true
   },
   {
     "source": "/promi-doc-fischer",
-    "destination": "/singles-partnersuche/aerzte/promi-doc-fischer",
+    "destination": "/promi-aerzte/promi-doc-fischer",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-doc-fischer",
+    "destination": "/promi-aerzte/promi-doc-fischer",
     "permanent": true
   },
   {
     "source": "/promi-eckart-hirschhausen-buecher",
-    "destination": "/singles-partnersuche/aerzte/promi-eckart-hirschhausen-buecher",
+    "destination": "/promi-aerzte/promi-eckart-hirschhausen-buecher",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-eckart-hirschhausen-buecher",
+    "destination": "/promi-aerzte/promi-eckart-hirschhausen-buecher",
     "permanent": true
   },
   {
     "source": "/promi-eckart-hirschhausen-frau",
-    "destination": "/singles-partnersuche/aerzte/promi-eckart-hirschhausen-frau",
+    "destination": "/promi-aerzte/promi-eckart-hirschhausen-frau",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-eckart-hirschhausen-frau",
+    "destination": "/promi-aerzte/promi-eckart-hirschhausen-frau",
     "permanent": true
   },
   {
     "source": "/promi-eckart-hirschhausen-vermoegen",
-    "destination": "/singles-partnersuche/aerzte/promi-eckart-hirschhausen-vermoegen",
+    "destination": "/promi-aerzte/promi-eckart-hirschhausen-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-eckart-hirschhausen-vermoegen",
+    "destination": "/promi-aerzte/promi-eckart-hirschhausen-vermoegen",
     "permanent": true
   },
   {
     "source": "/promi-eckart-hirschhausen",
-    "destination": "/singles-partnersuche/aerzte/promi-eckart-hirschhausen",
+    "destination": "/promi-aerzte/promi-eckart-hirschhausen",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-eckart-hirschhausen",
+    "destination": "/promi-aerzte/promi-eckart-hirschhausen",
     "permanent": true
   },
   {
     "source": "/promi-johannes-wimmer-buecher",
-    "destination": "/singles-partnersuche/aerzte/promi-johannes-wimmer-buecher",
+    "destination": "/promi-aerzte/promi-johannes-wimmer-buecher",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-johannes-wimmer-buecher",
+    "destination": "/promi-aerzte/promi-johannes-wimmer-buecher",
     "permanent": true
   },
   {
     "source": "/promi-johannes-wimmer-sendung",
-    "destination": "/singles-partnersuche/aerzte/promi-johannes-wimmer-sendung",
+    "destination": "/promi-aerzte/promi-johannes-wimmer-sendung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-johannes-wimmer-sendung",
+    "destination": "/promi-aerzte/promi-johannes-wimmer-sendung",
     "permanent": true
   },
   {
     "source": "/promi-johannes-wimmer-vermoegen",
-    "destination": "/singles-partnersuche/aerzte/promi-johannes-wimmer-vermoegen",
+    "destination": "/promi-aerzte/promi-johannes-wimmer-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-johannes-wimmer-vermoegen",
+    "destination": "/promi-aerzte/promi-johannes-wimmer-vermoegen",
     "permanent": true
   },
   {
     "source": "/promi-johannes-wimmer",
-    "destination": "/singles-partnersuche/aerzte/promi-johannes-wimmer",
+    "destination": "/promi-aerzte/promi-johannes-wimmer",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-johannes-wimmer",
+    "destination": "/promi-aerzte/promi-johannes-wimmer",
     "permanent": true
   },
   {
     "source": "/promi-matthias-riedl-buecher",
-    "destination": "/singles-partnersuche/aerzte/promi-matthias-riedl-buecher",
+    "destination": "/promi-aerzte/promi-matthias-riedl-buecher",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-matthias-riedl-buecher",
+    "destination": "/promi-aerzte/promi-matthias-riedl-buecher",
     "permanent": true
   },
   {
     "source": "/promi-matthias-riedl-praxis",
-    "destination": "/singles-partnersuche/aerzte/promi-matthias-riedl-praxis",
+    "destination": "/promi-aerzte/promi-matthias-riedl-praxis",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-matthias-riedl-praxis",
+    "destination": "/promi-aerzte/promi-matthias-riedl-praxis",
     "permanent": true
   },
   {
     "source": "/promi-matthias-riedl-vermoegen",
-    "destination": "/singles-partnersuche/aerzte/promi-matthias-riedl-vermoegen",
+    "destination": "/promi-aerzte/promi-matthias-riedl-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-matthias-riedl-vermoegen",
+    "destination": "/promi-aerzte/promi-matthias-riedl-vermoegen",
     "permanent": true
   },
   {
     "source": "/promi-matthias-riedl",
-    "destination": "/singles-partnersuche/aerzte/promi-matthias-riedl",
+    "destination": "/promi-aerzte/promi-matthias-riedl",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-matthias-riedl",
+    "destination": "/promi-aerzte/promi-matthias-riedl",
     "permanent": true
   },
   {
     "source": "/promi-yael-adler-buecher",
-    "destination": "/singles-partnersuche/aerzte/promi-yael-adler-buecher",
+    "destination": "/promi-aerzte/promi-yael-adler-buecher",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-yael-adler-buecher",
+    "destination": "/promi-aerzte/promi-yael-adler-buecher",
     "permanent": true
   },
   {
     "source": "/promi-yael-adler-mann",
-    "destination": "/singles-partnersuche/aerzte/promi-yael-adler-mann",
+    "destination": "/promi-aerzte/promi-yael-adler-mann",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-yael-adler-mann",
+    "destination": "/promi-aerzte/promi-yael-adler-mann",
     "permanent": true
   },
   {
     "source": "/promi-yael-adler-vermoegen",
-    "destination": "/singles-partnersuche/aerzte/promi-yael-adler-vermoegen",
+    "destination": "/promi-aerzte/promi-yael-adler-vermoegen",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-yael-adler-vermoegen",
+    "destination": "/promi-aerzte/promi-yael-adler-vermoegen",
     "permanent": true
   },
   {
     "source": "/promi-yael-adler",
-    "destination": "/singles-partnersuche/aerzte/promi-yael-adler",
+    "destination": "/promi-aerzte/promi-yael-adler",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-yael-adler",
+    "destination": "/promi-aerzte/promi-yael-adler",
     "permanent": true
   },
   {
@@ -670,6 +925,46 @@
     "permanent": true
   },
   {
+    "source": "/werner-mang-kirche-kanzel-2026",
+    "destination": "/promi-aerzte/werner-mang-kirche-kanzel-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/werner-mang-kirche-kanzel-2026",
+    "destination": "/promi-aerzte/werner-mang-kirche-kanzel-2026",
+    "permanent": true
+  },
+  {
+    "source": "/yael-adler-hautpflege-tipps-2026",
+    "destination": "/promi-aerzte/yael-adler-hautpflege-tipps-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/yael-adler-hautpflege-tipps-2026",
+    "destination": "/promi-aerzte/yael-adler-hautpflege-tipps-2026",
+    "permanent": true
+  },
+  {
+    "source": "/yael-adler-sonnencreme-vitamin-d-2026",
+    "destination": "/promi-aerzte/yael-adler-sonnencreme-vitamin-d-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/yael-adler-sonnencreme-vitamin-d-2026",
+    "destination": "/promi-aerzte/yael-adler-sonnencreme-vitamin-d-2026",
+    "permanent": true
+  },
+  {
+    "source": "/yael-adler-zuerich-genial-ernaehrt-2026",
+    "destination": "/promi-aerzte/yael-adler-zuerich-genial-ernaehrt-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/yael-adler-zuerich-genial-ernaehrt-2026",
+    "destination": "/promi-aerzte/yael-adler-zuerich-genial-ernaehrt-2026",
+    "permanent": true
+  },
+  {
     "source": "/zehn-date-ideen-dienstplan-pflege",
     "destination": "/singles-partnersuche/pflege/zehn-date-ideen-dienstplan-pflege",
     "permanent": true
@@ -700,6 +995,41 @@
     "permanent": true
   },
   {
+    "source": "/tv-news/charite/charite-ard-serie-staffeln-darsteller-ueberblick",
+    "destination": "/tv-serien/charite/charite-ard-serie-staffeln-darsteller-ueberblick",
+    "permanent": true
+  },
+  {
+    "source": "/tv-news/charite/charite-franz-hartwig-curt-bruncken",
+    "destination": "/tv-serien/charite/charite-franz-hartwig-curt-bruncken",
+    "permanent": true
+  },
+  {
+    "source": "/tv-news/charite/charite-luise-wolfram-margot-sauerbruch",
+    "destination": "/tv-serien/charite/charite-luise-wolfram-margot-sauerbruch",
+    "permanent": true
+  },
+  {
+    "source": "/tv-news/charite/charite-mala-emde-anni-waldhausen",
+    "destination": "/tv-serien/charite/charite-mala-emde-anni-waldhausen",
+    "permanent": true
+  },
+  {
+    "source": "/tv-news/charite/charite-nina-kunzendorf-ingeborg-rapoport",
+    "destination": "/tv-serien/charite/charite-nina-kunzendorf-ingeborg-rapoport",
+    "permanent": true
+  },
+  {
+    "source": "/tv-news/charite/charite-philipp-hochmair-otto-prokop",
+    "destination": "/tv-serien/charite/charite-philipp-hochmair-otto-prokop",
+    "permanent": true
+  },
+  {
+    "source": "/tv-news/dr-nice/dr-nice-patrick-kalupa-rolle-serie",
+    "destination": "/tv-serien/dr-nice/dr-nice-patrick-kalupa-rolle-serie",
+    "permanent": true
+  },
+  {
     "source": "/tv-news/greys-anatomy/greys-anatomy-camilla-luddington-hashimoto",
     "destination": "/tv-serien/greys-anatomy/greys-anatomy-camilla-luddington-hashimoto",
     "permanent": true
@@ -722,6 +1052,11 @@
   {
     "source": "/tv-news/greys-anatomy/greys-anatomy-staffel-23-verlaengerung-cast",
     "destination": "/tv-serien/greys-anatomy/greys-anatomy-staffel-23-verlaengerung-cast",
+    "permanent": true
+  },
+  {
+    "source": "/tv-news/in-aller-freundschaft/in-aller-freundschaft-sachsenklinik-cast-ueberblick",
+    "destination": "/tv-serien/in-aller-freundschaft/in-aller-freundschaft-sachsenklinik-cast-ueberblick",
     "permanent": true
   },
   {
@@ -855,8 +1190,23 @@
     "permanent": true
   },
   {
+    "source": "/tv-news/charite",
+    "destination": "/tv-serien/charite",
+    "permanent": true
+  },
+  {
+    "source": "/tv-news/dr-nice",
+    "destination": "/tv-serien/dr-nice",
+    "permanent": true
+  },
+  {
     "source": "/tv-news/greys-anatomy",
     "destination": "/tv-serien/greys-anatomy",
+    "permanent": true
+  },
+  {
+    "source": "/tv-news/in-aller-freundschaft",
+    "destination": "/tv-serien/in-aller-freundschaft",
     "permanent": true
   },
   {

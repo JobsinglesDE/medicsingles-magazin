@@ -22,7 +22,7 @@ export async function GET() {
     if (pubDate < twoDaysAgo) continue;
 
     newsEntries.push({
-      url: `${BASE}${getArticleUrl(a.slug, a.entry.specialization)}`,
+      url: `${BASE}${getArticleUrl(a.slug, a.entry.specialization, a.entry.section)}`,
       title: a.entry.title,
       date: pubDate.toISOString(),
     });

@@ -62,6 +62,19 @@ export default config({
             { label: 'In aller Freundschaft — Die jungen Ärzte', value: 'junge-aerzte' },
           ],
         }),
+        section: fields.select({
+          label: 'Sektion (URL-Treiber, optional)',
+          description: 'Leer = normale Partnersuche-URL. "Promi-Ärzte" → /promi-aerzte/{slug} (eigene Sektion, Personen-Hub).',
+          defaultValue: '',
+          options: [
+            { label: '— (Partnersuche-Standard)', value: '' },
+            { label: 'Promi-Ärzte', value: 'promi-aerzte' },
+          ],
+        }),
+        person: fields.text({
+          label: 'Personen-Hub-Slug (z.B. eckart-hirschhausen)',
+          description: 'Verknüpft den Artikel mit einem Promi-Arzt-Hub unter /aerzte/{slug}. Nur bei Sektion Promi-Ärzte.',
+        }),
         excerpt: fields.text({ label: 'Auszug', multiline: true }),
         featuredImage: fields.image({
           label: 'Beitragsbild',
@@ -269,6 +282,15 @@ export default config({
         slug: fields.slug({ name: { label: 'Slug' } }),
         name: fields.text({ label: 'Name' }),
         role: fields.text({ label: 'Rolle (z.B. Hauptdarstellerin, Arzt)' }),
+        personType: fields.select({
+          label: 'Personen-Typ',
+          description: 'TV-Cast → /tv-serien/{show}/person/{slug}. Promi-Arzt → /aerzte/{slug}.',
+          defaultValue: 'tv-cast',
+          options: [
+            { label: 'TV-Cast (Serien-Darsteller)', value: 'tv-cast' },
+            { label: 'Promi-Arzt (Personen-Hub)', value: 'promi-arzt' },
+          ],
+        }),
         show: fields.select({
           label: 'Show',
           defaultValue: 'junge-aerzte',

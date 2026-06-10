@@ -47,7 +47,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const articlePages: MetadataRoute.Sitemap = articles.map((a) => ({
-    url: `${BASE}${getArticleUrl(a.slug, a.entry.specialization)}`,
+    url: `${BASE}${getArticleUrl(a.slug, a.entry.specialization, a.entry.section)}`,
     lastModified: a.entry.publishedAt ? new Date(a.entry.publishedAt) : undefined,
     priority: a.entry.type === 'cluster' ? 0.8 : 0.7,
     changeFrequency: 'monthly',
@@ -80,7 +80,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const personPages: MetadataRoute.Sitemap = persons
     .filter((p) => p.entry.status !== 'draft')
     .map((p) => ({
-      url: `${BASE}/tv-serien/${p.entry.show}/person/${p.slug}`,
+      url:
+        p.entry.personType === 'promi-arzt'
+          ? `${BASE}/aerzte/${p.slug}`
+          : `${BASE}/tv-serien/${p.entry.show}/person/${p.slug}`,
       lastModified: p.entry.publishedAt ? new Date(p.entry.publishedAt) : undefined,
       priority: 0.7,
       changeFrequency: 'weekly',

@@ -12,7 +12,7 @@ export async function GET() {
     .map((a) => ({
       title: a.entry.title,
       excerpt: a.entry.excerpt || '',
-      url: `https://medicsingles.de/magazin${getArticleUrl(a.slug, a.entry.specialization)}`,
+      url: `https://medicsingles.de/magazin${getArticleUrl(a.slug, a.entry.specialization, a.entry.section)}`,
       image: a.entry.featuredImage
         ? `https://medicsingles.de/magazin${a.entry.featuredImage}`
         : '',

@@ -7,7 +7,7 @@ const SHOW = 'in-aller-freundschaft';
 export async function generateStaticParams() {
   const persons = await reader.collections.persons.all();
   return persons
-    .filter((p) => p.entry.show === SHOW && p.entry.status !== 'draft')
+    .filter((p) => p.entry.show === SHOW && p.entry.status !== 'draft' && p.entry.personType !== 'promi-arzt')
     .map((p) => ({ slug: p.slug }));
 }
 

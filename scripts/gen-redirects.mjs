@@ -19,6 +19,16 @@ for (const f of readdirSync(ADIR).filter((x) => x.endsWith('.mdoc'))) {
   const s = readFileSync(join(ADIR, f), 'utf8');
   const slug = f.replace(/\.mdoc$/, '');
   const spec = SPEC_SLUG[field(s, 'specialization')];
+  const section = field(s, 'section');
+
+  if (section === 'promi-aerzte') {
+    // Promi-Ärzte: eigene Sektion. Alte URLs (flach + bisher nested unter aerzte) → /promi-aerzte/{slug}.
+    const dest = `/promi-aerzte/${slug}`;
+    out.push({ source: `/${slug}`, destination: dest, permanent: true });
+    out.push({ source: `/singles-partnersuche/aerzte/${slug}`, destination: dest, permanent: true });
+    continue;
+  }
+
   const dest = spec ? `/singles-partnersuche/${spec}/${slug}` : '/singles-partnersuche';
   if (dest !== `/${slug}`) out.push({ source: `/${slug}`, destination: dest, permanent: true });
 }

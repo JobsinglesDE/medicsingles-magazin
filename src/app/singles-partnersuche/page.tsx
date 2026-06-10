@@ -242,7 +242,7 @@ export default async function SinglesPartnersuche() {
                   key={article.slug}
                   title={article.entry.title}
                   excerpt={article.entry.excerpt}
-                  href={getArticleUrl(article.slug, article.entry.specialization)}
+                  href={getArticleUrl(article.slug, article.entry.specialization, article.entry.section)}
                   image={article.entry.featuredImage || undefined}
                   imageAlt={article.entry.featuredImageAlt || undefined}
                   category={article.entry.category}

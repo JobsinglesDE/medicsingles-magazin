@@ -118,7 +118,7 @@ export default async function AuthorPage({ params }: { params: Promise<{ slug: s
             {visibleArticles.map((a) => (
               <li key={a.slug} className="py-5">
                 <Link
-                  href={getArticleUrl(a.slug, a.entry.specialization)}
+                  href={getArticleUrl(a.slug, a.entry.specialization, a.entry.section)}
                   className="group flex gap-4 items-start"
                 >
                   {a.entry.featuredImage && (

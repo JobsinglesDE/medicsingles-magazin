@@ -1,0 +1,49 @@
+slug: doc-fischer
+name: "Doc Fischer (Julia Fischer)"
+role: "Gesundheits-TV-Moderatorin & Ärztin"
+personType: promi-arzt
+status: published
+focusKeyword: "Doc Fischer"
+intro: "Doc Fischer ist das bekannteste Gesicht im deutschen Gesundheits-TV — seit Mai 2021 moderiert Dr. med. Julia Fischer das gleichnamige Magazin im SWR Fernsehen. Die 1984 in Aachen geborene Ärztin verbindet klinische Bildgebung, eine abgeschlossene Promotion und ausgebildeten Wissenschaftsjournalismus zu einem Profil, das im öffentlich-rechtlichen Fernsehen selten ist. Bücher, YouTube und NDR-Vertretungen runden ihr Wirken ab."
+creditLine: "Ärztin & Wissenschaftsjournalistin · geboren 1984 in Aachen · lebt in Berlin"
+steckbrief:
+  - label: Vollständiger Name
+    value: Dr. med. Julia Fischer
+  - label: Geburtsjahr
+    value: "1984 (Alter 2026: etwa 42 Jahre)"
+  - label: Geburtsort
+    value: Aachen
+  - label: Wohnort
+    value: Berlin
+  - label: Bekannt als
+    value: "Doc Fischer — Moderatorin des SWR-Gesundheitsmagazins (seit 10. Mai 2021)"
+  - label: Ausbildung
+    value: "Studium der Medizin in Berlin (Abschluss Juli 2011), Promotion September 2012 (kardiale MRT), Volontariat EMS Electronic Media School Potsdam 2015–2017"
+  - label: Klinische Tätigkeit
+    value: "Assistenzärztin Nuklearmedizin Berlin (nach Approbation)"
+  - label: Bücher
+    value: "Die Medizin der Gefühle (2020, Drömer Knaur) · What a feeling (Neuauflage 2022)"
+  - label: Weitere Engagements
+    value: "ARD Gesund auf YouTube (seit April 2023) · Visite NDR Vertretung (seit 2024) · radiöins rbb (seit 2016)"
+featuredImage: /images/persons/doc-fischer/doc-fischer.webp
+featuredImageAlt: "Doc Fischer — Dr. Julia Fischer, SWR-Gesundheits-Moderatorin und Ärztin"
+featuredImageCredit: "Foto: Vanessa Wunsch / Drömer Knaur Verlag (Autorenpressefoto)"
+author: tommy-honold
+faqItems:
+  - question: Wer steckt hinter Doc Fischer?
+    answer: "Hinter dem Sendungsnamen Doc Fischer steht Dr. med. Julia Fischer, geboren 1984 in Aachen. Sie ist Ärztin, Wissenschaftsjournalistin und Autorin. Einen Dr. Thomas Fischer als Moderator, wie gelegentlich behauptet, gibt es nicht — Moderatorin ist ausschließlich Julia Fischer."
+  - question: Wie alt ist Doc Fischer?
+    answer: "Doc Fischer, also Dr. med. Julia Fischer, wurde 1984 in Aachen geboren und ist damit im Jahr 2026 etwa 42 Jahre alt. Ein genaues Geburtsdatum macht sie öffentlich nicht bekannt."
+  - question: Seit wann läuft die Sendung Doc Fischer im SWR?
+    answer: "Die Erstausstrahlung der Sendung Doc Fischer war am 10. Mai 2021 im SWR Fernsehen. Sie ersetzte das frühere Format Rundum gesund und läuft seitdem wöchentlich am Mittwoch in 45 Minuten Länge. Zusätzlich wird sie im SR Fernsehen ausgestrahlt und ist in der ARD-Mediathek abrufbar."
+  - question: Welche Bücher hat Doc Fischer veröffentlicht?
+    answer: "Dr. Julia Fischer veröffentlichte 2020 bei Drömer Knaur das populärwissenschaftliche Buch Die Medizin der Gefühle. 2022 erschien die überarbeitete Neuauflage unter dem Titel What a feeling. Beide Titel erklären, wie Emotionen körperlich wirken und welche neurobiologischen Mechanismen dahinterstehen."
+  - question: Worüber hat Doc Fischer promoviert?
+    answer: "Julia Fischer promovierte im September 2012 an einer Berliner Universitätsklinik zur kardialen Magnetresonanztomographie zur Evaluation des linken Atriums — ein Thema aus der klinischen Kardio-Bildgebung."
+takeaways:
+  - "Doc Fischer ist das Pseudonym für Dr. med. Julia Fischer, geboren 1984 in Aachen — keine erfundene Figur, sondern eine promovierte Ärztin mit journalistischem Volontariat."
+  - "Die SWR-Sendung läuft seit dem 10. Mai 2021 wöchentlich und steht für evidenzbasiertes Gesundheits-TV ohne Lifestyle-Versprechen."
+  - "Julia Fischer verbindet klinische Bildgebung, Wissenschaftsjournalismus, Buchprojekte und YouTube zu einem Profil, das zeigt: medizinische Identität hat viele Formen."
+seoTitle: "Doc Fischer: Julia Fischer — Ärztin & SWR-Moderatorin"
+seoDescription: "Doc Fischer ist Dr. med. Julia Fischer: Ärztin, SWR-Gesundheitsmagazin seit 2021, ARD-YouTube, Bücher bei Drömer Knaur. Steckbrief, Werdegang und alle Fakten."
+publishedAt: 2026-06-10

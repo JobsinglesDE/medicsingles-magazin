@@ -6,7 +6,7 @@ export const dynamicParams = false;
 export async function generateStaticParams() {
   const articles = await reader.collections.articles.all();
   return articles
-    .filter((a) => a.entry.specialization === 'arzt')
+    .filter((a) => a.entry.specialization === 'arzt' && a.entry.section !== 'promi-aerzte')
     .map((a) => ({ slug: a.slug }));
 }
 

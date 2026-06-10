@@ -127,7 +127,7 @@ export default async function AerztestammtischePillar() {
 
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztestammtische">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-aerztestammtische">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -298,7 +298,7 @@ export default async function AerztestammtischePillar() {
             Mediziner-Singles in deiner Region. Wenn das Warten auf den nächsten Stammtisch zu
             lang dauert, geht es direkt auf Medicsingles.de schneller.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerztestammtische">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-aerztestammtische">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

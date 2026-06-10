@@ -180,7 +180,7 @@ export default function UeberUns() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Tausende Medizin-Singles warten auf dich.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

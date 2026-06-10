@@ -22,6 +22,17 @@ export const metadata: Metadata = {
   description:
     'Magazin für Ärzte, Pflege & Therapeuten: Partnersuche-Guides, Erfolgsgeschichten und Tipps für Dating trotz Schichtdienst. Jetzt kostenlos zu Medicsingles.de.',
   metadataBase: new URL(BASE_URL),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
   alternates: {
     types: {
       'application/rss+xml': `${BASE_URL}/rss.xml`,

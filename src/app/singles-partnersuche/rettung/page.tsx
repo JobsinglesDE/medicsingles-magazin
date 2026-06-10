@@ -189,7 +189,7 @@ export default async function RettungPillar() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-rettung">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-rettung">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -275,7 +275,7 @@ export default async function RettungPillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Rettungssanitäter, Notfallsanitäter und Menschen, die deinen 12/24-Rhythmus kennen.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-rettung">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-rettung">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

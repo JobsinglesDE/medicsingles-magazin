@@ -128,7 +128,7 @@ export default async function UniklinikenPillar() {
 
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-unikliniken">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-unikliniken">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -294,7 +294,7 @@ export default async function UniklinikenPillar() {
             Mediziner-Singles aus jedem Bundesland auf Medicsingles.de — Profil in zwei Minuten,
             erste Nachricht noch heute.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-unikliniken">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-unikliniken">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

@@ -139,7 +139,7 @@ export default async function JungeFachgesellschaftenPillar() {
 
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-junge-fg">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-junge-fg">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -438,7 +438,7 @@ export default async function JungeFachgesellschaftenPillar() {
             Mediziner-Singles aus jedem Fachgebiet auf Medicsingles.de — Profil in zwei Minuten,
             erste Nachricht noch heute.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-junge-fg">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-junge-fg">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

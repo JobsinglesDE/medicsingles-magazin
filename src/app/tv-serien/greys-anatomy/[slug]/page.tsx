@@ -162,7 +162,7 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
         )}
 
         <div className="text-center py-8">
-          <HeartButton href={`https://medicsingles.de/?AID=MedicMagazin-${SERIES_ID}`}>
+          <HeartButton href={`https://medicsingles.de/registration/?AID=MedicMagazin-${SERIES_ID}`}>
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </div>

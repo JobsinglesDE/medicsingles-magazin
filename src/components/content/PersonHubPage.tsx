@@ -191,7 +191,7 @@ export async function PersonHubPage({ slug, show }: PersonHubPageProps) {
 
         {/* CTA */}
         <div className="text-center py-8">
-          <HeartButton href={`https://medicsingles.de/?AID=MedicMagazin-${show}`}>
+          <HeartButton href={`https://medicsingles.de/registration/?AID=MedicMagazin-${show}`}>
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </div>

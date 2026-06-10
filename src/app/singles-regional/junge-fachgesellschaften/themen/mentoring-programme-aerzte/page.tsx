@@ -163,7 +163,7 @@ export default function MentoringPage() {
 
       <ScrollReveal>
         <section className="text-center py-16 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-mentoring">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-mentoring">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

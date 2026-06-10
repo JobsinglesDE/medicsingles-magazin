@@ -153,7 +153,7 @@ export default async function ArticleView({ slug }: { slug: string }) {
             <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
               <div className="p-6 text-center">
                 <p className="text-sm text-foreground/70 mb-3">Du arbeitest im Gesundheitswesen?</p>
-                <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+                <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin">
                   Jetzt kostenfrei anmelden
                 </HeartButton>
               </div>
@@ -166,7 +166,7 @@ export default async function ArticleView({ slug }: { slug: string }) {
           <div className="py-10 px-6 bg-surface-dark text-white text-center">
             <p className="text-lg font-bold mb-2">Genug gelesen?</p>
             <p className="text-white/60 text-sm mb-5">Finde Singles, die deinen Alltag verstehen.</p>
-            <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+            <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin">
               Jetzt kostenfrei mitmachen
             </HeartButton>
           </div>
@@ -216,7 +216,7 @@ export default async function ArticleView({ slug }: { slug: string }) {
 
       {/* Bottom CTA */}
       <section className="text-center py-16 px-6">
-        <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+        <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin">
           Jetzt kostenfrei mitmachen
         </HeartButton>
       </section>

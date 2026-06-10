@@ -177,7 +177,7 @@ export default async function SinglesPartnersuche() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -217,7 +217,7 @@ export default async function SinglesPartnersuche() {
               <p className="text-lg font-semibold">
                 Jetzt Medizin-Singles in deiner Region finden
               </p>
-              <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+              <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin">
                 Jetzt kostenlos registrieren
               </HeartButton>
             </div>
@@ -260,7 +260,7 @@ export default async function SinglesPartnersuche() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Tausende Medizin-Singles warten auf dich — echte Menschen, echter Alltag, echte Verbindungen.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

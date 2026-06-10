@@ -144,7 +144,7 @@ export default function SinglesRegionalHub() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-regional">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-regional">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -229,7 +229,7 @@ export default function SinglesRegionalHub() {
             Mediziner-Singles aus deiner Region. Stammtisch, Klinik, Kammer oder direkt auf
             Medicsingles.de.
           </p>
-          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-regional">
+          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-regional">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

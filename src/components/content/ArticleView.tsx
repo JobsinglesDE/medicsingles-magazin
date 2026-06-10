@@ -16,7 +16,7 @@ import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { StickyTOC } from '@/components/content/StickyTOC';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { ArticleByline } from '@/components/content/ArticleByline';
-import { JsonLd, articleJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, videoJsonLd, extractYoutubeEmbed } from '@/components/seo/JsonLd';
 import { SPEC_HUBS, SECTION_HUBS } from '@/lib/hubs';
 
 const BASE_URL = 'https://medicsingles.de/magazin';
@@ -120,6 +120,17 @@ export default async function ArticleView({ slug }: { slug: string }) {
       {article.faqItems && article.faqItems.length > 0 && (
         <JsonLd data={faqJsonLd(article.faqItems)} />
       )}
+      {(() => {
+        const ytEmbed = extractYoutubeEmbed(article.content);
+        return ytEmbed ? (
+          <JsonLd data={videoJsonLd({
+            name: ytEmbed.title || article.title,
+            description: article.excerpt,
+            videoId: ytEmbed.videoId,
+            uploadDate: `${article.publishedAt || new Date().toISOString().slice(0, 10)}T08:00:00+02:00`,
+          })} />
+        ) : null;
+      })()}
 
       <ClusterHero
         title={article.title}

@@ -221,12 +221,12 @@ export default async function BerufsbilderHub() {
           </p>
           <dl className="divide-y divide-foreground/10 rounded-2xl bg-surface border border-foreground/10 overflow-hidden">
             {[
-              ['Arzt/Ärztin (Assistenz- bis Oberarzt)', 'ca. 5.500–10.000+ €', 'arzt'],
-              ['Hebamme', 'ca. 3.300–4.500 €', 'hebamme'],
-              ['Notfallsanitäter/in', 'ca. 3.200–4.300 €', 'notfallsanitaeter'],
-              ['Pflegefachkraft', 'ca. 3.300–4.300 €', 'pflegefachkraft'],
-              ['Physiotherapeut/in', 'ca. 2.700–3.800 €', 'physiotherapeut'],
-              ['MFA', 'ca. 2.400–3.300 €', 'mfa'],
+              ['Arzt/Ärztin (Assistenz- bis Lt. Oberarzt, TV-Ärzte/VKA)', '5.722–11.689 €', 'arzt'],
+              ['Hebamme (TVöD P11, angestellt)', 'ab ca. 4.420 €', 'hebamme'],
+              ['Notfallsanitäter/in (TVöD EG-N + Zulagen)', '3.863–4.583 €', 'notfallsanitaeter'],
+              ['Pflegefachkraft (TVöD-P, P7)', '3.510–4.305 €', 'pflegefachkraft'],
+              ['MFA (Tarif TG I–VI)', '2.940–4.896 €', 'mfa'],
+              ['Physiotherapeut/in (Entgeltatlas-Quartile)', '2.757–3.839 €', 'physiotherapeut'],
             ].map(([label, value, slug]) => (
               <div key={slug} className="flex justify-between gap-4 px-5 py-3 text-sm">
                 <dt className="text-foreground/60">

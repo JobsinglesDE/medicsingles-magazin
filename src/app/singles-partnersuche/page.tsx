@@ -3,6 +3,7 @@ import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { PillarArticleFeature } from '@/components/content/PillarArticleFeature';
 import { ArticleCard } from '@/components/content/ArticleCard';
+import { TableOfContents } from '@/components/content/TableOfContents';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
@@ -35,6 +36,9 @@ const HUB_COLORS = [
 const PILLARS = [
   {
     title: 'Ärzte & Ärztinnen',
+    spec: 'arzt',
+    letter: 'A',
+    id: 'aerzte',
     excerpt: 'Partnersuche zwischen Assistenzdienst, Chefarzt-Visite und 60-Stunden-Woche. Für Mediziner, die eine Partnerschaft auf Augenhöhe suchen.',
     href: '/singles-partnersuche/aerzte',
     icon: '🩺',
@@ -42,6 +46,9 @@ const PILLARS = [
   },
   {
     title: 'Pflege & Krankenschwestern',
+    spec: 'pflege',
+    letter: 'B',
+    id: 'pflege',
     excerpt: 'Dating trotz Schichtdienst, Dreischicht und emotionaler Erschöpfung. Für Pflegekräfte, die jemanden suchen, der den Alltag mitträgt.',
     href: '/singles-partnersuche/pflege',
     icon: '💊',
@@ -49,6 +56,9 @@ const PILLARS = [
   },
   {
     title: 'Therapeuten & Psychologen',
+    spec: 'therapeut',
+    letter: 'C',
+    id: 'therapeuten',
     excerpt: 'Partnersuche mit professioneller Distanz — und echter Nähe. Für Menschen, die beruflich zuhören und privat gehört werden wollen.',
     href: '/singles-partnersuche/therapeuten',
     icon: '🧠',
@@ -56,6 +66,9 @@ const PILLARS = [
   },
   {
     title: 'Rettungsdienst',
+    spec: 'rettung',
+    letter: 'D',
+    id: 'rettung',
     excerpt: 'Dating im 12/24-Rhythmus, zwischen Adrenalin-Abfall und Funkruf. Für Rettungssanitäter, Notfallsanitäter und Notärzte.',
     href: '/singles-partnersuche/rettung',
     icon: '🚑',
@@ -71,15 +84,13 @@ export default async function SinglesPartnersuche() {
     url: `https://medicsingles.de/magazin${p.href}`,
   }));
 
-  const highlightSlugs = [
-    'partnersuche-aerzte-warum-schwer',
-    'dating-als-krankenschwester-schichtdienst',
-    'beziehung-mit-arzt-partner',
-    'erstes-date-aerzte-ideen',
-  ];
-  const highlights = highlightSlugs
-    .map((slug) => articles.find((a) => a.slug === slug))
-    .filter(Boolean) as typeof articles;
+  const topBySpec = (spec: string) =>
+    articles
+      .filter((a) => a.entry.category === 'partnersuche' && a.entry.specialization === spec && a.entry.type === 'cluster' && !a.entry.section)
+      .sort((a, b) => (b.entry.publishedAt || '').localeCompare(a.entry.publishedAt || ''))
+      .slice(0, 3);
+
+  const tocItems = PILLARS.map((p) => ({ label: `${p.letter}. ${p.title}`, id: p.id }));
 
   return (
     <>
@@ -184,31 +195,48 @@ export default async function SinglesPartnersuche() {
         </section>
       </ScrollReveal>
 
-      {/* 4 Sub-Pillar Links */}
+      {/* Inhaltsverzeichnis */}
       <ScrollReveal>
-        <section className="max-w-6xl mx-auto px-6 py-12">
-          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
-            Dein Beruf — deine Community
-          </h2>
-          <p className="text-foreground/70 mb-8 leading-relaxed">
-            Ob Arzt, Krankenschwester, Therapeut oder Rettungssanitäter — jede Berufsgruppe
-            im Gesundheitswesen hat ihre eigene Dating-Realität. Wähl deinen Beruf und entdecke
-            maßgeschneiderte Guides für deine Partnersuche.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {PILLARS.map((pillar) => (
-              <PillarArticleFeature
-                key={pillar.href}
-                title={pillar.title}
-                excerpt={pillar.excerpt}
-                href={pillar.href}
-                icon={<span className="text-2xl">{pillar.icon}</span>}
-                accentColor={pillar.color}
-              />
-            ))}
-          </div>
+        <section className="max-w-3xl mx-auto px-6 py-2">
+          <TableOfContents items={tocItems} showFaq={false} />
         </section>
       </ScrollReveal>
+
+      {/* Berufsgruppen-Sektionen A–D */}
+      {PILLARS.map((pillar) => {
+        const spokes = topBySpec(pillar.spec);
+        return (
+          <ScrollReveal key={pillar.id}>
+            <section id={pillar.id} className="max-w-6xl mx-auto px-6 py-10 scroll-mt-24">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
+                {pillar.letter}. Partnersuche {pillar.title}
+              </h2>
+              <p className="text-foreground/70 mb-6 leading-relaxed max-w-3xl">{pillar.excerpt}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <PillarArticleFeature
+                  title={`Der komplette Guide: ${pillar.title}`}
+                  excerpt="Inhaltsverzeichnis, alle Themen-Sektionen und vertiefende Artikel."
+                  href={pillar.href}
+                  icon={<span className="text-2xl">{pillar.icon}</span>}
+                  accentColor={pillar.color}
+                />
+                {spokes.map((a) => (
+                  <ArticleCard
+                    key={a.slug}
+                    title={a.entry.title}
+                    excerpt={a.entry.excerpt}
+                    href={getArticleUrl(a.slug, a.entry.specialization, a.entry.section)}
+                    image={a.entry.featuredImage || undefined}
+                    imageAlt={a.entry.featuredImageAlt || undefined}
+                    category={a.entry.category}
+                    date={a.entry.publishedAt || undefined}
+                  />
+                ))}
+              </div>
+            </section>
+          </ScrollReveal>
+        );
+      })}
 
       {/* Middle CTA */}
       <ScrollReveal>
@@ -225,34 +253,6 @@ export default async function SinglesPartnersuche() {
           </AnimatedGradientBorder>
         </section>
       </ScrollReveal>
-
-      {/* Highlights */}
-      {highlights.length > 0 && (
-        <ScrollReveal>
-          <section className="max-w-6xl mx-auto px-6 py-10">
-            <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-              💡 Empfohlene Guides
-            </h2>
-            <p className="text-foreground/70 mb-8 leading-relaxed">
-              Die meistgelesenen Artikel aus allen Berufsgruppen — für den ersten Überblick.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {highlights.map((article) => (
-                <ArticleCard
-                  key={article.slug}
-                  title={article.entry.title}
-                  excerpt={article.entry.excerpt}
-                  href={getArticleUrl(article.slug, article.entry.specialization, article.entry.section)}
-                  image={article.entry.featuredImage || undefined}
-                  imageAlt={article.entry.featuredImageAlt || undefined}
-                  category={article.entry.category}
-                  date={article.entry.publishedAt || undefined}
-                />
-              ))}
-            </div>
-          </section>
-        </ScrollReveal>
-      )}
 
       {/* Bottom CTA */}
       <ScrollReveal>

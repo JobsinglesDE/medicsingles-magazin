@@ -3,6 +3,7 @@ import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { PillarArticleFeature } from '@/components/content/PillarArticleFeature';
 import { ArticleCard } from '@/components/content/ArticleCard';
+import { TableOfContents } from '@/components/content/TableOfContents';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
@@ -34,16 +35,22 @@ const RETTUNG_COLORS = [
 
 const SECTIONS = [
   {
+    id: 'grundlagen-schichtrealitaet',
+    letter: 'A',
     title: '🚨 Grundlagen & Schichtrealität',
     intro: 'Der 12/24-Rhythmus prägt alles — vom Dating-Tempo bis zur Frage, wann Körper und Kopf überhaupt ansprechbar sind. Hier die Tiefenanalyse.',
     slugs: ['partnersuche-rettungsdienst-realitaet-12-24-rhythmus'],
   },
   {
+    id: 'online-dating-im-rettungsdienst',
+    letter: 'B',
     title: '💬 Online-Dating im Rettungsdienst',
     intro: 'Das richtige Profil entscheidet, ob du Menschen triffst, die deinen Beruf verstehen — oder solche, die beim ersten abgesagten Date abspringen.',
     slugs: ['dating-profil-rettungssanitaeter-notfallsanitaeter'],
   },
   {
+    id: 'beziehung-einsatz-alltag',
+    letter: 'C',
     title: '❤️ Beziehung & Einsatz-Alltag',
     intro: 'Was im Körper nach einem schweren Einsatz passiert und wie du das deinem Partner erklärst, ohne jedes Heimkommen zum Drama zu machen.',
     slugs: [
@@ -53,6 +60,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'karriere-familie-zukunft',
+    letter: 'D',
     title: '👨‍👩‍👧 Karriere, Familie & Zukunft',
     intro: 'Kita-Logistik im 12/24-Rhythmus, Elternzeit als Rettungsdienstler, NotSan-Weiterbildung mit Kindern — die finanzielle und biographische Realität.',
     slugs: [
@@ -60,6 +69,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'fachrichtungen-im-rettungsdienst',
+    letter: 'E',
     title: '🚑 Fachrichtungen im Rettungsdienst',
     intro: 'Notarzt, Notfallsanitäter, Leitstelle, Bergrettung — alle tragen ein Rettungsdienst-Schild, aber die Dating-Realitäten unterscheiden sich deutlich.',
     slugs: [
@@ -69,6 +80,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'networking-fachkontakte',
+    letter: 'F',
     title: '🎓 Networking & Fachkontakte',
     intro: 'RettMobil, ACLS- und PHTLS-Fortbildungen, Feuerwehrtag — wo du Menschen aus dem Fach triffst, ohne dass es ein Dating-Event sein muss.',
     slugs: [
@@ -77,6 +90,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'mental-health-beziehung',
+    letter: 'G',
     title: '🧠 Mental Health & Beziehung',
     intro: 'PTBS ist im Rettungsdienst statistisch relevant — und eine neue Beziehung ist kein Therapieersatz. Wie du damit offen umgehst.',
     slugs: [
@@ -112,6 +127,7 @@ export default async function RettungPillar() {
   }
 
   const allSectionSlugs = SECTIONS.flatMap((s) => s.slugs);
+  const tocItems = SECTIONS.map((s) => ({ label: `${s.letter}. ${s.title}`, id: s.id }));
   const schemaItems = allSectionSlugs
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter(Boolean)
@@ -197,14 +213,20 @@ export default async function RettungPillar() {
       </ScrollReveal>
 
       {/* Thematic Sections */}
+      <ScrollReveal>
+        <section className="max-w-3xl mx-auto px-6 py-2">
+          <TableOfContents items={tocItems} showFaq={false} />
+        </section>
+      </ScrollReveal>
+
       {SECTIONS.map((section) => {
         const sectionArticles = getSectionArticles(section.slugs);
         if (sectionArticles.length === 0) return null;
         return (
           <ScrollReveal key={section.title}>
-            <section className="max-w-6xl mx-auto px-6 py-10">
+            <section id={section.id} className="max-w-6xl mx-auto px-6 py-10 scroll-mt-24">
               <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-                {section.title}
+                {section.letter}. {section.title}
               </h2>
               {section.intro && (
                 <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>

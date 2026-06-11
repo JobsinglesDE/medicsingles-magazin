@@ -1,6 +1,7 @@
 import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ArticleCard } from '@/components/content/ArticleCard';
+import { TableOfContents } from '@/components/content/TableOfContents';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { CircularTestimonials } from '@/components/ui/CircularTestimonials';
@@ -51,6 +52,8 @@ const testimonials = [
 
 const SECTIONS = [
   {
+    id: 'grundlagen-realitaet',
+    letter: 'A',
     title: '💊 Grundlagen & Realität',
     intro: 'Die fünf zentralen Dating-Herausforderungen für Pflegekräfte — vom Schichtdienst über öffentliches Bild bis zum Gehalts-Realismus.',
     slugs: [
@@ -58,6 +61,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'online-dating-im-schichtdienst',
+    letter: 'B',
     title: '💬 Online-Dating im Schichtdienst',
     intro: 'Online-Dating funktioniert für Pflegekräfte besser als fast jede andere Methode. Du knüpfst Kontakte zwischen Spätdienst und Schlafphase, ohne Ausgehen. Die richtige Plattform, authentisches Profil und eine erste Nachricht, die zieht.',
     slugs: [
@@ -68,6 +73,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'erstes-date-kennenlernen',
+    letter: 'C',
     title: '☕ Erstes Date & Kennenlernen',
     intro: 'Date-Ideen, die zum Pflege-Dienstplan passen — von Micro-Dates im Tagesloch bis zum Wochenende-Ausflug.',
     slugs: [
@@ -77,6 +84,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'beziehung-alltag-in-der-pflege',
+    letter: 'D',
     title: '❤️ Beziehung & Alltag in der Pflege',
     intro: 'Der Dienstplan sitzt als dritter Partner am Tisch. Wie Partner das tragen, warum emotionale Abgrenzung entscheidend ist, und wie zwei Pflegekräfte ein funktionierendes Paar werden.',
     slugs: [
@@ -90,6 +99,8 @@ const SECTIONS = [
 
 const SECTIONS_AFTER_CTA = [
   {
+    id: 'zukunft-karriere-familie',
+    letter: 'E',
     title: '👨‍👩‍👧 Zukunft, Karriere & Familie',
     intro: 'Familienplanung in der Pflege: Elternzeit, Wiedereinstieg, Betreuungs-Puzzle und finanzielle Realität zwischen Kind und Schichtdienst.',
     slugs: [
@@ -99,6 +110,8 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
+    id: 'spezifische-lebenslagen',
+    letter: 'F',
     title: '🌙 Spezifische Lebenslagen',
     intro: 'Dreischicht, alleinerziehend, Intensivstation — jede Pflege-Lebenslage hat ihre eigenen Dating-Herausforderungen.',
     slugs: [
@@ -110,6 +123,8 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
+    id: 'networking-kontakte',
+    letter: 'G',
     title: '🎓 Networking & Kontakte',
     intro: 'Kongresse, Sportgruppen, Stationsteam — wo Pflegekräfte-Singles sich jenseits von Apps treffen.',
     slugs: [
@@ -119,6 +134,8 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
+    id: 'krankenschwester-sucht-mann-realitaet-je',
+    letter: 'H',
     title: '👩‍⚕️ Krankenschwester sucht Mann — Realität jenseits Klischee',
     intro: 'Wo Pflegekräfte ihre Partner wirklich treffen und warum Schichtdienst, Klischees und Online-Dating-Stigma kein Hindernis sein müssen.',
     slugs: [
@@ -128,6 +145,8 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
+    id: 'haeufige-fragen',
+    letter: 'I',
     title: '❓ Häufige Fragen',
     intro: 'Die Fragen, die sich jede Pflegekraft beim Thema Dating stellt — kompakt beantwortet.',
     slugs: [
@@ -147,6 +166,7 @@ export default async function PflegePillar() {
   }
 
   const allSectionSlugs = [...SECTIONS, ...SECTIONS_AFTER_CTA].flatMap((s) => s.slugs);
+  const tocItems = [...SECTIONS, ...SECTIONS_AFTER_CTA].map((s) => ({ label: `${s.letter}. ${s.title}`, id: s.id }));
   const schemaItems = allSectionSlugs
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter(Boolean)
@@ -230,14 +250,20 @@ export default async function PflegePillar() {
       </ScrollReveal>
 
       {/* Thematic Sections — before middle CTA */}
+      <ScrollReveal>
+        <section className="max-w-3xl mx-auto px-6 py-2">
+          <TableOfContents items={tocItems} showFaq={false} />
+        </section>
+      </ScrollReveal>
+
       {SECTIONS.map((section) => {
         const sectionArticles = getSectionArticles(section.slugs);
         if (sectionArticles.length === 0) return null;
         return (
           <ScrollReveal key={section.title}>
-            <section className="max-w-6xl mx-auto px-6 py-10">
+            <section id={section.id} className="max-w-6xl mx-auto px-6 py-10 scroll-mt-24">
               <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-                {section.title}
+                {section.letter}. {section.title}
               </h2>
               {section.intro && (
                 <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>
@@ -283,9 +309,9 @@ export default async function PflegePillar() {
         if (sectionArticles.length === 0) return null;
         return (
           <ScrollReveal key={section.title}>
-            <section className="max-w-6xl mx-auto px-6 py-10">
+            <section id={section.id} className="max-w-6xl mx-auto px-6 py-10 scroll-mt-24">
               <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-                {section.title}
+                {section.letter}. {section.title}
               </h2>
               {section.intro && (
                 <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>

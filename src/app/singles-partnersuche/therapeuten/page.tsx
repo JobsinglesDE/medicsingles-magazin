@@ -3,6 +3,7 @@ import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { PillarArticleFeature } from '@/components/content/PillarArticleFeature';
 import { ArticleCard } from '@/components/content/ArticleCard';
+import { TableOfContents } from '@/components/content/TableOfContents';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
@@ -34,6 +35,8 @@ const THERAPEUTEN_COLORS = [
 
 const SECTIONS = [
   {
+    id: 'grundlagen-realitaet',
+    letter: 'A',
     title: '🧠 Grundlagen & Realität',
     intro: 'Die fünf Dating-Herausforderungen für psychologische Fachkräfte und die Vorurteile, denen Therapeuten beim Dating immer wieder begegnen.',
     slugs: [
@@ -42,6 +45,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'online-dating-strategien',
+    letter: 'B',
     title: '💬 Online-Dating-Strategien',
     intro: 'Wie du Empathie zeigst, ohne wie eine Praxis-Website zu klingen — Profile und Erstnachrichten, die echte Verbindungen anziehen.',
     slugs: [
@@ -50,6 +55,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'erstes-date-kennenlernen',
+    letter: 'C',
     title: '☕ Erstes Date & Kennenlernen',
     intro: 'Date-Ideen, die tiefere Gespräche ermöglichen, ohne dass der Abend zur Therapiesitzung wird.',
     slugs: [
@@ -58,6 +65,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'beziehung-alltag',
+    letter: 'D',
     title: '❤️ Beziehung & Alltag',
     intro: 'Wie es sich wirklich anfühlt, mit einem Therapeuten zu leben — emotionale Verfügbarkeit, Schweigepflicht, gesunde Streitkultur.',
     slugs: [
@@ -67,6 +76,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'zukunft-karriere-familie',
+    letter: 'E',
     title: '👨‍👩‍👧 Zukunft, Karriere & Familie',
     intro: 'Praxisgründung gemeinsam stemmen, Familienplanung zwischen Kassensitz und Elternzeit — die finanzielle und biographische Realität.',
     slugs: [
@@ -75,6 +86,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'spezifische-lebenslagen-fachrichtungen',
+    letter: 'F',
     title: '🔬 Spezifische Lebenslagen & Fachrichtungen',
     intro: 'Dating als KJP mit Kindswohl-Themen, als Coach mit ungeregeltem Berufsbild — wo die Fachrichtung das Privatleben prägt.',
     slugs: [
@@ -83,6 +96,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'networking-kontakte',
+    letter: 'G',
     title: '🎓 Networking & Kontakte',
     intro: 'Supervision, Intervision, Berufsverbände — wo psychologische Fachkräfte sich jenseits von Apps treffen.',
     slugs: [
@@ -90,6 +105,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'ethik-grenzen',
+    letter: 'H',
     title: '⚖️ Ethik & Grenzen',
     intro: 'Das Abstinenzgebot, Klienten-Dating und Schweigepflicht in der Partnerschaft — was du unbedingt wissen musst.',
     slugs: [
@@ -126,6 +143,7 @@ export default async function TherapeutenPillar() {
   }
 
   const allSectionSlugs = SECTIONS.flatMap((s) => s.slugs);
+  const tocItems = SECTIONS.map((s) => ({ label: `${s.letter}. ${s.title}`, id: s.id }));
   const schemaItems = allSectionSlugs
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter(Boolean)
@@ -210,14 +228,20 @@ export default async function TherapeutenPillar() {
       </ScrollReveal>
 
       {/* Thematic Sections */}
+      <ScrollReveal>
+        <section className="max-w-3xl mx-auto px-6 py-2">
+          <TableOfContents items={tocItems} showFaq={false} />
+        </section>
+      </ScrollReveal>
+
       {SECTIONS.map((section) => {
         const sectionArticles = getSectionArticles(section.slugs);
         if (sectionArticles.length === 0) return null;
         return (
           <ScrollReveal key={section.title}>
-            <section className="max-w-6xl mx-auto px-6 py-10">
+            <section id={section.id} className="max-w-6xl mx-auto px-6 py-10 scroll-mt-24">
               <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-                {section.title}
+                {section.letter}. {section.title}
               </h2>
               {section.intro && (
                 <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>

@@ -28,6 +28,18 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
+    label: 'Berufsbilder',
+    href: '/berufsbilder',
+    dropdown: [
+      { label: 'MFA', href: '/berufsbilder/mfa', description: 'Ausbildung, Gehalt & Praxisalltag' },
+      { label: 'Pflegefachkraft', href: '/berufsbilder/pflegefachkraft', description: 'Generalistik, TVöD & Schichtdienst' },
+      { label: 'Hebamme', href: '/berufsbilder/hebamme', description: 'Duales Studium & Kreißsaal' },
+      { label: 'Physiotherapeut/in', href: '/berufsbilder/physiotherapeut', description: 'Ausbildung, Gehalt & Praxis' },
+      { label: 'Notfallsanitäter/in', href: '/berufsbilder/notfallsanitaeter', description: 'Rettungsdienst & TVöD' },
+      { label: 'Arzt & Ärztin', href: '/berufsbilder/arzt', description: 'Studium, TV-Ärzte & Karrierestufen' },
+    ],
+  },
+  {
     label: 'Singles Regional',
     href: '/singles-regional',
     dropdown: [

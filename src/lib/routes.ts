@@ -8,6 +8,7 @@ import { SPEC_SLUG } from './hubs';
  */
 export function getArticleUrl(slug: string, specialization?: string, section?: string): string {
   if (section === 'promi-aerzte') return `/promi-aerzte/${slug}`;
+  if (section === 'berufsbilder') return `/berufsbilder/${slug}`;
   const spec = specialization && SPEC_SLUG[specialization];
   return spec ? `/singles-partnersuche/${spec}/${slug}` : `/singles-partnersuche/${slug}`;
 }

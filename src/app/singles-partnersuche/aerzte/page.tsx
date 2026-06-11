@@ -1,6 +1,7 @@
 import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ArticleCard } from '@/components/content/ArticleCard';
+import { TableOfContents } from '@/components/content/TableOfContents';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { CircularTestimonials } from '@/components/ui/CircularTestimonials';
@@ -51,6 +52,8 @@ const testimonials = [
 
 const SECTIONS = [
   {
+    id: 'grundlagen-realitaet',
+    letter: 'A',
     title: '🩺 Grundlagen & Realität',
     intro: 'Warum Partnersuche als Arzt anders läuft — und was du darüber wissen solltest, bevor du anfängst.',
     slugs: [
@@ -60,6 +63,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'online-dating-strategien',
+    letter: 'B',
     title: '💬 Online-Dating-Strategien',
     intro: 'Für Ärzte ist Online-Dating die mit Abstand effizienteste Methode. Hier findest du die richtigen Plattformen, Profil-Tipps und den Umgang mit Diskretion.',
     slugs: [
@@ -70,6 +75,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'erstes-date-kennenlernen',
+    letter: 'C',
     title: '☕ Erstes Date & Kennenlernen',
     intro: 'Micro-Dates, Video-Calls als Vorfilter und Gesprächsthemen, die nicht in Fachsimpelei abdriften.',
     slugs: [
@@ -80,6 +87,8 @@ const SECTIONS = [
     ],
   },
   {
+    id: 'beziehung-alltag-im-arztberuf',
+    letter: 'D',
     title: '❤️ Beziehung & Alltag im Arztberuf',
     intro: 'Der Beruf sitzt als dritter Partner am Tisch. Wie Paare das managen, welche Rolle der Partner einnimmt und wie Kommunikation funktioniert.',
     slugs: [
@@ -93,6 +102,8 @@ const SECTIONS = [
 
 const SECTIONS_AFTER_CTA = [
   {
+    id: 'zukunft-karriere-familie',
+    letter: 'E',
     title: '👨‍👩‍👧 Zukunft, Karriere & Familie',
     intro: 'Familienplanung, Assistenzarzt-Karriere, Praxisgründung und die Balance zwischen zwei ambitionierten Menschen.',
     slugs: [
@@ -103,6 +114,8 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
+    id: 'fachrichtungen-lebenslagen',
+    letter: 'F',
     title: '🔬 Fachrichtungen & Lebenslagen',
     intro: 'Chirurgen, Allgemeinmediziner, Ärzte über 40 — die Realität ist nicht für alle gleich.',
     slugs: [
@@ -112,6 +125,8 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
+    id: 'networking-kontakte',
+    letter: 'G',
     title: '🎓 Networking & Kontakte',
     intro: 'Kongresse, Ärztekammern und Unikliniken — wo Ärzte-Singles sich jenseits von Apps treffen.',
     slugs: [
@@ -128,6 +143,8 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
+    id: 'promi-aerzte-deutschland-bekannte-tv-med',
+    letter: 'H',
     title: '⭐ Promi-Ärzte Deutschland — bekannte TV-Mediziner',
     intro: 'Hirschhausen, Riedl, Doc Fischer, Doc Esser und sechs weitere Persönlichkeiten zeigen, wie aus Klinikarbeit eine Marke wird. Vorbilder für Spezialisierung und Sichtbarkeit.',
     slugs: [
@@ -143,6 +160,8 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
+    id: 'akademiker-niveau-themen-hubs',
+    letter: 'I',
     title: '💎 Akademiker-Niveau & Themen-Hubs',
     intro: 'Partnersuche auf Augenhöhe, Singles unter Ärzten und realistische Wege Mediziner kennenzulernen.',
     slugs: [
@@ -156,6 +175,8 @@ const SECTIONS_AFTER_CTA = [
     ],
   },
   {
+    id: 'haeufige-fragen',
+    letter: 'J',
     title: '❓ Häufige Fragen',
     intro: 'Die Fragen, die sich jeder Arzt beim Thema Dating stellt — kompakt beantwortet.',
     slugs: [
@@ -180,6 +201,7 @@ export default async function AerztePillar() {
   }
 
   const allSectionSlugs = [...SECTIONS, ...SECTIONS_AFTER_CTA].flatMap((s) => s.slugs);
+  const tocItems = [...SECTIONS, ...SECTIONS_AFTER_CTA].map((s) => ({ label: `${s.letter}. ${s.title}`, id: s.id }));
   const schemaItems = allSectionSlugs
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter(Boolean)
@@ -265,14 +287,20 @@ export default async function AerztePillar() {
       </ScrollReveal>
 
       {/* Thematic Sections — before middle CTA */}
+      <ScrollReveal>
+        <section className="max-w-3xl mx-auto px-6 py-2">
+          <TableOfContents items={tocItems} showFaq={false} />
+        </section>
+      </ScrollReveal>
+
       {SECTIONS.map((section) => {
         const sectionArticles = getSectionArticles(section.slugs);
         if (sectionArticles.length === 0) return null;
         return (
           <ScrollReveal key={section.title}>
-            <section className="max-w-6xl mx-auto px-6 py-10">
+            <section id={section.id} className="max-w-6xl mx-auto px-6 py-10 scroll-mt-24">
               <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-                {section.title}
+                {section.letter}. {section.title}
               </h2>
               {section.intro && (
                 <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>
@@ -318,9 +346,9 @@ export default async function AerztePillar() {
         if (sectionArticles.length === 0) return null;
         return (
           <ScrollReveal key={section.title}>
-            <section className="max-w-6xl mx-auto px-6 py-10">
+            <section id={section.id} className="max-w-6xl mx-auto px-6 py-10 scroll-mt-24">
               <h2 className="text-2xl font-bold mb-8 pb-2 border-b-2 border-brand-orange">
-                {section.title}
+                {section.letter}. {section.title}
               </h2>
               {section.intro && (
                 <p className="text-foreground/70 mb-8 leading-relaxed">{section.intro}</p>

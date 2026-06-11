@@ -49,6 +49,7 @@ export default config({
           options: [
             { label: 'Cluster', value: 'cluster' },
             { label: 'Pillar-Sub', value: 'pillar-sub' },
+            { label: 'Berufsbild-Hub', value: 'berufsbild' },
             { label: 'Serie', value: 'serie' },
             { label: 'Story', value: 'story' },
           ],
@@ -69,6 +70,21 @@ export default config({
           options: [
             { label: '— (Partnersuche-Standard)', value: '' },
             { label: 'Promi-Ärzte', value: 'promi-aerzte' },
+            { label: 'Berufsbilder', value: 'berufsbilder' },
+          ],
+        }),
+        position: fields.select({
+          label: 'Beruf (Berufsbilder-Sektion)',
+          description: 'Steuert Intent-Leiste + Backlinks der Berufsbilder-Artikel',
+          defaultValue: '',
+          options: [
+            { label: '— keiner —', value: '' },
+            { label: 'MFA', value: 'mfa' },
+            { label: 'Pflegefachkraft', value: 'pflegefachkraft' },
+            { label: 'Hebamme', value: 'hebamme' },
+            { label: 'Arzt/Ärztin', value: 'arzt' },
+            { label: 'Physiotherapeut/in', value: 'physiotherapeut' },
+            { label: 'Notfallsanitäter/in', value: 'notfallsanitaeter' },
           ],
         }),
         person: fields.text({

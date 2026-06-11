@@ -6,6 +6,8 @@ import { ClusterHero } from '@/components/content/ClusterHero';
 import { TableOfContents } from '@/components/content/TableOfContents';
 import { PillarBacklinkCard } from '@/components/content/PillarBacklinkCard';
 import { DoctorBacklinkCard } from '@/components/content/DoctorBacklinkCard';
+import { HubBacklinkCard } from '@/components/content/HubBacklinkCard';
+import { BerufIntentNav } from '@/components/content/BerufIntentNav';
 import { CalloutBox } from '@/components/ui/CalloutBox';
 import { TakeawayBox } from '@/components/ui/TakeawayBox';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
@@ -106,7 +108,13 @@ export default async function ArticleView({ slug }: { slug: string }) {
 
   const canonicalPath = getArticleUrl(slug, article.specialization, article.section);
   const specHub = article.specialization ? SPEC_HUBS[article.specialization] : null;
-  const crumbs = isDoctor
+  const isBerufsbild = article.section === 'berufsbilder';
+  const crumbs = isBerufsbild
+    ? [
+        { label: 'Berufsbilder', href: '/berufsbilder' },
+        { label: article.title, href: canonicalPath },
+      ]
+    : isDoctor
     ? [
         { label: 'Promi-Ärzte', href: '/promi-aerzte' },
         ...(article.person ? [{ label: article.title.split(':')[0], href: getDoctorHubUrl(article.person) }] : []),
@@ -160,6 +168,16 @@ export default async function ArticleView({ slug }: { slug: string }) {
 
       <div className="max-w-3xl mx-auto px-6 py-12">
         <Breadcrumbs items={crumbs} />
+
+        {isBerufsbild && (
+          <BerufIntentNav
+            beruf={article.type === 'berufsbild' ? slug : article.position || ''}
+            activeSlug={slug}
+            availableSlugs={allArticles
+              .filter((a) => a.entry.section === 'berufsbilder')
+              .map((a) => a.slug)}
+          />
+        )}
 
         <ArticleByline publishedAt={article.publishedAt || undefined} />
 
@@ -228,14 +246,37 @@ export default async function ArticleView({ slug }: { slug: string }) {
           />
         )}
 
-        {/* Backlink: Promi-Arzt → Personen-Hub, sonst Pillar-Hub */}
-        {isDoctor ? (
+        {/* Backlink: Promi-Arzt → Personen-Hub, Berufsbild → Beruf-Hub/Übersicht, sonst Pillar-Hub */}
+        {isBerufsbild ? (
+          <HubBacklinkCard
+            {...(article.type !== 'berufsbild' && article.position && allArticles.some((a) => a.slug === article.position)
+              ? {
+                  heading: allArticles.find((a) => a.slug === article.position)!.entry.title,
+                  text:
+                    allArticles.find((a) => a.slug === article.position)!.entry.excerpt ||
+                    'Das komplette Berufsbild mit Aufgaben, Gehalt und Karrierewegen.',
+                  href: `/berufsbilder/${article.position}`,
+                  cta: 'Zum kompletten Berufsbild →',
+                }
+              : {
+                  heading: 'Alle Berufsbilder der Medizin',
+                  text: 'MFA, Pflege, Hebamme, Physiotherapie, Rettungsdienst und Ärzte: Ausbildung, Gehalt und Karriere im Überblick.',
+                  href: '/berufsbilder',
+                  cta: 'Zur Berufsbilder-Übersicht →',
+                })}
+          />
+        ) : isDoctor ? (
           article.person ? <DoctorBacklinkCard personSlug={article.person} /> : null
-        ) : (
-          article.specialization && ['arzt', 'pflege', 'therapeut', 'rettung'].includes(article.specialization) && (
-            <PillarBacklinkCard specialization={article.specialization as 'arzt' | 'pflege' | 'therapeut' | 'rettung'} />
-          )
-        )}
+        ) : article.specialization && ['arzt', 'pflege', 'therapeut', 'rettung'].includes(article.specialization) ? (
+          <PillarBacklinkCard specialization={article.specialization as 'arzt' | 'pflege' | 'therapeut' | 'rettung'} />
+        ) : article.category === 'partnersuche' ? (
+          <HubBacklinkCard
+            heading="Partnersuche in der Medizin: der komplette Guide"
+            text="Ärzte, Pflege, Therapeuten und Rettungsdienst — alle Guides für die Partnersuche im Gesundheitswesen."
+            href="/singles-partnersuche"
+            cta="Zum Partnersuche-Hub →"
+          />
+        ) : null}
       </div>
 
       {/* Related Articles Carousel */}

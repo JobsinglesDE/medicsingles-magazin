@@ -238,6 +238,32 @@ export default async function SinglesPartnersuche() {
         );
       })}
 
+      {/* Übergreifende Themen-Guides (aus dem Menü hierher verdrahtet) */}
+      <ScrollReveal>
+        <section className="max-w-6xl mx-auto px-6 py-10">
+          <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
+            Themen-Guides: Akademiker, Singles & Mediziner
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {['partnersuche-akademiker-niveau', 'singles-aerzte', 'partnersuche-mediziner-kennenlernen']
+              .map((slug) => articles.find((a) => a.slug === slug))
+              .filter(Boolean)
+              .map((a) => (
+                <ArticleCard
+                  key={a!.slug}
+                  title={a!.entry.title}
+                  excerpt={a!.entry.excerpt}
+                  href={getArticleUrl(a!.slug, a!.entry.specialization, a!.entry.section)}
+                  image={a!.entry.featuredImage || undefined}
+                  imageAlt={a!.entry.featuredImageAlt || undefined}
+                  category={a!.entry.category}
+                  date={a!.entry.publishedAt || undefined}
+                />
+              ))}
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* Middle CTA */}
       <ScrollReveal>
         <section className="max-w-xl mx-auto px-6 py-10 text-center">

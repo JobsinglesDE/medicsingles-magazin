@@ -21,10 +21,6 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Für Pflegekräfte', href: '/singles-partnersuche/pflege', description: 'Liebe trotz Schichtdienst' },
       { label: 'Für Therapeuten', href: '/singles-partnersuche/therapeuten', description: 'Partnersuche im Heilberuf' },
       { label: 'Für Rettungsdienst', href: '/singles-partnersuche/rettung', description: 'Dating im Einsatzalltag' },
-      { label: '─── Themen & Akademiker ───', href: '/singles-partnersuche', description: '' },
-      { label: 'Singles Ärzte', href: '/singles-aerzte', description: 'Warum Ärzte oft Single sind' },
-      { label: 'Partnersuche Akademiker', href: '/partnersuche-akademiker-niveau', description: 'Auf Augenhöhe daten' },
-      { label: 'Partnersuche Mediziner', href: '/partnersuche-mediziner-kennenlernen', description: 'Mediziner kennenlernen' },
     ],
   },
   {

@@ -13,8 +13,8 @@ import { getArticleUrl } from '@/lib/routes';
 
 export const metadata = {
   alternates: { canonical: '/' },
-  title: { absolute: '❤️ Medicsingles — Partnersuche für Ärzte & Pflege' },
-  description: 'Partnersuche für Ärzte, Pflege & Therapeuten. Guides für Dating trotz Schichtdienst, echte Erfolgsgeschichten und Tipps für den Klinikalltag.',
+  title: { absolute: '❤️ Medicsingles — Partnersuche für Ärzte, Pflege & Akademiker' },
+  description: 'Partnersuche auf Akademiker-Niveau: Ärzte, Pflege und Therapeuten kennenlernen. Guides für Dating trotz Schichtdienst und echte Erfolgsgeschichten.',
 };
 
 const rotations: Array<'left' | 'right' | 'slight'> = ['left', 'right', 'slight'];

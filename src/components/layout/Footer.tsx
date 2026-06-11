@@ -114,6 +114,9 @@ export function Footer() {
                 <a href="https://medicsingles.de/impressum.html" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Impressum / AGB
                 </a>
+                <Link href="/berufsbilder" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Medizinische Berufsbilder
+                </Link>
                 <Link href="/ueber-uns" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Über uns
                 </Link>

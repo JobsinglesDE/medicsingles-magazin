@@ -32,7 +32,7 @@ export function Footer() {
               clipPath: 'polygon(0% 3%, 15% 0%, 35% 4%, 52% 0%, 70% 3%, 88% 0%, 100% 4%, 98% 97%, 85% 100%, 65% 96%, 48% 100%, 30% 97%, 12% 100%, 2% 96%)',
             }}
           />
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
             {/* Brand */}
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -96,6 +96,36 @@ export function Footer() {
               </p>
             </div>
 
+            {/* Berufe */}
+            <div>
+              <h4 className="text-xs uppercase tracking-widest font-bold text-white/70 mb-4">
+                Berufe
+              </h4>
+              <nav className="flex flex-col gap-2">
+                <Link href="/berufsbilder" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Alle Berufsbilder
+                </Link>
+                <Link href="/berufsbilder/mfa" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  MFA
+                </Link>
+                <Link href="/berufsbilder/pflegefachkraft" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Pflegefachkraft
+                </Link>
+                <Link href="/berufsbilder/hebamme" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Hebamme
+                </Link>
+                <Link href="/berufsbilder/physiotherapeut" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Physiotherapeut/in
+                </Link>
+                <Link href="/berufsbilder/notfallsanitaeter" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Notfallsanitäter/in
+                </Link>
+                <Link href="/berufsbilder/arzt" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
+                  Arzt & Ärztin
+                </Link>
+              </nav>
+            </div>
+
             {/* Service */}
             <div>
               <h4 className="text-xs uppercase tracking-widest font-bold text-white/70 mb-4">
@@ -114,9 +144,6 @@ export function Footer() {
                 <a href="https://medicsingles.de/impressum.html" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Impressum / AGB
                 </a>
-                <Link href="/berufsbilder" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
-                  Medizinische Berufsbilder
-                </Link>
                 <Link href="/ueber-uns" className="text-sm text-white/75 hover:text-brand-orange transition-colors">
                   Über uns
                 </Link>

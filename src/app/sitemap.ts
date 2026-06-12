@@ -5,7 +5,11 @@ import { getArticleUrl } from '@/lib/routes';
 const BASE = 'https://medicsingles.de/magazin';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [articles, regional, series, stories, authors, aerztekammern, aerztestammtische, unikliniken, jungeFG, persons] = await Promise.all([
+  // Drafts dürfen NIE in die Sitemap (GSC-404s 2026-06-12: draft-Stammtisch erzeugte
+  // /aerztestammtische/deutschland + /deutschland/bundesweit als tote URLs)
+  const published = <T extends { entry: { status?: string } }>(items: readonly T[]) =>
+    items.filter((i) => !i.entry.status || i.entry.status === 'published');
+  const [articlesAll, regional, seriesAll, stories, authors, kammernAll, stammtischeAll, unikenAll, jungeFGAll, personsAll] = await Promise.all([
     reader.collections.articles.all(),
     reader.collections.regional.all(),
     reader.collections.series.all(),
@@ -17,6 +21,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     reader.collections.jungeFachgesellschaften.all(),
     reader.collections.persons.all(),
   ]);
+  const articles = published(articlesAll);
+  const series = published(seriesAll);
+  const aerztekammern = published(kammernAll);
+  const aerztestammtische = published(stammtischeAll);
+  const unikliniken = published(unikenAll);
+  const jungeFG = published(jungeFGAll);
+  const persons = published(personsAll);
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: BASE, priority: 1.0, changeFrequency: 'weekly' },

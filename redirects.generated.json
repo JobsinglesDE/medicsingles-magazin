@@ -45,6 +45,11 @@
     "permanent": true
   },
   {
+    "source": "/arzt-gehalt",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
     "source": "/arzt-kennenlernen-wege",
     "destination": "/singles-partnersuche/aerzte/arzt-kennenlernen-wege",
     "permanent": true
@@ -57,6 +62,11 @@
   {
     "source": "/arzt-sucht-frau-realitaet",
     "destination": "/singles-partnersuche/aerzte/arzt-sucht-frau-realitaet",
+    "permanent": true
+  },
+  {
+    "source": "/arzt",
+    "destination": "/singles-partnersuche/aerzte/arzt",
     "permanent": true
   },
   {
@@ -275,6 +285,21 @@
     "permanent": true
   },
   {
+    "source": "/hebamme-ausbildung",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/hebamme-gehalt",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/hebamme",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
     "source": "/heidelberg-uniklinik-mediziner-treffpunkte",
     "destination": "/singles-partnersuche/aerzte/heidelberg-uniklinik-mediziner-treffpunkte",
     "permanent": true
@@ -312,6 +337,16 @@
   {
     "source": "/hobbies-ausgleich-pflege-singles-treffen",
     "destination": "/singles-partnersuche/pflege/hobbies-ausgleich-pflege-singles-treffen",
+    "permanent": true
+  },
+  {
+    "source": "/johannes-wimmer-maximilia-erinnerung-2025",
+    "destination": "/promi-aerzte/johannes-wimmer-maximilia-erinnerung-2025",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/johannes-wimmer-maximilia-erinnerung-2025",
+    "destination": "/promi-aerzte/johannes-wimmer-maximilia-erinnerung-2025",
     "permanent": true
   },
   {
@@ -410,6 +445,16 @@
     "permanent": true
   },
   {
+    "source": "/matthias-riedl-kalorien-qualitaet-2026",
+    "destination": "/promi-aerzte/matthias-riedl-kalorien-qualitaet-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/matthias-riedl-kalorien-qualitaet-2026",
+    "destination": "/promi-aerzte/matthias-riedl-kalorien-qualitaet-2026",
+    "permanent": true
+  },
+  {
     "source": "/medica-duesseldorf-singles-medizinmesse",
     "destination": "/singles-partnersuche/aerzte/medica-duesseldorf-singles-medizinmesse",
     "permanent": true
@@ -417,6 +462,26 @@
   {
     "source": "/medicsingles-vs-tinder-nischen-dating",
     "destination": "/singles-partnersuche/aerzte/medicsingles-vs-tinder-nischen-dating",
+    "permanent": true
+  },
+  {
+    "source": "/medizinstudium",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/mfa-ausbildung",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/mfa-gehalt",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/mfa",
+    "destination": "/singles-partnersuche",
     "permanent": true
   },
   {
@@ -432,6 +497,21 @@
   {
     "source": "/notarzt-notfallsanitaeter-dating-unterschied",
     "destination": "/singles-partnersuche/rettung/notarzt-notfallsanitaeter-dating-unterschied",
+    "permanent": true
+  },
+  {
+    "source": "/notfallsanitaeter-ausbildung",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/notfallsanitaeter-gehalt",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/notfallsanitaeter",
+    "destination": "/singles-partnersuche",
     "permanent": true
   },
   {
@@ -486,7 +566,7 @@
   },
   {
     "source": "/partnersuche-medizin",
-    "destination": "/singles-partnersuche",
+    "destination": "/singles-partnersuche/aerzte/partnersuche-medizin",
     "permanent": true
   },
   {
@@ -530,6 +610,21 @@
     "permanent": true
   },
   {
+    "source": "/pflegefachkraft-ausbildung",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/pflegefachkraft-gehalt",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/pflegefachkraft",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
     "source": "/pflegemanagementkongress-networking-pflege",
     "destination": "/singles-partnersuche/pflege/pflegemanagementkongress-networking-pflege",
     "permanent": true
@@ -537,6 +632,21 @@
   {
     "source": "/pfleger-dating-app-tipps",
     "destination": "/singles-partnersuche/pflege/pfleger-dating-app-tipps",
+    "permanent": true
+  },
+  {
+    "source": "/physiotherapeut-ausbildung",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/physiotherapeut-gehalt",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/physiotherapeut",
+    "destination": "/singles-partnersuche",
     "permanent": true
   },
   {

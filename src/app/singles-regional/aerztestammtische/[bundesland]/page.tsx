@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ bundeslan
   const name = bundeslandName(bundesland);
   const url = `https://medicsingles.de/magazin/singles-regional/aerztestammtische/${bundesland}`;
   return {
-    title: `Ärztestammtische ${name} — JADE, MB-Junges-Netzwerk und lokale Mediziner-Treffen`,
+    title: `Ärztestammtische ${name} — Treffen & Partnersuche`,
     description: `Mediziner-Stammtische in ${name}: aktive Gruppen, Frequenz, Anmeldung und wie Singles im Heilberuf einsteigen.`,
     alternates: { canonical: url },
     openGraph: { url, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de_DE' },

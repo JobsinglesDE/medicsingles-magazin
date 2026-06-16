@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ bundeslan
   const name = bundeslandName(bundesland);
   const url = `https://medicsingles.de/magazin/singles-regional/aerztekammern/${bundesland}`;
   return {
-    title: `Ärztekammer ${name} — Singles-Networking für Mediziner`,
+    title: `Ärztekammer ${name} — Networking & Singles`,
     description: `Landesärztekammer ${name} und Bezirkskammern: Mitgliederzahlen, Top-Events, wie Mediziner-Singles diese für Networking nutzen.`,
     alternates: { canonical: url },
     openGraph: { url, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de_DE' },

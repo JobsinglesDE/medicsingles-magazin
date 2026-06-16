@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ bundeslan
   const name = bundeslandName(bundesland);
   const url = `https://medicsingles.de/magazin/singles-regional/unikliniken/${bundesland}`;
   return {
-    title: `Unikliniken ${name} — Singles-Networking für Mediziner`,
+    title: `Unikliniken ${name} — Networking & Singles`,
     description: `Universitätskliniken und Maximalversorger in ${name}: Bettenzahlen, Forschungsschwerpunkte, wie Mediziner-Singles diese Häuser für echte Begegnungen nutzen.`,
     alternates: { canonical: url },
     openGraph: { url, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de_DE' },

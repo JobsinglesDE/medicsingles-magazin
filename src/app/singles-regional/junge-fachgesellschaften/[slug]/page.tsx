@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: { params: Params }) {
   const url = `${BASE_URL}/singles-regional/junge-fachgesellschaften/${slug}`;
   const title = e.seoTitle || e.title;
   const description = e.seoDescription || e.excerpt;
-  const image = e.featuredImage ? `${BASE_URL}${e.featuredImage}` : `${BASE_URL}/logos/jobsingles-logo.png`;
+  const image = e.featuredImage ? `${BASE_URL}${e.featuredImage}` : `${BASE_URL}/logos/jobsingles-logo.webp`;
   return {
     title,
     description,

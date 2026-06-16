@@ -18,7 +18,8 @@ const nextConfig: NextConfig = {
     // Vercel-Image-Optimizer-Quota des Accounts ist erschöpft (intermittierende 402
     // OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED, account-weit über alle Magazine). Bilder
     // liegen bereits als WebP in passender Größe vor → direkt ausliefern, keine Quota.
-    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './image-loader.ts',
     remotePatterns: [
       {
         protocol: 'https',

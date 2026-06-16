@@ -100,7 +100,7 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
           name: ytEmbed.title || article.title,
           description: article.excerpt,
           videoId: ytEmbed.videoId,
-          uploadDate: `${article.publishedAt || new Date().toISOString().slice(0,10)}T08:00:00+02:00`,
+          uploadDate: article.publishedAt ? `${article.publishedAt}T08:00:00+02:00` : undefined,
         })} />
       )}
 

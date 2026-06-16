@@ -164,7 +164,7 @@ export function videoJsonLd({
   name: string;
   description: string;
   videoId: string;
-  uploadDate: string;
+  uploadDate?: string;
   duration?: string;
 }) {
   return {
@@ -173,7 +173,7 @@ export function videoJsonLd({
     name,
     description,
     thumbnailUrl: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
-    uploadDate: uploadDate.includes('T') ? uploadDate : `${uploadDate}T00:00:00+02:00`,
+    ...(uploadDate ? { uploadDate: uploadDate.includes('T') ? uploadDate : `${uploadDate}T00:00:00+02:00` } : {}),
     duration,
     contentUrl: `https://www.youtube.com/watch?v=${videoId}`,
     embedUrl: `https://www.youtube.com/embed/${videoId}`,

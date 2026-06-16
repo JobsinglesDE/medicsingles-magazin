@@ -6,7 +6,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 
 const FACHRICHTUNGEN: Record<string, { label: string; emoji: string; description: string }> = {
   innere: { label: 'Innere Medizin', emoji: '🫀', description: 'Junge Internisten, Kardiologie, Gastro, Nephrologie, Pneumologie, Onkologie, Endokrinologie, Rheumatologie, Diabetologie.' },
@@ -52,7 +52,7 @@ export const metadata = {
   openGraph: {
     title: 'Junge Fachgesellschaften — Mediziner-Nachwuchs vernetzt',
     description: 'Pro Fachrichtung: Junges Forum, Stammtisch-Format, Altersgrenze, BJÄ-Status. Wo Mediziner-Singles auf Augenhöhe netzwerken.',
-    url: PILLAR_URL, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE',
+    url: PILLAR_URL, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de_DE',
   },
 };
 
@@ -84,13 +84,6 @@ export default async function JungeFachgesellschaftenPillar() {
             url: `${PILLAR_URL}/${a.slug}`,
           })),
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://medicsingles.de/magazin/singles-regional' },
-          { name: 'Junge Fachgesellschaften', url: PILLAR_URL },
-        ])}
       />
       <JsonLd data={faqJsonLd(FAQ)} />
 

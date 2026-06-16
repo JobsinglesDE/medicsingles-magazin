@@ -7,7 +7,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { CircularTestimonials } from '@/components/ui/CircularTestimonials';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { getArticleUrl } from '@/lib/routes';
 
 const AERZTE_URL = 'https://medicsingles.de/magazin/singles-partnersuche/aerzte';
@@ -22,7 +22,7 @@ export const metadata = {
     url: AERZTE_URL,
     type: 'website',
     siteName: 'Medicsingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -219,13 +219,6 @@ export default async function AerztePillar() {
           url: AERZTE_URL,
           items: schemaItems,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles & Partnersuche', url: 'https://medicsingles.de/magazin/singles-partnersuche' },
-          { name: 'Für Ärzte', url: AERZTE_URL },
-        ])}
       />
       <PillarHero
         title="Ärzte Singles"

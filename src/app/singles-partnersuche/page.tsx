@@ -8,7 +8,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { getArticleUrl } from '@/lib/routes';
 
 const HUB_URL = 'https://medicsingles.de/magazin/singles-partnersuche';
@@ -23,7 +23,7 @@ export const metadata = {
     url: HUB_URL,
     type: 'website',
     siteName: 'Medicsingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -101,12 +101,6 @@ export default async function SinglesPartnersuche() {
           url: HUB_URL,
           items: pillarItems,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles & Partnersuche', url: HUB_URL },
-        ])}
       />
 
       {/* Hero */}

@@ -13,7 +13,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd, organizationJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, organizationJsonLd } from '@/components/seo/JsonLd';
 
 const BASE_URL = 'https://medicsingles.de/magazin';
 type Params = Promise<{ slug: string }>;
@@ -128,14 +128,6 @@ export default async function JungeFGDetailPage({ params }: { params: Params }) 
           foundingDate: e.gruendung && /^\d{4}/.test(e.gruendung) ? e.gruendung.match(/^\d{4}/)![0] : undefined,
           memberOfBjae: !!e.bjaeMitglied,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: BASE_URL },
-          { name: 'Singles Regional', url: `${BASE_URL}/singles-regional` },
-          { name: 'Junge Fachgesellschaften', url: `${BASE_URL}/singles-regional/junge-fachgesellschaften` },
-          { name: e.title, url },
-        ])}
       />
 
       <ClusterHero

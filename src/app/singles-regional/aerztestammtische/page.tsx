@@ -6,7 +6,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, BUNDESLAND_SLUGS } from '@/lib/bundeslaender';
 
 const FAQ = [
@@ -44,7 +44,7 @@ export const metadata = {
     url: PILLAR_URL,
     type: 'website',
     siteName: 'Medicsingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -74,13 +74,6 @@ export default async function AerztestammtischePillar() {
             url: `${PILLAR_URL}/${s}`,
           })),
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://medicsingles.de/magazin/singles-regional' },
-          { name: 'Ärztestammtische', url: PILLAR_URL },
-        ])}
       />
       <JsonLd data={faqJsonLd(FAQ)} />
 

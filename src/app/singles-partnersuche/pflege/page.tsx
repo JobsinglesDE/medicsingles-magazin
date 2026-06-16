@@ -7,7 +7,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { CircularTestimonials } from '@/components/ui/CircularTestimonials';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { getArticleUrl } from '@/lib/routes';
 
 const PFLEGE_URL = 'https://medicsingles.de/magazin/singles-partnersuche/pflege';
@@ -22,7 +22,7 @@ export const metadata = {
     url: PFLEGE_URL,
     type: 'website',
     siteName: 'Medicsingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -184,13 +184,6 @@ export default async function PflegePillar() {
           url: PFLEGE_URL,
           items: schemaItems,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles & Partnersuche', url: 'https://medicsingles.de/magazin/singles-partnersuche' },
-          { name: 'Für Pflegekräfte', url: PFLEGE_URL },
-        ])}
       />
       <PillarHero
         title="Pflege Singles"

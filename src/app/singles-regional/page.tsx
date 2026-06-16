@@ -5,7 +5,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 
 const HUB_URL = 'https://medicsingles.de/magazin/singles-regional';
 
@@ -19,7 +19,7 @@ export const metadata = {
     url: HUB_URL,
     type: 'website',
     siteName: 'Medicsingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -86,12 +86,6 @@ export default function SinglesRegionalHub() {
           url: HUB_URL,
           items: PILLARS.map((p) => ({ name: p.title, url: `https://medicsingles.de/magazin${p.href}` })),
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: HUB_URL },
-        ])}
       />
       <JsonLd data={faqJsonLd(FAQ)} />
 

@@ -8,7 +8,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
-import { JsonLd, breadcrumbJsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { getArticleUrl } from '@/lib/routes';
 
 const THERAPEUTEN_URL = 'https://medicsingles.de/magazin/singles-partnersuche/therapeuten';
@@ -23,7 +23,7 @@ export const metadata = {
     url: THERAPEUTEN_URL,
     type: 'website',
     siteName: 'Medicsingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -161,13 +161,6 @@ export default async function TherapeutenPillar() {
           url: THERAPEUTEN_URL,
           items: schemaItems,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles & Partnersuche', url: 'https://medicsingles.de/magazin/singles-partnersuche' },
-          { name: 'Für Therapeuten', url: THERAPEUTEN_URL },
-        ])}
       />
       <PillarHero
         title="Therapeuten Singles"

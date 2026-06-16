@@ -13,7 +13,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd, hospitalJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, hospitalJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 
 const BASE_URL = 'https://medicsingles.de/magazin';
@@ -129,15 +129,6 @@ export default async function KlinikStadtPage({ params }: { params: Params }) {
           trägerschaft: e.trägerschaft || undefined,
           klinikTyp: klinikLabel,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: BASE_URL },
-          { name: 'Singles Regional', url: `${BASE_URL}/singles-regional` },
-          { name: 'Unikliniken', url: `${BASE_URL}/singles-regional/unikliniken` },
-          { name: blName, url: `${BASE_URL}/singles-regional/unikliniken/${bundesland}` },
-          { name: e.title, url },
-        ])}
       />
 
       <ClusterHero

@@ -5,7 +5,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, breadcrumbJsonLd, faqJsonLd, organizationJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, faqJsonLd, organizationJsonLd } from '@/components/seo/JsonLd';
 
 const URL = 'https://medicsingles.de/magazin/singles-regional/junge-fachgesellschaften/themen/bjae-buendnis-junge-aerzte';
 const BASE = 'https://medicsingles.de/magazin';
@@ -40,7 +40,7 @@ export const metadata = {
   openGraph: {
     title: 'BJÄ — politische Stimme junger Mediziner',
     description: 'Bündnis Junge Ärzte: Mitglieder, Ziele, Geschichte seit 2013 — und welche Junge FG zu welcher Karriere passt.',
-    url: URL, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE',
+    url: URL, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de_DE',
   },
 };
 
@@ -81,12 +81,6 @@ export default function BjaePage() {
         description: 'Zusammenschluss von Verbänden und Fachgesellschaften zur politischen Vertretung junger Ärztinnen und Ärzte in Deutschland.',
         foundingDate: '2013',
       })} />
-      <JsonLd data={breadcrumbJsonLd([
-        { name: 'Magazin', url: BASE },
-        { name: 'Singles Regional', url: `${BASE}/singles-regional` },
-        { name: 'Junge Fachgesellschaften', url: `${BASE}/singles-regional/junge-fachgesellschaften` },
-        { name: 'BJÄ', url: URL },
-      ])} />
       <JsonLd data={faqJsonLd(FAQ)} />
 
       <PillarHero

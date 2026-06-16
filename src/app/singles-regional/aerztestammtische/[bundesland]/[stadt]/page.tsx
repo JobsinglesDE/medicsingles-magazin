@@ -14,7 +14,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 
 const BASE_URL = 'https://medicsingles.de/magazin';
@@ -119,15 +119,6 @@ export default async function StammtischStadtPage({ params }: { params: Params }
         })}
       />
       {e.faqItems && e.faqItems.length > 0 && <JsonLd data={faqJsonLd(e.faqItems)} />}
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: BASE_URL },
-          { name: 'Singles Regional', url: `${BASE_URL}/singles-regional` },
-          { name: 'Ärztestammtische', url: `${BASE_URL}/singles-regional/aerztestammtische` },
-          { name: blName, url: `${BASE_URL}/singles-regional/aerztestammtische/${bundesland}` },
-          { name: e.title, url },
-        ])}
-      />
 
       <ClusterHero
         title={e.title}

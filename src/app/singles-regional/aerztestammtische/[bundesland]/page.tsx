@@ -5,7 +5,7 @@ import { ArticleCard } from '@/components/content/ArticleCard';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, BUNDESLAND_SLUGS, bundeslandName, bundeslandEmoji } from '@/lib/bundeslaender';
 
 export async function generateStaticParams() {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ bundeslan
     title: `Ärztestammtische ${name} — JADE, MB-Junges-Netzwerk und lokale Mediziner-Treffen`,
     description: `Mediziner-Stammtische in ${name}: aktive Gruppen, Frequenz, Anmeldung und wie Singles im Heilberuf einsteigen.`,
     alternates: { canonical: url },
-    openGraph: { url, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE' },
+    openGraph: { url, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de_DE' },
   };
 }
 
@@ -49,14 +49,6 @@ export default async function StammtischBundeslandPage({ params }: { params: Pro
             url: `https://medicsingles.de/magazin/singles-regional/aerztestammtische/${bundesland}/${a.entry.stadt}`,
           })),
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://medicsingles.de/magazin/singles-regional' },
-          { name: 'Ärztestammtische', url: 'https://medicsingles.de/magazin/singles-regional/aerztestammtische' },
-          { name: blName, url },
-        ])}
       />
 
       <section className="relative overflow-hidden min-h-[280px] md:min-h-[360px] flex items-center">

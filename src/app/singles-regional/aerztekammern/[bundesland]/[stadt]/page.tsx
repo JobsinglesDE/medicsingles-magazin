@@ -14,7 +14,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AuthorBio } from '@/components/ui/AuthorBio';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, articleJsonLd, faqJsonLd, breadcrumbJsonLd, kammerOrgJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, kammerOrgJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, bundeslandName } from '@/lib/bundeslaender';
 
 const BASE_URL = 'https://medicsingles.de/magazin';
@@ -131,15 +131,6 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
           mitgliederzahl: e.mitgliederzahl || undefined,
           kammerTyp: e.kammerTyp || undefined,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: BASE_URL },
-          { name: 'Singles Regional', url: `${BASE_URL}/singles-regional` },
-          { name: 'Ärztekammern', url: `${BASE_URL}/singles-regional/aerztekammern` },
-          { name: blName, url: `${BASE_URL}/singles-regional/aerztekammern/${bundesland}` },
-          { name: e.title, url },
-        ])}
       />
 
       <ClusterHero

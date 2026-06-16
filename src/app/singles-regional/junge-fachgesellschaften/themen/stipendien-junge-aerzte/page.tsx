@@ -5,7 +5,7 @@ import { HeartButton } from '@/components/ui/HeartButton';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, breadcrumbJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 
 const URL = 'https://medicsingles.de/magazin/singles-regional/junge-fachgesellschaften/themen/stipendien-junge-aerzte';
 const BASE = 'https://medicsingles.de/magazin';
@@ -57,19 +57,13 @@ export const metadata = {
   openGraph: {
     title: 'Stipendien für junge Ärzte: alle Programme der Jungen FGs',
     description: 'Reise-, Forschungs- und Hospitationsstipendien junger Fachgesellschaften — sortiert nach Fach.',
-    url: URL, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE',
+    url: URL, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de_DE',
   },
 };
 
 export default function StipendienPage() {
   return (
     <>
-      <JsonLd data={breadcrumbJsonLd([
-        { name: 'Magazin', url: BASE },
-        { name: 'Singles Regional', url: `${BASE}/singles-regional` },
-        { name: 'Junge Fachgesellschaften', url: `${BASE}/singles-regional/junge-fachgesellschaften` },
-        { name: 'Stipendien', url: URL },
-      ])} />
       <JsonLd data={faqJsonLd(FAQ)} />
 
       <PillarHero

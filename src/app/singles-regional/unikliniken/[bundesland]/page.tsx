@@ -5,7 +5,7 @@ import { ArticleCard } from '@/components/content/ArticleCard';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, BUNDESLAND_SLUGS, bundeslandName, bundeslandEmoji } from '@/lib/bundeslaender';
 
 export async function generateStaticParams() {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ bundeslan
     title: `Unikliniken ${name} — Singles-Networking für Mediziner`,
     description: `Universitätskliniken und Maximalversorger in ${name}: Bettenzahlen, Forschungsschwerpunkte, wie Mediziner-Singles diese Häuser für echte Begegnungen nutzen.`,
     alternates: { canonical: url },
-    openGraph: { url, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de-DE' },
+    openGraph: { url, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de_DE' },
   };
 }
 
@@ -49,14 +49,6 @@ export default async function KlinikBundeslandPage({ params }: { params: Promise
             url: `https://medicsingles.de/magazin/singles-regional/unikliniken/${bundesland}/${a.entry.stadt}`,
           })),
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
-          { name: 'Singles Regional', url: 'https://medicsingles.de/magazin/singles-regional' },
-          { name: 'Unikliniken', url: 'https://medicsingles.de/magazin/singles-regional/unikliniken' },
-          { name: blName, url },
-        ])}
       />
 
       <section className="relative overflow-hidden min-h-[280px] md:min-h-[360px] flex items-center">

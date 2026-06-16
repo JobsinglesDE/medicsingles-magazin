@@ -137,6 +137,7 @@ export default async function ArticleView({ slug }: { slug: string }) {
           datePublished: article.publishedAt || undefined,
           authorName: author?.name,
           authorUrl: author?.socialLinks?.find((l) => l.platform === 'Website')?.url ?? undefined,
+          isNews: article.isNews === true,
         })}
       />
       {article.faqItems && article.faqItems.length > 0 && (

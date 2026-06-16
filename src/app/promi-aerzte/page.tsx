@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { reader } from '@/lib/keystatic';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
 import { getDoctorHubUrl } from '@/lib/routes';
 import { PROMI_AERZTE_SECTION_HUB } from '@/lib/hubs';
 
@@ -19,7 +19,7 @@ export const metadata = {
     url: HUB_URL,
     type: 'website',
     siteName: 'Medicsingles Magazin',
-    locale: 'de-DE',
+    locale: 'de_DE',
   },
 };
 
@@ -40,12 +40,6 @@ export default async function PromiAerzteHub() {
             url: `${SITE}${getDoctorHubUrl(p.slug)}`,
           })),
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: 'Startseite', url: 'https://medicsingles.de/' },
-          { name: 'Promi-Ärzte', url: HUB_URL },
-        ])}
       />
 
       <section className="relative overflow-hidden min-h-[300px] md:min-h-[400px] flex items-center">

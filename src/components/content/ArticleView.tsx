@@ -196,7 +196,7 @@ export default async function ArticleView({ slug }: { slug: string }) {
           insertElement={
             <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
               <div className="p-6 text-center">
-                <p className="text-sm text-foreground/70 mb-3">Du arbeitest im Gesundheitswesen?</p>
+                <p className="text-sm text-foreground/70 mb-3">Du suchst Singles aus dem Gesundheitswesen?</p>
                 <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin">
                   Jetzt kostenfrei anmelden
                 </HeartButton>

@@ -59,10 +59,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/magazin/logos/jobsingles-logo.png', type: 'image/png' },
+      { url: '/magazin/logos/jobsingles-icon-512.webp', type: 'image/webp', sizes: '512x512' },
     ],
-    shortcut: '/magazin/logos/jobsingles-logo.png',
-    apple: '/magazin/logos/jobsingles-logo.png',
+    shortcut: '/magazin/logos/jobsingles-icon-512.webp',
+    apple: '/magazin/logos/jobsingles-icon-512.webp',
   },
 };
 

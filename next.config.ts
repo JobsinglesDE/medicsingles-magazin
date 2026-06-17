@@ -15,6 +15,11 @@ const nextConfig: NextConfig = {
     '/wp-json/wp/v2/posts': ['./content/**/*'],
   },
   images: {
+    // Vercel-Image-Optimizer-Quota des Accounts ist erschöpft (intermittierende 402
+    // OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED, account-weit über alle Magazine). Bilder
+    // liegen bereits als WebP in passender Größe vor → direkt ausliefern, keine Quota.
+    loader: 'custom',
+    loaderFile: './image-loader.ts',
     remotePatterns: [
       {
         protocol: 'https',

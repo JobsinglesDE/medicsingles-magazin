@@ -382,6 +382,82 @@ export function kammerOrgJsonLd({
   };
 }
 
+/** Dataset-Schema für die Kammer-Statistik (Mitgliederzahl + Beitrag) — AI-Citation-Signal. */
+export function kammerDatasetJsonLd({
+  name,
+  description,
+  url,
+  mitglieder,
+  bezugsjahr,
+  dateModified,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  mitglieder?: string;
+  bezugsjahr?: string;
+  dateModified?: string;
+}) {
+  const members = parseIntFromText(mitglieder);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name,
+    description,
+    url,
+    inLanguage: 'de-DE',
+    ...(bezugsjahr ? { temporalCoverage: bezugsjahr } : {}),
+    ...(dateModified ? { dateModified } : {}),
+    isPartOf: { '@id': WEBSITE_ID },
+    creator: {
+      '@type': 'Organization',
+      name: 'Bundesärztekammer',
+      url: 'https://www.bundesaerztekammer.de',
+    },
+    variableMeasured: [
+      ...(members ? [{ '@type': 'PropertyValue', name: 'Kammermitglieder (Ärztinnen und Ärzte)', value: members }] : []),
+      { '@type': 'PropertyValue', name: 'Kammerbeitrag', description: 'Einkommensabhängiger Pflichtbeitrag je Kammersatzung' },
+    ],
+  };
+}
+
+/** Occupation/Salary-Schema für „Arzt" nach TV-Ärzte/VKA, regional verortet (Google-Salary-Signal). */
+export function physicianSalaryJsonLd({
+  bundesland,
+  url,
+  rows,
+  quelle,
+}: {
+  bundesland: string;
+  url: string;
+  rows: { gruppe: string; einstieg: string; endstufe: string }[];
+  quelle?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Occupation',
+    name: 'Arzt / Ärztin',
+    description: `Arzt-Gehalt nach Tarifvertrag TV-Ärzte/VKA (kommunale Krankenhäuser) in ${bundesland}.${quelle ? ' Quelle: ' + quelle : ''}`,
+    mainEntityOfPage: url,
+    occupationLocation: { '@type': 'AdministrativeArea', name: bundesland },
+    estimatedSalary: rows
+      .map((r) => {
+        const min = parseIntFromText(r.einstieg);
+        const max = parseIntFromText(r.endstufe);
+        if (!min) return null;
+        return {
+          '@type': 'MonetaryAmountDistribution',
+          name: r.gruppe,
+          currency: 'EUR',
+          duration: 'P1M',
+          median: min,
+          ...(max ? { percentile90: max } : {}),
+        };
+      })
+      .filter(Boolean),
+  };
+}
+
 export function organizationJsonLd({
   name,
   alternateName,

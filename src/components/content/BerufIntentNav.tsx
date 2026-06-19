@@ -5,6 +5,14 @@ type Tab = { label: string; href: string; active: boolean };
 // Geschlechts-Varianten teilen sich EINE Ausbildung-Seite (Kannibalisierung vermeiden)
 const INTENT_ALIAS: Record<string, string> = {};
 
+// Akademiker-Berufe: der Ausbildungsweg ist ein Studium → keyword-reicher Spoke-Slug
+// (z.B. "pharmazie studium" 6.600/mo statt "apotheker-ausbildung"). Beruf-Key → Studium-Spoke-Slug.
+const STUDIUM_ALIAS: Record<string, string> = {
+  apotheker: 'pharmazie-studium',
+  zahnarzt: 'zahnmedizin-studium',
+  tierarzt: 'tiermedizin-studium',
+};
+
 /**
  * Intent-Leiste auf Berufsbild-Seiten: Übersicht · Ausbildung · Gehalt.
  * Jeder Tab ist eine eigene URL (Spoke), keine Anker — rankt eigenständig.
@@ -22,6 +30,7 @@ export function BerufIntentNav({
   const resolve = (slug: string) => INTENT_ALIAS[slug] ?? slug;
   const candidates = [
     { label: 'Übersicht', slug: beruf },
+    { label: 'Studium', slug: STUDIUM_ALIAS[beruf] ?? `${beruf}-studium` },
     { label: 'Ausbildung', slug: resolve(`${beruf}-ausbildung`) },
     { label: 'Gehalt', slug: resolve(`${beruf}-gehalt`) },
   ];

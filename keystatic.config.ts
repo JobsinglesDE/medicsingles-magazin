@@ -291,6 +291,7 @@ export default config({
           }
         ),
         publishedAt: fields.date({ label: 'Veröffentlicht am' }),
+        updatedAt: fields.date({ label: 'Aktualisiert am (optional, Freshness-Signal)' }),
       },
     }),
 

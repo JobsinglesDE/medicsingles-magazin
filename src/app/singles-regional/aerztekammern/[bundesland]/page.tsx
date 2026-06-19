@@ -5,8 +5,33 @@ import { ArticleCard } from '@/components/content/ArticleCard';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd, kammerOrgJsonLd, kammerDatasetJsonLd, physicianSalaryJsonLd, faqJsonLd } from '@/components/seo/JsonLd';
 import { BUNDESLAENDER, BUNDESLAND_SLUGS, bundeslandName, bundeslandEmoji } from '@/lib/bundeslaender';
+import { KammerStats } from '@/components/content/KammerStats';
+import { kammerData, ARZT_TARIF_VKA, ARZT_TARIF_QUELLE } from '@/lib/aerztekammer-statistiken';
+import { FAQAccordion } from '@/components/ui/FAQAccordion';
+
+// Long-Tail-FAQ (aufgaben/mitgliedschaft/pflichtbeitrag) — data-aware, deckt informationale Queries ab.
+function kammerFaq(blName: string, data: ReturnType<typeof kammerData>) {
+  const b = data?.beitrag;
+  const beitragAntwort = b
+    ? `Der Beitrag ist einkommensabhängig${b.hebesatz ? ` (Hebesatz ${b.hebesatz} der Einkünfte aus ärztlicher Tätigkeit)` : ''}.${b.mindestbeitrag ? ` Mindestbeitrag ${b.mindestbeitrag}` : ''}${b.hoechstbeitrag ? `, Höchstbeitrag ${b.hoechstbeitrag} pro Jahr` : (b.mindestbeitrag ? ' pro Jahr aufwärts' : '')}.`
+    : 'Der Beitrag ist einkommensabhängig und wird als Hebesatz (häufig rund 0,6 %) auf die Einkünfte aus ärztlicher Tätigkeit berechnet, mit satzungsgemäßem Mindest- und Höchstbeitrag.';
+  return [
+    {
+      question: `Ist die Mitgliedschaft in der Ärztekammer ${blName} Pflicht?`,
+      answer: `Ja. Approbierte Ärztinnen und Ärzte, die in ${blName} ärztlich tätig sind, sind Pflichtmitglied der Kammer. Sie ist eine Körperschaft des öffentlichen Rechts nach dem Heilberufsgesetz des Landes.`,
+    },
+    {
+      question: `Wie hoch ist der Kammerbeitrag in ${blName}?`,
+      answer: beitragAntwort,
+    },
+    {
+      question: `Welche Aufgaben hat die Ärztekammer ${blName}?`,
+      answer: 'Zu den gesetzlichen Aufgaben zählen die ärztliche Weiterbildung samt Facharztprüfung, die Berufsaufsicht, die Fortbildung, das Arztregister, Ethikkommissionen, Gutachter- und Schlichtungsstellen für Behandlungsfehler sowie das ärztliche Versorgungswerk.',
+    },
+  ];
+}
 
 export async function generateStaticParams() {
   return BUNDESLAND_SLUGS.map((bundesland) => ({ bundesland }));
@@ -17,11 +42,16 @@ export async function generateMetadata({ params }: { params: Promise<{ bundeslan
   if (!BUNDESLAENDER[bundesland]) return {};
   const name = bundeslandName(bundesland);
   const url = `https://medicsingles.de/magazin/singles-regional/aerztekammern/${bundesland}`;
+  const data = kammerData(bundesland);
+  const title = `Ärztekammer ${name}: Mitglieder, Beitrag & Aufgaben 2026`;
+  const description = data
+    ? `${data.kammerName}${data.mitglieder ? `: ${data.mitglieder} Mitglieder` : ''}${data.sitz ? `, Sitz ${data.sitz}` : ''}. Pflichtbeitrag, Aufgaben, Weiterbildung und Arzt-Tarif 2026 — plus Mediziner-Singles in ${name}.`
+    : `Landesärztekammer ${name}: Mitglieder, Pflichtbeitrag, Aufgaben und Arzt-Tarif 2026 im Überblick — plus Mediziner-Singles in ${name}.`;
   return {
-    title: `Ärztekammer ${name} — Networking & Singles`,
-    description: `Landesärztekammer ${name} und Bezirkskammern: Mitgliederzahlen, Top-Events, wie Mediziner-Singles diese für Networking nutzen.`,
+    title,
+    description,
     alternates: { canonical: url },
-    openGraph: { url, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de_DE' },
+    openGraph: { title, description, url, type: 'website', siteName: 'Medicsingles Magazin', locale: 'de_DE' },
   };
 }
 
@@ -36,6 +66,8 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
 
   const blName = bundeslandName(bundesland);
   const url = `https://medicsingles.de/magazin/singles-regional/aerztekammern/${bundesland}`;
+  const data = kammerData(bundesland);
+  const faq = data ? kammerFaq(blName, data) : [];
 
   return (
     <>
@@ -50,6 +82,32 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
           })),
         })}
       />
+      {data && (
+        <>
+          <JsonLd
+            data={kammerOrgJsonLd({
+              name: data.kammerName,
+              url,
+              webseite: data.url,
+              bundesland: blName,
+              mitgliederzahl: data.mitglieder,
+              kammerTyp: 'Landesärztekammer',
+            })}
+          />
+          <JsonLd
+            data={kammerDatasetJsonLd({
+              name: `${data.kammerName} — Mitglieder & Kammerbeitrag`,
+              description: `Mitgliederzahl und Beitragsmodell der ${data.kammerName} (${blName}).`,
+              url,
+              mitglieder: data.mitglieder,
+              bezugsjahr: data.mitgliederStand?.slice(-4),
+              dateModified: data.aktualisiert,
+            })}
+          />
+          <JsonLd data={physicianSalaryJsonLd({ bundesland: blName, url, rows: ARZT_TARIF_VKA, quelle: ARZT_TARIF_QUELLE })} />
+          {faq.length > 0 && <JsonLd data={faqJsonLd(faq)} />}
+        </>
+      )}
 
       <section className="relative overflow-hidden min-h-[280px] md:min-h-[360px] flex items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-medical-teal/40 via-surface-dark to-background" />
@@ -72,7 +130,28 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
         ]} />
       </div>
 
+      {data && (
+        <div className="max-w-3xl mx-auto px-6 pt-8">
+          <p className="text-foreground/80 leading-relaxed">
+            Die <strong>{data.kammerName}</strong> ist die ärztliche Selbstverwaltung in {blName}: Pflichtmitgliedschaft für
+            alle hier tätigen Ärztinnen und Ärzte, zuständig für Weiterbildung, Berufsaufsicht und das Versorgungswerk.
+            Hier findest du die wichtigsten Zahlen, den Pflichtbeitrag, die Aufgaben und den aktuellen Arzt-Tarif — und am
+            Ende lokale Mediziner-Singles in {blName}.
+          </p>
+
+          <KammerStats data={data} kammerName={blName} />
+
+          {faq.length > 0 && (
+            <section className="mt-10">
+              <h2 className="text-2xl font-bold mb-2">Häufige Fragen zur Ärztekammer {blName}</h2>
+              <FAQAccordion items={faq} />
+            </section>
+          )}
+        </div>
+      )}
+
       {inBL.length === 0 ? (
+        !data && (
         <ScrollReveal>
           <section className="max-w-3xl mx-auto px-6 py-16 text-center">
             <p className="text-lg text-foreground/70 mb-6">
@@ -84,6 +163,7 @@ export default async function KammerBundeslandPage({ params }: { params: Promise
             </HeartButton>
           </section>
         </ScrollReveal>
+        )
       ) : (
         <ScrollReveal>
           <section className="max-w-6xl mx-auto px-6 py-12">

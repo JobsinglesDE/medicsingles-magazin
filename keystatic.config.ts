@@ -85,6 +85,10 @@ export default config({
             { label: 'Arzt/Ärztin', value: 'arzt' },
             { label: 'Physiotherapeut/in', value: 'physiotherapeut' },
             { label: 'Notfallsanitäter/in', value: 'notfallsanitaeter' },
+            { label: 'Psychotherapeut/Psychologe', value: 'psychotherapeut' },
+            { label: 'Apotheker/in', value: 'apotheker' },
+            { label: 'Zahnarzt/Zahnärztin', value: 'zahnarzt' },
+            { label: 'Tierarzt/Tierärztin', value: 'tierarzt' },
           ],
         }),
         person: fields.text({

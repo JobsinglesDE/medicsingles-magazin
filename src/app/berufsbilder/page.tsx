@@ -14,12 +14,12 @@ const HUB_URL = 'https://medicsingles.de/magazin/berufsbilder';
 export const metadata = {
   title: 'Medizinische Berufe: Ausbildung, Gehalt & Karriere',
   description:
-    'Berufsbilder der Medizin im Überblick: MFA, Pflegefachkraft, Hebamme, Physiotherapie, Notfallsanitäter und Arzt — Ausbildung, Gehalt und Karrierewege mit aktuellen Tarifzahlen.',
+    'Berufsbilder der Medizin im Überblick: MFA, Pflege, Arzt, Psychotherapeut, Zahnarzt, Apotheker, Tierarzt & mehr — Ausbildung, Studium, Gehalt und Karrierewege mit aktuellen Tarifzahlen.',
   alternates: { canonical: HUB_URL },
   openGraph: {
     title: 'Medizinische Berufe: Ausbildung, Gehalt & Karriere',
     description:
-      'MFA, Pflege, Hebamme, Physiotherapie, Rettungsdienst und Ärzte: Ausbildung, Gehalt und Karriere im Überblick.',
+      'Von MFA und Pflege bis Arzt, Psychotherapeut, Zahnarzt und Apotheker: Ausbildung, Studium, Gehalt und Karriere im Überblick.',
     url: HUB_URL,
     type: 'website',
     siteName: 'MedicSingles Magazin',
@@ -96,6 +96,42 @@ const SECTIONS: BerufSection[] = [
       'Vom Medizinstudium über die Assistenzarzt-Jahre bis zur Fach- oder Oberarztposition: Kaum ein Berufsweg ist so klar gestaffelt — und so tarifgenau bezahlt (TV-Ärzte). Was in welcher Stufe verdient wird und wie lange der Weg wirklich dauert, steht hier.',
     ],
   },
+  {
+    beruf: 'psychotherapeut',
+    letter: 'G',
+    tocLabel: 'Psychotherapeut & Psychologe: Studium, Ausbildung & Gehalt',
+    heading: 'Psychotherapeut und Psychologe: Studium, Ausbildung & Gehalt',
+    paragraphs: [
+      'Seit der Reform 2020 führt ein eigenes Psychotherapie-Studium direkt zur Approbation — der alte Umweg über Psychologie-Studium plus teure Zusatzausbildung wird abgelöst. Zwischen Klinik, eigener Praxis mit Kassensitz und Beratungsstellen ist der Beruf so gefragt wie überlastet: Wartelisten von Monaten sind die Regel.',
+    ],
+  },
+  {
+    beruf: 'zahnarzt',
+    letter: 'H',
+    tocLabel: 'Zahnarzt: Studium, Gehalt & eigene Praxis',
+    heading: 'Zahnarzt und Zahnärztin: Studium, Gehalt & Niederlassung',
+    paragraphs: [
+      'Fünf Jahre Zahnmedizin-Studium, zwei Jahre Vorbereitungszeit als Assistenzzahnarzt — und dann die große Weichenstellung: angestellt im MVZ oder eigene Praxis? Kaum ein Heilberuf koppelt Einkommen so stark an die Selbstständigkeit wie die Zahnmedizin.',
+    ],
+  },
+  {
+    beruf: 'apotheker',
+    letter: 'I',
+    tocLabel: 'Apotheker: Pharmazie-Studium & Gehalt',
+    heading: 'Apotheker und Apothekerin: Pharmazie-Studium, Gehalt & Alltag',
+    paragraphs: [
+      'Pharmazie-Studium, Staatsexamen und das praktische Jahr führen zur Approbation. Zwischen öffentlicher Apotheke, Krankenhausapotheke und Industrie ist die Bandbreite groß — und der Tarifvertrag der Apothekenangestellten (ADA) regelt, was approbierte Apotheker mindestens verdienen.',
+    ],
+  },
+  {
+    beruf: 'tierarzt',
+    letter: 'J',
+    tocLabel: 'Tierarzt: Studium, Gehalt & Klinikalltag',
+    heading: 'Tierarzt und Tierärztin: Studium, Gehalt & Praxisrealität',
+    paragraphs: [
+      'Tiermedizin ist eines der begehrtesten Studienfächer — und einer der am schlechtesten bezahlten akademischen Heilberufe im Einstieg. Lange Notdienste, hohe emotionale Last und ein Tarifvertrag, der erst aufholt: Wer Tierarzt wird, tut es aus Überzeugung. Was realistisch verdient wird, steht hier.',
+    ],
+  },
 ];
 
 export default async function BerufsbilderHub() {
@@ -122,7 +158,7 @@ export default async function BerufsbilderHub() {
         data={collectionPageJsonLd({
           name: 'Medizinische Berufe: Ausbildung, Gehalt & Karriere — alle Berufsbilder',
           description:
-            'MFA, Pflegefachkraft, Hebamme, Physiotherapie, Notfallsanitäter und Arzt im Überblick.',
+            'MFA, Pflege, Hebamme, Physiotherapie, Notfallsanitäter, Arzt, Psychotherapeut, Zahnarzt, Apotheker und Tierarzt im Überblick.',
           url: HUB_URL,
           items: itemList,
         })}
@@ -131,10 +167,11 @@ export default async function BerufsbilderHub() {
       <PillarHero
         title="Medizinische Berufe"
         texts={[
-          '6 Berufsbilder',
-          'MFA · Pflege · Hebamme',
+          '10 Berufsbilder',
+          'MFA · Pflege · Arzt',
+          'Psychotherapie · Zahnmedizin',
+          'Apotheke · Tiermedizin',
           'Ausbildung, Gehalt, Realität',
-          'Praxis · Klinik · Rettung',
         ]}
         subtitle="Die wichtigsten Gesundheitsberufe im Überblick — mit Ausbildungswegen, aktuellen Tarif-Gehältern und dem Alltag dahinter."
         colors={HUB_COLORS}
@@ -216,6 +253,10 @@ export default async function BerufsbilderHub() {
           <dl className="divide-y divide-foreground/10 rounded-2xl bg-surface border border-foreground/10 overflow-hidden">
             {[
               ['Arzt/Ärztin (Assistenz- bis Lt. Oberarzt, TV-Ärzte/VKA)', '5.722–11.689 €', 'arzt'],
+              ['Psychotherapeut/in (approbiert, TVöD EG 13/14)', '4.901–7.552 €', 'psychotherapeut'],
+              ['Zahnarzt/Zahnärztin (angestellt, Assistenz bis Median)', '3.650–6.944 €', 'zahnarzt'],
+              ['Tierarzt/Tierärztin (BaT, angestellt)', '3.710–5.834 €', 'tierarzt'],
+              ['Apotheker/in (ADA-Tarif, öffentl. Apotheke)', '4.166–4.922 €', 'apotheker'],
               ['Hebamme (TVöD P11, angestellt)', 'ab ca. 4.420 €', 'hebamme'],
               ['Notfallsanitäter/in (TVöD EG-N + Zulagen)', '3.863–4.583 €', 'notfallsanitaeter'],
               ['Pflegefachkraft (TVöD-P, P7)', '3.510–4.305 €', 'pflegefachkraft'],

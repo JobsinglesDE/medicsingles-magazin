@@ -40,6 +40,8 @@ const nextConfig: NextConfig = {
       { source: '/partnersuche-pflege', destination: '/singles-partnersuche/pflege', permanent: true },
       { source: '/partnersuche-therapeuten', destination: '/singles-partnersuche/therapeuten', permanent: true },
       { source: '/partnersuche-rettung', destination: '/singles-partnersuche/rettung', permanent: true },
+      // Gelöschte, aber in GSC noch rankende tv-news-Seite (4 Klk/129 Impr) → auf Show-Hub statt 404
+      { source: '/tv-news/greys-anatomy/greys-anatomy-winston-jules-staffel-22-finale', destination: '/tv-serien/greys-anatomy', permanent: true },
     ];
     const seen = new Set<string>();
     return [...legacy, ...generatedRedirects].filter((r) =>

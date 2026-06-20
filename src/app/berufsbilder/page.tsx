@@ -7,7 +7,7 @@ import { TableOfContents } from '@/components/content/TableOfContents';
 import { HeartButton } from '@/components/ui/HeartButton';
 import { ScrollReveal } from '@/components/ui/ScrollReveal';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { JsonLd, collectionPageJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, collectionPageJsonLd, breadcrumbJsonLd } from '@/components/seo/JsonLd';
 
 const HUB_URL = 'https://medicsingles.de/magazin/berufsbilder';
 
@@ -23,7 +23,7 @@ export const metadata = {
     url: HUB_URL,
     type: 'website',
     siteName: 'MedicSingles Magazin',
-    locale: 'de_DE',
+    locale: 'de-DE',
   },
 };
 
@@ -126,6 +126,12 @@ export default async function BerufsbilderHub() {
           url: HUB_URL,
           items: itemList,
         })}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: 'Magazin', url: 'https://medicsingles.de/magazin' },
+          { name: 'Berufsbilder', url: HUB_URL },
+        ])}
       />
 
       <PillarHero

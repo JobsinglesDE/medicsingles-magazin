@@ -198,7 +198,7 @@ export default function BjaePage() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Mediziner-Singles aus jedem BJÄ-Mitglieds-Fach — auf Augenhöhe, ohne Erklärungs-Overhead.
           </p>
-          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-bjae">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-bjae">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

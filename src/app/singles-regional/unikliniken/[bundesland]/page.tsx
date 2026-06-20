@@ -79,7 +79,7 @@ export default async function KlinikBundeslandPage({ params }: { params: Promise
               Pages für {blName} sind in Vorbereitung. Während wir die Recherche finalisieren —
               Medicsingles.de wartet nicht.
             </p>
-            <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-unikliniken">
+            <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-unikliniken">
               Jetzt kostenfrei mitmachen
             </HeartButton>
           </section>
@@ -125,7 +125,7 @@ export default async function KlinikBundeslandPage({ params }: { params: Promise
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Lokale Mediziner-Singles auf Medicsingles.de finden.
           </p>
-          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-unikliniken">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-unikliniken">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

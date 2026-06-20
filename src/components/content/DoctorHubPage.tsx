@@ -155,7 +155,7 @@ export async function DoctorHubPage({ slug }: { slug: string }) {
         </div>
 
         <div className="text-center py-8">
-          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-promi-aerzte">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-promi-aerzte">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </div>

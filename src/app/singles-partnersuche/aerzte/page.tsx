@@ -273,7 +273,7 @@ export default async function AerztePillar() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-aerzte">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerzte">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -325,7 +325,7 @@ export default async function AerztePillar() {
               <p className="text-lg font-semibold">
                 Jetzt Ärzte-Singles in deiner Region finden
               </p>
-              <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-aerzte">
+              <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerzte">
                 Jetzt kostenlos registrieren
               </HeartButton>
             </div>
@@ -401,7 +401,7 @@ export default async function AerztePillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Tausende Ärzte-Singles warten — Menschen, die deinen Alltag kennen.
           </p>
-          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-aerzte">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-aerzte">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

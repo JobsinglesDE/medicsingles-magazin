@@ -1,5 +1,7 @@
 import { reader } from '@/lib/keystatic';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { getPersonHubUrl } from '@/lib/routes';
 import { ArticleBody } from '@/components/content/ArticleBody';
 import { ClusterHero } from '@/components/content/ClusterHero';
 import { TableOfContents } from '@/components/content/TableOfContents';
@@ -80,6 +82,19 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
   const hasFaq = 'faqItems' in article && article.faqItems && article.faqItems.length > 0;
   const isNews = 'isNews' in article ? (article as any).isNews : false;
   const ytEmbed = extractYoutubeEmbed(article.content);
+  const updatedAt = (article as any).updatedAt || null;
+  const dateModified = updatedAt || article.publishedAt || undefined;
+
+  // Cast-Person-Hubs zu diesem Artikel (bidirektionale Verlinkung, GESETZ)
+  const personSlugs = ((article as any).person as string[]) ?? [];
+  const linkedPersons = (
+    await Promise.all(personSlugs.map((p) => reader.collections.persons.read(p)))
+  )
+    .map((person, i) => ({ slug: personSlugs[i], person }))
+    .filter(
+      (x): x is { slug: string; person: NonNullable<typeof x.person> } =>
+        !!x.person && x.person.status !== 'draft' && x.person.personType !== 'promi-arzt' && x.person.show === SERIES_ID
+    );
 
   return (
     <>
@@ -90,7 +105,7 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
           url: `${SITE_BASE}${SERIES_PATH}/${slug}`,
           image: article.featuredImage || undefined,
           datePublished: article.publishedAt || undefined,
-          dateModified: article.publishedAt || undefined,
+          dateModified,
           isNews,
         })}
       />
@@ -125,7 +140,7 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
           ]}
         />
 
-        <ArticleByline publishedAt={article.publishedAt || undefined} />
+        <ArticleByline publishedAt={article.publishedAt || undefined} updatedAt={updatedAt} />
 
         <TableOfContents items={extractH2s(article.content)} />
 
@@ -150,6 +165,26 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
           </>
         )}
 
+        {linkedPersons.length > 0 && (
+          <section className="mt-16">
+            <h2 className="text-2xl font-bold mb-4 pb-2 border-b-2 border-brand-orange">
+              {linkedPersons.length === 1 ? 'Mehr zu dieser Person' : 'Mehr zu den Personen'}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {linkedPersons.map(({ slug: pSlug, person }) => (
+                <Link
+                  key={pSlug}
+                  href={getPersonHubUrl(pSlug, SERIES_ID)}
+                  className="block p-4 rounded-lg bg-surface border border-foreground/10 hover:border-brand-orange/50 hover:bg-brand-orange/5 transition-colors"
+                >
+                  <div className="text-xs uppercase text-foreground/50 mb-1">Personen-Hub · {SERIES_LABEL}</div>
+                  <div className="text-base font-bold text-foreground">Alle Artikel zu {person.name}</div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
         {author && (
           <AuthorBio
             name={author.name}
@@ -162,7 +197,7 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
         )}
 
         <div className="text-center py-8">
-          <HeartButton href={`https://medicsingles.de/registration/?AID=MedicMagazin-${SERIES_ID}`}>
+          <HeartButton href={`https://medicsingles.de/?AID=MedicMagazin-${SERIES_ID}`}>
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </div>

@@ -214,7 +214,7 @@ export default async function TherapeutenPillar() {
       {/* Top CTA */}
       <ScrollReveal>
         <section className="text-center py-6 px-6">
-          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-therapeuten">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-therapeuten">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>
@@ -305,7 +305,7 @@ export default async function TherapeutenPillar() {
           <p className="text-foreground/60 mb-8 max-w-lg mx-auto">
             Psychologische Fachkräfte und Singles, die dein Feld verstehen — auf Medicsingles.de.
           </p>
-          <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin-therapeuten">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-therapeuten">
             Jetzt kostenfrei mitmachen
           </HeartButton>
         </section>

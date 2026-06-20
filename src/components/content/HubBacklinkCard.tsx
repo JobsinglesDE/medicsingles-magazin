@@ -27,7 +27,7 @@ export function HubBacklinkCard({
         >
           {cta}
         </Link>
-        <HeartButton href="https://medicsingles.de/registration/?AID=MedicMagazin">
+        <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
           Jetzt mitmachen
         </HeartButton>
       </div>

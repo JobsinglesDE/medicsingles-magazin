@@ -24,6 +24,24 @@ const GEHALT_LADDER: Record<string, { label: string; slug: string }[]> = {
     { label: 'Oberarzt', slug: 'oberarzt-gehalt' },
     { label: 'Chefarzt', slug: 'chefarzt-gehalt' },
   ],
+  // Pflege-Leiter — alle Pflege-Gehalt-Spokes tragen position: pflegefachkraft
+  pflegefachkraft: [
+    { label: 'Pflegehelfer', slug: 'pflegehelfer-gehalt' },
+    { label: 'Pflegefachkraft', slug: 'pflegefachkraft-gehalt' },
+    { label: 'Altenpfleger', slug: 'altenpfleger-gehalt' },
+    { label: 'Pflegedienstleitung', slug: 'pflegedienstleitung-gehalt' },
+  ],
+  // Apotheken-Leiter — PKA/PTA tragen position: apotheker
+  apotheker: [
+    { label: 'PKA', slug: 'pka-gehalt' },
+    { label: 'PTA', slug: 'pta-gehalt' },
+    { label: 'Apotheker', slug: 'apotheker-gehalt' },
+  ],
+  // Zahn-Leiter — ZFA trägt position: zahnarzt
+  zahnarzt: [
+    { label: 'ZFA', slug: 'zfa-gehalt' },
+    { label: 'Zahnarzt', slug: 'zahnarzt-gehalt' },
+  ],
 };
 
 /**

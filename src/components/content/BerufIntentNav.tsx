@@ -13,6 +13,19 @@ const STUDIUM_ALIAS: Record<string, string> = {
   tierarzt: 'tiermedizin-studium',
 };
 
+// Zweite Ebene: Gehalt nach Karrierestufe (eigene Suchvolumen je Stufe, z.B.
+// "oberarzt gehalt"/"assistenzarzt gehalt" je 5.400/mo). Beruf-Key → Stufen-Spokes.
+// Submenü erscheint nur auf Gehalt-Stufen-Seiten und nur für existierende Spokes.
+const GEHALT_LADDER: Record<string, { label: string; slug: string }[]> = {
+  arzt: [
+    { label: 'Übersicht', slug: 'arzt-gehalt' },
+    { label: 'Assistenzarzt', slug: 'assistenzarzt-gehalt' },
+    { label: 'Facharzt', slug: 'facharzt-gehalt' },
+    { label: 'Oberarzt', slug: 'oberarzt-gehalt' },
+    { label: 'Chefarzt', slug: 'chefarzt-gehalt' },
+  ],
+};
+
 /**
  * Intent-Leiste auf Berufsbild-Seiten: Übersicht · Ausbildung · Gehalt.
  * Jeder Tab ist eine eigene URL (Spoke), keine Anker — rankt eigenständig.
@@ -42,31 +55,69 @@ export function BerufIntentNav({
       active: c.slug === activeSlug,
     }));
 
-  if (tabs.length < 2) return null;
+  // Gehalt-Submenü (Karrierestufen) — nur wenn der aktive Slug Teil der Leiter ist.
+  const ladder = GEHALT_LADDER[beruf] ?? [];
+  const ladderTabs: Tab[] = ladder
+    .filter((c) => availableSlugs.includes(c.slug))
+    .map((c) => ({ label: c.label, href: `/berufsbilder/${c.slug}`, active: c.slug === activeSlug }));
+  const showLadder = ladderTabs.length >= 2 && ladder.some((c) => c.slug === activeSlug);
+
+  if (tabs.length < 2 && !showLadder) return null;
 
   return (
-    <nav aria-label="Berufsbild-Themen" className="my-6">
-      <ul className="flex flex-wrap gap-2 list-none pl-0">
-        {tabs.map((t) => (
-          <li key={t.href}>
-            {t.active ? (
-              <span
-                aria-current="page"
-                className="inline-block px-4 py-2 rounded-full bg-brand-orange text-white text-sm font-semibold"
-              >
-                {t.label}
-              </span>
-            ) : (
-              <Link
-                href={t.href}
-                className="inline-block px-4 py-2 rounded-full bg-surface border border-foreground/15 text-sm font-semibold text-foreground/80 hover:border-brand-orange/60 hover:text-brand-orange transition-colors"
-              >
-                {t.label}
-              </Link>
-            )}
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div className="my-6">
+      {tabs.length >= 2 && (
+        <nav aria-label="Berufsbild-Themen">
+          <ul className="flex flex-wrap gap-2 list-none pl-0">
+            {tabs.map((t) => (
+              <li key={t.href}>
+                {t.active ? (
+                  <span
+                    aria-current="page"
+                    className="inline-block px-4 py-2 rounded-full bg-brand-orange text-white text-sm font-semibold"
+                  >
+                    {t.label}
+                  </span>
+                ) : (
+                  <Link
+                    href={t.href}
+                    className="inline-block px-4 py-2 rounded-full bg-surface border border-foreground/15 text-sm font-semibold text-foreground/80 hover:border-brand-orange/60 hover:text-brand-orange transition-colors"
+                  >
+                    {t.label}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
+      {showLadder && (
+        <nav aria-label="Gehalt nach Karrierestufe" className="mt-3">
+          <p className="text-xs font-semibold uppercase tracking-wide text-foreground/50 mb-2">Gehalt nach Karrierestufe</p>
+          <ul className="flex flex-wrap gap-2 list-none pl-0">
+            {ladderTabs.map((t) => (
+              <li key={t.href}>
+                {t.active ? (
+                  <span
+                    aria-current="page"
+                    className="inline-block px-3 py-1.5 rounded-full bg-brand-orange text-white text-xs font-semibold"
+                  >
+                    {t.label}
+                  </span>
+                ) : (
+                  <Link
+                    href={t.href}
+                    className="inline-block px-3 py-1.5 rounded-full bg-surface border border-foreground/15 text-xs font-semibold text-foreground/70 hover:border-brand-orange/60 hover:text-brand-orange transition-colors"
+                  >
+                    {t.label}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+    </div>
   );
 }

@@ -14,6 +14,7 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { ArticleByline } from '@/components/content/ArticleByline';
 import { JsonLd, articleJsonLd, faqJsonLd, videoJsonLd, extractYoutubeEmbed } from '@/components/seo/JsonLd';
 import { AuthorBio } from '@/components/ui/AuthorBio';
+import { MoneyLinks } from '@/components/content/MoneyLinks';
 
 const SERIES_ID = 'charite';
 const SERIES_LABEL = 'Charité';
@@ -184,6 +185,9 @@ export default async function SeriesArticle({ params }: { params: Promise<{ slug
             </div>
           </section>
         )}
+
+        {/* Motor → Money: TV-Cast-Seiten brücken Equity auf die Berufs-/Gehalt-Pillars */}
+        <MoneyLinks />
 
         {author && (
           <AuthorBio

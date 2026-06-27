@@ -8,6 +8,7 @@ import { PillarBacklinkCard } from '@/components/content/PillarBacklinkCard';
 import { DoctorBacklinkCard } from '@/components/content/DoctorBacklinkCard';
 import { HubBacklinkCard } from '@/components/content/HubBacklinkCard';
 import { BerufIntentNav } from '@/components/content/BerufIntentNav';
+import { MoneyLinks } from '@/components/content/MoneyLinks';
 import { CalloutBox } from '@/components/ui/CalloutBox';
 import { TakeawayBox } from '@/components/ui/TakeawayBox';
 import { FAQAccordion } from '@/components/ui/FAQAccordion';
@@ -283,6 +284,13 @@ export default async function ArticleView({ slug }: { slug: string }) {
       {/* Related Articles Carousel */}
       {relatedArticles.length > 0 && (
         <CarouselCards title="Weitere Artikel" items={relatedArticles} />
+      )}
+
+      {/* Motor → Money: Promi-Ärzte-Seiten brücken Equity auf die Berufs-/Gehalt-Pillars */}
+      {isDoctor && (
+        <div className="max-w-3xl mx-auto px-6 pb-4">
+          <MoneyLinks />
+        </div>
       )}
 
       {/* Bottom CTA */}

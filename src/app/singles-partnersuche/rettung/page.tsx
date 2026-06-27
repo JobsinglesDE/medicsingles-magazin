@@ -127,7 +127,7 @@ export default async function RettungPillar() {
   }
 
   const allSectionSlugs = SECTIONS.flatMap((s) => s.slugs);
-  const tocItems = SECTIONS.map((s) => ({ label: `${s.letter}. ${s.title}`, id: s.id }));
+  const tocItems = SECTIONS.filter((s) => getSectionArticles(s.slugs).length > 0).map((s) => ({ label: `${s.letter}. ${s.title}`, id: s.id }));
   const schemaItems = allSectionSlugs
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter(Boolean)

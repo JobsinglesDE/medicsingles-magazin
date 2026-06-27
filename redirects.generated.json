@@ -1,35 +1,5 @@
 [
   {
-    "source": "/acls-phtls-fortbildung-dating-rettung",
-    "destination": "/singles-partnersuche/rettung/acls-phtls-fortbildung-dating-rettung",
-    "permanent": true
-  },
-  {
-    "source": "/adrenalin-abfall-partner-erklaeren-rettung",
-    "destination": "/singles-partnersuche/rettung/adrenalin-abfall-partner-erklaeren-rettung",
-    "permanent": true
-  },
-  {
-    "source": "/aerzte-kongresse-singles-kennenlernen",
-    "destination": "/singles-partnersuche/aerzte/aerzte-kongresse-singles-kennenlernen",
-    "permanent": true
-  },
-  {
-    "source": "/aerztekammer-netzwerke-singles",
-    "destination": "/singles-partnersuche/aerzte/aerztekammer-netzwerke-singles",
-    "permanent": true
-  },
-  {
-    "source": "/alleinerziehend-pflegekraft-dating",
-    "destination": "/singles-partnersuche/pflege/alleinerziehend-pflegekraft-dating",
-    "permanent": true
-  },
-  {
-    "source": "/analysierst-du-mich-dating-vorurteile-therapeut",
-    "destination": "/singles-partnersuche/therapeuten/analysierst-du-mich-dating-vorurteile-therapeut",
-    "permanent": true
-  },
-  {
     "source": "/anne-fleck-longevity-schlaf-podcast-2026",
     "destination": "/promi-aerzte/anne-fleck-longevity-schlaf-podcast-2026",
     "permanent": true
@@ -40,8 +10,13 @@
     "permanent": true
   },
   {
-    "source": "/arzt-beziehung-familie-alltag",
-    "destination": "/singles-partnersuche/aerzte/arzt-beziehung-familie-alltag",
+    "source": "/apotheker-gehalt",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/apotheker",
+    "destination": "/singles-partnersuche",
     "permanent": true
   },
   {
@@ -50,33 +25,38 @@
     "permanent": true
   },
   {
-    "source": "/arzt-kennenlernen-wege",
-    "destination": "/singles-partnersuche/aerzte/arzt-kennenlernen-wege",
-    "permanent": true
-  },
-  {
-    "source": "/arzt-status-dating-anziehung-abschreckung",
-    "destination": "/singles-partnersuche/aerzte/arzt-status-dating-anziehung-abschreckung",
-    "permanent": true
-  },
-  {
-    "source": "/arzt-sucht-frau-realitaet",
-    "destination": "/singles-partnersuche/aerzte/arzt-sucht-frau-realitaet",
-    "permanent": true
-  },
-  {
     "source": "/arzt",
     "destination": "/singles-partnersuche/aerzte/arzt",
     "permanent": true
   },
   {
-    "source": "/bergrettung-partnersuche-alpen-dating",
-    "destination": "/singles-partnersuche/rettung/bergrettung-partnersuche-alpen-dating",
+    "source": "/bergdoktor-hans-sigl-abschied-vision",
+    "destination": "/promi-aerzte/bergdoktor-hans-sigl-abschied-vision",
     "permanent": true
   },
   {
-    "source": "/beruf-arzt-dating-profil-erwaehnen-faq",
-    "destination": "/singles-partnersuche/aerzte/beruf-arzt-dating-profil-erwaehnen-faq",
+    "source": "/singles-partnersuche/aerzte/bergdoktor-hans-sigl-abschied-vision",
+    "destination": "/promi-aerzte/bergdoktor-hans-sigl-abschied-vision",
+    "permanent": true
+  },
+  {
+    "source": "/bergdoktor-ronja-forcher-staffel-20-potsdam-2026",
+    "destination": "/promi-aerzte/bergdoktor-ronja-forcher-staffel-20-potsdam-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/bergdoktor-ronja-forcher-staffel-20-potsdam-2026",
+    "destination": "/promi-aerzte/bergdoktor-ronja-forcher-staffel-20-potsdam-2026",
+    "permanent": true
+  },
+  {
+    "source": "/bergdoktor-staffel-20-hans-sigl-simone-hanselmann-2026",
+    "destination": "/promi-aerzte/bergdoktor-staffel-20-hans-sigl-simone-hanselmann-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/bergdoktor-staffel-20-hans-sigl-simone-hanselmann-2026",
+    "destination": "/promi-aerzte/bergdoktor-staffel-20-hans-sigl-simone-hanselmann-2026",
     "permanent": true
   },
   {
@@ -85,18 +65,18 @@
     "permanent": true
   },
   {
-    "source": "/beziehung-mit-arzt-partner",
-    "destination": "/singles-partnersuche/aerzte/beziehung-mit-arzt-partner",
-    "permanent": true
-  },
-  {
-    "source": "/beziehung-mit-therapeut-partner-guide",
-    "destination": "/singles-partnersuche/therapeuten/beziehung-mit-therapeut-partner-guide",
-    "permanent": true
-  },
-  {
     "source": "/beziehung-rettungsdienstler-schweigsam-einsatz",
     "destination": "/singles-partnersuche/rettung/beziehung-rettungsdienstler-schweigsam-einsatz",
+    "permanent": true
+  },
+  {
+    "source": "/carsten-lekutat-1-minuten-strategie-2026",
+    "destination": "/promi-aerzte/carsten-lekutat-1-minuten-strategie-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/carsten-lekutat-1-minuten-strategie-2026",
+    "destination": "/promi-aerzte/carsten-lekutat-1-minuten-strategie-2026",
     "permanent": true
   },
   {
@@ -110,68 +90,68 @@
     "permanent": true
   },
   {
+    "source": "/carsten-lekutat-muede-buch-2026",
+    "destination": "/promi-aerzte/carsten-lekutat-muede-buch-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/carsten-lekutat-muede-buch-2026",
+    "destination": "/promi-aerzte/carsten-lekutat-muede-buch-2026",
+    "permanent": true
+  },
+  {
     "source": "/charite-dating-guide-berlin",
     "destination": "/singles-partnersuche/aerzte/charite-dating-guide-berlin",
     "permanent": true
   },
   {
-    "source": "/chat-zu-treffen-pflegekraft-naechster-schritt",
-    "destination": "/singles-partnersuche/pflege/chat-zu-treffen-pflegekraft-naechster-schritt",
+    "source": "/chefarzt-gehalt",
+    "destination": "/singles-partnersuche/aerzte/chefarzt-gehalt",
     "permanent": true
   },
   {
-    "source": "/date-ideen-tiefgruendige-gespraeche-therapeuten",
-    "destination": "/singles-partnersuche/therapeuten/date-ideen-tiefgruendige-gespraeche-therapeuten",
+    "source": "/christian-drosten-fake-werbung-diabetes-2026",
+    "destination": "/promi-aerzte/christian-drosten-fake-werbung-diabetes-2026",
     "permanent": true
   },
   {
-    "source": "/dating-als-chirurg",
-    "destination": "/singles-partnersuche/aerzte/dating-als-chirurg",
+    "source": "/singles-partnersuche/aerzte/christian-drosten-fake-werbung-diabetes-2026",
+    "destination": "/promi-aerzte/christian-drosten-fake-werbung-diabetes-2026",
     "permanent": true
   },
   {
-    "source": "/dating-als-intensivpfleger-stress-partner",
-    "destination": "/singles-partnersuche/pflege/dating-als-intensivpfleger-stress-partner",
+    "source": "/christian-drosten-gericht-wiesendanger-2026",
+    "destination": "/promi-aerzte/christian-drosten-gericht-wiesendanger-2026",
     "permanent": true
   },
   {
-    "source": "/dating-als-kinderjugendpsychotherapeut",
-    "destination": "/singles-partnersuche/therapeuten/dating-als-kinderjugendpsychotherapeut",
+    "source": "/singles-partnersuche/aerzte/christian-drosten-gericht-wiesendanger-2026",
+    "destination": "/promi-aerzte/christian-drosten-gericht-wiesendanger-2026",
     "permanent": true
   },
   {
-    "source": "/dating-als-krankenschwester-schichtdienst",
-    "destination": "/singles-partnersuche/pflege/dating-als-krankenschwester-schichtdienst",
+    "source": "/christoph-specht-arzt-buch",
+    "destination": "/promi-aerzte/christoph-specht-arzt-buch",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/christoph-specht-arzt-buch",
+    "destination": "/promi-aerzte/christoph-specht-arzt-buch",
+    "permanent": true
+  },
+  {
+    "source": "/christoph-specht-mette-marit-transplantation-2026",
+    "destination": "/promi-aerzte/christoph-specht-mette-marit-transplantation-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/christoph-specht-mette-marit-transplantation-2026",
+    "destination": "/promi-aerzte/christoph-specht-mette-marit-transplantation-2026",
     "permanent": true
   },
   {
     "source": "/dating-profil-aerzte-pflegekraefte",
     "destination": "/singles-partnersuche/aerzte/dating-profil-aerzte-pflegekraefte",
-    "permanent": true
-  },
-  {
-    "source": "/dating-profil-rettungssanitaeter-notfallsanitaeter",
-    "destination": "/singles-partnersuche/rettung/dating-profil-rettungssanitaeter-notfallsanitaeter",
-    "permanent": true
-  },
-  {
-    "source": "/dating-profil-therapeuten-empathie-ohne-therapieren",
-    "destination": "/singles-partnersuche/therapeuten/dating-profil-therapeuten-empathie-ohne-therapieren",
-    "permanent": true
-  },
-  {
-    "source": "/dating-sicherheit-diskretion-arzt",
-    "destination": "/singles-partnersuche/aerzte/dating-sicherheit-diskretion-arzt",
-    "permanent": true
-  },
-  {
-    "source": "/dating-tipps-krankenschwestern",
-    "destination": "/singles-partnersuche/pflege/dating-tipps-krankenschwestern",
-    "permanent": true
-  },
-  {
-    "source": "/deutscher-aerztetag-singles-networking",
-    "destination": "/singles-partnersuche/aerzte/deutscher-aerztetag-singles-networking",
     "permanent": true
   },
   {
@@ -185,6 +165,36 @@
     "permanent": true
   },
   {
+    "source": "/dietrich-groenemeyer-natuerlich-altern-2026",
+    "destination": "/promi-aerzte/dietrich-groenemeyer-natuerlich-altern-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/dietrich-groenemeyer-natuerlich-altern-2026",
+    "destination": "/promi-aerzte/dietrich-groenemeyer-natuerlich-altern-2026",
+    "permanent": true
+  },
+  {
+    "source": "/doc-caro-georgien-multiresistente-keime-2026",
+    "destination": "/promi-aerzte/doc-caro-georgien-multiresistente-keime-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/doc-caro-georgien-multiresistente-keime-2026",
+    "destination": "/promi-aerzte/doc-caro-georgien-multiresistente-keime-2026",
+    "permanent": true
+  },
+  {
+    "source": "/doc-caro-wiederbelebung-schulfach-2026",
+    "destination": "/promi-aerzte/doc-caro-wiederbelebung-schulfach-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/doc-caro-wiederbelebung-schulfach-2026",
+    "destination": "/promi-aerzte/doc-caro-wiederbelebung-schulfach-2026",
+    "permanent": true
+  },
+  {
     "source": "/doc-esser-sprechende-medizin-2026",
     "destination": "/promi-aerzte/doc-esser-sprechende-medizin-2026",
     "permanent": true
@@ -195,93 +205,73 @@
     "permanent": true
   },
   {
-    "source": "/dr-nice-patrick-kalupa-privat",
-    "destination": "/singles-partnersuche/aerzte/dr-nice-patrick-kalupa-privat",
+    "source": "/doc-esser-supplemente-gesundheitsmythen-2026",
+    "destination": "/promi-aerzte/doc-esser-supplemente-gesundheitsmythen-2026",
     "permanent": true
   },
   {
-    "source": "/einsam-im-kittel-isolation-aerzte",
-    "destination": "/singles-partnersuche/aerzte/einsam-im-kittel-isolation-aerzte",
+    "source": "/singles-partnersuche/aerzte/doc-esser-supplemente-gesundheitsmythen-2026",
+    "destination": "/promi-aerzte/doc-esser-supplemente-gesundheitsmythen-2026",
     "permanent": true
   },
   {
-    "source": "/emotionale-abgrenzung-job-privat-therapeut",
-    "destination": "/singles-partnersuche/therapeuten/emotionale-abgrenzung-job-privat-therapeut",
+    "source": "/doc-fischer-hoersturz-tinnitus-2026",
+    "destination": "/promi-aerzte/doc-fischer-hoersturz-tinnitus-2026",
     "permanent": true
   },
   {
-    "source": "/erste-date-ideen-aerzte",
-    "destination": "/singles-partnersuche/aerzte/erste-date-ideen-aerzte",
+    "source": "/singles-partnersuche/aerzte/doc-fischer-hoersturz-tinnitus-2026",
+    "destination": "/promi-aerzte/doc-fischer-hoersturz-tinnitus-2026",
     "permanent": true
   },
   {
-    "source": "/erste-nachricht-dating-app-mediziner",
-    "destination": "/singles-partnersuche/aerzte/erste-nachricht-dating-app-mediziner",
+    "source": "/dr-bob-dschungelcamp-arzt-wer-ist-er",
+    "destination": "/promi-aerzte/dr-bob-dschungelcamp-arzt-wer-ist-er",
     "permanent": true
   },
   {
-    "source": "/erste-nachricht-krankenschwester-pfleger-dating",
-    "destination": "/singles-partnersuche/pflege/erste-nachricht-krankenschwester-pfleger-dating",
+    "source": "/singles-partnersuche/aerzte/dr-bob-dschungelcamp-arzt-wer-ist-er",
+    "destination": "/promi-aerzte/dr-bob-dschungelcamp-arzt-wer-ist-er",
     "permanent": true
   },
   {
-    "source": "/erste-nachricht-tiefgruendige-gespraechsstarter-therapeut",
-    "destination": "/singles-partnersuche/therapeuten/erste-nachricht-tiefgruendige-gespraechsstarter-therapeut",
+    "source": "/ernaehrungs-docs-anne-fleck-viola-andresen-staffel-12",
+    "destination": "/promi-aerzte/ernaehrungs-docs-anne-fleck-viola-andresen-staffel-12",
     "permanent": true
   },
   {
-    "source": "/erstes-date-aerzte-ideen",
-    "destination": "/singles-partnersuche/aerzte/erstes-date-aerzte-ideen",
+    "source": "/singles-partnersuche/aerzte/ernaehrungs-docs-anne-fleck-viola-andresen-staffel-12",
+    "destination": "/promi-aerzte/ernaehrungs-docs-anne-fleck-viola-andresen-staffel-12",
     "permanent": true
   },
   {
-    "source": "/familienplanung-aerzte-kinder-karriere",
-    "destination": "/singles-partnersuche/aerzte/familienplanung-aerzte-kinder-karriere",
+    "source": "/frederic-brossier-bergdoktor-in-aller-freundschaft",
+    "destination": "/promi-aerzte/frederic-brossier-bergdoktor-in-aller-freundschaft",
     "permanent": true
   },
   {
-    "source": "/familienplanung-therapeut-karriere-kind",
-    "destination": "/singles-partnersuche/therapeuten/familienplanung-therapeut-karriere-kind",
+    "source": "/singles-partnersuche/aerzte/frederic-brossier-bergdoktor-in-aller-freundschaft",
+    "destination": "/promi-aerzte/frederic-brossier-bergdoktor-in-aller-freundschaft",
     "permanent": true
   },
   {
-    "source": "/faq-partnersuche-aerzte",
-    "destination": "/singles-partnersuche/aerzte/faq-partnersuche-aerzte",
+    "source": "/hans-sigl-felix-burda-award-vorsorge-2026",
+    "destination": "/promi-aerzte/hans-sigl-felix-burda-award-vorsorge-2026",
     "permanent": true
   },
   {
-    "source": "/finanzielle-absicherung-partnerschaft-pflege",
-    "destination": "/singles-partnersuche/pflege/finanzielle-absicherung-partnerschaft-pflege",
+    "source": "/singles-partnersuche/aerzte/hans-sigl-felix-burda-award-vorsorge-2026",
+    "destination": "/promi-aerzte/hans-sigl-felix-burda-award-vorsorge-2026",
     "permanent": true
   },
   {
-    "source": "/fuenf-dating-herausforderungen-pflege",
-    "destination": "/singles-partnersuche/pflege/fuenf-dating-herausforderungen-pflege",
+    "source": "/hans-sigl-fernsehgarten-buh-rufe-wm-2026",
+    "destination": "/promi-aerzte/hans-sigl-fernsehgarten-buh-rufe-wm-2026",
     "permanent": true
   },
   {
-    "source": "/fuenf-dating-herausforderungen-psychologen-therapeuten",
-    "destination": "/singles-partnersuche/therapeuten/fuenf-dating-herausforderungen-psychologen-therapeuten",
-    "permanent": true
-  },
-  {
-    "source": "/gespraechsthemen-erstes-date-arzt",
-    "destination": "/singles-partnersuche/aerzte/gespraechsthemen-erstes-date-arzt",
-    "permanent": true
-  },
-  {
-    "source": "/gespraechsthemen-erstes-date-pflege",
-    "destination": "/singles-partnersuche/pflege/gespraechsthemen-erstes-date-pflege",
-    "permanent": true
-  },
-  {
-    "source": "/grenzen-setzen-arztberuf-privatleben",
-    "destination": "/singles-partnersuche/aerzte/grenzen-setzen-arztberuf-privatleben",
-    "permanent": true
-  },
-  {
-    "source": "/hauptstadtkongress-berlin-aerzte-dating",
-    "destination": "/singles-partnersuche/aerzte/hauptstadtkongress-berlin-aerzte-dating",
+    "source": "/singles-partnersuche/aerzte/hans-sigl-fernsehgarten-buh-rufe-wm-2026",
+    "destination": "/promi-aerzte/hans-sigl-fernsehgarten-buh-rufe-wm-2026",
     "permanent": true
   },
   {
@@ -300,8 +290,33 @@
     "permanent": true
   },
   {
-    "source": "/heidelberg-uniklinik-mediziner-treffpunkte",
-    "destination": "/singles-partnersuche/aerzte/heidelberg-uniklinik-mediziner-treffpunkte",
+    "source": "/hendrik-streeck-drogenbeauftragter-bundestag-2026",
+    "destination": "/promi-aerzte/hendrik-streeck-drogenbeauftragter-bundestag-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/hendrik-streeck-drogenbeauftragter-bundestag-2026",
+    "destination": "/promi-aerzte/hendrik-streeck-drogenbeauftragter-bundestag-2026",
+    "permanent": true
+  },
+  {
+    "source": "/hendrik-streeck-tabaksteuer-2026",
+    "destination": "/promi-aerzte/hendrik-streeck-tabaksteuer-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/hendrik-streeck-tabaksteuer-2026",
+    "destination": "/promi-aerzte/hendrik-streeck-tabaksteuer-2026",
+    "permanent": true
+  },
+  {
+    "source": "/hendrik-streeck-vater-baby-2026",
+    "destination": "/promi-aerzte/hendrik-streeck-vater-baby-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/hendrik-streeck-vater-baby-2026",
+    "destination": "/promi-aerzte/hendrik-streeck-vater-baby-2026",
     "permanent": true
   },
   {
@@ -325,6 +340,16 @@
     "permanent": true
   },
   {
+    "source": "/hirschhausen-nrw-hitze-wdr-2026",
+    "destination": "/promi-aerzte/hirschhausen-nrw-hitze-wdr-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/hirschhausen-nrw-hitze-wdr-2026",
+    "destination": "/promi-aerzte/hirschhausen-nrw-hitze-wdr-2026",
+    "permanent": true
+  },
+  {
     "source": "/hirschhausen-papst-vatikan",
     "destination": "/promi-aerzte/hirschhausen-papst-vatikan",
     "permanent": true
@@ -335,8 +360,43 @@
     "permanent": true
   },
   {
-    "source": "/hobbies-ausgleich-pflege-singles-treffen",
-    "destination": "/singles-partnersuche/pflege/hobbies-ausgleich-pflege-singles-treffen",
+    "source": "/hirschhausen-wissen-vor-acht-co2-2026",
+    "destination": "/promi-aerzte/hirschhausen-wissen-vor-acht-co2-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/hirschhausen-wissen-vor-acht-co2-2026",
+    "destination": "/promi-aerzte/hirschhausen-wissen-vor-acht-co2-2026",
+    "permanent": true
+  },
+  {
+    "source": "/hirschhausen-wm-2026-hitze-warnung",
+    "destination": "/promi-aerzte/hirschhausen-wm-2026-hitze-warnung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/hirschhausen-wm-2026-hitze-warnung",
+    "destination": "/promi-aerzte/hirschhausen-wm-2026-hitze-warnung",
+    "permanent": true
+  },
+  {
+    "source": "/hirschhausen-zucker-doku-ard-2026",
+    "destination": "/promi-aerzte/hirschhausen-zucker-doku-ard-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/hirschhausen-zucker-doku-ard-2026",
+    "destination": "/promi-aerzte/hirschhausen-zucker-doku-ard-2026",
+    "permanent": true
+  },
+  {
+    "source": "/joe-bausch-knastarzt-schuhbeck",
+    "destination": "/promi-aerzte/joe-bausch-knastarzt-schuhbeck",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/joe-bausch-knastarzt-schuhbeck",
+    "destination": "/promi-aerzte/joe-bausch-knastarzt-schuhbeck",
     "permanent": true
   },
   {
@@ -360,28 +420,13 @@
     "permanent": true
   },
   {
-    "source": "/karriere-arzt-beziehung-assistenzarzt-chefarzt",
-    "destination": "/singles-partnersuche/aerzte/karriere-arzt-beziehung-assistenzarzt-chefarzt",
+    "source": "/johannes-wimmer-wieder-papa-2026",
+    "destination": "/promi-aerzte/johannes-wimmer-wieder-papa-2026",
     "permanent": true
   },
   {
-    "source": "/karriere-familie-12-24-rettungsdienst",
-    "destination": "/singles-partnersuche/rettung/karriere-familie-12-24-rettungsdienst",
-    "permanent": true
-  },
-  {
-    "source": "/kind-karriere-kittel-familienplanung-pflege",
-    "destination": "/singles-partnersuche/pflege/kind-karriere-kittel-familienplanung-pflege",
-    "permanent": true
-  },
-  {
-    "source": "/klienten-daten-ethische-grenzen-abstinenzgebot",
-    "destination": "/singles-partnersuche/therapeuten/klienten-daten-ethische-grenzen-abstinenzgebot",
-    "permanent": true
-  },
-  {
-    "source": "/kollegen-daten-krankenhaus-ja-nein",
-    "destination": "/singles-partnersuche/aerzte/kollegen-daten-krankenhaus-ja-nein",
+    "source": "/singles-partnersuche/aerzte/johannes-wimmer-wieder-papa-2026",
+    "destination": "/promi-aerzte/johannes-wimmer-wieder-papa-2026",
     "permanent": true
   },
   {
@@ -390,33 +435,38 @@
     "permanent": true
   },
   {
-    "source": "/kommunikation-beziehung-arzt-stress",
-    "destination": "/singles-partnersuche/aerzte/kommunikation-beziehung-arzt-stress",
-    "permanent": true
-  },
-  {
-    "source": "/kommunikation-schichtdienst-beziehung-stark",
-    "destination": "/singles-partnersuche/pflege/kommunikation-schichtdienst-beziehung-stark",
-    "permanent": true
-  },
-  {
-    "source": "/kommunikationsmuster-beziehung-therapeut",
-    "destination": "/singles-partnersuche/therapeuten/kommunikationsmuster-beziehung-therapeut",
-    "permanent": true
-  },
-  {
-    "source": "/krankenschwester-partner-finden-online",
-    "destination": "/singles-partnersuche/pflege/krankenschwester-partner-finden-online",
-    "permanent": true
-  },
-  {
     "source": "/krankenschwester-sucht-mann-realitaet",
     "destination": "/singles-partnersuche/pflege/krankenschwester-sucht-mann-realitaet",
     "permanent": true
   },
   {
-    "source": "/leitstelle-dating-partnersuche-disponent",
-    "destination": "/singles-partnersuche/rettung/leitstelle-dating-partnersuche-disponent",
+    "source": "/kurt-steuer-sportarzt-des-jahres-2026",
+    "destination": "/promi-aerzte/kurt-steuer-sportarzt-des-jahres-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/kurt-steuer-sportarzt-des-jahres-2026",
+    "destination": "/promi-aerzte/kurt-steuer-sportarzt-des-jahres-2026",
+    "permanent": true
+  },
+  {
+    "source": "/lauterbach-fitness-tipps-arzt",
+    "destination": "/promi-aerzte/lauterbach-fitness-tipps-arzt",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/lauterbach-fitness-tipps-arzt",
+    "destination": "/promi-aerzte/lauterbach-fitness-tipps-arzt",
+    "permanent": true
+  },
+  {
+    "source": "/leif-erik-sander-ebola-charite",
+    "destination": "/promi-aerzte/leif-erik-sander-ebola-charite",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/leif-erik-sander-ebola-charite",
+    "destination": "/promi-aerzte/leif-erik-sander-ebola-charite",
     "permanent": true
   },
   {
@@ -425,13 +475,33 @@
     "permanent": true
   },
   {
-    "source": "/lmu-klinikum-muenchen-mediziner-dating",
-    "destination": "/singles-partnersuche/aerzte/lmu-klinikum-muenchen-mediziner-dating",
+    "source": "/lisa-federle-botschafterin-2026",
+    "destination": "/promi-aerzte/lisa-federle-botschafterin-2026",
     "permanent": true
   },
   {
-    "source": "/marburger-bund-tarif-arbeitsbedingungen-partnerschaft",
-    "destination": "/singles-partnersuche/aerzte/marburger-bund-tarif-arbeitsbedingungen-partnerschaft",
+    "source": "/singles-partnersuche/aerzte/lisa-federle-botschafterin-2026",
+    "destination": "/promi-aerzte/lisa-federle-botschafterin-2026",
+    "permanent": true
+  },
+  {
+    "source": "/matthias-riedl-bluthochdruck-ernaehrung-2026",
+    "destination": "/promi-aerzte/matthias-riedl-bluthochdruck-ernaehrung-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/matthias-riedl-bluthochdruck-ernaehrung-2026",
+    "destination": "/promi-aerzte/matthias-riedl-bluthochdruck-ernaehrung-2026",
+    "permanent": true
+  },
+  {
+    "source": "/matthias-riedl-cola-hormonhaushalt-hitze-2026",
+    "destination": "/promi-aerzte/matthias-riedl-cola-hormonhaushalt-hitze-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/matthias-riedl-cola-hormonhaushalt-hitze-2026",
+    "destination": "/promi-aerzte/matthias-riedl-cola-hormonhaushalt-hitze-2026",
     "permanent": true
   },
   {
@@ -455,22 +525,17 @@
     "permanent": true
   },
   {
-    "source": "/medica-duesseldorf-singles-medizinmesse",
-    "destination": "/singles-partnersuche/aerzte/medica-duesseldorf-singles-medizinmesse",
-    "permanent": true
-  },
-  {
-    "source": "/medicsingles-vs-tinder-nischen-dating",
-    "destination": "/singles-partnersuche/aerzte/medicsingles-vs-tinder-nischen-dating",
-    "permanent": true
-  },
-  {
     "source": "/medizinstudium",
     "destination": "/singles-partnersuche",
     "permanent": true
   },
   {
     "source": "/mfa-ausbildung",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/mfa-gehalt-nrw",
     "destination": "/singles-partnersuche",
     "permanent": true
   },
@@ -485,6 +550,26 @@
     "permanent": true
   },
   {
+    "source": "/michalsen-ernaehrung-quintessenz",
+    "destination": "/promi-aerzte/michalsen-ernaehrung-quintessenz",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/michalsen-ernaehrung-quintessenz",
+    "destination": "/promi-aerzte/michalsen-ernaehrung-quintessenz",
+    "permanent": true
+  },
+  {
+    "source": "/michalsen-proteinpulver-eiweiss-2026",
+    "destination": "/promi-aerzte/michalsen-proteinpulver-eiweiss-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/michalsen-proteinpulver-eiweiss-2026",
+    "destination": "/promi-aerzte/michalsen-proteinpulver-eiweiss-2026",
+    "permanent": true
+  },
+  {
     "source": "/mueller-wohlfahrt-wiederverletzungen-2026",
     "destination": "/promi-aerzte/mueller-wohlfahrt-wiederverletzungen-2026",
     "permanent": true
@@ -495,8 +580,23 @@
     "permanent": true
   },
   {
-    "source": "/notarzt-notfallsanitaeter-dating-unterschied",
-    "destination": "/singles-partnersuche/rettung/notarzt-notfallsanitaeter-dating-unterschied",
+    "source": "/mueller-wohlfahrt-zverev-french-open-2026",
+    "destination": "/promi-aerzte/mueller-wohlfahrt-zverev-french-open-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/mueller-wohlfahrt-zverev-french-open-2026",
+    "destination": "/promi-aerzte/mueller-wohlfahrt-zverev-french-open-2026",
+    "permanent": true
+  },
+  {
+    "source": "/mueller-wohlfahrt-zverev-french-open",
+    "destination": "/promi-aerzte/mueller-wohlfahrt-zverev-french-open",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/mueller-wohlfahrt-zverev-french-open",
+    "destination": "/promi-aerzte/mueller-wohlfahrt-zverev-french-open",
     "permanent": true
   },
   {
@@ -515,26 +615,6 @@
     "permanent": true
   },
   {
-    "source": "/online-chat-zum-treffen-mediziner",
-    "destination": "/singles-partnersuche/aerzte/online-chat-zum-treffen-mediziner",
-    "permanent": true
-  },
-  {
-    "source": "/online-dating-sicherheit-pflege-diskretion",
-    "destination": "/singles-partnersuche/pflege/online-dating-sicherheit-pflege-diskretion",
-    "permanent": true
-  },
-  {
-    "source": "/partner-ohne-akademischen-abschluss-arzt",
-    "destination": "/singles-partnersuche/aerzte/partner-ohne-akademischen-abschluss-arzt",
-    "permanent": true
-  },
-  {
-    "source": "/partnersuche-aerzte-warum-schwer",
-    "destination": "/singles-partnersuche/aerzte/partnersuche-aerzte-warum-schwer",
-    "permanent": true
-  },
-  {
     "source": "/partnersuche-aerzte",
     "destination": "/singles-partnersuche/aerzte/partnersuche-aerzte",
     "permanent": true
@@ -542,26 +622,6 @@
   {
     "source": "/partnersuche-akademiker-niveau",
     "destination": "/singles-partnersuche/aerzte/partnersuche-akademiker-niveau",
-    "permanent": true
-  },
-  {
-    "source": "/partnersuche-allgemeinmedizin",
-    "destination": "/singles-partnersuche/aerzte/partnersuche-allgemeinmedizin",
-    "permanent": true
-  },
-  {
-    "source": "/partnersuche-altenpflege-empathie-abgrenzung",
-    "destination": "/singles-partnersuche/pflege/partnersuche-altenpflege-empathie-abgrenzung",
-    "permanent": true
-  },
-  {
-    "source": "/partnersuche-arzt-ueber-40",
-    "destination": "/singles-partnersuche/aerzte/partnersuche-arzt-ueber-40",
-    "permanent": true
-  },
-  {
-    "source": "/partnersuche-coach-berater-grenzen",
-    "destination": "/singles-partnersuche/therapeuten/partnersuche-coach-berater-grenzen",
     "permanent": true
   },
   {
@@ -580,33 +640,13 @@
     "permanent": true
   },
   {
-    "source": "/partnersuche-pflegekraft-stress-abgrenzung",
-    "destination": "/singles-partnersuche/pflege/partnersuche-pflegekraft-stress-abgrenzung",
-    "permanent": true
-  },
-  {
     "source": "/partnersuche-rettung",
     "destination": "/singles-partnersuche/rettung/partnersuche-rettung",
     "permanent": true
   },
   {
-    "source": "/partnersuche-rettungsdienst-realitaet-12-24-rhythmus",
-    "destination": "/singles-partnersuche/rettung/partnersuche-rettungsdienst-realitaet-12-24-rhythmus",
-    "permanent": true
-  },
-  {
     "source": "/partnersuche-therapeuten",
     "destination": "/singles-partnersuche/therapeuten/partnersuche-therapeuten",
-    "permanent": true
-  },
-  {
-    "source": "/patient-flirtet-mit-arzt-umgang",
-    "destination": "/singles-partnersuche/aerzte/patient-flirtet-mit-arzt-umgang",
-    "permanent": true
-  },
-  {
-    "source": "/pflege-ueber-40-zweiter-fruehling-dating",
-    "destination": "/singles-partnersuche/pflege/pflege-ueber-40-zweiter-fruehling-dating",
     "permanent": true
   },
   {
@@ -625,13 +665,8 @@
     "permanent": true
   },
   {
-    "source": "/pflegemanagementkongress-networking-pflege",
-    "destination": "/singles-partnersuche/pflege/pflegemanagementkongress-networking-pflege",
-    "permanent": true
-  },
-  {
-    "source": "/pfleger-dating-app-tipps",
-    "destination": "/singles-partnersuche/pflege/pfleger-dating-app-tipps",
+    "source": "/pharmazie-studium",
+    "destination": "/singles-partnersuche",
     "permanent": true
   },
   {
@@ -647,11 +682,6 @@
   {
     "source": "/physiotherapeut",
     "destination": "/singles-partnersuche",
-    "permanent": true
-  },
-  {
-    "source": "/praxisgruendung-paar-arzt-finanzen",
-    "destination": "/singles-partnersuche/aerzte/praxisgruendung-paar-arzt-finanzen",
     "permanent": true
   },
   {
@@ -945,6 +975,26 @@
     "permanent": true
   },
   {
+    "source": "/promi-mueller-wohlfahrt",
+    "destination": "/promi-aerzte/promi-mueller-wohlfahrt",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-mueller-wohlfahrt",
+    "destination": "/promi-aerzte/promi-mueller-wohlfahrt",
+    "permanent": true
+  },
+  {
+    "source": "/promi-werner-mang",
+    "destination": "/promi-aerzte/promi-werner-mang",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/promi-werner-mang",
+    "destination": "/promi-aerzte/promi-werner-mang",
+    "permanent": true
+  },
+  {
     "source": "/promi-yael-adler-buecher",
     "destination": "/promi-aerzte/promi-yael-adler-buecher",
     "permanent": true
@@ -985,18 +1035,28 @@
     "permanent": true
   },
   {
-    "source": "/ptbs-rettungsdienst-neue-beziehung-umgang",
-    "destination": "/singles-partnersuche/rettung/ptbs-rettungsdienst-neue-beziehung-umgang",
+    "source": "/psychotherapeut-ausbildung",
+    "destination": "/singles-partnersuche/therapeuten/psychotherapeut-ausbildung",
     "permanent": true
   },
   {
-    "source": "/rettmobil-fulda-networking-singles-dating",
-    "destination": "/singles-partnersuche/rettung/rettmobil-fulda-networking-singles-dating",
+    "source": "/psychotherapeut-gehalt",
+    "destination": "/singles-partnersuche/therapeuten/psychotherapeut-gehalt",
     "permanent": true
   },
   {
-    "source": "/schweigepflicht-partner-erzaehlen-therapeut",
-    "destination": "/singles-partnersuche/therapeuten/schweigepflicht-partner-erzaehlen-therapeut",
+    "source": "/psychotherapeut",
+    "destination": "/singles-partnersuche/therapeuten/psychotherapeut",
+    "permanent": true
+  },
+  {
+    "source": "/reinhardt-bundesaerztekammer-schluessseljahr-2026",
+    "destination": "/promi-aerzte/reinhardt-bundesaerztekammer-schluessseljahr-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/reinhardt-bundesaerztekammer-schluessseljahr-2026",
+    "destination": "/promi-aerzte/reinhardt-bundesaerztekammer-schluessseljahr-2026",
     "permanent": true
   },
   {
@@ -1005,8 +1065,18 @@
     "permanent": true
   },
   {
-    "source": "/supervision-intervision-networking-therapeuten",
-    "destination": "/singles-partnersuche/therapeuten/supervision-intervision-networking-therapeuten",
+    "source": "/tierarzt-gehalt",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/tierarzt",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/tiermedizin-studium",
+    "destination": "/singles-partnersuche",
     "permanent": true
   },
   {
@@ -1015,23 +1085,23 @@
     "permanent": true
   },
   {
-    "source": "/uniklinik-singles-charite-lmu-kennenlernen",
-    "destination": "/singles-partnersuche/aerzte/uniklinik-singles-charite-lmu-kennenlernen",
+    "source": "/ulrich-strunz-fitness-papst-nachruf-2026",
+    "destination": "/promi-aerzte/ulrich-strunz-fitness-papst-nachruf-2026",
     "permanent": true
   },
   {
-    "source": "/video-call-effizienz-booster-arzt-dating",
-    "destination": "/singles-partnersuche/aerzte/video-call-effizienz-booster-arzt-dating",
+    "source": "/singles-partnersuche/aerzte/ulrich-strunz-fitness-papst-nachruf-2026",
+    "destination": "/promi-aerzte/ulrich-strunz-fitness-papst-nachruf-2026",
     "permanent": true
   },
   {
-    "source": "/weiterbildung-pflege-partner-unterstuetzung",
-    "destination": "/singles-partnersuche/pflege/weiterbildung-pflege-partner-unterstuetzung",
+    "source": "/volker-busch-zuversicht-tour-2026",
+    "destination": "/promi-aerzte/volker-busch-zuversicht-tour-2026",
     "permanent": true
   },
   {
-    "source": "/wenn-zwei-aerzte-ein-paar-sind",
-    "destination": "/singles-partnersuche/aerzte/wenn-zwei-aerzte-ein-paar-sind",
+    "source": "/singles-partnersuche/aerzte/volker-busch-zuversicht-tour-2026",
+    "destination": "/promi-aerzte/volker-busch-zuversicht-tour-2026",
     "permanent": true
   },
   {
@@ -1042,6 +1112,26 @@
   {
     "source": "/singles-partnersuche/aerzte/werner-mang-kirche-kanzel-2026",
     "destination": "/promi-aerzte/werner-mang-kirche-kanzel-2026",
+    "permanent": true
+  },
+  {
+    "source": "/werner-mang-kirche-predigt-bussen",
+    "destination": "/promi-aerzte/werner-mang-kirche-predigt-bussen",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/werner-mang-kirche-predigt-bussen",
+    "destination": "/promi-aerzte/werner-mang-kirche-predigt-bussen",
+    "permanent": true
+  },
+  {
+    "source": "/yael-adler-gsaam-praesidentin-2026",
+    "destination": "/promi-aerzte/yael-adler-gsaam-praesidentin-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/yael-adler-gsaam-praesidentin-2026",
+    "destination": "/promi-aerzte/yael-adler-gsaam-praesidentin-2026",
     "permanent": true
   },
   {
@@ -1065,6 +1155,16 @@
     "permanent": true
   },
   {
+    "source": "/yael-adler-uv-index-sonnenbad-trend-2026",
+    "destination": "/promi-aerzte/yael-adler-uv-index-sonnenbad-trend-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/yael-adler-uv-index-sonnenbad-trend-2026",
+    "destination": "/promi-aerzte/yael-adler-uv-index-sonnenbad-trend-2026",
+    "permanent": true
+  },
+  {
     "source": "/yael-adler-zuerich-genial-ernaehrt-2026",
     "destination": "/promi-aerzte/yael-adler-zuerich-genial-ernaehrt-2026",
     "permanent": true
@@ -1075,33 +1175,908 @@
     "permanent": true
   },
   {
+    "source": "/zahnarzt-gehalt",
+    "destination": "/singles-partnersuche/aerzte/zahnarzt-gehalt",
+    "permanent": true
+  },
+  {
+    "source": "/zahnarzt",
+    "destination": "/singles-partnersuche/aerzte/zahnarzt",
+    "permanent": true
+  },
+  {
+    "source": "/zahnmedizin-studium",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
+    "source": "/acls-phtls-fortbildung-dating-rettung",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/rettung/acls-phtls-fortbildung-dating-rettung",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/adrenalin-abfall-partner-erklaeren-rettung",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/rettung/adrenalin-abfall-partner-erklaeren-rettung",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/aerzte-kongresse-singles-kennenlernen",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/aerzte-kongresse-singles-kennenlernen",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/aerztekammer-netzwerke-singles",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/aerztekammer-netzwerke-singles",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/alleinerziehend-pflegekraft-dating",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/alleinerziehend-pflegekraft-dating",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/analysierst-du-mich-dating-vorurteile-therapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/analysierst-du-mich-dating-vorurteile-therapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/arzt-beziehung-familie-alltag",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/arzt-beziehung-familie-alltag",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/arzt-kennenlernen-wege",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/arzt-kennenlernen-wege",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/arzt-status-dating-anziehung-abschreckung",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/arzt-status-dating-anziehung-abschreckung",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/arzt-sucht-frau-realitaet",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/arzt-sucht-frau-realitaet",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/bergrettung-partnersuche-alpen-dating",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/rettung/bergrettung-partnersuche-alpen-dating",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/beruf-arzt-dating-profil-erwaehnen-faq",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/beruf-arzt-dating-profil-erwaehnen-faq",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/beziehung-mit-arzt-partner",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/beziehung-mit-arzt-partner",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/beziehung-mit-therapeut-partner-guide",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/beziehung-mit-therapeut-partner-guide",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/chat-zu-treffen-pflegekraft-naechster-schritt",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/chat-zu-treffen-pflegekraft-naechster-schritt",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/date-ideen-tiefgruendige-gespraeche-therapeuten",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/date-ideen-tiefgruendige-gespraeche-therapeuten",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/dating-als-chirurg",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/dating-als-chirurg",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/dating-als-intensivpfleger-stress-partner",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/dating-als-intensivpfleger-stress-partner",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/dating-als-kinderjugendpsychotherapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/dating-als-kinderjugendpsychotherapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/dating-als-krankenschwester-schichtdienst",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/dating-als-krankenschwester-schichtdienst",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/dating-profil-rettungssanitaeter-notfallsanitaeter",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/rettung/dating-profil-rettungssanitaeter-notfallsanitaeter",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/dating-profil-therapeuten-empathie-ohne-therapieren",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/dating-profil-therapeuten-empathie-ohne-therapieren",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/dating-sicherheit-diskretion-arzt",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/dating-sicherheit-diskretion-arzt",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/dating-tipps-krankenschwestern",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/dating-tipps-krankenschwestern",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/deutscher-aerztetag-singles-networking",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/deutscher-aerztetag-singles-networking",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/dr-nice-patrick-kalupa-privat",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/dr-nice-patrick-kalupa-privat",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/einsam-im-kittel-isolation-aerzte",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/einsam-im-kittel-isolation-aerzte",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/emotionale-abgrenzung-job-privat-therapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/emotionale-abgrenzung-job-privat-therapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/erste-date-ideen-aerzte",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/erste-date-ideen-aerzte",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/erste-nachricht-dating-app-mediziner",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/erste-nachricht-dating-app-mediziner",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/erste-nachricht-krankenschwester-pfleger-dating",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/erste-nachricht-krankenschwester-pfleger-dating",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/erste-nachricht-tiefgruendige-gespraechsstarter-therapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/erste-nachricht-tiefgruendige-gespraechsstarter-therapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/erstes-date-aerzte-ideen",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/erstes-date-aerzte-ideen",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/familienplanung-aerzte-kinder-karriere",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/familienplanung-aerzte-kinder-karriere",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/familienplanung-therapeut-karriere-kind",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/familienplanung-therapeut-karriere-kind",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/faq-partnersuche-aerzte",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/faq-partnersuche-aerzte",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/finanzielle-absicherung-partnerschaft-pflege",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/finanzielle-absicherung-partnerschaft-pflege",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/fuenf-dating-herausforderungen-pflege",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/fuenf-dating-herausforderungen-pflege",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/fuenf-dating-herausforderungen-psychologen-therapeuten",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/fuenf-dating-herausforderungen-psychologen-therapeuten",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/gespraechsthemen-erstes-date-arzt",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/gespraechsthemen-erstes-date-arzt",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/gespraechsthemen-erstes-date-pflege",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/gespraechsthemen-erstes-date-pflege",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/grenzen-setzen-arztberuf-privatleben",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/grenzen-setzen-arztberuf-privatleben",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/hauptstadtkongress-berlin-aerzte-dating",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/hauptstadtkongress-berlin-aerzte-dating",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/heidelberg-uniklinik-mediziner-treffpunkte",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/heidelberg-uniklinik-mediziner-treffpunkte",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/hobbies-ausgleich-pflege-singles-treffen",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/hobbies-ausgleich-pflege-singles-treffen",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/karriere-arzt-beziehung-assistenzarzt-chefarzt",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/karriere-arzt-beziehung-assistenzarzt-chefarzt",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/karriere-familie-12-24-rettungsdienst",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/rettung/karriere-familie-12-24-rettungsdienst",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/kind-karriere-kittel-familienplanung-pflege",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/kind-karriere-kittel-familienplanung-pflege",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/klienten-daten-ethische-grenzen-abstinenzgebot",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/klienten-daten-ethische-grenzen-abstinenzgebot",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/kollegen-daten-krankenhaus-ja-nein",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/kollegen-daten-krankenhaus-ja-nein",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/kommunikation-beziehung-arzt-stress",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/kommunikation-beziehung-arzt-stress",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/kommunikation-schichtdienst-beziehung-stark",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/kommunikation-schichtdienst-beziehung-stark",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/kommunikationsmuster-beziehung-therapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/kommunikationsmuster-beziehung-therapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/krankenschwester-partner-finden-online",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/krankenschwester-partner-finden-online",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/leitstelle-dating-partnersuche-disponent",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/rettung/leitstelle-dating-partnersuche-disponent",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/lmu-klinikum-muenchen-mediziner-dating",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/lmu-klinikum-muenchen-mediziner-dating",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/marburger-bund-tarif-arbeitsbedingungen-partnerschaft",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/marburger-bund-tarif-arbeitsbedingungen-partnerschaft",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/medica-duesseldorf-singles-medizinmesse",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/medica-duesseldorf-singles-medizinmesse",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/medicsingles-vs-tinder-nischen-dating",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/medicsingles-vs-tinder-nischen-dating",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/notarzt-notfallsanitaeter-dating-unterschied",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/rettung/notarzt-notfallsanitaeter-dating-unterschied",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/online-chat-zum-treffen-mediziner",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/online-chat-zum-treffen-mediziner",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/online-dating-sicherheit-pflege-diskretion",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/online-dating-sicherheit-pflege-diskretion",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/partner-ohne-akademischen-abschluss-arzt",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/partner-ohne-akademischen-abschluss-arzt",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/partnersuche-aerzte-warum-schwer",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/partnersuche-aerzte-warum-schwer",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/partnersuche-allgemeinmedizin",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/partnersuche-allgemeinmedizin",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/partnersuche-altenpflege-empathie-abgrenzung",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/partnersuche-altenpflege-empathie-abgrenzung",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/partnersuche-arzt-ueber-40",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/partnersuche-arzt-ueber-40",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/partnersuche-coach-berater-grenzen",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/partnersuche-coach-berater-grenzen",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/partnersuche-pflegekraft-stress-abgrenzung",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/partnersuche-pflegekraft-stress-abgrenzung",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/partnersuche-rettungsdienst-realitaet-12-24-rhythmus",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/rettung/partnersuche-rettungsdienst-realitaet-12-24-rhythmus",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/patient-flirtet-mit-arzt-umgang",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/patient-flirtet-mit-arzt-umgang",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/pflege-ueber-40-zweiter-fruehling-dating",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/pflege-ueber-40-zweiter-fruehling-dating",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/pflegemanagementkongress-networking-pflege",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/pflegemanagementkongress-networking-pflege",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/pfleger-dating-app-tipps",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/pfleger-dating-app-tipps",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/praxisgruendung-paar-arzt-finanzen",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/praxisgruendung-paar-arzt-finanzen",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/ptbs-rettungsdienst-neue-beziehung-umgang",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/rettung/ptbs-rettungsdienst-neue-beziehung-umgang",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/rettmobil-fulda-networking-singles-dating",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/rettung/rettmobil-fulda-networking-singles-dating",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/schweigepflicht-partner-erzaehlen-therapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/schweigepflicht-partner-erzaehlen-therapeut",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/supervision-intervision-networking-therapeuten",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/supervision-intervision-networking-therapeuten",
+    "destination": "/singles-partnersuche/therapeuten",
+    "permanent": true
+  },
+  {
+    "source": "/uniklinik-singles-charite-lmu-kennenlernen",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/uniklinik-singles-charite-lmu-kennenlernen",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/video-call-effizienz-booster-arzt-dating",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/video-call-effizienz-booster-arzt-dating",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/weiterbildung-pflege-partner-unterstuetzung",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/weiterbildung-pflege-partner-unterstuetzung",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/wenn-zwei-aerzte-ein-paar-sind",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/wenn-zwei-aerzte-ein-paar-sind",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
     "source": "/zehn-date-ideen-dienstplan-pflege",
-    "destination": "/singles-partnersuche/pflege/zehn-date-ideen-dienstplan-pflege",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/zehn-date-ideen-dienstplan-pflege",
+    "destination": "/singles-partnersuche/pflege",
     "permanent": true
   },
   {
     "source": "/zeitmanagement-50h-woche-dating-pflege-faq",
-    "destination": "/singles-partnersuche/pflege/zeitmanagement-50h-woche-dating-pflege-faq",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/zeitmanagement-50h-woche-dating-pflege-faq",
+    "destination": "/singles-partnersuche/pflege",
     "permanent": true
   },
   {
     "source": "/zeitmanagement-60h-woche-dating-arzt",
-    "destination": "/singles-partnersuche/aerzte/zeitmanagement-60h-woche-dating-arzt",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/zeitmanagement-60h-woche-dating-arzt",
+    "destination": "/singles-partnersuche/aerzte",
     "permanent": true
   },
   {
     "source": "/zwei-karrieren-arzt-paar-power-couple",
-    "destination": "/singles-partnersuche/aerzte/zwei-karrieren-arzt-paar-power-couple",
+    "destination": "/singles-partnersuche/aerzte",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/zwei-karrieren-arzt-paar-power-couple",
+    "destination": "/singles-partnersuche/aerzte",
     "permanent": true
   },
   {
     "source": "/zwei-pflegekraefte-paar-gemeinsames-verstaendnis",
-    "destination": "/singles-partnersuche/pflege/zwei-pflegekraefte-paar-gemeinsames-verstaendnis",
+    "destination": "/singles-partnersuche/pflege",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/pflege/zwei-pflegekraefte-paar-gemeinsames-verstaendnis",
+    "destination": "/singles-partnersuche/pflege",
     "permanent": true
   },
   {
     "source": "/zwei-rettungsdienstler-paar-wechselschicht",
-    "destination": "/singles-partnersuche/rettung/zwei-rettungsdienstler-paar-wechselschicht",
+    "destination": "/singles-partnersuche/rettung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/rettung/zwei-rettungsdienstler-paar-wechselschicht",
+    "destination": "/singles-partnersuche/rettung",
     "permanent": true
   },
   {
@@ -1137,6 +2112,11 @@
   {
     "source": "/tv-news/dr-nice/dr-nice-patrick-kalupa-rolle-serie",
     "destination": "/tv-serien/dr-nice/dr-nice-patrick-kalupa-rolle-serie",
+    "permanent": true
+  },
+  {
+    "source": "/tv-news/dr-nice/dr-nice-staffel-4-2026-cast-handlung",
+    "destination": "/tv-serien/dr-nice/dr-nice-staffel-4-2026-cast-handlung",
     "permanent": true
   },
   {

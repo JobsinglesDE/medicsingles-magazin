@@ -166,7 +166,7 @@ export default async function PflegePillar() {
   }
 
   const allSectionSlugs = [...SECTIONS, ...SECTIONS_AFTER_CTA].flatMap((s) => s.slugs);
-  const tocItems = [...SECTIONS, ...SECTIONS_AFTER_CTA].map((s) => ({ label: `${s.letter}. ${s.title}`, id: s.id }));
+  const tocItems = [...SECTIONS, ...SECTIONS_AFTER_CTA].filter((s) => getSectionArticles(s.slugs).length > 0).map((s) => ({ label: `${s.letter}. ${s.title}`, id: s.id }));
   const schemaItems = allSectionSlugs
     .map((slug) => articles.find((a) => a.slug === slug))
     .filter(Boolean)

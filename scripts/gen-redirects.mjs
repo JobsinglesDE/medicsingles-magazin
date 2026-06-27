@@ -1,7 +1,7 @@
 // scripts/gen-redirects.mjs — 301-Redirects auf das 3-Sektionen-Modell.
 // articles: flach /{slug} → /singles-partnersuche/{spec}/{slug} (spiegelt routes.ts).
 // series:   /tv-news/{seriesId}/{slug} → /tv-serien/{seriesId}/{slug}.
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 const SPEC_SLUG = { arzt: 'aerzte', pflege: 'pflege', therapeut: 'therapeuten', rettung: 'rettung' };
@@ -31,6 +31,18 @@ for (const f of readdirSync(ADIR).filter((x) => x.endsWith('.mdoc'))) {
 
   const dest = spec ? `/singles-partnersuche/${spec}/${slug}` : '/singles-partnersuche';
   if (dest !== `/${slug}`) out.push({ source: `/${slug}`, destination: dest, permanent: true });
+}
+
+// Konsolidierte Dating-Spokes (2026-06-27, gelöscht wg. 0-Volumen/0-Impr) → 301 auf Pillar.
+// Pflicht: dynamicParams=false → gelöschter Slug wäre sonst 404. Manifest: consolidated.json.
+if (existsSync('consolidated.json')) {
+  const consolidated = JSON.parse(readFileSync('consolidated.json', 'utf8'));
+  for (const { slug, spec } of consolidated) {
+    const pillar = SPEC_SLUG[spec] ? `/singles-partnersuche/${SPEC_SLUG[spec]}` : '/singles-partnersuche';
+    out.push({ source: `/${slug}`, destination: pillar, permanent: true });
+    if (SPEC_SLUG[spec]) out.push({ source: `/singles-partnersuche/${SPEC_SLUG[spec]}/${slug}`, destination: pillar, permanent: true });
+  }
+  console.log(`${consolidated.length} konsolidierte Spokes → Pillar-Redirects`);
 }
 
 // TV-Serien-Artikel (series-Collection): /tv-news/* → /tv-serien/*

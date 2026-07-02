@@ -102,7 +102,14 @@ const markdocConfig = {
         // auch zu Netzwerk-Sites wie jobsingles/seeside aus Content — werden nofollow,
         // damit Link-Equity nicht inflationär verschenkt wird.
         const isExternal = /^https?:\/\//i.test(rawHref) && !/^https?:\/\/(www\.)?medicsingles\.de/i.test(rawHref);
-        if (isExternal) {
+        // Eigenes Netzwerk = dofollow erlaubt (GESETZ #1): gezielte kontextuelle Cross-Links
+        // transferieren Authority im Netz (z.B. Gesundheitshandwerke → handwerksingles.de).
+        // Nur Dritt-Domains werden nofollow, damit Equity nicht inflationär verschenkt wird.
+        const isNetwork = /^https?:\/\/(www\.)?(farmersingles\.de|singlebuure\.ch|gastrosingles\.de|handwerksingles\.de|blaulichtsingles\.ch|jobsingles\.de)/i.test(rawHref);
+        if (isNetwork) {
+          attrs.rel = 'noopener';
+          attrs.target = '_blank';
+        } else if (isExternal) {
           attrs.rel = 'nofollow noopener noreferrer';
           attrs.target = '_blank';
         }

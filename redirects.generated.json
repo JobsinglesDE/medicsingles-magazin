@@ -1,5 +1,20 @@
 [
   {
+    "source": "/altenpfleger-gehalt",
+    "destination": "/berufsbilder/altenpfleger-gehalt",
+    "permanent": true
+  },
+  {
+    "source": "/anne-fleck-epigenetik-gene-sommer-2026",
+    "destination": "/promi-aerzte/anne-fleck-epigenetik-gene-sommer-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/anne-fleck-epigenetik-gene-sommer-2026",
+    "destination": "/promi-aerzte/anne-fleck-epigenetik-gene-sommer-2026",
+    "permanent": true
+  },
+  {
     "source": "/anne-fleck-longevity-schlaf-podcast-2026",
     "destination": "/promi-aerzte/anne-fleck-longevity-schlaf-podcast-2026",
     "permanent": true
@@ -11,22 +26,32 @@
   },
   {
     "source": "/apotheker-gehalt",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/apotheker-gehalt",
     "permanent": true
   },
   {
     "source": "/apotheker",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/apotheker",
     "permanent": true
   },
   {
     "source": "/arzt-gehalt",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/arzt-gehalt",
     "permanent": true
   },
   {
     "source": "/arzt",
-    "destination": "/singles-partnersuche/aerzte/arzt",
+    "destination": "/berufsbilder/arzt",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/arzt",
+    "destination": "/berufsbilder/arzt",
+    "permanent": true
+  },
+  {
+    "source": "/assistenzarzt-gehalt",
+    "destination": "/berufsbilder/assistenzarzt-gehalt",
     "permanent": true
   },
   {
@@ -90,6 +115,16 @@
     "permanent": true
   },
   {
+    "source": "/carsten-lekutat-keks-strategie-23-kilo-2026",
+    "destination": "/promi-aerzte/carsten-lekutat-keks-strategie-23-kilo-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/carsten-lekutat-keks-strategie-23-kilo-2026",
+    "destination": "/promi-aerzte/carsten-lekutat-keks-strategie-23-kilo-2026",
+    "permanent": true
+  },
+  {
     "source": "/carsten-lekutat-muede-buch-2026",
     "destination": "/promi-aerzte/carsten-lekutat-muede-buch-2026",
     "permanent": true
@@ -106,7 +141,12 @@
   },
   {
     "source": "/chefarzt-gehalt",
-    "destination": "/singles-partnersuche/aerzte/chefarzt-gehalt",
+    "destination": "/berufsbilder/chefarzt-gehalt",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/chefarzt-gehalt",
+    "destination": "/berufsbilder/chefarzt-gehalt",
     "permanent": true
   },
   {
@@ -137,6 +177,16 @@
   {
     "source": "/singles-partnersuche/aerzte/christoph-specht-arzt-buch",
     "destination": "/promi-aerzte/christoph-specht-arzt-buch",
+    "permanent": true
+  },
+  {
+    "source": "/christoph-specht-hitzschlag-sonnenstich-2026",
+    "destination": "/promi-aerzte/christoph-specht-hitzschlag-sonnenstich-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/christoph-specht-hitzschlag-sonnenstich-2026",
+    "destination": "/promi-aerzte/christoph-specht-hitzschlag-sonnenstich-2026",
     "permanent": true
   },
   {
@@ -215,6 +265,16 @@
     "permanent": true
   },
   {
+    "source": "/doc-fischer-alzheimer-sendung-juni-2026",
+    "destination": "/promi-aerzte/doc-fischer-alzheimer-sendung-juni-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/doc-fischer-alzheimer-sendung-juni-2026",
+    "destination": "/promi-aerzte/doc-fischer-alzheimer-sendung-juni-2026",
+    "permanent": true
+  },
+  {
     "source": "/doc-fischer-hoersturz-tinnitus-2026",
     "destination": "/promi-aerzte/doc-fischer-hoersturz-tinnitus-2026",
     "permanent": true
@@ -245,6 +305,21 @@
     "permanent": true
   },
   {
+    "source": "/facharzt-gehalt",
+    "destination": "/berufsbilder/facharzt-gehalt",
+    "permanent": true
+  },
+  {
+    "source": "/franziska-rubin-7-minuten-immunsystem-2026",
+    "destination": "/promi-aerzte/franziska-rubin-7-minuten-immunsystem-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/franziska-rubin-7-minuten-immunsystem-2026",
+    "destination": "/promi-aerzte/franziska-rubin-7-minuten-immunsystem-2026",
+    "permanent": true
+  },
+  {
     "source": "/frederic-brossier-bergdoktor-in-aller-freundschaft",
     "destination": "/promi-aerzte/frederic-brossier-bergdoktor-in-aller-freundschaft",
     "permanent": true
@@ -252,6 +327,26 @@
   {
     "source": "/singles-partnersuche/aerzte/frederic-brossier-bergdoktor-in-aller-freundschaft",
     "destination": "/promi-aerzte/frederic-brossier-bergdoktor-in-aller-freundschaft",
+    "permanent": true
+  },
+  {
+    "source": "/groenemeyer-demenz-schlaf-2026",
+    "destination": "/promi-aerzte/groenemeyer-demenz-schlaf-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/groenemeyer-demenz-schlaf-2026",
+    "destination": "/promi-aerzte/groenemeyer-demenz-schlaf-2026",
+    "permanent": true
+  },
+  {
+    "source": "/groenemeyer-hotel-matze-demenz-angst-2026",
+    "destination": "/promi-aerzte/groenemeyer-hotel-matze-demenz-angst-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/groenemeyer-hotel-matze-demenz-angst-2026",
+    "destination": "/promi-aerzte/groenemeyer-hotel-matze-demenz-angst-2026",
     "permanent": true
   },
   {
@@ -276,17 +371,17 @@
   },
   {
     "source": "/hebamme-ausbildung",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/hebamme-ausbildung",
     "permanent": true
   },
   {
     "source": "/hebamme-gehalt",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/hebamme-gehalt",
     "permanent": true
   },
   {
     "source": "/hebamme",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/hebamme",
     "permanent": true
   },
   {
@@ -400,6 +495,16 @@
     "permanent": true
   },
   {
+    "source": "/joe-bausch-true-crime-tour-2026",
+    "destination": "/promi-aerzte/joe-bausch-true-crime-tour-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/joe-bausch-true-crime-tour-2026",
+    "destination": "/promi-aerzte/joe-bausch-true-crime-tour-2026",
+    "permanent": true
+  },
+  {
     "source": "/johannes-wimmer-maximilia-erinnerung-2025",
     "destination": "/promi-aerzte/johannes-wimmer-maximilia-erinnerung-2025",
     "permanent": true
@@ -460,6 +565,16 @@
     "permanent": true
   },
   {
+    "source": "/lauterbach-hitze-warnung-sommer-2026",
+    "destination": "/promi-aerzte/lauterbach-hitze-warnung-sommer-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/lauterbach-hitze-warnung-sommer-2026",
+    "destination": "/promi-aerzte/lauterbach-hitze-warnung-sommer-2026",
+    "permanent": true
+  },
+  {
     "source": "/leif-erik-sander-ebola-charite",
     "destination": "/promi-aerzte/leif-erik-sander-ebola-charite",
     "permanent": true
@@ -505,6 +620,26 @@
     "permanent": true
   },
   {
+    "source": "/matthias-riedl-fake-werbung-aerzte-2026",
+    "destination": "/promi-aerzte/matthias-riedl-fake-werbung-aerzte-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/matthias-riedl-fake-werbung-aerzte-2026",
+    "destination": "/promi-aerzte/matthias-riedl-fake-werbung-aerzte-2026",
+    "permanent": true
+  },
+  {
+    "source": "/matthias-riedl-faltenbeschleuniger-ernaehrung-2026",
+    "destination": "/promi-aerzte/matthias-riedl-faltenbeschleuniger-ernaehrung-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/matthias-riedl-faltenbeschleuniger-ernaehrung-2026",
+    "destination": "/promi-aerzte/matthias-riedl-faltenbeschleuniger-ernaehrung-2026",
+    "permanent": true
+  },
+  {
     "source": "/matthias-riedl-iss-besser-3sat-2026",
     "destination": "/promi-aerzte/matthias-riedl-iss-besser-3sat-2026",
     "permanent": true
@@ -525,28 +660,48 @@
     "permanent": true
   },
   {
+    "source": "/matthias-riedl-reiseuebelkeit-tipps-2026",
+    "destination": "/promi-aerzte/matthias-riedl-reiseuebelkeit-tipps-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/matthias-riedl-reiseuebelkeit-tipps-2026",
+    "destination": "/promi-aerzte/matthias-riedl-reiseuebelkeit-tipps-2026",
+    "permanent": true
+  },
+  {
+    "source": "/matthias-riedl-supplement-vergiftung-2026",
+    "destination": "/promi-aerzte/matthias-riedl-supplement-vergiftung-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/matthias-riedl-supplement-vergiftung-2026",
+    "destination": "/promi-aerzte/matthias-riedl-supplement-vergiftung-2026",
+    "permanent": true
+  },
+  {
     "source": "/medizinstudium",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/medizinstudium",
     "permanent": true
   },
   {
     "source": "/mfa-ausbildung",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/mfa-ausbildung",
     "permanent": true
   },
   {
     "source": "/mfa-gehalt-nrw",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/mfa-gehalt-nrw",
     "permanent": true
   },
   {
     "source": "/mfa-gehalt",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/mfa-gehalt",
     "permanent": true
   },
   {
     "source": "/mfa",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/mfa",
     "permanent": true
   },
   {
@@ -557,6 +712,16 @@
   {
     "source": "/singles-partnersuche/aerzte/michalsen-ernaehrung-quintessenz",
     "destination": "/promi-aerzte/michalsen-ernaehrung-quintessenz",
+    "permanent": true
+  },
+  {
+    "source": "/michalsen-osteoporose-risikofaktoren-2026",
+    "destination": "/promi-aerzte/michalsen-osteoporose-risikofaktoren-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/michalsen-osteoporose-risikofaktoren-2026",
+    "destination": "/promi-aerzte/michalsen-osteoporose-risikofaktoren-2026",
     "permanent": true
   },
   {
@@ -601,17 +766,22 @@
   },
   {
     "source": "/notfallsanitaeter-ausbildung",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/notfallsanitaeter-ausbildung",
     "permanent": true
   },
   {
     "source": "/notfallsanitaeter-gehalt",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/notfallsanitaeter-gehalt",
     "permanent": true
   },
   {
     "source": "/notfallsanitaeter",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/notfallsanitaeter",
+    "permanent": true
+  },
+  {
+    "source": "/oberarzt-gehalt",
+    "destination": "/berufsbilder/oberarzt-gehalt",
     "permanent": true
   },
   {
@@ -650,38 +820,53 @@
     "permanent": true
   },
   {
+    "source": "/pflegedienstleitung-gehalt",
+    "destination": "/berufsbilder/pflegedienstleitung-gehalt",
+    "permanent": true
+  },
+  {
     "source": "/pflegefachkraft-ausbildung",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/pflegefachkraft-ausbildung",
     "permanent": true
   },
   {
     "source": "/pflegefachkraft-gehalt",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/pflegefachkraft-gehalt",
     "permanent": true
   },
   {
     "source": "/pflegefachkraft",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/pflegefachkraft",
+    "permanent": true
+  },
+  {
+    "source": "/pflegehelfer-gehalt",
+    "destination": "/berufsbilder/pflegehelfer-gehalt",
     "permanent": true
   },
   {
     "source": "/pharmazie-studium",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/pharmazie-studium",
     "permanent": true
   },
   {
     "source": "/physiotherapeut-ausbildung",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/physiotherapeut-ausbildung",
     "permanent": true
   },
   {
     "source": "/physiotherapeut-gehalt",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/physiotherapeut-gehalt",
     "permanent": true
   },
   {
     "source": "/physiotherapeut",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/physiotherapeut",
+    "permanent": true
+  },
+  {
+    "source": "/pka-gehalt",
+    "destination": "/berufsbilder/pka-gehalt",
     "permanent": true
   },
   {
@@ -1036,17 +1221,37 @@
   },
   {
     "source": "/psychotherapeut-ausbildung",
-    "destination": "/singles-partnersuche/therapeuten/psychotherapeut-ausbildung",
+    "destination": "/berufsbilder/psychotherapeut-ausbildung",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/psychotherapeut-ausbildung",
+    "destination": "/berufsbilder/psychotherapeut-ausbildung",
     "permanent": true
   },
   {
     "source": "/psychotherapeut-gehalt",
-    "destination": "/singles-partnersuche/therapeuten/psychotherapeut-gehalt",
+    "destination": "/berufsbilder/psychotherapeut-gehalt",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/psychotherapeut-gehalt",
+    "destination": "/berufsbilder/psychotherapeut-gehalt",
     "permanent": true
   },
   {
     "source": "/psychotherapeut",
-    "destination": "/singles-partnersuche/therapeuten/psychotherapeut",
+    "destination": "/berufsbilder/psychotherapeut",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/therapeuten/psychotherapeut",
+    "destination": "/berufsbilder/psychotherapeut",
+    "permanent": true
+  },
+  {
+    "source": "/pta-gehalt",
+    "destination": "/berufsbilder/pta-gehalt",
     "permanent": true
   },
   {
@@ -1066,17 +1271,17 @@
   },
   {
     "source": "/tierarzt-gehalt",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/tierarzt-gehalt",
     "permanent": true
   },
   {
     "source": "/tierarzt",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/tierarzt",
     "permanent": true
   },
   {
     "source": "/tiermedizin-studium",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/tiermedizin-studium",
     "permanent": true
   },
   {
@@ -1092,6 +1297,16 @@
   {
     "source": "/singles-partnersuche/aerzte/ulrich-strunz-fitness-papst-nachruf-2026",
     "destination": "/promi-aerzte/ulrich-strunz-fitness-papst-nachruf-2026",
+    "permanent": true
+  },
+  {
+    "source": "/volker-busch-gute-nacht-gehirn-2026",
+    "destination": "/promi-aerzte/volker-busch-gute-nacht-gehirn-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/volker-busch-gute-nacht-gehirn-2026",
+    "destination": "/promi-aerzte/volker-busch-gute-nacht-gehirn-2026",
     "permanent": true
   },
   {
@@ -1125,6 +1340,16 @@
     "permanent": true
   },
   {
+    "source": "/yael-adler-fuesse-schuhe-gesundheit-2026",
+    "destination": "/promi-aerzte/yael-adler-fuesse-schuhe-gesundheit-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/yael-adler-fuesse-schuhe-gesundheit-2026",
+    "destination": "/promi-aerzte/yael-adler-fuesse-schuhe-gesundheit-2026",
+    "permanent": true
+  },
+  {
     "source": "/yael-adler-gsaam-praesidentin-2026",
     "destination": "/promi-aerzte/yael-adler-gsaam-praesidentin-2026",
     "permanent": true
@@ -1155,6 +1380,16 @@
     "permanent": true
   },
   {
+    "source": "/yael-adler-sonnenschutz-ernaehrung-lebensmittel-2026",
+    "destination": "/promi-aerzte/yael-adler-sonnenschutz-ernaehrung-lebensmittel-2026",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/yael-adler-sonnenschutz-ernaehrung-lebensmittel-2026",
+    "destination": "/promi-aerzte/yael-adler-sonnenschutz-ernaehrung-lebensmittel-2026",
+    "permanent": true
+  },
+  {
     "source": "/yael-adler-uv-index-sonnenbad-trend-2026",
     "destination": "/promi-aerzte/yael-adler-uv-index-sonnenbad-trend-2026",
     "permanent": true
@@ -1176,17 +1411,32 @@
   },
   {
     "source": "/zahnarzt-gehalt",
-    "destination": "/singles-partnersuche/aerzte/zahnarzt-gehalt",
+    "destination": "/berufsbilder/zahnarzt-gehalt",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/zahnarzt-gehalt",
+    "destination": "/berufsbilder/zahnarzt-gehalt",
     "permanent": true
   },
   {
     "source": "/zahnarzt",
-    "destination": "/singles-partnersuche/aerzte/zahnarzt",
+    "destination": "/berufsbilder/zahnarzt",
+    "permanent": true
+  },
+  {
+    "source": "/singles-partnersuche/aerzte/zahnarzt",
+    "destination": "/berufsbilder/zahnarzt",
     "permanent": true
   },
   {
     "source": "/zahnmedizin-studium",
-    "destination": "/singles-partnersuche",
+    "destination": "/berufsbilder/zahnmedizin-studium",
+    "permanent": true
+  },
+  {
+    "source": "/zfa-gehalt",
+    "destination": "/berufsbilder/zfa-gehalt",
     "permanent": true
   },
   {

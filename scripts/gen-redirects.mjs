@@ -29,6 +29,15 @@ for (const f of readdirSync(ADIR).filter((x) => x.endsWith('.mdoc'))) {
     continue;
   }
 
+  if (section === 'berufsbilder') {
+    // Berufsbilder/Money-Seiten leben unter /berufsbilder/{slug} (siehe getArticleUrl).
+    // Alte flache URL + evtl. altes spec-Nesting → kanonische Berufsbild-URL (kein Equity-Leck auf den Dating-Hub).
+    const dest = `/berufsbilder/${slug}`;
+    out.push({ source: `/${slug}`, destination: dest, permanent: true });
+    if (spec) out.push({ source: `/singles-partnersuche/${spec}/${slug}`, destination: dest, permanent: true });
+    continue;
+  }
+
   const dest = spec ? `/singles-partnersuche/${spec}/${slug}` : '/singles-partnersuche';
   if (dest !== `/${slug}`) out.push({ source: `/${slug}`, destination: dest, permanent: true });
 }

@@ -101,12 +101,20 @@ export default async function KammerStadtPage({ params }: { params: Params }) {
     (s) => s.entry.status === 'published' && s.entry.bundesland === bundesland && s.entry.stadt === stadt,
   );
   const allKammern = await reader.collections.aerztekammern.all();
-  const sameBundesland = allKammern
-    .filter((k) => k.entry.status === 'published' && k.entry.bundesland === bundesland && k.entry.stadt !== stadt);
-  const otherBundesland = allKammern
-    .filter((k) => k.entry.status === 'published' && k.entry.bundesland !== bundesland)
-    .sort((a, b) => (a.entry.stadt || '').localeCompare(b.entry.stadt || ''));
-  const nearbyKammern = [...sameBundesland, ...otherBundesland].slice(0, 3);
+  const publishedKammern = allKammern.filter((k) => k.entry.status === 'published');
+  // Stabiler globaler Ring: jede Kammer ist Ring-Nachbar von genau zwei anderen -> jede Spoke
+  // bekommt >=2 eingehende Geschwister-Links (plus Hub + Bundesland-Seite = >=4 In-Links, 0 Orphans).
+  const kammerRing = publishedKammern
+    .slice()
+    .sort((a, b) => `${a.entry.bundesland}/${a.entry.stadt}`.localeCompare(`${b.entry.bundesland}/${b.entry.stadt}`));
+  const selfIdx = kammerRing.findIndex((k) => k.entry.bundesland === bundesland && k.entry.stadt === stadt);
+  const ringPick = selfIdx < 0 ? [] : [1, 2, 3].map((o) => kammerRing[(selfIdx + o) % kammerRing.length]);
+  const sameBundesland = publishedKammern
+    .filter((k) => k.entry.bundesland === bundesland && k.entry.stadt !== stadt);
+  // same-Bundesland zuerst (Geo-Relevanz), dann Ring-Nachbarn (garantierte, gleichmaessige Abdeckung), dedupe, max 3
+  const nearbyKammern = [...sameBundesland.slice(0, 1), ...ringPick]
+    .filter((k, i, arr) => k && k.slug !== entry.slug && arr.findIndex((x) => x && x.slug === k.slug) === i)
+    .slice(0, 3);
 
   return (
     <>

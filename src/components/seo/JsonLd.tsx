@@ -458,6 +458,50 @@ export function physicianSalaryJsonLd({
   };
 }
 
+/** Generisches Occupation/Salary-Schema (Median je Gruppe, optional Höchstwert) für Gehalt-Money-Pages. */
+export function occupationSalaryJsonLd({
+  name,
+  description,
+  url,
+  area = 'Deutschland',
+  rows,
+  quelle,
+}: {
+  name: string;
+  description?: string;
+  url: string;
+  area?: string;
+  rows: { gruppe: string; median: string; max?: string }[];
+  quelle?: string;
+}) {
+  const dist = rows
+    .map((r) => {
+      const median = parseIntFromText(r.median);
+      if (!median) return null;
+      const max = r.max ? parseIntFromText(r.max) : null;
+      return {
+        '@type': 'MonetaryAmountDistribution',
+        name: r.gruppe,
+        currency: 'EUR',
+        duration: 'P1M',
+        median,
+        ...(max ? { percentile90: max } : {}),
+      };
+    })
+    .filter(Boolean);
+  if (dist.length === 0) return null;
+  const desc = [description, quelle ? `Quelle: ${quelle}` : null].filter(Boolean).join(' ');
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Occupation',
+    name,
+    ...(desc ? { description: desc } : {}),
+    mainEntityOfPage: url,
+    occupationLocation: { '@type': 'AdministrativeArea', name: area },
+    estimatedSalary: dist,
+  };
+}
+
 export function organizationJsonLd({
   name,
   alternateName,

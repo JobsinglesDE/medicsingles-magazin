@@ -20,7 +20,9 @@ import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { StickyTOC } from '@/components/content/StickyTOC';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { ArticleByline } from '@/components/content/ArticleByline';
-import { JsonLd, articleJsonLd, faqJsonLd, videoJsonLd, extractYoutubeEmbed } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, videoJsonLd, extractYoutubeEmbed, physicianSalaryJsonLd, occupationSalaryJsonLd } from '@/components/seo/JsonLd';
+import { ARZT_TARIF_VKA, ARZT_TARIF_QUELLE } from '@/lib/aerztekammer-statistiken';
+import { APOTHEKER_TARIF, APOTHEKER_TARIF_QUELLE } from '@/lib/apotheker-tarif';
 import { SPEC_HUBS, SECTION_HUBS } from '@/lib/hubs';
 
 const BASE_URL = 'https://medicsingles.de/magazin';
@@ -144,6 +146,23 @@ export default async function ArticleView({ slug }: { slug: string }) {
       {article.faqItems && article.faqItems.length > 0 && (
         <JsonLd data={faqJsonLd(article.faqItems)} />
       )}
+      {slug === 'arzt-gehalt' && (
+        <JsonLd data={physicianSalaryJsonLd({
+          bundesland: 'Deutschland',
+          url: `${BASE_URL}${canonicalPath}`,
+          rows: ARZT_TARIF_VKA,
+          quelle: ARZT_TARIF_QUELLE,
+        })} />
+      )}
+      {slug === 'apotheker-gehalt' && (() => {
+        const s = occupationSalaryJsonLd({
+          name: 'Apotheker / Apothekerin',
+          url: `${BASE_URL}${canonicalPath}`,
+          rows: APOTHEKER_TARIF,
+          quelle: APOTHEKER_TARIF_QUELLE,
+        });
+        return s ? <JsonLd data={s} /> : null;
+      })()}
       {(() => {
         const ytEmbed = extractYoutubeEmbed(article.content);
         return ytEmbed ? (

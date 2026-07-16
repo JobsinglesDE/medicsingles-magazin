@@ -84,7 +84,12 @@ export async function buildArticleMetadata(slug: string) {
 
 export default async function ArticleView({ slug }: { slug: string }) {
   const article = await reader.collections.articles.read(slug, { resolveLinkedFiles: true });
-  if (!article) notFound();
+  // `status: draft` hielt den Artikel bisher nur aus Sitemap + Listings raus — die Detailseite
+  // rendete trotzdem, öffentlich erreichbar und mit `index, follow`. "Draft" war damit kein
+  // Review-Zustand, sondern nur "unverlinkt". Für medic ist das zentral: der News-Agent schreibt
+  // seit 2026-07-16 bewusst Drafts, und erst der keystatic-publisher (news_gate + verify_facts
+  // + fact_crosscheck) schaltet sie live. Ohne diese Zeile wäre die ganze Kette wirkungslos.
+  if (!article || article.status !== 'published') notFound();
 
   const author = article.author
     ? await reader.collections.authors.read(article.author)

@@ -42,6 +42,11 @@ const nextConfig: NextConfig = {
       { source: '/partnersuche-rettung', destination: '/singles-partnersuche/rettung', permanent: true },
       // Gelöschte, aber in GSC noch rankende tv-news-Seite (4 Klk/129 Impr) → auf Show-Hub statt 404
       { source: '/tv-news/greys-anatomy/greys-anatomy-winston-jules-staffel-22-finale', destination: '/tv-serien/greys-anatomy', permanent: true },
+      // 2026-07-20 Löschverlangen der Presseagentur (BUCH CONTACT) → Artikel entfernt, alle
+      // URL-Varianten auf den Hub. Über diese Person wird nicht mehr publiziert.
+      { source: '/promi-aerzte/giovanni-maio-arzt-philosoph-freiburg', destination: '/promi-aerzte', permanent: true },
+      { source: '/giovanni-maio-arzt-philosoph-freiburg', destination: '/promi-aerzte', permanent: true },
+      { source: '/singles-partnersuche/aerzte/giovanni-maio-arzt-philosoph-freiburg', destination: '/promi-aerzte', permanent: true },
     ];
     const seen = new Set<string>();
     return [...legacy, ...generatedRedirects].filter((r) =>

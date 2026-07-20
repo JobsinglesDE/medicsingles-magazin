@@ -139,6 +139,14 @@ export default config({
         }),
         isNews: fields.checkbox({ label: 'News-Artikel (NewsArticle JSON-LD)', defaultValue: false }),
         isFeatured: fields.checkbox({ label: 'Auf ICONY-Startseite anzeigen (max. 3)', defaultValue: false }),
+        // Persoenlichkeitsrecht: Artikel ueber reale Personen, die Privates beruehren
+        // (Ehepartner, Vermoegen, Alter), duerfen nicht in einem Werbekontext stehen —
+        // das macht aus Berichterstattung eine werbliche Vereinnahmung. Siehe Vault
+        // Loeschverlangen-Giovanni-Maio-2026-07-20.md.
+        noCta: fields.checkbox({
+          label: 'Keine Dating-CTAs (Personen-Artikel mit Privatsphaeren-Bezug)',
+          defaultValue: false,
+        }),
         tags: fields.array(fields.text({ label: 'Tag' }), { label: 'Tags' }),
         seoTitle: fields.text({ label: 'SEO Titel' }),
         seoDescription: fields.text({ label: 'SEO Beschreibung' }),

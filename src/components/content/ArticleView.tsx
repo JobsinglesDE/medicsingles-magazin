@@ -219,27 +219,32 @@ export default async function ArticleView({ slug }: { slug: string }) {
           content={article.content}
           insertAfterH2={2}
           insertElement={
-            <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
-              <div className="p-6 text-center">
-                <p className="text-sm text-foreground/70 mb-3">Du suchst Singles aus dem Gesundheitswesen?</p>
-                <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
-                  Jetzt kostenfrei anmelden
-                </HeartButton>
-              </div>
-            </AnimatedGradientBorder>
+            article.noCta ? null : (
+              <AnimatedGradientBorder borderRadius={12} borderWidth={2} className="my-8">
+                <div className="p-6 text-center">
+                  <p className="text-sm text-foreground/70 mb-3">Du suchst Singles aus dem Gesundheitswesen?</p>
+                  <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+                    Jetzt kostenfrei anmelden
+                  </HeartButton>
+                </div>
+              </AnimatedGradientBorder>
+            )
           }
         />
 
-        {/* CTA Stopper nach Content */}
-        <AnimatedGradientBorder borderRadius={16} borderWidth={2} className="my-12">
-          <div className="py-10 px-6 bg-surface-dark text-white text-center">
-            <p className="text-lg font-bold mb-2">Genug gelesen?</p>
-            <p className="text-white/60 text-sm mb-5">Finde Singles, die deinen Alltag verstehen.</p>
-            <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
-              Jetzt kostenfrei mitmachen
-            </HeartButton>
-          </div>
-        </AnimatedGradientBorder>
+        {/* CTA Stopper nach Content — bei noCta unterdrueckt, damit Personen-Artikel
+            mit Privatsphaeren-Bezug nicht in einem Werbekontext stehen. */}
+        {!article.noCta && (
+          <AnimatedGradientBorder borderRadius={16} borderWidth={2} className="my-12">
+            <div className="py-10 px-6 bg-surface-dark text-white text-center">
+              <p className="text-lg font-bold mb-2">Genug gelesen?</p>
+              <p className="text-white/60 text-sm mb-5">Finde Singles, die deinen Alltag verstehen.</p>
+              <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+                Jetzt kostenfrei mitmachen
+              </HeartButton>
+            </div>
+          </AnimatedGradientBorder>
+        )}
 
         {article.takeaways && article.takeaways.length > 0 && (
           <TakeawayBox items={article.takeaways} />
@@ -317,12 +322,14 @@ export default async function ArticleView({ slug }: { slug: string }) {
         </div>
       )}
 
-      {/* Bottom CTA */}
-      <section className="text-center py-16 px-6">
-        <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
-          Jetzt kostenfrei mitmachen
-        </HeartButton>
-      </section>
+      {/* Bottom CTA — bei noCta unterdrueckt (siehe oben) */}
+      {!article.noCta && (
+        <section className="text-center py-16 px-6">
+          <HeartButton href="https://medicsingles.de/?AID=MedicMagazin">
+            Jetzt kostenfrei mitmachen
+          </HeartButton>
+        </section>
+      )}
     </>
   );
 }

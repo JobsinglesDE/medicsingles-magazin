@@ -54,6 +54,20 @@ if (existsSync('consolidated.json')) {
   console.log(`${consolidated.length} konsolidierte Spokes → Pillar-Redirects`);
 }
 
+// Aus Persoenlichkeitsrechts-Gruenden entfernte Personen-Artikel (2026-07-20) → 301 auf den Hub.
+// Wie oben: dynamicParams=false, ein geloeschter Slug waere sonst 404. Manifest: removed.json.
+// Alle drei historischen URL-Varianten abdecken (flach, spec-nested, promi-aerzte-Sektion).
+if (existsSync('removed.json')) {
+  const removed = JSON.parse(readFileSync('removed.json', 'utf8'));
+  for (const { slug, dest } of removed) {
+    const d = dest || '/promi-aerzte';
+    out.push({ source: `/${slug}`, destination: d, permanent: true });
+    out.push({ source: `/promi-aerzte/${slug}`, destination: d, permanent: true });
+    out.push({ source: `/singles-partnersuche/aerzte/${slug}`, destination: d, permanent: true });
+  }
+  console.log(`${removed.length} entfernte Personen-Artikel → Hub-Redirects`);
+}
+
 // TV-Serien-Artikel (series-Collection): /tv-news/* → /tv-serien/*
 const SDIR = 'content/series';
 const seriesIds = new Set();

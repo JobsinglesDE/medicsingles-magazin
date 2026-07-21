@@ -421,6 +421,61 @@ export function kammerDatasetJsonLd({
   };
 }
 
+/** Dataset-Schema für eine MedicSingles-Studie — macht die Kernzahlen maschinenlesbar
+    (Google Rich Results + KI-Citation-Signal). Bewusst format-agnostisch: taugt fuer die
+    Reanalyse amtlicher Statistik ebenso wie fuer eine eigene Mitgliederbefragung — es
+    variieren nur creator/temporalCoverage/variableMeasured. */
+export function studieDatasetJsonLd({
+  name,
+  description,
+  url,
+  datenpunkte = [],
+  temporalCoverage,
+  dateModified,
+  creatorName = 'Medicsingles Magazin',
+  creatorUrl = SITE_BASE,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  datenpunkte?: readonly { label: string; wert?: string; einheit?: string; quelle?: string }[];
+  temporalCoverage?: string;
+  dateModified?: string;
+  creatorName?: string;
+  creatorUrl?: string;
+}) {
+  const toNum = (s?: string): number | undefined => {
+    if (!s) return undefined;
+    const n = Number(String(s).trim().replace(/\s/g, '').replace(/\.(?=\d{3}\b)/g, '').replace(',', '.'));
+    return Number.isFinite(n) ? n : undefined;
+  };
+  const variableMeasured = datenpunkte
+    .filter((d) => d.label)
+    .map((d) => {
+      const value = toNum(d.wert);
+      return {
+        '@type': 'PropertyValue',
+        name: d.label,
+        ...(value !== undefined ? { value } : {}),
+        ...(d.einheit ? { unitText: d.einheit } : {}),
+        ...(d.quelle ? { description: `Quelle: ${d.quelle}` } : {}),
+      };
+    });
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name,
+    description,
+    url,
+    inLanguage: 'de-DE',
+    ...(temporalCoverage ? { temporalCoverage } : {}),
+    ...(dateModified ? { dateModified } : {}),
+    isPartOf: { '@id': WEBSITE_ID },
+    creator: { '@type': 'Organization', name: creatorName, url: creatorUrl },
+    ...(variableMeasured.length ? { variableMeasured } : {}),
+  };
+}
+
 /** Occupation/Salary-Schema für „Arzt" nach TV-Ärzte/VKA, regional verortet (Google-Salary-Signal). */
 export function physicianSalaryJsonLd({
   bundesland,

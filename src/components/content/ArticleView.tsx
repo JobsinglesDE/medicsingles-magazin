@@ -20,7 +20,8 @@ import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 import { StickyTOC } from '@/components/content/StickyTOC';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { ArticleByline } from '@/components/content/ArticleByline';
-import { JsonLd, articleJsonLd, faqJsonLd, videoJsonLd, extractYoutubeEmbed, physicianSalaryJsonLd, occupationSalaryJsonLd } from '@/components/seo/JsonLd';
+import { JsonLd, articleJsonLd, faqJsonLd, videoJsonLd, extractYoutubeEmbed, physicianSalaryJsonLd, occupationSalaryJsonLd, studieDatasetJsonLd } from '@/components/seo/JsonLd';
+import { StudyReport } from '@/components/content/StudyReport';
 import { ARZT_TARIF_VKA, ARZT_TARIF_QUELLE } from '@/lib/aerztekammer-statistiken';
 import { APOTHEKER_TARIF, APOTHEKER_TARIF_QUELLE } from '@/lib/apotheker-tarif';
 import { SPEC_HUBS, SECTION_HUBS } from '@/lib/hubs';
@@ -96,6 +97,7 @@ export default async function ArticleView({ slug }: { slug: string }) {
     : null;
 
   const isDoctor = article.section === 'promi-aerzte';
+  const isStudie = article.section === 'studien';
 
   const allArticles = await reader.collections.articles.all();
   const relatedArticles = allArticles
@@ -120,6 +122,11 @@ export default async function ArticleView({ slug }: { slug: string }) {
   const crumbs = isBerufsbild
     ? [
         { label: 'Berufsbilder', href: '/berufsbilder' },
+        { label: article.title, href: canonicalPath },
+      ]
+    : isStudie
+    ? [
+        { label: 'Wissenschaft & Liebe', href: '/studien' },
         { label: article.title, href: canonicalPath },
       ]
     : isDoctor
@@ -150,6 +157,18 @@ export default async function ArticleView({ slug }: { slug: string }) {
       />
       {article.faqItems && article.faqItems.length > 0 && (
         <JsonLd data={faqJsonLd(article.faqItems)} />
+      )}
+      {isStudie && (
+        <JsonLd
+          data={studieDatasetJsonLd({
+            name: article.title,
+            description: article.excerpt,
+            url: `${BASE_URL}${canonicalPath}`,
+            datenpunkte: article.studieDatenpunkte || [],
+            temporalCoverage: article.studieDatengrundlage || undefined,
+            dateModified: article.publishedAt || undefined,
+          })}
+        />
       )}
       {slug === 'arzt-gehalt' && (
         <JsonLd data={physicianSalaryJsonLd({
@@ -213,6 +232,17 @@ export default async function ArticleView({ slug }: { slug: string }) {
           <CalloutBox question={article.calloutQuestion}>
             {article.calloutAnswer}
           </CalloutBox>
+        )}
+
+        {isStudie && (
+          <StudyReport
+            methodik={article.studieMethodik || undefined}
+            datengrundlage={article.studieDatengrundlage || undefined}
+            stichprobe={article.studieStichprobe || undefined}
+            institut={article.studieInstitut || undefined}
+            datenpunkte={article.studieDatenpunkte || []}
+            quellen={article.studieQuellen || []}
+          />
         )}
 
         <ArticleBody

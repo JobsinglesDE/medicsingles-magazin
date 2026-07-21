@@ -36,6 +36,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE}/singles-partnersuche/pflege`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${BASE}/singles-partnersuche/rettung`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${BASE}/singles-partnersuche/therapeuten`, priority: 0.8, changeFrequency: 'weekly' },
+    { url: `${BASE}/studien`, priority: 0.8, changeFrequency: 'monthly' },
     { url: `${BASE}/tv-serien`, priority: 0.7, changeFrequency: 'weekly' },
     { url: `${BASE}/promi-aerzte`, priority: 0.8, changeFrequency: 'weekly' },
     { url: `${BASE}/tv-serien/greys-anatomy`, priority: 0.7, changeFrequency: 'weekly' },

@@ -125,6 +125,11 @@
     "permanent": true
   },
   {
+    "source": "/beziehung-schichtdienst-pflege",
+    "destination": "/singles-partnersuche/pflege/beziehung-schichtdienst-pflege",
+    "permanent": true
+  },
+  {
     "source": "/carola-holzner-doc-caro-vox-show-2026",
     "destination": "/promi-aerzte/carola-holzner-doc-caro-vox-show-2026",
     "permanent": true
@@ -665,6 +670,11 @@
     "permanent": true
   },
   {
+    "source": "/karriere-arzt-beziehung-assistenzarzt-chefarzt",
+    "destination": "/singles-partnersuche/aerzte/karriere-arzt-beziehung-assistenzarzt-chefarzt",
+    "permanent": true
+  },
+  {
     "source": "/kollegen-daten-station-krankenhaus-pflege",
     "destination": "/singles-partnersuche/pflege/kollegen-daten-station-krankenhaus-pflege",
     "permanent": true
@@ -677,6 +687,11 @@
   {
     "source": "/liebe-im-krankenhaus-realitaet",
     "destination": "/singles-partnersuche/aerzte/liebe-im-krankenhaus-realitaet",
+    "permanent": true
+  },
+  {
+    "source": "/liebe-im-schichtdienst-pflege",
+    "destination": "/singles-partnersuche",
     "permanent": true
   },
   {
@@ -770,6 +785,11 @@
     "permanent": true
   },
   {
+    "source": "/medicsingles-vs-tinder-nischen-dating",
+    "destination": "/singles-partnersuche/aerzte/medicsingles-vs-tinder-nischen-dating",
+    "permanent": true
+  },
+  {
     "source": "/medizinstudium",
     "destination": "/berufsbilder/medizinstudium",
     "permanent": true
@@ -795,6 +815,11 @@
     "permanent": true
   },
   {
+    "source": "/nachtdienst-partnerschaft-pflege",
+    "destination": "/singles-partnersuche/pflege/nachtdienst-partnerschaft-pflege",
+    "permanent": true
+  },
+  {
     "source": "/notfallsanitaeter-ausbildung",
     "destination": "/berufsbilder/notfallsanitaeter-ausbildung",
     "permanent": true
@@ -812,6 +837,16 @@
   {
     "source": "/oberarzt-gehalt",
     "destination": "/berufsbilder/oberarzt-gehalt",
+    "permanent": true
+  },
+  {
+    "source": "/partner-finden-pflege",
+    "destination": "/singles-partnersuche/pflege/partner-finden-pflege",
+    "permanent": true
+  },
+  {
+    "source": "/partnersuche-aerzte-warum-schwer",
+    "destination": "/singles-partnersuche/aerzte/partnersuche-aerzte-warum-schwer",
     "permanent": true
   },
   {
@@ -1910,16 +1945,6 @@
     "permanent": true
   },
   {
-    "source": "/karriere-arzt-beziehung-assistenzarzt-chefarzt",
-    "destination": "/singles-partnersuche/aerzte",
-    "permanent": true
-  },
-  {
-    "source": "/singles-partnersuche/aerzte/karriere-arzt-beziehung-assistenzarzt-chefarzt",
-    "destination": "/singles-partnersuche/aerzte",
-    "permanent": true
-  },
-  {
     "source": "/karriere-familie-12-24-rettungsdienst",
     "destination": "/singles-partnersuche/rettung",
     "permanent": true
@@ -2040,16 +2065,6 @@
     "permanent": true
   },
   {
-    "source": "/medicsingles-vs-tinder-nischen-dating",
-    "destination": "/singles-partnersuche/aerzte",
-    "permanent": true
-  },
-  {
-    "source": "/singles-partnersuche/aerzte/medicsingles-vs-tinder-nischen-dating",
-    "destination": "/singles-partnersuche/aerzte",
-    "permanent": true
-  },
-  {
     "source": "/notarzt-notfallsanitaeter-dating-unterschied",
     "destination": "/singles-partnersuche/rettung",
     "permanent": true
@@ -2086,16 +2101,6 @@
   },
   {
     "source": "/singles-partnersuche/aerzte/partner-ohne-akademischen-abschluss-arzt",
-    "destination": "/singles-partnersuche/aerzte",
-    "permanent": true
-  },
-  {
-    "source": "/partnersuche-aerzte-warum-schwer",
-    "destination": "/singles-partnersuche/aerzte",
-    "permanent": true
-  },
-  {
-    "source": "/singles-partnersuche/aerzte/partnersuche-aerzte-warum-schwer",
     "destination": "/singles-partnersuche/aerzte",
     "permanent": true
   },

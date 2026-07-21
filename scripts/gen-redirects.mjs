@@ -13,11 +13,17 @@ function field(s, key) {
 
 const out = [];
 
+// Slugs, die als echter Artikel existieren — kein Consolidated/Removed-Redirect darf
+// eine solche Live-Seite ueberschatten (sonst 308→Hub statt Artikel). Schuetzt das
+// Wiederbeleben konsolidierter Slugs mit neuem Content (Track-B-Slot-Fuellung).
+const liveSlugs = new Set();
+
 // Artikel
 const ADIR = 'content/articles';
 for (const f of readdirSync(ADIR).filter((x) => x.endsWith('.mdoc'))) {
   const s = readFileSync(join(ADIR, f), 'utf8');
   const slug = f.replace(/\.mdoc$/, '');
+  liveSlugs.add(slug);
   const spec = SPEC_SLUG[field(s, 'specialization')];
   const section = field(s, 'section');
 
@@ -47,6 +53,7 @@ for (const f of readdirSync(ADIR).filter((x) => x.endsWith('.mdoc'))) {
 if (existsSync('consolidated.json')) {
   const consolidated = JSON.parse(readFileSync('consolidated.json', 'utf8'));
   for (const { slug, spec } of consolidated) {
+    if (liveSlugs.has(slug)) continue; // Slug wieder als echter Artikel live → nicht redirecten
     const pillar = SPEC_SLUG[spec] ? `/singles-partnersuche/${SPEC_SLUG[spec]}` : '/singles-partnersuche';
     out.push({ source: `/${slug}`, destination: pillar, permanent: true });
     if (SPEC_SLUG[spec]) out.push({ source: `/singles-partnersuche/${SPEC_SLUG[spec]}/${slug}`, destination: pillar, permanent: true });
@@ -60,6 +67,7 @@ if (existsSync('consolidated.json')) {
 if (existsSync('removed.json')) {
   const removed = JSON.parse(readFileSync('removed.json', 'utf8'));
   for (const { slug, dest } of removed) {
+    if (liveSlugs.has(slug)) continue; // Slug wieder als echter Artikel live → nicht redirecten
     const d = dest || '/promi-aerzte';
     out.push({ source: `/${slug}`, destination: d, permanent: true });
     out.push({ source: `/promi-aerzte/${slug}`, destination: d, permanent: true });

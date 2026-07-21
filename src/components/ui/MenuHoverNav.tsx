@@ -24,6 +24,18 @@ const NAV_ITEMS: NavItem[] = [
     ],
   },
   {
+    label: 'Berufe & Gehalt',
+    href: '/berufsbilder',
+    dropdown: [
+      { label: 'Alle Berufsbilder', href: '/berufsbilder', description: 'Überblick über medizinische Berufe' },
+      { label: 'Arzt & Ärztin', href: '/berufsbilder/arzt', description: 'Gehalt, Ausbildung, Alltag' },
+      { label: 'Pflegefachkraft', href: '/berufsbilder/pflegefachkraft', description: 'Karriere in der Pflege' },
+      { label: 'MFA', href: '/berufsbilder/mfa', description: 'Medizinische Fachangestellte' },
+      { label: 'Hebamme', href: '/berufsbilder/hebamme', description: 'Beruf und Berufung' },
+      { label: 'Notfallsanitäter/in', href: '/berufsbilder/notfallsanitaeter', description: 'Rettungsdienst als Beruf' },
+    ],
+  },
+  {
     label: 'Singles Regional',
     href: '/singles-regional',
     dropdown: [
@@ -31,15 +43,6 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Unikliniken', href: '/singles-regional/unikliniken', description: 'Universitätskliniken & Maximalversorger' },
       { label: 'Ärztekammern', href: '/singles-regional/aerztekammern', description: 'Kammer-Netzwerke nach Bundesland' },
       { label: 'Junge Fachgesellschaften', href: '/singles-regional/junge-fachgesellschaften', description: 'JADE, JUNGE DGIM, Young DGK & Co.' },
-    ],
-  },
-  {
-    label: 'TV & Promi-Ärzte',
-    href: '/promi-aerzte',
-    dropdown: [
-      { label: "Grey's Anatomy", href: '/tv-serien/greys-anatomy', description: 'Singles aus Grey Sloan Memorial' },
-      { label: 'Junge Ärzte', href: '/tv-serien/junge-aerzte', description: 'In aller Freundschaft' },
-      { label: 'Promi-Ärzte Deutschland', href: '/promi-aerzte', description: 'Die 8 bekanntesten TV-Mediziner' },
     ],
   },
   { label: 'Erfolgsgeschichten', href: '/erfolgsgeschichten' },

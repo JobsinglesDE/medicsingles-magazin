@@ -47,6 +47,11 @@ const nextConfig: NextConfig = {
       { source: '/promi-aerzte/giovanni-maio-arzt-philosoph-freiburg', destination: '/promi-aerzte', permanent: true },
       { source: '/giovanni-maio-arzt-philosoph-freiburg', destination: '/promi-aerzte', permanent: true },
       { source: '/singles-partnersuche/aerzte/giovanni-maio-arzt-philosoph-freiburg', destination: '/promi-aerzte', permanent: true },
+      // 2026-07-21 Tommy: medic-News-Produktion pausiert, heutige Artikel entfernt → Hub statt 404.
+      { source: '/promi-aerzte/joe-bausch-knastarzt-tour-2026', destination: '/promi-aerzte', permanent: true },
+      { source: '/joe-bausch-knastarzt-tour-2026', destination: '/promi-aerzte', permanent: true },
+      { source: '/promi-aerzte/franziska-rubin-heilen-lebensmitteln-2026', destination: '/promi-aerzte', permanent: true },
+      { source: '/franziska-rubin-heilen-lebensmitteln-2026', destination: '/promi-aerzte', permanent: true },
     ];
     const seen = new Set<string>();
     return [...legacy, ...generatedRedirects].filter((r) =>

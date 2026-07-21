@@ -1,5 +1,10 @@
 [
   {
+    "source": "/adrenalin-abfall-partner-erklaeren-rettung",
+    "destination": "/singles-partnersuche/rettung/adrenalin-abfall-partner-erklaeren-rettung",
+    "permanent": true
+  },
+  {
     "source": "/altenpfleger-gehalt",
     "destination": "/berufsbilder/altenpfleger-gehalt",
     "permanent": true
@@ -675,6 +680,11 @@
     "permanent": true
   },
   {
+    "source": "/karriere-familie-12-24-rettungsdienst",
+    "destination": "/singles-partnersuche/rettung/karriere-familie-12-24-rettungsdienst",
+    "permanent": true
+  },
+  {
     "source": "/kollegen-daten-station-krankenhaus-pflege",
     "destination": "/singles-partnersuche/pflege/kollegen-daten-station-krankenhaus-pflege",
     "permanent": true
@@ -1310,6 +1320,11 @@
     "permanent": true
   },
   {
+    "source": "/ptbs-rettungsdienst-neue-beziehung-umgang",
+    "destination": "/singles-partnersuche/rettung/ptbs-rettungsdienst-neue-beziehung-umgang",
+    "permanent": true
+  },
+  {
     "source": "/singles-aerzte",
     "destination": "/singles-partnersuche/aerzte/singles-aerzte",
     "permanent": true
@@ -1501,16 +1516,6 @@
   },
   {
     "source": "/singles-partnersuche/rettung/acls-phtls-fortbildung-dating-rettung",
-    "destination": "/singles-partnersuche/rettung",
-    "permanent": true
-  },
-  {
-    "source": "/adrenalin-abfall-partner-erklaeren-rettung",
-    "destination": "/singles-partnersuche/rettung",
-    "permanent": true
-  },
-  {
-    "source": "/singles-partnersuche/rettung/adrenalin-abfall-partner-erklaeren-rettung",
     "destination": "/singles-partnersuche/rettung",
     "permanent": true
   },
@@ -1945,16 +1950,6 @@
     "permanent": true
   },
   {
-    "source": "/karriere-familie-12-24-rettungsdienst",
-    "destination": "/singles-partnersuche/rettung",
-    "permanent": true
-  },
-  {
-    "source": "/singles-partnersuche/rettung/karriere-familie-12-24-rettungsdienst",
-    "destination": "/singles-partnersuche/rettung",
-    "permanent": true
-  },
-  {
     "source": "/kind-karriere-kittel-familienplanung-pflege",
     "destination": "/singles-partnersuche/pflege",
     "permanent": true
@@ -2212,16 +2207,6 @@
   {
     "source": "/singles-partnersuche/aerzte/praxisgruendung-paar-arzt-finanzen",
     "destination": "/singles-partnersuche/aerzte",
-    "permanent": true
-  },
-  {
-    "source": "/ptbs-rettungsdienst-neue-beziehung-umgang",
-    "destination": "/singles-partnersuche/rettung",
-    "permanent": true
-  },
-  {
-    "source": "/singles-partnersuche/rettung/ptbs-rettungsdienst-neue-beziehung-umgang",
-    "destination": "/singles-partnersuche/rettung",
     "permanent": true
   },
   {

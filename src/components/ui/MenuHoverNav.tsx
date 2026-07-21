@@ -45,6 +45,7 @@ const NAV_ITEMS: NavItem[] = [
       { label: 'Junge Fachgesellschaften', href: '/singles-regional/junge-fachgesellschaften', description: 'JADE, JUNGE DGIM, Young DGK & Co.' },
     ],
   },
+  { label: 'Wissenschaft & Liebe', href: '/studien' },
   { label: 'Erfolgsgeschichten', href: '/erfolgsgeschichten' },
 ];
 

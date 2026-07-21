@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { reader } from '@/lib/keystatic';
 import { PillarHero } from '@/components/content/PillarHero';
 import { ArticleCard } from '@/components/content/ArticleCard';
@@ -66,6 +67,7 @@ const SECTIONS = [
     title: '💬 Online-Dating im Schichtdienst',
     intro: 'Online-Dating funktioniert für Pflegekräfte besser als fast jede andere Methode. Du knüpfst Kontakte zwischen Spätdienst und Schlafphase, ohne Ausgehen. Die richtige Plattform, authentisches Profil und eine erste Nachricht, die zieht.',
     slugs: [
+      'partner-finden-pflege',
       'krankenschwester-partner-finden-online',
       'pfleger-dating-app-tipps',
       'erste-nachricht-krankenschwester-pfleger-dating',
@@ -89,6 +91,8 @@ const SECTIONS = [
     title: '❤️ Beziehung & Alltag in der Pflege',
     intro: 'Der Dienstplan sitzt als dritter Partner am Tisch. Wie Partner das tragen, warum emotionale Abgrenzung entscheidend ist, und wie zwei Pflegekräfte ein funktionierendes Paar werden.',
     slugs: [
+      'beziehung-schichtdienst-pflege',
+      'nachtdienst-partnerschaft-pflege',
       'beziehung-krankenschwester-nicht-pflege',
       'partnersuche-pflegekraft-stress-abgrenzung',
       'zwei-pflegekraefte-paar-gemeinsames-verstaendnis',
@@ -239,6 +243,30 @@ export default async function PflegePillar() {
           <HeartButton href="https://medicsingles.de/?AID=MedicMagazin-pflege">
             Jetzt kostenfrei mitmachen
           </HeartButton>
+        </section>
+      </ScrollReveal>
+
+      {/* Studien-Banner — Wissenschaft & Liebe */}
+      <ScrollReveal>
+        <section className="max-w-3xl mx-auto px-6 py-4">
+          <Link href="/studien/liebe-im-schichtdienst-pflege" className="block group">
+            <AnimatedGradientBorder borderRadius={16} borderWidth={2}>
+              <div className="bg-surface rounded-xl p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+                <div className="text-xs uppercase tracking-widest font-bold text-brand-orange-text whitespace-nowrap">
+                  Wissenschaft &amp; Liebe
+                </div>
+                <div className="flex-1">
+                  <p className="font-bold text-lg leading-snug group-hover:text-brand-orange-text transition-colors">
+                    Liebe im Schichtdienst: Was die Zahlen über Beziehungen in der Pflege sagen
+                  </p>
+                  <p className="text-sm text-foreground/70 mt-1">
+                    Unser Report auf Basis amtlicher Statistik — 61 % Nachtarbeit, belegte Beziehungsrisiken und was wirklich hilft.
+                  </p>
+                </div>
+                <span className="text-brand-orange-text font-bold whitespace-nowrap">Report lesen →</span>
+              </div>
+            </AnimatedGradientBorder>
+          </Link>
         </section>
       </ScrollReveal>
 

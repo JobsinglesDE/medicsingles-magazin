@@ -295,6 +295,11 @@
     "permanent": true
   },
   {
+    "source": "/dating-verhalten-gesundheitswesen",
+    "destination": "/singles-partnersuche",
+    "permanent": true
+  },
+  {
     "source": "/dietrich-groenemeyer-demenz-buch",
     "destination": "/promi-aerzte/dietrich-groenemeyer-demenz-buch",
     "permanent": true

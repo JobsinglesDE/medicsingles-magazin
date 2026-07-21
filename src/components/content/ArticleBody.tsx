@@ -1,6 +1,7 @@
 import Markdoc, { type RenderableTreeNode } from '@markdoc/markdoc';
 import React, { type ReactNode } from 'react';
 import { InstagramEmbed } from './InstagramEmbed';
+import { StatHighlight } from './StatHighlight';
 import { AnimatedGradientBorder } from '@/components/ui/AnimatedGradientBorder';
 
 function YouTubeEmbed({ url, title }: { url: string; title?: string }) {
@@ -71,6 +72,16 @@ const markdocConfig = {
         title: { type: String },
       },
     },
+    stat: {
+      render: 'Stat',
+      attributes: {
+        value: { type: String, required: true },
+        unit: { type: String },
+        label: { type: String },
+        source: { type: String },
+        compare: { type: String },
+      },
+    },
   },
   nodes: {
     heading: {
@@ -136,7 +147,7 @@ export function ArticleBody({ content, insertAfterH2, insertElement }: Props) {
   if (!insertAfterH2 || !insertElement) {
     return (
       <div className={proseClasses}>
-        {Markdoc.renderers.react(renderable, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed } })}
+        {Markdoc.renderers.react(renderable, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed, Stat: StatHighlight } })}
       </div>
     );
   }
@@ -170,7 +181,7 @@ export function ArticleBody({ content, insertAfterH2, insertElement }: Props) {
   if (splitIndex === -1) {
     return (
       <div className={proseClasses}>
-        {Markdoc.renderers.react(renderable, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed } })}
+        {Markdoc.renderers.react(renderable, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed, Stat: StatHighlight } })}
       </div>
     );
   }
@@ -182,11 +193,11 @@ export function ArticleBody({ content, insertAfterH2, insertElement }: Props) {
   return (
     <>
       <div className={proseClasses}>
-        {Markdoc.renderers.react(firstHalf, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed } })}
+        {Markdoc.renderers.react(firstHalf, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed, Stat: StatHighlight } })}
       </div>
       {insertElement}
       <div className={proseClasses}>
-        {Markdoc.renderers.react(secondHalf, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed } })}
+        {Markdoc.renderers.react(secondHalf, React, { components: { InstagramEmbed, YouTube: YouTubeEmbed, Stat: StatHighlight } })}
       </div>
     </>
   );

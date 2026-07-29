@@ -128,6 +128,9 @@ export default async function StammtischStadtPage({ params }: { params: Params }
         imageAlt={e.featuredImageAlt || undefined}
         imageCredit={e.featuredImageCredit || undefined}
         date={e.publishedAt || undefined}
+      /* News nutzen echte Pressebilder, alles andere ist KI-generiert
+         (Art. 50 Abs. 4 KI-VO). */
+      aiGenerated
       />
 
       <StickyTOC items={tocItems} />

@@ -52,6 +52,12 @@ const nextConfig: NextConfig = {
       { source: '/joe-bausch-knastarzt-tour-2026', destination: '/promi-aerzte', permanent: true },
       { source: '/promi-aerzte/franziska-rubin-heilen-lebensmitteln-2026', destination: '/promi-aerzte', permanent: true },
       { source: '/franziska-rubin-heilen-lebensmitteln-2026', destination: '/promi-aerzte', permanent: true },
+      // 2026-08-13 GSC: rankt mit 432 Impressionen auf Pos. 20,7 und liefert 404. Die Seite
+      // wurde nie gebaut — content/persons/hans-wilhelm-mueller-wohlfahrt/ hat als einziger
+      // Personen-Ordner keine .yaml. check-person-risk.sh sagt STOP (Sportmediziner/Buchautor,
+      // Risikogruppe wie Maio) → Seite bewusst NICHT aufbauen, sondern auf den Hub leiten.
+      { source: '/aerzte/hans-wilhelm-mueller-wohlfahrt', destination: '/promi-aerzte', permanent: true },
+      { source: '/promi-aerzte/hans-wilhelm-mueller-wohlfahrt', destination: '/promi-aerzte', permanent: true },
     ];
     const seen = new Set<string>();
     return [...legacy, ...generatedRedirects].filter((r) =>

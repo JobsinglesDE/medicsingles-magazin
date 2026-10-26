@@ -12,7 +12,7 @@ import { MatchQuiz } from '@/components/ui/MatchQuiz';
 import { getArticleUrl } from '@/lib/routes';
 
 export const metadata = {
-  alternates: { canonical: '/' },
+  alternates: { canonical: 'https://medicsingles.de/magazin' },
   title: { absolute: '❤️ Medicsingles — Partnersuche für Ärzte, Pflege & Akademiker' },
   description: 'Partnersuche auf Akademiker-Niveau: Ärzte, Pflege und Therapeuten kennenlernen. Guides für Dating trotz Schichtdienst und echte Erfolgsgeschichten.',
 };
